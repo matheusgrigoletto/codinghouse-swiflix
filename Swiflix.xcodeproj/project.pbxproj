@@ -12,6 +12,11 @@
 		2FD283B92537DC9E0032400F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FD283B72537DC9E0032400F /* Main.storyboard */; };
 		2FD283BB2537DCA10032400F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FD283BA2537DCA10032400F /* Assets.xcassets */; };
 		2FD283BE2537DCA10032400F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FD283BC2537DCA10032400F /* LaunchScreen.storyboard */; };
+		C33E12E6254452D50011E5A9 /* BerkshireSwash-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C33E12E5254452D50011E5A9 /* BerkshireSwash-Regular.ttf */; };
+		C33E12EA254457F40011E5A9 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33E12E9254457F40011E5A9 /* InitialViewController.swift */; };
+		C33E12F1254469DE0011E5A9 /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33E12F0254469DE0011E5A9 /* Segues.swift */; };
+		C33E12F425446C3B0011E5A9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33E12F325446C3B0011E5A9 /* LoginViewController.swift */; };
+		C33E12F725449A690011E5A9 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33E12F625449A690011E5A9 /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		2FD283BA2537DCA10032400F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2FD283BD2537DCA10032400F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2FD283BF2537DCA10032400F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C33E12E5254452D50011E5A9 /* BerkshireSwash-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BerkshireSwash-Regular.ttf"; sourceTree = "<group>"; };
+		C33E12E9254457F40011E5A9 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		C33E12F0254469DE0011E5A9 /* Segues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segues.swift; sourceTree = "<group>"; };
+		C33E12F325446C3B0011E5A9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C33E12F625449A690011E5A9 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +64,7 @@
 		2FD283B02537DC9E0032400F /* Swiflix */ = {
 			isa = PBXGroup;
 			children = (
+				C33E12E4254452B70011E5A9 /* Fonts */,
 				C3B54E0C253C6C990067E6F5 /* Utils */,
 				C3B54E0B253C6C910067E6F5 /* Network */,
 				C3B54E0A253C6C8B0067E6F5 /* Resources */,
@@ -63,6 +74,14 @@
 				2FD283BF2537DCA10032400F /* Info.plist */,
 			);
 			path = Swiflix;
+			sourceTree = "<group>";
+		};
+		C33E12E4254452B70011E5A9 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C33E12E5254452D50011E5A9 /* BerkshireSwash-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		C3B54E07253C6C770067E6F5 /* Model */ = {
@@ -84,6 +103,9 @@
 		C3B54E09253C6C830067E6F5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C33E12E9254457F40011E5A9 /* InitialViewController.swift */,
+				C33E12F325446C3B0011E5A9 /* LoginViewController.swift */,
+				C33E12F625449A690011E5A9 /* RegisterViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -108,6 +130,7 @@
 		C3B54E0C253C6C990067E6F5 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				C33E12F0254469DE0011E5A9 /* Segues.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -171,6 +194,7 @@
 			files = (
 				2FD283BE2537DCA10032400F /* LaunchScreen.storyboard in Resources */,
 				2FD283BB2537DCA10032400F /* Assets.xcassets in Resources */,
+				C33E12E6254452D50011E5A9 /* BerkshireSwash-Regular.ttf in Resources */,
 				2FD283B92537DC9E0032400F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -182,8 +206,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C33E12EA254457F40011E5A9 /* InitialViewController.swift in Sources */,
 				2FD283B22537DC9E0032400F /* AppDelegate.swift in Sources */,
 				2FD283B42537DC9E0032400F /* SceneDelegate.swift in Sources */,
+				C33E12F725449A690011E5A9 /* RegisterViewController.swift in Sources */,
+				C33E12F425446C3B0011E5A9 /* LoginViewController.swift in Sources */,
+				C33E12F1254469DE0011E5A9 /* Segues.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,7 +355,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8A3VLCQATV;
 				INFOPLIST_FILE = Swiflix/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -336,6 +366,7 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.codinghouse.Swiflix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -346,6 +377,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8A3VLCQATV;
 				INFOPLIST_FILE = Swiflix/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
