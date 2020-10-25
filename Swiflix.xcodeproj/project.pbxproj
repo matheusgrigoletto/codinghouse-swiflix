@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FBDE1922545D4EC00655436 /* SimpleSerie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBDE1902545D4EC00655436 /* SimpleSerie.swift */; };
+		0FBDE1932545D4EC00655436 /* SimpleMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBDE1912545D4EC00655436 /* SimpleMovie.swift */; };
 		2FD283B22537DC9E0032400F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD283B12537DC9E0032400F /* AppDelegate.swift */; };
 		2FD283B42537DC9E0032400F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD283B32537DC9E0032400F /* SceneDelegate.swift */; };
 		2FD283B92537DC9E0032400F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FD283B72537DC9E0032400F /* Main.storyboard */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0FBDE1902545D4EC00655436 /* SimpleSerie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleSerie.swift; sourceTree = "<group>"; };
+		0FBDE1912545D4EC00655436 /* SimpleMovie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleMovie.swift; sourceTree = "<group>"; };
 		2FD283AE2537DC9E0032400F /* Swiflix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swiflix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FD283B12537DC9E0032400F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FD283B32537DC9E0032400F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,9 +91,12 @@
 		C3B54E07253C6C770067E6F5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0FBDE1912545D4EC00655436 /* SimpleMovie.swift */,
+				0FBDE1902545D4EC00655436 /* SimpleSerie.swift */,
 			);
-			path = Model;
-			sourceTree = "<group>";
+			name = Model;
+			path = "/Users/brhorta/Documents/IOS DIGITAL HOUSE/Swiflix/codinghouse-swiflix/Swiflix/Model";
+			sourceTree = "<absolute>";
 		};
 		C3B54E08253C6C7F0067E6F5 /* View */ = {
 			isa = PBXGroup;
@@ -209,8 +216,10 @@
 				C33E12EA254457F40011E5A9 /* InitialViewController.swift in Sources */,
 				2FD283B22537DC9E0032400F /* AppDelegate.swift in Sources */,
 				2FD283B42537DC9E0032400F /* SceneDelegate.swift in Sources */,
+				0FBDE1922545D4EC00655436 /* SimpleSerie.swift in Sources */,
 				C33E12F725449A690011E5A9 /* RegisterViewController.swift in Sources */,
 				C33E12F425446C3B0011E5A9 /* LoginViewController.swift in Sources */,
+				0FBDE1932545D4EC00655436 /* SimpleMovie.swift in Sources */,
 				C33E12F1254469DE0011E5A9 /* Segues.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
