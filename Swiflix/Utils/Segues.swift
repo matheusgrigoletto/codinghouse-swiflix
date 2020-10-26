@@ -11,4 +11,5 @@ import Foundation
 struct Segues {
     static let toLogin: String = "toLoginSegue"
     static let toRegister: String = "toRegisterSegue"
+    static let loginToMain: String = "loginToMainSegue"
 }
