@@ -9,21 +9,41 @@ import UIKit
 
 class PeopleViewController: UIViewController {
 
+    @IBOutlet weak var peopleTableView: UITableView!
+    
+    let pessoas = MockupPerson.getPeople()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.configureDelegates()
+        self.registerCell()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func configureDelegates(){
+        self.peopleTableView.delegate = self
+        self.peopleTableView.dataSource = self
     }
-    */
+    
+    func registerCell(){
+        let nib = UINib(nibName: PessoaTableViewCell.nibName, bundle: nil)
+        self.peopleTableView.register(nib, forCellReuseIdentifier: PessoaTableViewCell.cellID)
+    }
+}
 
+extension PeopleViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.pessoas.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: PessoaTableViewCell.cellID, for: indexPath) as? PessoaTableViewCell
+        cell?.setup(withPerson: self.pessoas[indexPath.row])
+        return cell ?? UITableViewCell()
+    }
+    
+    
+}
+
+extension PeopleViewController: UITableViewDelegate {
+    
 }

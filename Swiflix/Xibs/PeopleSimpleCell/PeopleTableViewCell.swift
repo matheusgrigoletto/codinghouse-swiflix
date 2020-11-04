@@ -25,12 +25,12 @@ class PeopleTableViewCell: UITableViewCell {
     func configure(person: Person, credits: Credit){
         
         self.actorNameLabel.text = person.name
-        self.jobLabel.text = person.knownForDepartment
+        self.jobLabel.text = person.department
         self.knownWorksLabel.text = credits.cast?
             .map( { $0.title ?? "" } )
             .joined(separator: ", ")
         
-        if let imageURL = URL(string: "\(Utils.imageBaseURL)\(person.profilePath ?? "")") {
+        if let imageURL = URL(string: "\(Utils.baseImageURL)\(person.profile ?? "")") {
             do {
                 let imageData = try Data(contentsOf: imageURL)
                 self.portraitView.image = UIImage(data: imageData)

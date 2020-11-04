@@ -14,6 +14,9 @@ class MovieSerieTableViewCell: UITableViewCell {
     @IBOutlet weak var sinopse: UILabel!
     @IBOutlet weak var rating: UILabel!
     
+    let cellID: String = ""
+    let nibName: String = "MovieSerieTableViewCell"
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,7 +31,7 @@ class MovieSerieTableViewCell: UITableViewCell {
         self.sinopse.text = data.sinopse
         self.rating.text = "\(Utils.star)\(data.rating)"
         
-        if let imageURL = URL(string: "\(Utils.imageBaseURL)\(data.image)") {
+        if let imageURL = URL(string: "\(Utils.baseImageURL)\(data.image)") {
             do {
                 let imageData = try Data(contentsOf: imageURL)
                 self.posterImage.image = UIImage(data: imageData)

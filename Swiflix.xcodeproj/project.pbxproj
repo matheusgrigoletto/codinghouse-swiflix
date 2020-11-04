@@ -30,6 +30,10 @@
 		AD64EA49254E2BC100F63F89 /* PeopleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD64EA47254E2BC100F63F89 /* PeopleTableViewCell.xib */; };
 		AD64EA4A254E2BC100F63F89 /* PeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD64EA48254E2BC100F63F89 /* PeopleTableViewCell.swift */; };
 		C309566025477CE500E5A75E /* SimpleMovieSerie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C309565F25477CE500E5A75E /* SimpleMovieSerie.swift */; };
+		C3110BE82553661600A6BD86 /* GenericMediaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3110BE62553661600A6BD86 /* GenericMediaTableViewCell.xib */; };
+		C3110BE92553661600A6BD86 /* GenericMediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3110BE72553661600A6BD86 /* GenericMediaTableViewCell.swift */; };
+		C3110BEE25536B8200A6BD86 /* PessoaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3110BEC25536B8100A6BD86 /* PessoaTableViewCell.swift */; };
+		C3110BEF25536B8200A6BD86 /* PessoaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3110BED25536B8200A6BD86 /* PessoaTableViewCell.xib */; };
 		C33E12E6254452D50011E5A9 /* BerkshireSwash-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C33E12E5254452D50011E5A9 /* BerkshireSwash-Regular.ttf */; };
 		C33E12EA254457F40011E5A9 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33E12E9254457F40011E5A9 /* InitialViewController.swift */; };
 		C33E12F1254469DE0011E5A9 /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33E12F0254469DE0011E5A9 /* Segues.swift */; };
@@ -40,6 +44,9 @@
 		C37A75642546523C00A597ED /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37A75612546523C00A597ED /* Utils.swift */; };
 		C37A75652546523C00A597ED /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37A75622546523C00A597ED /* Alert.swift */; };
 		C37A75662546523C00A597ED /* Mockups.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37A75632546523C00A597ED /* Mockups.swift */; };
+		C38A0339255360A300E6C010 /* GenericMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38A0338255360A300E6C010 /* GenericMedia.swift */; };
+		C38A033C2553610300E6C010 /* FullPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38A033B2553610300E6C010 /* FullPerson.swift */; };
+		C38A033F2553612000E6C010 /* PersonPhotoGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38A033E2553612000E6C010 /* PersonPhotoGallery.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +75,10 @@
 		AD64EA47254E2BC100F63F89 /* PeopleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PeopleTableViewCell.xib; sourceTree = "<group>"; };
 		AD64EA48254E2BC100F63F89 /* PeopleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleTableViewCell.swift; sourceTree = "<group>"; };
 		C309565F25477CE500E5A75E /* SimpleMovieSerie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleMovieSerie.swift; sourceTree = "<group>"; };
+		C3110BE62553661600A6BD86 /* GenericMediaTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GenericMediaTableViewCell.xib; sourceTree = "<group>"; };
+		C3110BE72553661600A6BD86 /* GenericMediaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericMediaTableViewCell.swift; sourceTree = "<group>"; };
+		C3110BEC25536B8100A6BD86 /* PessoaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PessoaTableViewCell.swift; sourceTree = "<group>"; };
+		C3110BED25536B8200A6BD86 /* PessoaTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PessoaTableViewCell.xib; sourceTree = "<group>"; };
 		C33E12E5254452D50011E5A9 /* BerkshireSwash-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BerkshireSwash-Regular.ttf"; sourceTree = "<group>"; };
 		C33E12E9254457F40011E5A9 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		C33E12F0254469DE0011E5A9 /* Segues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segues.swift; sourceTree = "<group>"; };
@@ -78,6 +89,9 @@
 		C37A75612546523C00A597ED /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		C37A75622546523C00A597ED /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		C37A75632546523C00A597ED /* Mockups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mockups.swift; sourceTree = "<group>"; };
+		C38A0338255360A300E6C010 /* GenericMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericMedia.swift; sourceTree = "<group>"; };
+		C38A033B2553610300E6C010 /* FullPerson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullPerson.swift; sourceTree = "<group>"; };
+		C38A033E2553612000E6C010 /* PersonPhotoGallery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonPhotoGallery.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +108,8 @@
 		0FBDE1A22545D74B00655436 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
+				C3110BEB25536B6800A6BD86 /* PessoaCell */,
+				C3110BE5255365F400A6BD86 /* GenericMediaCell */,
 				AD64EA46254E2BA300F63F89 /* PeopleSimpleCell */,
 				C3D2551425477B72003E628C /* MovieSerieSimpleCell */,
 			);
@@ -141,6 +157,24 @@
 			path = PeopleSimpleCell;
 			sourceTree = "<group>";
 		};
+		C3110BE5255365F400A6BD86 /* GenericMediaCell */ = {
+			isa = PBXGroup;
+			children = (
+				C3110BE72553661600A6BD86 /* GenericMediaTableViewCell.swift */,
+				C3110BE62553661600A6BD86 /* GenericMediaTableViewCell.xib */,
+			);
+			path = GenericMediaCell;
+			sourceTree = "<group>";
+		};
+		C3110BEB25536B6800A6BD86 /* PessoaCell */ = {
+			isa = PBXGroup;
+			children = (
+				C3110BEC25536B8100A6BD86 /* PessoaTableViewCell.swift */,
+				C3110BED25536B8200A6BD86 /* PessoaTableViewCell.xib */,
+			);
+			path = PessoaCell;
+			sourceTree = "<group>";
+		};
 		C33E12E4254452B70011E5A9 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +186,9 @@
 		C3B54E07253C6C770067E6F5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C38A033E2553612000E6C010 /* PersonPhotoGallery.swift */,
+				C38A033B2553610300E6C010 /* FullPerson.swift */,
+				C38A0338255360A300E6C010 /* GenericMedia.swift */,
 				AD64EA3F254E2B9500F63F89 /* Credit.swift */,
 				AD64EA41254E2B9500F63F89 /* Movie.swift */,
 				AD64EA40254E2B9500F63F89 /* Person.swift */,
@@ -287,12 +324,14 @@
 			files = (
 				AD64EA49254E2BC100F63F89 /* PeopleTableViewCell.xib in Resources */,
 				2FD283BE2537DCA10032400F /* LaunchScreen.storyboard in Resources */,
+				C3110BEF25536B8200A6BD86 /* PessoaTableViewCell.xib in Resources */,
 				2FD283BB2537DCA10032400F /* Assets.xcassets in Resources */,
 				C33E12E6254452D50011E5A9 /* BerkshireSwash-Regular.ttf in Resources */,
 				0FBDE1AA2545D74B00655436 /* MovieSerieTableViewCell.xib in Resources */,
 				0FBDE1AA2545D74B00655436 /* MovieSerieTableViewCell.xib in Resources */,
 				5631F42925473B9E00FFCCBC /* Tabbar.storyboard in Resources */,
 				2FD283B92537DC9E0032400F /* Main.storyboard in Resources */,
+				C3110BE82553661600A6BD86 /* GenericMediaTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,7 +346,9 @@
 				5631F4312547403400FFCCBC /* PeopleViewController.swift in Sources */,
 				5631F4332547406700FFCCBC /* TabbarViewController.swift in Sources */,
 				AD64EA4A254E2BC100F63F89 /* PeopleTableViewCell.swift in Sources */,
+				C38A033F2553612000E6C010 /* PersonPhotoGallery.swift in Sources */,
 				C33E12EA254457F40011E5A9 /* InitialViewController.swift in Sources */,
+				C3110BEE25536B8200A6BD86 /* PessoaTableViewCell.swift in Sources */,
 				2FD283B22537DC9E0032400F /* AppDelegate.swift in Sources */,
 				0FBDE1A92545D74B00655436 /* MovieSerieTableViewCell.swift in Sources */,
 				2FD283B42537DC9E0032400F /* SceneDelegate.swift in Sources */,
@@ -326,11 +367,14 @@
 				5631F43D2547415B00FFCCBC /* NewMoviesViewController.swift in Sources */,
 				C33E12F725449A690011E5A9 /* RegisterViewController.swift in Sources */,
 				5631F4392547409D00FFCCBC /* Mockups.swift in Sources */,
+				C3110BE92553661600A6BD86 /* GenericMediaTableViewCell.swift in Sources */,
 				C33E12F425446C3B0011E5A9 /* LoginViewController.swift in Sources */,
 				C33E12F1254469DE0011E5A9 /* Segues.swift in Sources */,
 				C37A755F2546522E00A597ED /* MovieViewController.swift in Sources */,
 				C309566025477CE500E5A75E /* SimpleMovieSerie.swift in Sources */,
 				5631F4382547409D00FFCCBC /* Alert.swift in Sources */,
+				C38A033C2553610300E6C010 /* FullPerson.swift in Sources */,
+				C38A0339255360A300E6C010 /* GenericMedia.swift in Sources */,
 				5631F42E25473FAD00FFCCBC /* MovieViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

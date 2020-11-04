@@ -9,21 +9,42 @@ import UIKit
 
 class SerieViewController: UIViewController {
 
+    @IBOutlet weak var serieTableView: UITableView!
+    
+    let series:[GenericMedia] = MockupSerie.getSeries()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.configureDelegates()
+        self.registerCell()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func configureDelegates(){
+        self.serieTableView.delegate = self
+        self.serieTableView.dataSource = self
     }
-    */
+    
+    func registerCell(){
+        let nib = UINib(nibName: GenericMediaTableViewCell.nibName, bundle: nil)
+        self.serieTableView.register(nib, forCellReuseIdentifier: GenericMediaTableViewCell.cellID)
+    }
 
+}
+
+extension SerieViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.series.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: GenericMediaTableViewCell.cellID, for: indexPath) as? GenericMediaTableViewCell
+        cell?.setup(withMedia: self.series[indexPath.row])
+        return cell ?? UITableViewCell()
+    }
+    
+    
+}
+
+extension SerieViewController: UITableViewDelegate {
+    
 }
