@@ -39,6 +39,10 @@
 		C33E12F1254469DE0011E5A9 /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33E12F0254469DE0011E5A9 /* Segues.swift */; };
 		C33E12F425446C3B0011E5A9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33E12F325446C3B0011E5A9 /* LoginViewController.swift */; };
 		C33E12F725449A690011E5A9 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33E12F625449A690011E5A9 /* RegisterViewController.swift */; };
+		C36856AF2556E3940032D09A /* FullMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36856AE2556E3940032D09A /* FullMovie.swift */; };
+		C36856B22556E45E0032D09A /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36856B12556E45E0032D09A /* MovieDetailViewController.swift */; };
+		C36856B72556E8D90032D09A /* MovieGeralTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36856B52556E8D90032D09A /* MovieGeralTableViewCell.swift */; };
+		C36856B82556E8D90032D09A /* MovieGeralTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C36856B62556E8D90032D09A /* MovieGeralTableViewCell.xib */; };
 		C37A755E2546522E00A597ED /* SerieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37A755C2546522E00A597ED /* SerieViewController.swift */; };
 		C37A755F2546522E00A597ED /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37A755D2546522E00A597ED /* MovieViewController.swift */; };
 		C37A75642546523C00A597ED /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37A75612546523C00A597ED /* Utils.swift */; };
@@ -84,6 +88,10 @@
 		C33E12F0254469DE0011E5A9 /* Segues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segues.swift; sourceTree = "<group>"; };
 		C33E12F325446C3B0011E5A9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C33E12F625449A690011E5A9 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		C36856AE2556E3940032D09A /* FullMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullMovie.swift; sourceTree = "<group>"; };
+		C36856B12556E45E0032D09A /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		C36856B52556E8D90032D09A /* MovieGeralTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieGeralTableViewCell.swift; sourceTree = "<group>"; };
+		C36856B62556E8D90032D09A /* MovieGeralTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieGeralTableViewCell.xib; sourceTree = "<group>"; };
 		C37A755C2546522E00A597ED /* SerieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerieViewController.swift; sourceTree = "<group>"; };
 		C37A755D2546522E00A597ED /* MovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
 		C37A75612546523C00A597ED /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -108,6 +116,7 @@
 		0FBDE1A22545D74B00655436 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
+				C36856B42556E8B80032D09A /* MovieDetail */,
 				C3110BEB25536B6800A6BD86 /* PessoaCell */,
 				C3110BE5255365F400A6BD86 /* GenericMediaCell */,
 				AD64EA46254E2BA300F63F89 /* PeopleSimpleCell */,
@@ -183,6 +192,15 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		C36856B42556E8B80032D09A /* MovieDetail */ = {
+			isa = PBXGroup;
+			children = (
+				C36856B52556E8D90032D09A /* MovieGeralTableViewCell.swift */,
+				C36856B62556E8D90032D09A /* MovieGeralTableViewCell.xib */,
+			);
+			path = MovieDetail;
+			sourceTree = "<group>";
+		};
 		C3B54E07253C6C770067E6F5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +211,7 @@
 				AD64EA41254E2B9500F63F89 /* Movie.swift */,
 				AD64EA40254E2B9500F63F89 /* Person.swift */,
 				C309565F25477CE500E5A75E /* SimpleMovieSerie.swift */,
+				C36856AE2556E3940032D09A /* FullMovie.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -221,6 +240,7 @@
 				5631F4322547406700FFCCBC /* TabbarViewController.swift */,
 				5631F43A2547411B00FFCCBC /* MovieHouseViewController.swift */,
 				5631F43C2547415B00FFCCBC /* NewMoviesViewController.swift */,
+				C36856B12556E45E0032D09A /* MovieDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -329,6 +349,7 @@
 				C33E12E6254452D50011E5A9 /* BerkshireSwash-Regular.ttf in Resources */,
 				0FBDE1AA2545D74B00655436 /* MovieSerieTableViewCell.xib in Resources */,
 				0FBDE1AA2545D74B00655436 /* MovieSerieTableViewCell.xib in Resources */,
+				C36856B82556E8D90032D09A /* MovieGeralTableViewCell.xib in Resources */,
 				5631F42925473B9E00FFCCBC /* Tabbar.storyboard in Resources */,
 				2FD283B92537DC9E0032400F /* Main.storyboard in Resources */,
 				C3110BE82553661600A6BD86 /* GenericMediaTableViewCell.xib in Resources */,
@@ -358,7 +379,9 @@
 				AD64EA42254E2B9500F63F89 /* Credit.swift in Sources */,
 				C33E12F725449A690011E5A9 /* RegisterViewController.swift in Sources */,
 				C37A755E2546522E00A597ED /* SerieViewController.swift in Sources */,
+				C36856B22556E45E0032D09A /* MovieDetailViewController.swift in Sources */,
 				5631F4372547409D00FFCCBC /* Utils.swift in Sources */,
+				C36856B72556E8D90032D09A /* MovieGeralTableViewCell.swift in Sources */,
 				AD64EA44254E2B9500F63F89 /* Movie.swift in Sources */,
 				5631F43B2547411B00FFCCBC /* MovieHouseViewController.swift in Sources */,
 				AD64EA43254E2B9500F63F89 /* Person.swift in Sources */,
@@ -373,6 +396,7 @@
 				C37A755F2546522E00A597ED /* MovieViewController.swift in Sources */,
 				C309566025477CE500E5A75E /* SimpleMovieSerie.swift in Sources */,
 				5631F4382547409D00FFCCBC /* Alert.swift in Sources */,
+				C36856AF2556E3940032D09A /* FullMovie.swift in Sources */,
 				C38A033C2553610300E6C010 /* FullPerson.swift in Sources */,
 				C38A0339255360A300E6C010 /* GenericMedia.swift in Sources */,
 				5631F42E25473FAD00FFCCBC /* MovieViewController.swift in Sources */,

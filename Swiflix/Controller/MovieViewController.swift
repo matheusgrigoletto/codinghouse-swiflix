@@ -28,6 +28,14 @@ class MovieViewController: UIViewController {
         self.movieTableView.delegate = self
         self.movieTableView.dataSource = self
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        #warning("passar o id do filme escolhido para a proxima tela")
+        let movie = sender as? GenericMedia
+        print(movie)
+        let vc = segue.destination as? MovieDetailViewController
+        vc?.title = movie?.title ?? "Erro"
+    }
 }
 
 extension MovieViewController: UITableViewDataSource {
@@ -45,5 +53,12 @@ extension MovieViewController: UITableViewDataSource {
 }
 
 extension MovieViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        #warning("performar segue enviando o id do filme escolhido")
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let chosenMovie = self.movies[indexPath.row]
+        performSegue(withIdentifier: Segues.toMovieDetail, sender: chosenMovie)
+    }
 }

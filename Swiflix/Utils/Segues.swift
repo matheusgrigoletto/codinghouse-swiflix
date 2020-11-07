@@ -13,4 +13,5 @@ struct Segues {
     static let toRegister: String = "toRegisterSegue"
     static let loginToMain: String = "loginToMainSegue"
     static let toPersonDetail: String = "personDetailSegue"
+    static let toMovieDetail: String = "movieToDetailMovieSegue"
 }
