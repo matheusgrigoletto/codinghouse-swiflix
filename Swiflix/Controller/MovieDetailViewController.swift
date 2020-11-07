@@ -44,7 +44,7 @@ class MovieDetailViewController: UIViewController {
         self.movieTableView.delegate = self
         self.movieTableView.dataSource = self
         
-        //self.movieTableView.tableFooterView = UIView()
+        self.movieTableView.tableFooterView = UIView()
     }
     
     func registerCells(nibName: String, cellID: String){

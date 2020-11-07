@@ -32,13 +32,13 @@ class MovieGeralTableViewCell: UITableViewCell {
         self.tituloOriginal.text = m.originalTitle
         self.sinopse.text = m.overview
         self.duracao.text = "\(m.runtime) min"
-        self.dataLancamento.text = m.releaseDate ?? "erro"
+        self.dataLancamento.text = m.releaseDate
         
         self.genero.text = " "
         for g in m.genres {
             self.genero.text! += "\(g.name), "
         }
-        
+    
         self.genero.text?.removeLast()
         self.genero.text?.removeLast()
     }
