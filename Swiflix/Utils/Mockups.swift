@@ -31,6 +31,15 @@ struct MockupMovie {
         ]
         return reviews
     }
+    
+    static func getTraillers() -> [MovieTrailler] {
+        let traillers: [MovieTrailler] = [
+            MovieTrailler(name: "Convenção das Bruxas - Trailer Legendado (Versão EUA)", key: "8CtPa7wt07Q", site: "YouTube", type: "Trailer"),
+            MovieTrailler(name: "Convenção das Bruxas - Trailer Dublado", key: "8TQLGcnJ3mc", site: "YouTube", type: "Trailer"),
+            MovieTrailler(name: "Convenção das Bruxas - Trailer Legendado", key: "SvIhmRaCkYY", site: "YouTube", type: "Trailer"),
+        ]
+        return traillers
+    }
  
 }
 

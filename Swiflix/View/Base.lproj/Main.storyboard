@@ -575,7 +575,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5AV-Am-GSz">
-                                <rect key="frame" x="0.0" y="372.5" width="414" height="32"/>
+                                <rect key="frame" x="0.0" y="377.5" width="414" height="32"/>
                                 <segments>
                                     <segment title="Geral"/>
                                     <segment title="Outros"/>
@@ -586,26 +586,27 @@
                                     <action selector="segmentedChanged:" destination="9v4-lX-OVG" eventType="valueChanged" id="Eac-og-62a"/>
                                 </connections>
                             </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="1U7-Ch-rHX">
-                                <rect key="frame" x="0.0" y="403.5" width="414" height="409.5"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="1U7-Ch-rHX">
+                                <rect key="frame" x="0.0" y="408.5" width="414" height="404.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2Pl-E2-75R"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="5AV-Am-GSz" firstAttribute="top" secondItem="vKZ-GS-RLx" secondAttribute="bottom" id="0pr-hx-VoM"/>
-                            <constraint firstItem="2Pl-E2-75R" firstAttribute="bottom" secondItem="1U7-Ch-rHX" secondAttribute="bottom" id="Agc-RB-jfe"/>
-                            <constraint firstItem="2Pl-E2-75R" firstAttribute="trailing" secondItem="5AV-Am-GSz" secondAttribute="trailing" id="KRd-rs-dPu"/>
-                            <constraint firstItem="5AV-Am-GSz" firstAttribute="leading" secondItem="2Pl-E2-75R" secondAttribute="leading" id="YVX-iB-a8i"/>
-                            <constraint firstItem="5AV-Am-GSz" firstAttribute="top" secondItem="AbV-SB-aaO" secondAttribute="bottom" constant="10" id="cdf-Hd-SM7"/>
+                            <constraint firstItem="1U7-Ch-rHX" firstAttribute="leading" secondItem="2Pl-E2-75R" secondAttribute="leading" id="7tD-6s-pj6"/>
+                            <constraint firstItem="5AV-Am-GSz" firstAttribute="top" secondItem="AbV-SB-aaO" secondAttribute="bottom" constant="15" id="KNq-Au-Hfh"/>
+                            <constraint firstItem="5AV-Am-GSz" firstAttribute="leading" secondItem="2Pl-E2-75R" secondAttribute="leading" id="QQH-62-Ea4"/>
                             <constraint firstItem="2Pl-E2-75R" firstAttribute="trailing" secondItem="AbV-SB-aaO" secondAttribute="trailing" constant="10" id="dgi-FI-9qS"/>
-                            <constraint firstItem="1U7-Ch-rHX" firstAttribute="leading" secondItem="2Pl-E2-75R" secondAttribute="leading" id="ghA-KD-NL9"/>
-                            <constraint firstItem="2Pl-E2-75R" firstAttribute="trailing" secondItem="1U7-Ch-rHX" secondAttribute="trailing" id="r6F-sw-mFb"/>
+                            <constraint firstItem="5AV-Am-GSz" firstAttribute="top" secondItem="vKZ-GS-RLx" secondAttribute="bottom" constant="5" id="fXs-TJ-XET"/>
+                            <constraint firstItem="1U7-Ch-rHX" firstAttribute="trailing" secondItem="2Pl-E2-75R" secondAttribute="trailing" id="iyd-cT-3Hn"/>
+                            <constraint firstItem="1U7-Ch-rHX" firstAttribute="top" secondItem="5AV-Am-GSz" secondAttribute="bottom" id="kqq-Hq-YMB"/>
+                            <constraint firstItem="1U7-Ch-rHX" firstAttribute="bottom" secondItem="2Pl-E2-75R" secondAttribute="bottom" id="o6D-zy-2s3"/>
                             <constraint firstItem="vKZ-GS-RLx" firstAttribute="leading" secondItem="2Pl-E2-75R" secondAttribute="leading" id="szW-ym-mgs"/>
-                            <constraint firstItem="1U7-Ch-rHX" firstAttribute="top" secondItem="5AV-Am-GSz" secondAttribute="bottom" id="tWz-F2-GLa"/>
                             <constraint firstItem="vKZ-GS-RLx" firstAttribute="top" secondItem="2Pl-E2-75R" secondAttribute="top" id="vEm-Wm-9xC"/>
+                            <constraint firstItem="5AV-Am-GSz" firstAttribute="trailing" secondItem="2Pl-E2-75R" secondAttribute="trailing" id="x1v-Kd-UYa"/>
                             <constraint firstAttribute="trailing" secondItem="vKZ-GS-RLx" secondAttribute="trailing" id="xPq-iQ-59Q"/>
+                            <constraint firstItem="2Pl-E2-75R" firstAttribute="trailing" secondItem="AbV-SB-aaO" secondAttribute="trailing" constant="10" id="ypW-bJ-Q0L"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="595-TA-duN"/>
@@ -617,7 +618,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sHv-cP-SuY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5748" y="2894.3028485757122"/>
+            <point key="canvasLocation" x="-5749.275362318841" y="2894.1964285714284"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

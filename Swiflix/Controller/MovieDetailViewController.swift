@@ -14,9 +14,9 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var backdrop: UIImageView!
     
     let fullMovie:FullMovie = MockupMovie.getFullMovie()
-    
     let similarMovies = MockupMovie.getMovies()
     let reviews = MockupMovie.getReviews()
+    let traillers = MockupMovie.getTraillers()
     
     var segmentedIndex = 0
     
@@ -24,9 +24,11 @@ class MovieDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureDelegates()
+        
         self.registerCells(nibName: MovieGeralTableViewCell.nibName, cellID: MovieGeralTableViewCell.cellID)
         self.registerCells(nibName: GenericMediaTableViewCell.nibName, cellID: GenericMediaTableViewCell.cellID)
         self.registerCells(nibName: MovieCriticaTableViewCell.nibName, cellID: MovieCriticaTableViewCell.cellID)
+        self.registerCells(nibName: MovieTraillerTableViewCell.nibName, cellID: MovieTraillerTableViewCell.cellID)
         
         self.configureUIElements()
     }
@@ -68,10 +70,16 @@ extension MovieDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch self.segmentedIndex {
         case 0:
+            tableView.allowsSelection = false
             return 1
         case 1:
+            tableView.allowsSelection = true
             return self.similarMovies.count
+        case 2:
+            tableView.allowsSelection = true
+            return self.traillers.count
         case 3:
+            tableView.allowsSelection = false
             return self.reviews.count
         default:
             return 0
@@ -80,15 +88,19 @@ extension MovieDetailViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch self.segmentedIndex {
-        case 0:
+        case 0: //geral
             let cell = tableView.dequeueReusableCell(withIdentifier: MovieGeralTableViewCell.cellID, for: indexPath) as? MovieGeralTableViewCell
             cell?.setup(self.fullMovie)
             return cell ?? UITableViewCell()
-        case 1:
+        case 1: // filmes similares
             let cell = tableView.dequeueReusableCell(withIdentifier: GenericMediaTableViewCell.cellID, for: indexPath) as? GenericMediaTableViewCell
             cell?.setup(withMedia: self.similarMovies[indexPath.row])
             return cell ?? UITableViewCell()
-        case 3:
+        case 2: // traillers
+            let cell = tableView.dequeueReusableCell(withIdentifier: MovieTraillerTableViewCell.cellID, for: indexPath) as? MovieTraillerTableViewCell
+            cell?.setup(self.traillers[indexPath.row], movieImage: self.fullMovie.poster)
+            return cell ?? UITableViewCell()
+        case 3: // criticas
             let cell = tableView.dequeueReusableCell(withIdentifier: MovieCriticaTableViewCell.cellID, for: indexPath) as? MovieCriticaTableViewCell
             cell?.setup(self.reviews[indexPath.row])
             return cell ?? UITableViewCell()
@@ -101,5 +113,9 @@ extension MovieDetailViewController: UITableViewDataSource {
 }
 
 extension MovieDetailViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     
 }

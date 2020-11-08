@@ -54,6 +54,9 @@
 		C3D8F63E255827BD001FFCA1 /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D8F63D255827BD001FFCA1 /* Reviews.swift */; };
 		C3D8F6442558289B001FFCA1 /* MovieCriticaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D8F6422558289B001FFCA1 /* MovieCriticaTableViewCell.swift */; };
 		C3D8F6452558289B001FFCA1 /* MovieCriticaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3D8F6432558289B001FFCA1 /* MovieCriticaTableViewCell.xib */; };
+		C3D8F64825582E7D001FFCA1 /* MovieTrailler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D8F64725582E7D001FFCA1 /* MovieTrailler.swift */; };
+		C3D8F64D25582FB7001FFCA1 /* MovieTraillerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D8F64B25582FB7001FFCA1 /* MovieTraillerTableViewCell.swift */; };
+		C3D8F64E25582FB7001FFCA1 /* MovieTraillerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3D8F64C25582FB7001FFCA1 /* MovieTraillerTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +109,9 @@
 		C3D8F63D255827BD001FFCA1 /* Reviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
 		C3D8F6422558289B001FFCA1 /* MovieCriticaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCriticaTableViewCell.swift; sourceTree = "<group>"; };
 		C3D8F6432558289B001FFCA1 /* MovieCriticaTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCriticaTableViewCell.xib; sourceTree = "<group>"; };
+		C3D8F64725582E7D001FFCA1 /* MovieTrailler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTrailler.swift; sourceTree = "<group>"; };
+		C3D8F64B25582FB7001FFCA1 /* MovieTraillerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTraillerTableViewCell.swift; sourceTree = "<group>"; };
+		C3D8F64C25582FB7001FFCA1 /* MovieTraillerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTraillerTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +207,7 @@
 		C36856B42556E8B80032D09A /* MovieDetail */ = {
 			isa = PBXGroup;
 			children = (
+				C3D8F64A25582FA2001FFCA1 /* Trailler */,
 				C3D8F64125582872001FFCA1 /* Critica */,
 				C3D8F64025582866001FFCA1 /* Geral */,
 			);
@@ -219,6 +226,7 @@
 				C309565F25477CE500E5A75E /* SimpleMovieSerie.swift */,
 				C36856AE2556E3940032D09A /* FullMovie.swift */,
 				C3D8F63D255827BD001FFCA1 /* Reviews.swift */,
+				C3D8F64725582E7D001FFCA1 /* MovieTrailler.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -310,6 +318,15 @@
 			path = Critica;
 			sourceTree = "<group>";
 		};
+		C3D8F64A25582FA2001FFCA1 /* Trailler */ = {
+			isa = PBXGroup;
+			children = (
+				C3D8F64B25582FB7001FFCA1 /* MovieTraillerTableViewCell.swift */,
+				C3D8F64C25582FB7001FFCA1 /* MovieTraillerTableViewCell.xib */,
+			);
+			path = Trailler;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -376,6 +393,7 @@
 				0FBDE1AA2545D74B00655436 /* MovieSerieTableViewCell.xib in Resources */,
 				0FBDE1AA2545D74B00655436 /* MovieSerieTableViewCell.xib in Resources */,
 				C36856B82556E8D90032D09A /* MovieGeralTableViewCell.xib in Resources */,
+				C3D8F64E25582FB7001FFCA1 /* MovieTraillerTableViewCell.xib in Resources */,
 				5631F42925473B9E00FFCCBC /* Tabbar.storyboard in Resources */,
 				2FD283B92537DC9E0032400F /* Main.storyboard in Resources */,
 				C3110BE82553661600A6BD86 /* GenericMediaTableViewCell.xib in Resources */,
@@ -402,8 +420,10 @@
 				0FBDE1A92545D74B00655436 /* MovieSerieTableViewCell.swift in Sources */,
 				2FD283B42537DC9E0032400F /* SceneDelegate.swift in Sources */,
 				C37A75662546523C00A597ED /* Mockups.swift in Sources */,
+				C3D8F64825582E7D001FFCA1 /* MovieTrailler.swift in Sources */,
 				C37A75642546523C00A597ED /* Utils.swift in Sources */,
 				C37A75652546523C00A597ED /* Alert.swift in Sources */,
+				C3D8F64D25582FB7001FFCA1 /* MovieTraillerTableViewCell.swift in Sources */,
 				AD64EA42254E2B9500F63F89 /* Credit.swift in Sources */,
 				C33E12F725449A690011E5A9 /* RegisterViewController.swift in Sources */,
 				C37A755E2546522E00A597ED /* SerieViewController.swift in Sources */,
