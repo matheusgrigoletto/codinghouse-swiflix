@@ -51,6 +51,9 @@
 		C38A0339255360A300E6C010 /* GenericMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38A0338255360A300E6C010 /* GenericMedia.swift */; };
 		C38A033C2553610300E6C010 /* FullPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38A033B2553610300E6C010 /* FullPerson.swift */; };
 		C38A033F2553612000E6C010 /* PersonPhotoGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38A033E2553612000E6C010 /* PersonPhotoGallery.swift */; };
+		C3D8F63E255827BD001FFCA1 /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D8F63D255827BD001FFCA1 /* Reviews.swift */; };
+		C3D8F6442558289B001FFCA1 /* MovieCriticaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D8F6422558289B001FFCA1 /* MovieCriticaTableViewCell.swift */; };
+		C3D8F6452558289B001FFCA1 /* MovieCriticaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3D8F6432558289B001FFCA1 /* MovieCriticaTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +103,9 @@
 		C38A0338255360A300E6C010 /* GenericMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericMedia.swift; sourceTree = "<group>"; };
 		C38A033B2553610300E6C010 /* FullPerson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullPerson.swift; sourceTree = "<group>"; };
 		C38A033E2553612000E6C010 /* PersonPhotoGallery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonPhotoGallery.swift; sourceTree = "<group>"; };
+		C3D8F63D255827BD001FFCA1 /* Reviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
+		C3D8F6422558289B001FFCA1 /* MovieCriticaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCriticaTableViewCell.swift; sourceTree = "<group>"; };
+		C3D8F6432558289B001FFCA1 /* MovieCriticaTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCriticaTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,8 +201,8 @@
 		C36856B42556E8B80032D09A /* MovieDetail */ = {
 			isa = PBXGroup;
 			children = (
-				C36856B52556E8D90032D09A /* MovieGeralTableViewCell.swift */,
-				C36856B62556E8D90032D09A /* MovieGeralTableViewCell.xib */,
+				C3D8F64125582872001FFCA1 /* Critica */,
+				C3D8F64025582866001FFCA1 /* Geral */,
 			);
 			path = MovieDetail;
 			sourceTree = "<group>";
@@ -212,6 +218,7 @@
 				AD64EA40254E2B9500F63F89 /* Person.swift */,
 				C309565F25477CE500E5A75E /* SimpleMovieSerie.swift */,
 				C36856AE2556E3940032D09A /* FullMovie.swift */,
+				C3D8F63D255827BD001FFCA1 /* Reviews.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -285,6 +292,24 @@
 			path = MovieSerieSimpleCell;
 			sourceTree = "<group>";
 		};
+		C3D8F64025582866001FFCA1 /* Geral */ = {
+			isa = PBXGroup;
+			children = (
+				C36856B52556E8D90032D09A /* MovieGeralTableViewCell.swift */,
+				C36856B62556E8D90032D09A /* MovieGeralTableViewCell.xib */,
+			);
+			path = Geral;
+			sourceTree = "<group>";
+		};
+		C3D8F64125582872001FFCA1 /* Critica */ = {
+			isa = PBXGroup;
+			children = (
+				C3D8F6422558289B001FFCA1 /* MovieCriticaTableViewCell.swift */,
+				C3D8F6432558289B001FFCA1 /* MovieCriticaTableViewCell.xib */,
+			);
+			path = Critica;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -346,6 +371,7 @@
 				2FD283BE2537DCA10032400F /* LaunchScreen.storyboard in Resources */,
 				C3110BEF25536B8200A6BD86 /* PessoaTableViewCell.xib in Resources */,
 				2FD283BB2537DCA10032400F /* Assets.xcassets in Resources */,
+				C3D8F6452558289B001FFCA1 /* MovieCriticaTableViewCell.xib in Resources */,
 				C33E12E6254452D50011E5A9 /* BerkshireSwash-Regular.ttf in Resources */,
 				0FBDE1AA2545D74B00655436 /* MovieSerieTableViewCell.xib in Resources */,
 				0FBDE1AA2545D74B00655436 /* MovieSerieTableViewCell.xib in Resources */,
@@ -364,6 +390,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5631F42F25473FAD00FFCCBC /* SerieViewController.swift in Sources */,
+				C3D8F6442558289B001FFCA1 /* MovieCriticaTableViewCell.swift in Sources */,
+				C3D8F63E255827BD001FFCA1 /* Reviews.swift in Sources */,
 				5631F4312547403400FFCCBC /* PeopleViewController.swift in Sources */,
 				5631F4332547406700FFCCBC /* TabbarViewController.swift in Sources */,
 				AD64EA4A254E2BC100F63F89 /* PeopleTableViewCell.swift in Sources */,

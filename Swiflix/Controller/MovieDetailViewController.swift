@@ -13,7 +13,10 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var rateLabel: UILabel!
     @IBOutlet weak var backdrop: UIImageView!
     
-    let fullMovie:[FullMovie] = [FullMovie(backdrop: "/9DeGfFIqjph5CBFVQrD6wv9S7rR.jpg", genres: [Genres(id: 12, name: "Aventura"), Genres(id: 14, name: "Fantasia"), Genres(id: 28, name: "Ação")], homePage: "http://www.lordoftherings.net", id: 122, originalTitle: "The Lord of the Rings: The Return of the King", overview: "O confronto final entre as forças do bem e do mal que lutam pelo controle do futuro da Terra Média se aproxima. Sauron planeja um grande ataque a Minas Tirith, capital de Gondor, o que faz com que Gandalf e Pippin partam para o local na intenção de ajudar a resistência. Um exército é reunido por Theoden em Rohan, em mais uma tentativa de deter as forças de Sauron. Enquanto isso, Frodo, Sam e Gollum seguem sua viagem rumo à Montanha da Perdição para destruir o anel.", poster: "/izPNMzffsgZUvlbiYlPxjFr3TAa.jpg", releaseDate: "2003-12-01", runtime: 201, title: "O Senhor dos Anéis: O Retorno do Rei", vote: 8.5)]
+    let fullMovie:FullMovie = MockupMovie.getFullMovie()
+    
+    let similarMovies = MockupMovie.getMovies()
+    let reviews = MockupMovie.getReviews()
     
     var segmentedIndex = 0
     
@@ -22,12 +25,14 @@ class MovieDetailViewController: UIViewController {
         super.viewDidLoad()
         self.configureDelegates()
         self.registerCells(nibName: MovieGeralTableViewCell.nibName, cellID: MovieGeralTableViewCell.cellID)
+        self.registerCells(nibName: GenericMediaTableViewCell.nibName, cellID: GenericMediaTableViewCell.cellID)
+        self.registerCells(nibName: MovieCriticaTableViewCell.nibName, cellID: MovieCriticaTableViewCell.cellID)
         
         self.configureUIElements()
     }
     
     func configureUIElements(){
-        if let imageUrl = URL(string: "\(Utils.baseImageURL)\(self.fullMovie[0].backdrop)"){
+        if let imageUrl = URL(string: "\(Utils.baseImageURL)\(self.fullMovie.backdrop)"){
             do{
                 let imageData = try Data(contentsOf: imageUrl)
                 self.backdrop.image = UIImage(data: imageData)
@@ -62,8 +67,12 @@ class MovieDetailViewController: UIViewController {
 extension MovieDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch self.segmentedIndex {
-        case 0, 3:
+        case 0:
             return 1
+        case 1:
+            return self.similarMovies.count
+        case 3:
+            return self.reviews.count
         default:
             return 0
         }
@@ -73,7 +82,15 @@ extension MovieDetailViewController: UITableViewDataSource {
         switch self.segmentedIndex {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: MovieGeralTableViewCell.cellID, for: indexPath) as? MovieGeralTableViewCell
-            cell?.setup(self.fullMovie[indexPath.row])
+            cell?.setup(self.fullMovie)
+            return cell ?? UITableViewCell()
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: GenericMediaTableViewCell.cellID, for: indexPath) as? GenericMediaTableViewCell
+            cell?.setup(withMedia: self.similarMovies[indexPath.row])
+            return cell ?? UITableViewCell()
+        case 3:
+            let cell = tableView.dequeueReusableCell(withIdentifier: MovieCriticaTableViewCell.cellID, for: indexPath) as? MovieCriticaTableViewCell
+            cell?.setup(self.reviews[indexPath.row])
             return cell ?? UITableViewCell()
         default:
           return UITableViewCell()

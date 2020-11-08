@@ -19,6 +19,18 @@ struct MockupMovie {
         
         return movies
     }
+    
+    static func getFullMovie() -> FullMovie {
+        let movie: FullMovie = FullMovie(backdrop: "/9DeGfFIqjph5CBFVQrD6wv9S7rR.jpg", genres: [Genres(id: 12, name: "Aventura"), Genres(id: 14, name: "Fantasia"), Genres(id: 28, name: "Ação")], homePage: "http://www.lordoftherings.net", id: 122, originalTitle: "The Lord of the Rings: The Return of the King", overview: "O confronto final entre as forças do bem e do mal que lutam pelo controle do futuro da Terra Média se aproxima. Sauron planeja um grande ataque a Minas Tirith, capital de Gondor, o que faz com que Gandalf e Pippin partam para o local na intenção de ajudar a resistência. Um exército é reunido por Theoden em Rohan, em mais uma tentativa de deter as forças de Sauron. Enquanto isso, Frodo, Sam e Gollum seguem sua viagem rumo à Montanha da Perdição para destruir o anel.", poster: "/izPNMzffsgZUvlbiYlPxjFr3TAa.jpg", releaseDate: "2003-12-01", runtime: 201, title: "O Senhor dos Anéis: O Retorno do Rei", vote: 8.5)
+        return movie
+    }
+    
+    static func getReviews() -> [Reviews] {
+        let reviews: [Reviews] = [
+            Reviews(author: "Filipe Manuel Dias Neto", content: "**O fim de uma obra-prima**\r\n\r\nEste filme marca o fim da trilogia \"O Senhor dos Anéis\", baseada no romance épico de J.R.R. Tolkien. Como nos outros dois filmes, manteve o mesmo elenco e equipa. Neste filme, o enredo chega ao fim com a chegada de Sam e Frodo a Mordor. Mas não podemos analisar este filme com justiça se olharmos para ele sem considerar os dois que o precederam. \r\n\r\nA trilogia conseguiu manter o sentido de unidade e de coesão do início ao fim. Na prática, funciona como um filme único, com cerca de onze horas de duração e em três partes. Por isso, falar de apenas um é falar sobre os três da mesma maneira que para entender a acção é necessário ver primeiro os dois filmes que o precederam. E se os dois filmes anteriores deleitaram o público com cenas incríveis, este filme vai continuar esse trabalho. E não estou só a falar das grandiosas batalhas, como o Cerco a Minas Tirith, ou das várias cenas de acção, mas também das paisagens maravilhosas da Nova Zelândia, onde muitas das cenas ao ar livre foram filmadas. O uso de recursos tecnológicos e CGI permitiu cenas que parecem realmente impossíveis, como a sequência de luta na Porta Negra e o colapso da torre de Barad Dur. A maquilhagem e a caracterização também merecem uma nota especial de mérito pelo cuidado especial que tiveram. Para provar isso basta estar atento aos pés dos hobbits ou aos ouvidos dos elfos.\r\n\r\nTensão, mistério, suspense e adrenalina correm do início ao fim e mantêm a audiência, que segue as personagens na sua luta contra o mal. O elenco é impecável, as performances foram excelentes e a banda sonora tornou-se icónica, ajudando a consagrar Howard Shore como um dos maiores nomes da música de cinema dos nossos dias.")
+        ]
+        return reviews
+    }
  
 }
 
