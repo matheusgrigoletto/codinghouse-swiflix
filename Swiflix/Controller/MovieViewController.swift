@@ -15,13 +15,13 @@ class MovieViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.registerCell()
+        self.registerCell(nib: GenericMediaTableViewCell.nibName, cellID: GenericMediaTableViewCell.cellID)
         self.configureDelegates()
     }
     
-    func registerCell(){
-        let nib = UINib(nibName: GenericMediaTableViewCell.nibName, bundle: nil)
-        self.movieTableView.register(nib, forCellReuseIdentifier: GenericMediaTableViewCell.cellID)
+    func registerCell(nib:String, cellID: String){
+        let nib = UINib(nibName: nib, bundle: nil)
+        self.movieTableView.register(nib, forCellReuseIdentifier: cellID)
     }
     
     func configureDelegates(){
@@ -32,7 +32,6 @@ class MovieViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         #warning("passar o id do filme escolhido para a proxima tela")
         let movie = sender as? GenericMedia
-        print(movie)
         let vc = segue.destination as? MovieDetailViewController
         vc?.title = movie?.title ?? "Erro"
     }
