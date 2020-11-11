@@ -28,6 +28,13 @@ class PeopleViewController: UIViewController {
         let nib = UINib(nibName: PessoaTableViewCell.nibName, bundle: nil)
         self.peopleTableView.register(nib, forCellReuseIdentifier: PessoaTableViewCell.cellID)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        #warning("passar o id do filme escolhido para a proxima tela")
+        let people = sender as? Person
+        let vc = segue.destination as? PeopleDetailViewController
+        //vc?.name = people?.name ?? "Erro"
+    }
 }
 
 extension PeopleViewController: UITableViewDataSource {
@@ -45,5 +52,13 @@ extension PeopleViewController: UITableViewDataSource {
 }
 
 extension PeopleViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        #warning("performar segue enviando o id do filme escolhido")
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let chosenPeople = self.pessoas[indexPath.row]
+        performSegue(withIdentifier: Segues.toPersonDetail, sender: chosenPeople)
+    }
 }
+

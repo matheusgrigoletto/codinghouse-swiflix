@@ -95,6 +95,17 @@ struct MockupFullPerson {
         
         return fullPerson
     }
+    
+    static func getWorks() -> [GenericMedia] {
+        let movies: [GenericMedia] = [
+            GenericMedia(title: "Hard Kill", rating: 4, overview: "O trabalho do bilionário CEO de tecnologia Donovan Chalmers (Willis) é tão valioso que ele contrata mercenários para protegê-lo e um grupo terrorista sequestra sua filha apenas para obtê-lo.", poster: "/ugZW8ocsrfgI95pnQ7wrmKDxIe.jpg"),
+            GenericMedia(title: "2067", rating: 5.5, overview: "Um grupo de humanos busca respostas no futuro após as florestas, vida selvagem e plantas do planeta serem devastados pela mudança climática.", poster: "/7D430eqZj8y3oVkLFfsWXGRcpEG.jpg"),
+            GenericMedia(title: "Demon Slayer: O Trem Infinito", rating: 8, overview: "Tanjiro Kamado, junto com Inosuke Hashibira, um garoto criado por javalis que usa uma cabeça de javali, e Zenitsu Agatsuma, um garoto assustado que revela seu verdadeiro poder quando dorme, embarca no Trem Infinito em uma nova missão com o Hashira de Fogo, Kyojuro Rengoku, para derrotar um demônio que tem atormentado o povo e matado os caçadores de oni que se opõem a ele!", poster: "/m9cn5mhW519QKr1YGpGxNWi98VJ.jpg"),
+            GenericMedia(title: "Enola Holmes", rating: 7.6, overview: "Enola Holmes só tem 16 anos, mas vai fazer de tudo para encontrar a mãe desaparecida, inclusive despistar o irmão Sherlock e ajudar um jovem lorde fugitivo.", poster: "/riYInlsq2kf1AWoGm80JQW5dLKp.jpg"),
+        ]
+        
+        return movies
+    }
 }
 
 struct MockupPhoto {

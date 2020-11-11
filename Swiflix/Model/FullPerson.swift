@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct FullPerson {
     let birthday: String
     let deathday: String?
