@@ -17,9 +17,12 @@ class PeopleDetailViewController: UIViewController {
     @IBOutlet weak var dateBirth: UILabel!
     @IBOutlet weak var dateDeath: UILabel!
     
-    let person = MockupFullPerson.getFullPerson()
+   
+    let fullPerson: FullPerson = MockupFullPerson.getFullPerson()
     let workMovies = MockupFullPerson.getWorks()
     let galery = MockupPhoto.getPhotos()
+    let person = FullPerson(birthday: MockupFullPerson.getFullPerson().birthday , deathday:MockupFullPerson.getFullPerson().deathday, name: MockupFullPerson.getFullPerson().name, biography: MockupFullPerson.getFullPerson().biography, place_of_birth: MockupFullPerson.getFullPerson().place_of_birth, profile_path: MockupFullPerson.getFullPerson().profile_path, known_for_department: MockupFullPerson.getFullPerson().known_for_department)
+   
     //let traillers = MockupMovie.getTraillers()
     
     var segmentedIndex = 0
@@ -35,19 +38,32 @@ class PeopleDetailViewController: UIViewController {
         self.registerCells(nibName: GenericMediaTableViewCell.nibName, cellID: GenericMediaTableViewCell.cellID)
         //self.registerCells(nibName: MovieCriticaTableViewCell.nibName, cellID: MovieCriticaTableViewCell.cellID)
         
-        self.configureUIElements()
+        self.configureUIElements(person)
     }
     
-    func configureUIElements(){
-        if let imageUrl = URL(string: "\(Utils.baseImageURL)\(self.person.profile_path)"){
+    func configureUIElements(_ data: FullPerson){
+        
+        
+        
+        self.name.text = data.name
+        self.department.text = data.known_for_department
+        self.dateBirth.text = data.birthday
+        self.dateDeath.text = data.deathday
+        
+        if let imageUrl = URL(string: "\(Utils.baseImageURL)\(self.fullPerson.profile_path)"){
             do{
                 let imageData = try Data(contentsOf: imageUrl)
+                self.profile_path.image = UIImage(data: imageData)
+                self.profile_path.contentMode = .scaleAspectFill
                 
             }catch{
                 print(error.localizedDescription)
+                self.profile_path.image = UIImage(systemName: "person" )
                
             }
         }else{
+            self.profile_path.image = UIImage(systemName: "person")
+            self.profile_path.contentMode = .scaleAspectFill
            
           
         }
@@ -94,7 +110,7 @@ extension PeopleDetailViewController: UITableViewDataSource {
         switch self.segmentedIndex {
         case 0: //Biografia
             let cell = tableView.dequeueReusableCell(withIdentifier: PersonBiographyTableViewCell.cellID, for: indexPath) as? PersonBiographyTableViewCell
-            cell?.setup(self.person)
+            cell?.setup(self.fullPerson)
             return cell ?? UITableViewCell()
         case 1: // filmes trabalhados
             let cell = tableView.dequeueReusableCell(withIdentifier: GenericMediaTableViewCell.cellID, for: indexPath) as? GenericMediaTableViewCell
