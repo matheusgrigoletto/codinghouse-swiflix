@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Pnf-VG-o4o">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="BerkshireSwash-Regular.ttf">
+            <string>BerkshireSwash-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Title-->
+        <scene sceneID="zSD-qJ-6nD">
+            <objects>
+                <viewController storyboardIdentifier="ProfileStoryboard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Pnf-VG-o4o" customClass="ProfileViewController" customModule="Swiflix" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1nA-RV-ofD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="k4Z-9l-fci">
+                                <rect key="frame" x="0.0" y="281.5" width="414" height="32"/>
+                                <segments>
+                                    <segment title="Filmes"/>
+                                    <segment title="Série"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedChanged:" destination="Pnf-VG-o4o" eventType="valueChanged" id="2nH-ok-AGE"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="qSa-c4-quQ">
+                                <rect key="frame" x="0.0" y="312.5" width="414" height="549.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="549.5" id="o4U-U4-euE"/>
+                                </constraints>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghH-Ur-dSg">
+                                <rect key="frame" x="0.0" y="44" width="414" height="230"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GIO-IM-sMo">
+                                        <rect key="frame" x="8" y="124.5" width="398" height="23"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lista de Favoritos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aiu-jL-7cC">
+                                        <rect key="frame" x="8" y="209.5" width="398" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swiflix" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="iFM-YU-0WP">
+                                        <rect key="frame" x="136" y="0.0" width="143" height="124.5"/>
+                                        <fontDescription key="fontDescription" name="BerkshireSwash-Regular" family="Berkshire Swash" pointSize="100"/>
+                                        <color key="textColor" systemColor="systemRedColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1v8-4y-H0M">
+                                        <rect key="frame" x="8" y="157.5" width="398" height="23"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="GIO-IM-sMo" firstAttribute="top" secondItem="iFM-YU-0WP" secondAttribute="bottom" id="29f-mS-IYo"/>
+                                    <constraint firstItem="GIO-IM-sMo" firstAttribute="trailing" secondItem="1v8-4y-H0M" secondAttribute="trailing" id="8s6-JI-ZWe"/>
+                                    <constraint firstItem="1v8-4y-H0M" firstAttribute="leading" secondItem="ghH-Ur-dSg" secondAttribute="leading" constant="8" id="Dm0-9q-ZGu"/>
+                                    <constraint firstAttribute="trailing" secondItem="Aiu-jL-7cC" secondAttribute="trailing" constant="8" id="GfK-Eq-jFt"/>
+                                    <constraint firstItem="Aiu-jL-7cC" firstAttribute="leading" secondItem="ghH-Ur-dSg" secondAttribute="leading" constant="8" id="NPl-qT-Frc"/>
+                                    <constraint firstItem="GIO-IM-sMo" firstAttribute="leading" secondItem="1v8-4y-H0M" secondAttribute="leading" id="Pf3-VO-cTA"/>
+                                    <constraint firstItem="iFM-YU-0WP" firstAttribute="top" secondItem="ghH-Ur-dSg" secondAttribute="top" id="VoI-Cw-Dne"/>
+                                    <constraint firstItem="1v8-4y-H0M" firstAttribute="top" secondItem="GIO-IM-sMo" secondAttribute="bottom" constant="10" id="jNB-VV-pxh"/>
+                                    <constraint firstAttribute="bottom" secondItem="Aiu-jL-7cC" secondAttribute="bottom" id="tDi-u5-Rys"/>
+                                    <constraint firstAttribute="trailing" secondItem="1v8-4y-H0M" secondAttribute="trailing" constant="8" id="tlY-mz-nQF"/>
+                                    <constraint firstAttribute="trailing" secondItem="iFM-YU-0WP" secondAttribute="trailing" constant="135" id="yFI-xn-dV0"/>
+                                    <constraint firstItem="iFM-YU-0WP" firstAttribute="leading" secondItem="ghH-Ur-dSg" secondAttribute="leading" constant="136" id="yLz-sl-Sst"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qLx-b2-qaG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="k4Z-9l-fci" firstAttribute="trailing" secondItem="ghH-Ur-dSg" secondAttribute="trailing" id="52F-ae-tfQ"/>
+                            <constraint firstItem="k4Z-9l-fci" firstAttribute="leading" secondItem="qLx-b2-qaG" secondAttribute="leading" id="Bvl-sH-zFX"/>
+                            <constraint firstItem="ghH-Ur-dSg" firstAttribute="top" secondItem="qLx-b2-qaG" secondAttribute="top" id="Czh-ja-T0B"/>
+                            <constraint firstItem="qSa-c4-quQ" firstAttribute="bottom" secondItem="qLx-b2-qaG" secondAttribute="bottom" id="ESR-1o-BaH"/>
+                            <constraint firstItem="qSa-c4-quQ" firstAttribute="leading" secondItem="qLx-b2-qaG" secondAttribute="leading" id="XzA-iu-is9"/>
+                            <constraint firstItem="qSa-c4-quQ" firstAttribute="trailing" secondItem="qLx-b2-qaG" secondAttribute="trailing" id="a0Q-Z5-dBT"/>
+                            <constraint firstItem="k4Z-9l-fci" firstAttribute="top" secondItem="ghH-Ur-dSg" secondAttribute="bottom" constant="7.5" id="joR-jo-vPJ"/>
+                            <constraint firstItem="k4Z-9l-fci" firstAttribute="trailing" secondItem="qLx-b2-qaG" secondAttribute="trailing" id="lN6-Rh-2t1"/>
+                            <constraint firstItem="qSa-c4-quQ" firstAttribute="top" secondItem="k4Z-9l-fci" secondAttribute="bottom" id="ql2-HG-9iG"/>
+                            <constraint firstItem="k4Z-9l-fci" firstAttribute="leading" secondItem="ghH-Ur-dSg" secondAttribute="leading" id="wUf-zS-AUP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="w0X-Kc-8nH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rfE-7p-NGE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5749" y="3675"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
