@@ -43,21 +43,6 @@ struct MockupMovie {
  
 }
 
-struct MockupSerie {
-    static func getSeries() -> [GenericMedia] {
-        
-        let series: [GenericMedia] = [
-            GenericMedia(title: "Cobra Kai", rating: 8, overview: "Esta sequência de Karate Kid pega 30 anos depois dos eventos do All Valley Karate Tournament de 1984 e encontra Johnny Lawrence em busca de redenção reabrindo o infame dojo de karate Cobra Kai . Isso reacende sua antiga rivalidade com o bem-sucedido Daniel LaRusso, que vem trabalhado para manter o equilíbrio em sua vida sem o seu mentor Miyagi.", poster: "/eTMMU2rKpZRbo9ERytyhwatwAjz.jpg"),
-            GenericMedia(title: "Fear the Walking Dead", rating: 7.3, overview: "Ambientada em Los Angeles, a série mostra o começo do apocalipse zumbi e a temível desintegração da sociedade pelos olhos de uma família disfuncional, que precisa se unir para tentar sobreviver ao caos do fim dos tempos.", poster: "/tbgPaIEZa9BuKKESdyapOn0CZh6.jpg"),
-            GenericMedia(title: "The Boys", rating: 8.4, overview: "Na trama, conhecemos um mundo em que super-heróis são as maiores celebridades do planeta, e rotineiramente abusam dos seus poderes ao invés de os usarem para o bem.", poster: "/dzOxNbbz1liFzHU1IPvdgUR647b.jpg"),
-            GenericMedia(title: "Lucifer", rating: 8.5, overview: "Entediado com a vida nas trevas, o diabo se muda para Los Angeles, abre um piano-bar e empresta sua sabedoria a uma investigadora de assassinatos.", poster: "/vn4K3hgtoDV2rIK6FfYK8ejn1tW.jpg"),
-        ]
-        
-        return series
-    }
- 
-}
-
 struct MockupPerson {
     static func getPeople() -> [Person] {
         let people: [Person] = [

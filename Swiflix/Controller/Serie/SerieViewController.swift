@@ -28,6 +28,13 @@ class SerieViewController: UIViewController {
         let nib = UINib(nibName: GenericMediaTableViewCell.nibName, bundle: nil)
         self.serieTableView.register(nib, forCellReuseIdentifier: GenericMediaTableViewCell.cellID)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        #warning("passar o id da serie escolhida para a proxima tela")
+        let serie = sender as? GenericMedia
+        let vc = segue.destination as? SerieDetailViewController
+        vc?.title = serie?.title ?? "Erro"
+    }
 
 }
 
@@ -46,5 +53,14 @@ extension SerieViewController: UITableViewDataSource {
 }
 
 extension SerieViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        #warning("performar segue enviando o id da serie escolhida")
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let chosenSerie = self.series[indexPath.row]
+        performSegue(withIdentifier: Segues.toSerieDetail, sender: chosenSerie)
+    }
     
 }

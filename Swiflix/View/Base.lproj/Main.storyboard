@@ -500,6 +500,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="serieTableView" destination="g9E-V7-yIk" id="cBO-cp-Mj4"/>
+                        <segue destination="Mks-Qb-pAl" kind="show" identifier="serieDetailShowSegue" id="ZDf-mJ-Tkj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pK1-oP-pHh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -773,7 +774,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y5H-Ef-BX3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2468" y="2868"/>
+            <point key="canvasLocation" x="-2468" y="2894"/>
         </scene>
         <!--People Detail View Controller-->
         <scene sceneID="P9r-WB-Yoc">
@@ -1022,6 +1023,82 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wuW-WP-lco" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1600" y="2867"/>
+        </scene>
+        <!--Serie Detail View Controller-->
+        <scene sceneID="AWE-Y7-Git">
+            <objects>
+                <viewController id="Mks-Qb-pAl" customClass="SerieDetailViewController" customModule="Swiflix" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SjM-MZ-aYs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y68-f7-rw1">
+                                <rect key="frame" x="0.0" y="140" width="414" height="232.5"/>
+                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="y68-f7-rw1" secondAttribute="height" multiplier="376:211" id="AZi-57-NVH"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⭐️9.9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dj5-iN-VTh">
+                                <rect key="frame" x="325" y="323.5" width="79" height="39"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="TPA-gd-Y2B"/>
+                                    <constraint firstAttribute="width" constant="79" id="bqH-KG-hjv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="AvZ-R9-B2c">
+                                <rect key="frame" x="0.0" y="377.5" width="414" height="32"/>
+                                <segments>
+                                    <segment title="Geral"/>
+                                    <segment title="Episódios"/>
+                                    <segment title="Similares"/>
+                                    <segment title="Críticas"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedChanged:" destination="Mks-Qb-pAl" eventType="valueChanged" id="6Bu-Cs-vsc"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="YGZ-ZP-FJb">
+                                <rect key="frame" x="0.0" y="408.5" width="414" height="404.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="07t-t0-QGC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YGZ-ZP-FJb" firstAttribute="top" secondItem="AvZ-R9-B2c" secondAttribute="bottom" id="68W-aH-6fx"/>
+                            <constraint firstItem="AvZ-R9-B2c" firstAttribute="top" secondItem="y68-f7-rw1" secondAttribute="bottom" constant="5" id="KYc-x7-u5u"/>
+                            <constraint firstItem="YGZ-ZP-FJb" firstAttribute="bottom" secondItem="07t-t0-QGC" secondAttribute="bottom" id="Q0V-Ro-n1y"/>
+                            <constraint firstItem="07t-t0-QGC" firstAttribute="trailing" secondItem="dj5-iN-VTh" secondAttribute="trailing" constant="10" id="Wrs-KV-cWR"/>
+                            <constraint firstItem="YGZ-ZP-FJb" firstAttribute="leading" secondItem="07t-t0-QGC" secondAttribute="leading" id="c2X-Bz-Q8f"/>
+                            <constraint firstItem="AvZ-R9-B2c" firstAttribute="leading" secondItem="07t-t0-QGC" secondAttribute="leading" id="gOw-5K-N8J"/>
+                            <constraint firstItem="AvZ-R9-B2c" firstAttribute="top" secondItem="dj5-iN-VTh" secondAttribute="bottom" constant="15" id="iK4-eB-VzU"/>
+                            <constraint firstItem="07t-t0-QGC" firstAttribute="trailing" secondItem="dj5-iN-VTh" secondAttribute="trailing" constant="10" id="jy9-9V-2fO"/>
+                            <constraint firstItem="y68-f7-rw1" firstAttribute="leading" secondItem="07t-t0-QGC" secondAttribute="leading" id="llO-5f-wjH"/>
+                            <constraint firstItem="y68-f7-rw1" firstAttribute="top" secondItem="07t-t0-QGC" secondAttribute="top" id="nn9-c8-f5h"/>
+                            <constraint firstItem="YGZ-ZP-FJb" firstAttribute="trailing" secondItem="07t-t0-QGC" secondAttribute="trailing" id="qcK-6f-lVN"/>
+                            <constraint firstItem="AvZ-R9-B2c" firstAttribute="trailing" secondItem="07t-t0-QGC" secondAttribute="trailing" id="xvr-rV-U11"/>
+                            <constraint firstAttribute="trailing" secondItem="y68-f7-rw1" secondAttribute="trailing" id="yMU-PQ-aNK"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZRl-tv-KUJ">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="person.fill" catalog="system" id="2ER-3j-on9">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="backdrop" destination="y68-f7-rw1" id="88b-oL-D9g"/>
+                        <outlet property="rateLabel" destination="dj5-iN-VTh" id="BbP-h1-moa"/>
+                        <outlet property="serieTableView" destination="YGZ-ZP-FJb" id="AXR-dV-Uzz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NiJ-5Y-Of4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3387" y="2894"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

@@ -1,13 +1,13 @@
 //
-//  FullMovie.swift
+//  Serie.swift
 //  Swiflix
 //
-//  Created by Bryan Barreto on 07/11/20.
+//  Created by Erik Radicheski da Silva on 12/11/20.
 //
 
 import Foundation
 
-struct FullMovie {
+struct Serie {
     let backdrop: String
     let genres:[Genres]
     let homePage: String
