@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieCriticaCell" rowHeight="223" id="KGk-i7-Jjw" customClass="MovieCriticaTableViewCell" customModule="Swiflix" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="223"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="223"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Review" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kzx-8s-Eom">
+                        <rect key="frame" x="26" y="21" width="268" height="109.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="autor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="Nif-ME-0X4">
+                        <rect key="frame" x="26" y="130.5" width="268" height="21"/>
+                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="review" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWn-by-KSL">
+                        <rect key="frame" x="26" y="161.5" width="268" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="kzx-8s-Eom" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="AHl-HN-F6s"/>
+                    <constraint firstItem="kzx-8s-Eom" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="Gx6-dw-jqx"/>
+                    <constraint firstItem="bWn-by-KSL" firstAttribute="top" secondItem="Nif-ME-0X4" secondAttribute="bottom" constant="10" id="OhS-nA-9q5"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="bWn-by-KSL" secondAttribute="bottom" constant="30" id="V72-ve-WWz"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="bWn-by-KSL" secondAttribute="trailing" constant="10" id="eEG-RI-PYH"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="kzx-8s-Eom" secondAttribute="trailing" constant="10" id="fcb-nx-N33"/>
+                    <constraint firstItem="Nif-ME-0X4" firstAttribute="top" secondItem="kzx-8s-Eom" secondAttribute="bottom" id="h85-ru-oEN"/>
+                    <constraint firstItem="Nif-ME-0X4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="n4I-oh-IM5"/>
+                    <constraint firstItem="bWn-by-KSL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="wMa-if-Yki"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Nif-ME-0X4" secondAttribute="trailing" constant="10" id="yru-Td-UKo"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="author" destination="Nif-ME-0X4" id="D0W-kx-C54"/>
+                <outlet property="review" destination="bWn-by-KSL" id="7Nn-X6-hJT"/>
+            </connections>
+            <point key="canvasLocation" x="-97.101449275362327" y="29.799107142857142"/>
+        </tableViewCell>
+    </objects>
+</document>
