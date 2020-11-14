@@ -33,7 +33,7 @@ class PeopleViewController: UIViewController {
         #warning("passar o id do filme escolhido para a proxima tela")
         let people = sender as? Person
         let vc = segue.destination as? PeopleDetailViewController
-        //vc?.name = people?.name ?? "Erro"
+        vc?.title = people?.name
     }
 }
 

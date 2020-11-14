@@ -21,30 +21,21 @@ class PeopleDetailViewController: UIViewController {
     let fullPerson: FullPerson = MockupFullPerson.getFullPerson()
     let workMovies = MockupFullPerson.getWorks()
     let galery = MockupPhoto.getPhotos()
-    let person = FullPerson(birthday: MockupFullPerson.getFullPerson().birthday , deathday:MockupFullPerson.getFullPerson().deathday, name: MockupFullPerson.getFullPerson().name, biography: MockupFullPerson.getFullPerson().biography, place_of_birth: MockupFullPerson.getFullPerson().place_of_birth, profile_path: MockupFullPerson.getFullPerson().profile_path, known_for_department: MockupFullPerson.getFullPerson().known_for_department)
-   
-    //let traillers = MockupMovie.getTraillers()
-    
+
     var segmentedIndex = 0
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureDelegates()
-        
-    
 
         self.registerCells(nibName: PersonBiographyTableViewCell.nibName, cellID: PersonBiographyTableViewCell.cellID)
         self.registerCells(nibName: GenericMediaTableViewCell.nibName, cellID: GenericMediaTableViewCell.cellID)
-        //self.registerCells(nibName: MovieCriticaTableViewCell.nibName, cellID: MovieCriticaTableViewCell.cellID)
+        self.registerCells(nibName: PersonGaleryTableViewCell.nibName, cellID: PersonGaleryTableViewCell.cellID)
         
-        self.configureUIElements(person)
+        self.configureUIElements(fullPerson)
     }
     
     func configureUIElements(_ data: FullPerson){
-        
-        
-        
         self.name.text = data.name
         self.department.text = data.known_for_department
         self.dateBirth.text = data.birthday
@@ -64,8 +55,6 @@ class PeopleDetailViewController: UIViewController {
         }else{
             self.profile_path.image = UIImage(systemName: "person")
             self.profile_path.contentMode = .scaleAspectFill
-           
-          
         }
     }
     
@@ -99,8 +88,8 @@ extension PeopleDetailViewController: UITableViewDataSource {
             return self.workMovies.count
         case 2:
             tableView.allowsSelection = true
-            return self.galery.count
-        
+            tableView.rowHeight = tableView.frame.height
+            return 1
         default:
             return 0
         }
@@ -116,10 +105,10 @@ extension PeopleDetailViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: GenericMediaTableViewCell.cellID, for: indexPath) as? GenericMediaTableViewCell
             cell?.setup(withMedia: self.workMovies[indexPath.row])
             return cell ?? UITableViewCell()
-//        case 2: // Galeria
-//            let cell = tableView.dequeueReusableCell(withIdentifier: MovieTraillerTableViewCell.cellID, for: indexPath) as? MovieTraillerTableViewCell
-//            cell?.setup(self.galery)
-//            return cell ?? UITableViewCell()
+        case 2: // Galeria
+            let cell = tableView.dequeueReusableCell(withIdentifier: PersonGaleryTableViewCell.cellID, for: indexPath) as? PersonGaleryTableViewCell
+            cell?.setup(self.galery)
+            return UITableViewCell()
         default:
           return UITableViewCell()
         }
