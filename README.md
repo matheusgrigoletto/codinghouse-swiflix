@@ -1,2 +1,2 @@
 # codinghouse-swiflix
-Projeto entregável grupo #7 - SantanderCoders Mobile iOS
+Projeto entregável grupo #7 - DigitalHouse Mobile iOS
