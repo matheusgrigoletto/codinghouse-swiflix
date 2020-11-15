@@ -9,6 +9,8 @@ import UIKit
 
 class GalleryCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var galleryImageView: UIImageView!
+    
     static let nibName: String = "GalleryCollectionViewCell"
     static let cellID: String = "galleryCollectionViewCell"
 
@@ -16,6 +18,17 @@ class GalleryCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
-    
+    func setup(_ gallery: PersonPhotoGallery){
+        if let imageURL = URL(string: "\(Utils.baseImageURL)\(gallery.file_path)"){
+            do{
+                let imageData = try Data(contentsOf: imageURL)
+                self.galleryImageView.image = UIImage(data: imageData)
+            }catch{
+                print("error getting image data")
+            }
+        }else{
+            print("error getting image url")
+        }
+    }
 
 }

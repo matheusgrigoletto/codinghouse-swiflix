@@ -17,5 +17,5 @@ struct Segues {
     static let toMovieHouseDetail: String = "movieHouseToDetailMovieHouseSegue"
     static let toSerieDetail: String = "serieDetailShowSegue"
     static let toNewMovieDetail: String = "NewMovieToDetailNewMovieSegue"
-    
+    static let toPhotoGalleryDetail: String = "toPhotoGalleryDetailSegue"
 }

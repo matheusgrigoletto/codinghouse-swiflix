@@ -34,6 +34,9 @@
                 <constraint firstAttribute="bottom" secondItem="Zdf-3S-lTO" secondAttribute="bottom" id="bYY-bz-XAO"/>
             </constraints>
             <size key="customSize" width="111" height="148"/>
+            <connections>
+                <outlet property="galleryImageView" destination="Zdf-3S-lTO" id="awF-HM-AXQ"/>
+            </connections>
             <point key="canvasLocation" x="-276.08695652173913" y="-46.205357142857139"/>
         </collectionViewCell>
     </objects>

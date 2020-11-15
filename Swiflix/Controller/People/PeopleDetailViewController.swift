@@ -62,6 +62,8 @@ class PeopleDetailViewController: UIViewController {
         self.personTableView.delegate = self
         self.personTableView.dataSource = self
         
+        
+        
         self.personTableView.tableFooterView = UIView()
     }
     
@@ -73,6 +75,13 @@ class PeopleDetailViewController: UIViewController {
     @IBAction func segmentedChanged(_ sender: UISegmentedControl) {
         self.segmentedIndex = sender.selectedSegmentIndex
         self.personTableView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let filePath = sender as? String {
+            let vc = segue.destination as? PhotoDetailViewController
+            vc?.photoString = filePath
+        }
     }
     
 }
@@ -108,7 +117,8 @@ extension PeopleDetailViewController: UITableViewDataSource {
         case 2: // Galeria
             let cell = tableView.dequeueReusableCell(withIdentifier: PersonGaleryTableViewCell.cellID, for: indexPath) as? PersonGaleryTableViewCell
             cell?.setup(self.galery)
-            return UITableViewCell()
+            cell?.photoClickDelegate = self
+            return cell ?? UITableViewCell()
         default:
           return UITableViewCell()
         }
@@ -123,4 +133,10 @@ extension PeopleDetailViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+}
+
+extension PeopleDetailViewController: PersonGaleryTableViewCellDelegate {
+    func tappedPhoto(file_path: String) {
+        self.performSegue(withIdentifier: Segues.toPhotoGalleryDetail, sender: file_path)
+    }
 }
