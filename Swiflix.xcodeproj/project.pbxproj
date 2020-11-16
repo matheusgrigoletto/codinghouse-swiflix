@@ -53,6 +53,7 @@
 		C33E12F1254469DE0011E5A9 /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33E12F0254469DE0011E5A9 /* Segues.swift */; };
 		C33E12F425446C3B0011E5A9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33E12F325446C3B0011E5A9 /* LoginViewController.swift */; };
 		C33E12F725449A690011E5A9 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33E12F625449A690011E5A9 /* RegisterViewController.swift */; };
+		C353434D2562226E00239BE5 /* UserProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C353434C2562226E00239BE5 /* UserProfile.storyboard */; };
 		C364A1682560421400265DBB /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C364A1662560421400265DBB /* GalleryCollectionViewCell.swift */; };
 		C364A1692560421400265DBB /* GalleryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C364A1672560421400265DBB /* GalleryCollectionViewCell.xib */; };
 		C36856AF2556E3940032D09A /* FullMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36856AE2556E3940032D09A /* FullMovie.swift */; };
@@ -123,6 +124,7 @@
 		C33E12F0254469DE0011E5A9 /* Segues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segues.swift; sourceTree = "<group>"; };
 		C33E12F325446C3B0011E5A9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C33E12F625449A690011E5A9 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		C353434C2562226E00239BE5 /* UserProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserProfile.storyboard; sourceTree = "<group>"; };
 		C364A1662560421400265DBB /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
 		C364A1672560421400265DBB /* GalleryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryCollectionViewCell.xib; sourceTree = "<group>"; };
 		C36856AE2556E3940032D09A /* FullMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullMovie.swift; sourceTree = "<group>"; };
@@ -424,6 +426,7 @@
 				2FD283B72537DC9E0032400F /* Main.storyboard */,
 				2FD283BC2537DCA10032400F /* LaunchScreen.storyboard */,
 				5631F42825473B9E00FFCCBC /* Tabbar.storyboard */,
+				C353434C2562226E00239BE5 /* UserProfile.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -566,6 +569,7 @@
 				C3110BEF25536B8200A6BD86 /* PessoaTableViewCell.xib in Resources */,
 				2FD283BB2537DCA10032400F /* Assets.xcassets in Resources */,
 				AD3F4C37255DF7F30044F24B /* SerieCriticaTableViewCell.xib in Resources */,
+				C353434D2562226E00239BE5 /* UserProfile.storyboard in Resources */,
 				C3D8F6452558289B001FFCA1 /* MovieCriticaTableViewCell.xib in Resources */,
 				C33E12E6254452D50011E5A9 /* BerkshireSwash-Regular.ttf in Resources */,
 				0FBDE1AA2545D74B00655436 /* MovieSerieTableViewCell.xib in Resources */,

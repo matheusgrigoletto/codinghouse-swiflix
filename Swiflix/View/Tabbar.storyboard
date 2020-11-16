@@ -15,7 +15,7 @@
                 <navigationController id="21y-CX-qSw" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Filmes" image="film" catalog="system" selectedImage="film.fill" id="Pgh-U4-tsw"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="5ME-GF-Ij0">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="104.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -57,7 +57,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="Filmes" id="ssn-Sk-Lna">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="person.fill" catalog="system" id="04U-7X-64e">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <segue destination="v99-t2-bXz" kind="show" id="fnY-8L-E4y"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -78,11 +81,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="U10-OE-nFJ">
-                                <rect key="frame" x="0.0" y="140" width="414" height="56"/>
+                                <rect key="frame" x="0.0" y="148.5" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RAM-mF-5CG">
-                                <rect key="frame" x="0.0" y="196" width="414" height="617"/>
+                                <rect key="frame" x="0.0" y="204.5" width="414" height="608.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -100,7 +103,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="Pessoas" id="taK-1B-eq5">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="person.fill" catalog="system" id="Fcc-zO-SvM">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <segue destination="v99-t2-bXz" kind="show" id="jZK-el-4n1"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -143,7 +149,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="Séries" id="5bF-Hm-fI6">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="person.fill" catalog="system" id="Lre-76-Rzp">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <segue destination="v99-t2-bXz" kind="show" id="oDl-Ss-GIk"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -201,7 +210,7 @@
                 <navigationController id="Ce4-38-V9i" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Séries" image="list.and.film" catalog="system" selectedImage="list.and.film" id="dUG-Zm-ZqA"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="K3L-9T-4hW">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="104.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -221,14 +230,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N4m-dM-sM8">
-                                <rect key="frame" x="0.0" y="140" width="414" height="232.5"/>
+                                <rect key="frame" x="0.0" y="148.5" width="414" height="232.5"/>
                                 <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="N4m-dM-sM8" secondAttribute="height" multiplier="376:211" id="oaJ-Hv-vjt"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⭐️9.9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5k-HL-DYz">
-                                <rect key="frame" x="325" y="323.5" width="79" height="39"/>
+                                <rect key="frame" x="325" y="332" width="79" height="39"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="79" id="i4i-Fw-Gvy"/>
@@ -239,7 +248,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="J4V-hf-Adk">
-                                <rect key="frame" x="0.0" y="377.5" width="414" height="32"/>
+                                <rect key="frame" x="0.0" y="386" width="414" height="32"/>
                                 <segments>
                                     <segment title="Geral"/>
                                     <segment title="Outros"/>
@@ -251,7 +260,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="pKd-JZ-uyQ">
-                                <rect key="frame" x="0.0" y="408.5" width="414" height="404.5"/>
+                                <rect key="frame" x="0.0" y="417" width="414" height="396"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -275,7 +284,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="WbH-sl-nJf">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="person.fill" catalog="system" id="cjG-sd-Asu">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <segue destination="v99-t2-bXz" kind="show" id="wqg-4E-Guo"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -288,6 +300,16 @@
             </objects>
             <point key="canvasLocation" x="-5749.275362318841" y="2894.1964285714284"/>
         </scene>
+        <!--UserProfile-->
+        <scene sceneID="JHZ-4R-jgW">
+            <objects>
+                <viewControllerPlaceholder storyboardName="UserProfile" id="v99-t2-bXz" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="QV3-25-IrS"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5ty-w8-gda" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3386" y="3498"/>
+        </scene>
         <!--Cinema-->
         <scene sceneID="45w-fk-RTi">
             <objects>
@@ -297,11 +319,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="HFW-tW-vkv">
-                                <rect key="frame" x="0.0" y="140" width="414" height="56"/>
+                                <rect key="frame" x="0.0" y="148.5" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="n2f-Ei-hfY">
-                                <rect key="frame" x="0.0" y="196" width="414" height="617"/>
+                                <rect key="frame" x="0.0" y="204.5" width="414" height="608.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -319,7 +341,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="Cinema" id="yYO-YA-bk2">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="person.fill" catalog="system" id="LL7-Ts-l7H">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <segue destination="v99-t2-bXz" kind="show" id="IX6-dr-MkC"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -357,14 +382,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Hc-V3-EjK">
-                                <rect key="frame" x="0.0" y="140" width="414" height="232.5"/>
+                                <rect key="frame" x="0.0" y="148.5" width="414" height="232.5"/>
                                 <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="5Hc-V3-EjK" secondAttribute="height" multiplier="376:211" id="9KP-Ip-CRA"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⭐️9.9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9v0-I3-Pp1">
-                                <rect key="frame" x="325" y="323.5" width="79" height="39"/>
+                                <rect key="frame" x="325" y="332" width="79" height="39"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="cjn-Vp-hfe"/>
@@ -375,7 +400,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="SwE-sy-diQ">
-                                <rect key="frame" x="0.0" y="377.5" width="414" height="32"/>
+                                <rect key="frame" x="0.0" y="386" width="414" height="32"/>
                                 <segments>
                                     <segment title="Geral"/>
                                     <segment title="Outros"/>
@@ -387,7 +412,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="qud-hp-0W2">
-                                <rect key="frame" x="0.0" y="408.5" width="414" height="404.5"/>
+                                <rect key="frame" x="0.0" y="417" width="414" height="396"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -411,7 +436,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="fda-9U-e3L">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="person.fill" catalog="system" id="uuh-GG-XYF">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <segue destination="v99-t2-bXz" kind="show" id="9xl-UH-t8Z"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -433,7 +461,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5qS-lD-9rs">
-                                <rect key="frame" x="0.0" y="303" width="414" height="32"/>
+                                <rect key="frame" x="0.0" y="311.5" width="414" height="32"/>
                                 <segments>
                                     <segment title="Biografia"/>
                                     <segment title="Trabalhos"/>
@@ -444,11 +472,11 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="S8w-LI-4R3">
-                                <rect key="frame" x="0.0" y="334" width="414" height="479"/>
+                                <rect key="frame" x="0.0" y="342.5" width="414" height="470.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Nbp-SB-0Rk">
-                                <rect key="frame" x="131" y="140" width="273" height="157"/>
+                                <rect key="frame" x="131" y="148.5" width="273" height="157"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XOo-Sj-Z04">
                                         <rect key="frame" x="0.0" y="0.0" width="273" height="32"/>
@@ -480,7 +508,7 @@
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r6i-Ko-crd">
-                                <rect key="frame" x="10" y="140" width="111" height="158"/>
+                                <rect key="frame" x="10" y="148.5" width="111" height="158"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="111" id="M26-aZ-jCn"/>
                                     <constraint firstAttribute="height" constant="158" id="tJ3-HD-NNk"/>
@@ -507,7 +535,10 @@
                     <navigationItem key="navigationItem" id="WXV-Um-3j3">
                         <barButtonItem key="backBarButtonItem" title="Voltar" id="GL2-ME-hMr"/>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="person.fill" catalog="system" id="dPQ-hg-sXQ">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <segue destination="v99-t2-bXz" kind="show" id="lQX-YM-eYg"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -552,7 +583,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sFY-um-0gf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4452" y="3660"/>
+            <point key="canvasLocation" x="-4452" y="3789"/>
         </scene>
         <!--Lançamentos-->
         <scene sceneID="gy5-0m-Vsw">
@@ -560,7 +591,7 @@
                 <navigationController id="bMe-uV-fga" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Lançamentos" image="square.stack.3d.forward.dottedline" catalog="system" selectedImage="square.stack.3d.forward.dottedline" id="wIQ-Yz-4mk"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Rp7-yr-qLH">
-                        <rect key="frame" x="0.0" y="44" width="414" height="104.5"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -602,7 +633,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="Lançamentos" id="aCT-QS-qRd">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="person.fill" catalog="system" id="nRL-3n-oFL">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <segue destination="v99-t2-bXz" kind="show" id="pvk-Jb-KYf"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -677,7 +711,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="PiZ-1o-p43">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="person.fill" catalog="system" id="Hw8-Pn-AG6">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <segue destination="v99-t2-bXz" kind="show" id="eZy-yA-8F8"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -699,14 +736,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vvd-ET-PX7">
-                                <rect key="frame" x="0.0" y="140" width="414" height="232.5"/>
+                                <rect key="frame" x="0.0" y="148.5" width="414" height="232.5"/>
                                 <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Vvd-ET-PX7" secondAttribute="height" multiplier="376:211" id="Cxw-w2-TTF"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⭐️9.9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ckf-l6-LGQ">
-                                <rect key="frame" x="325" y="323.5" width="79" height="39"/>
+                                <rect key="frame" x="325" y="332" width="79" height="39"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="79" id="Lr3-DD-SuW"/>
@@ -717,7 +754,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pKv-uk-VAO">
-                                <rect key="frame" x="0.0" y="377.5" width="414" height="32"/>
+                                <rect key="frame" x="0.0" y="386" width="414" height="32"/>
                                 <segments>
                                     <segment title="Geral"/>
                                     <segment title="Episódios"/>
@@ -729,7 +766,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="bNd-Yu-ZBg">
-                                <rect key="frame" x="0.0" y="418.5" width="414" height="394.5"/>
+                                <rect key="frame" x="0.0" y="427" width="414" height="386"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -753,7 +790,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="HkP-o4-hRc">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="person.fill" catalog="system" id="wap-pY-4eG">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <segue destination="v99-t2-bXz" kind="show" id="hse-v7-88L"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -767,6 +807,9 @@
             <point key="canvasLocation" x="-3387" y="2894"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="pvk-Jb-KYf"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="film" catalog="system" width="128" height="93"/>
         <image name="film.fill" catalog="system" width="128" height="93"/>
