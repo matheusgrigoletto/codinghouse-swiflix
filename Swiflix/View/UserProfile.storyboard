@@ -9,19 +9,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Perfil View Controller-->
         <scene sceneID="Ezp-ue-4AN">
             <objects>
-                <viewController id="M2U-Z0-1NW" sceneMemberID="viewController">
+                <viewController id="M2U-Z0-1NW" customClass="PerfilViewController" customModule="Swiflix" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sDl-2H-l9y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ACT-M2-7RX">
-                                <rect key="frame" x="342" y="49" width="52" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Logout"/>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0Qw-XH-h3d">
                                 <rect key="frame" x="20" y="199" width="374" height="122"/>
                                 <subviews>
@@ -84,8 +79,8 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qtz-f2-vGc">
-                                <rect key="frame" x="157" y="89" width="100" height="100"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="qtz-f2-vGc">
+                                <rect key="frame" x="157" y="90.5" width="100" height="97.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="Tia-DH-jpp"/>
                                     <constraint firstAttribute="height" constant="100" id="wYC-6w-mll"/>
@@ -97,6 +92,9 @@
                                     <segment title="Filmes"/>
                                     <segment title="Séries"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentedChanged:" destination="M2U-Z0-1NW" eventType="valueChanged" id="zAT-IC-uoW"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favoritos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ily-lK-3fy">
                                 <rect key="frame" x="10" y="341" width="394" height="24"/>
@@ -114,12 +112,10 @@
                         <constraints>
                             <constraint firstItem="j8e-11-FQw" firstAttribute="trailing" secondItem="0Qw-XH-h3d" secondAttribute="trailing" constant="20" id="0bg-BA-JFP"/>
                             <constraint firstItem="lCP-Zd-kvV" firstAttribute="top" secondItem="Ily-lK-3fy" secondAttribute="bottom" constant="5" id="Afa-fE-L9h"/>
-                            <constraint firstItem="ACT-M2-7RX" firstAttribute="top" secondItem="j8e-11-FQw" secondAttribute="top" constant="5" id="NMi-nE-ZMR"/>
+                            <constraint firstItem="qtz-f2-vGc" firstAttribute="top" secondItem="j8e-11-FQw" secondAttribute="top" constant="45" id="Kh9-Tv-3sH"/>
                             <constraint firstItem="Zml-AD-Vas" firstAttribute="top" secondItem="lCP-Zd-kvV" secondAttribute="bottom" constant="5" id="R4L-ed-dS4"/>
-                            <constraint firstItem="qtz-f2-vGc" firstAttribute="top" secondItem="ACT-M2-7RX" secondAttribute="bottom" constant="10" id="X1Z-g3-OPh"/>
                             <constraint firstItem="j8e-11-FQw" firstAttribute="trailing" secondItem="Zml-AD-Vas" secondAttribute="trailing" id="Xjr-r6-Vfc"/>
                             <constraint firstItem="Ily-lK-3fy" firstAttribute="leading" secondItem="j8e-11-FQw" secondAttribute="leading" constant="10" id="Xny-xX-Qwh"/>
-                            <constraint firstItem="j8e-11-FQw" firstAttribute="trailing" secondItem="ACT-M2-7RX" secondAttribute="trailing" constant="20" id="dJl-mq-uaI"/>
                             <constraint firstItem="lCP-Zd-kvV" firstAttribute="leading" secondItem="j8e-11-FQw" secondAttribute="leading" id="f9W-F6-cpS"/>
                             <constraint firstItem="qtz-f2-vGc" firstAttribute="centerX" secondItem="sDl-2H-l9y" secondAttribute="centerX" id="ibN-ve-Y8k"/>
                             <constraint firstItem="Ily-lK-3fy" firstAttribute="top" secondItem="0Qw-XH-h3d" secondAttribute="bottom" constant="20" id="l2V-iy-lgx"/>
@@ -133,6 +129,9 @@
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="favoriteTableView" destination="Zml-AD-Vas" id="g7R-Ku-coX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SFL-f1-h5Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -140,6 +139,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="person" catalog="system" width="128" height="117"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

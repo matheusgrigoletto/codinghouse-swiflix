@@ -48,6 +48,7 @@
 		C3110BE92553661600A6BD86 /* GenericMediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3110BE72553661600A6BD86 /* GenericMediaTableViewCell.swift */; };
 		C3110BEE25536B8200A6BD86 /* PessoaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3110BEC25536B8100A6BD86 /* PessoaTableViewCell.swift */; };
 		C3110BEF25536B8200A6BD86 /* PessoaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3110BED25536B8200A6BD86 /* PessoaTableViewCell.xib */; };
+		C337370325648A4000F90F36 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C337370225648A4000F90F36 /* PerfilViewController.swift */; };
 		C33E12E6254452D50011E5A9 /* BerkshireSwash-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C33E12E5254452D50011E5A9 /* BerkshireSwash-Regular.ttf */; };
 		C33E12EA254457F40011E5A9 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33E12E9254457F40011E5A9 /* InitialViewController.swift */; };
 		C33E12F1254469DE0011E5A9 /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33E12F0254469DE0011E5A9 /* Segues.swift */; };
@@ -119,6 +120,7 @@
 		C3110BE72553661600A6BD86 /* GenericMediaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericMediaTableViewCell.swift; sourceTree = "<group>"; };
 		C3110BEC25536B8100A6BD86 /* PessoaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PessoaTableViewCell.swift; sourceTree = "<group>"; };
 		C3110BED25536B8200A6BD86 /* PessoaTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PessoaTableViewCell.xib; sourceTree = "<group>"; };
+		C337370225648A4000F90F36 /* PerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
 		C33E12E5254452D50011E5A9 /* BerkshireSwash-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BerkshireSwash-Regular.ttf"; sourceTree = "<group>"; };
 		C33E12E9254457F40011E5A9 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		C33E12F0254469DE0011E5A9 /* Segues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segues.swift; sourceTree = "<group>"; };
@@ -356,6 +358,14 @@
 			path = PessoaCell;
 			sourceTree = "<group>";
 		};
+		C337370125648A2E00F90F36 /* Perfil */ = {
+			isa = PBXGroup;
+			children = (
+				C337370225648A4000F90F36 /* PerfilViewController.swift */,
+			);
+			path = Perfil;
+			sourceTree = "<group>";
+		};
 		C33E12E4254452B70011E5A9 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -434,6 +444,7 @@
 		C3B54E09253C6C830067E6F5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C337370125648A2E00F90F36 /* Perfil */,
 				C3B0390825617E3300F63C70 /* PhotoGalleryDetail */,
 				569D29CC2559B07F0012B924 /* NewMovies */,
 				569D29CB2559B0730012B924 /* MovieHouse */,
@@ -620,6 +631,7 @@
 				AD5A8660255D774500F187C8 /* SerieDetailViewController.swift in Sources */,
 				C3B0390A25617E4A00F63C70 /* PhotoDetailViewController.swift in Sources */,
 				C36856B22556E45E0032D09A /* MovieDetailViewController.swift in Sources */,
+				C337370325648A4000F90F36 /* PerfilViewController.swift in Sources */,
 				568288D12559D9BF00309954 /* MovieHouseDetailViewController.swift in Sources */,
 				C36856B72556E8D90032D09A /* MovieGeralTableViewCell.swift in Sources */,
 				AD1EEC57255DEF6D001BE764 /* SerieGeralTableViewCell.swift in Sources */,
