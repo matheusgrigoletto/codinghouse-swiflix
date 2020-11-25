@@ -18,6 +18,18 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureTextFields()
+        self.configureDelegates()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        self.view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard(){
+        self.view.endEditing(true)
+    }
+    
+    func configureDelegates(){
+        self.emailTextField.delegate = self
+        self.senhaTextField.delegate = self
     }
     
     //MARK: - IBAction
@@ -41,4 +53,21 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController: UITextFieldDelegate {
     
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.validate(caracters: 6)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return true
+    }
+}
+
+extension UITextField {
+    func validate(caracters: Int){
+        if self.text?.count ?? 0 < caracters {
+            self.layer.borderColor = UIColor.red.cgColor
+        }else{
+            self.layer.borderColor = UIColor.green.cgColor
+        }
+    }
 }
