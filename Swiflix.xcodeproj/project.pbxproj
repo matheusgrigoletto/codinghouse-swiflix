@@ -27,6 +27,7 @@
 		56DD8A78255AFEBF005B0E16 /* PeopleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DD8A77255AFEBF005B0E16 /* PeopleDetailViewController.swift */; };
 		56DD8A84255B0A1C005B0E16 /* PersonBiographyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DD8A82255B0A1C005B0E16 /* PersonBiographyTableViewCell.swift */; };
 		56DD8A85255B0A1C005B0E16 /* PersonBiographyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56DD8A83255B0A1C005B0E16 /* PersonBiographyTableViewCell.xib */; };
+		839A34EB41B98A2FC094AA50 /* Pods_Swiflix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E98EAC79CB37A047BAACCB1A /* Pods_Swiflix.framework */; };
 		AD1EEC57255DEF6D001BE764 /* SerieGeralTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1EEC55255DEF6D001BE764 /* SerieGeralTableViewCell.swift */; };
 		AD1EEC58255DEF6D001BE764 /* SerieGeralTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD1EEC56255DEF6D001BE764 /* SerieGeralTableViewCell.xib */; };
 		AD3F4C36255DF7F30044F24B /* SerieCriticaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3F4C34255DF7F30044F24B /* SerieCriticaTableViewCell.swift */; };
@@ -99,6 +100,8 @@
 		56DD8A77255AFEBF005B0E16 /* PeopleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleDetailViewController.swift; sourceTree = "<group>"; };
 		56DD8A82255B0A1C005B0E16 /* PersonBiographyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonBiographyTableViewCell.swift; sourceTree = "<group>"; };
 		56DD8A83255B0A1C005B0E16 /* PersonBiographyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonBiographyTableViewCell.xib; sourceTree = "<group>"; };
+		7FE01D9830F17091FCA73A30 /* Pods-Swiflix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiflix.release.xcconfig"; path = "Target Support Files/Pods-Swiflix/Pods-Swiflix.release.xcconfig"; sourceTree = "<group>"; };
+		9C07E6B7F39DBC66E22F972F /* Pods-Swiflix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiflix.debug.xcconfig"; path = "Target Support Files/Pods-Swiflix/Pods-Swiflix.debug.xcconfig"; sourceTree = "<group>"; };
 		AD1EEC55255DEF6D001BE764 /* SerieGeralTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieGeralTableViewCell.swift; sourceTree = "<group>"; };
 		AD1EEC56255DEF6D001BE764 /* SerieGeralTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SerieGeralTableViewCell.xib; sourceTree = "<group>"; };
 		AD3F4C34255DF7F30044F24B /* SerieCriticaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieCriticaTableViewCell.swift; sourceTree = "<group>"; };
@@ -146,6 +149,7 @@
 		C3D8F64725582E7D001FFCA1 /* MovieTrailler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTrailler.swift; sourceTree = "<group>"; };
 		C3D8F64B25582FB7001FFCA1 /* MovieTraillerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTraillerTableViewCell.swift; sourceTree = "<group>"; };
 		C3D8F64C25582FB7001FFCA1 /* MovieTraillerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTraillerTableViewCell.xib; sourceTree = "<group>"; };
+		E98EAC79CB37A047BAACCB1A /* Pods_Swiflix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swiflix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,12 +157,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				839A34EB41B98A2FC094AA50 /* Pods_Swiflix.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08621D74529EB5CB9CF050EC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E98EAC79CB37A047BAACCB1A /* Pods_Swiflix.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		0FBDE1A22545D74B00655436 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +192,8 @@
 				2FD283B02537DC9E0032400F /* Swiflix */,
 				2FD283BF2537DCA10032400F /* Info.plist */,
 				2FD283AF2537DC9E0032400F /* Products */,
+				D8A1CE840BDC8217C6B3F230 /* Pods */,
+				08621D74529EB5CB9CF050EC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -514,6 +529,16 @@
 			path = Trailler;
 			sourceTree = "<group>";
 		};
+		D8A1CE840BDC8217C6B3F230 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9C07E6B7F39DBC66E22F972F /* Pods-Swiflix.debug.xcconfig */,
+				7FE01D9830F17091FCA73A30 /* Pods-Swiflix.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -521,9 +546,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2FD283C22537DCA10032400F /* Build configuration list for PBXNativeTarget "Swiflix" */;
 			buildPhases = (
+				E0A1C360F52863C3FA9B58E0 /* [CP] Check Pods Manifest.lock */,
 				2FD283AA2537DC9E0032400F /* Sources */,
 				2FD283AB2537DC9E0032400F /* Frameworks */,
 				2FD283AC2537DC9E0032400F /* Resources */,
+				51A8E1A368FD59147B5C3106 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -595,6 +622,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		51A8E1A368FD59147B5C3106 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Swiflix/Pods-Swiflix-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Swiflix/Pods-Swiflix-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Swiflix/Pods-Swiflix-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0A1C360F52863C3FA9B58E0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Swiflix-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2FD283AA2537DC9E0032400F /* Sources */ = {
@@ -793,6 +862,7 @@
 		};
 		2FD283C32537DCA10032400F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C07E6B7F39DBC66E22F972F /* Pods-Swiflix.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -814,6 +884,7 @@
 		};
 		2FD283C42537DCA10032400F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FE01D9830F17091FCA73A30 /* Pods-Swiflix.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";

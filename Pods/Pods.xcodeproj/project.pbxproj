@@ -1,0 +1,838 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00B9729AC1DE0BC9AEB9F521BBADEEB9 /* ImagesMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2C36D6DA0B21E4F469124AA3A959B5 /* ImagesMDB.swift */; };
+		06746D88B57C748A3D3370552E79A57B /* Client_Changes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FB572DC4FC2E9B349168E18D249507 /* Client_Changes.swift */; };
+		0815688B6BB94C11AC143FDA36109633 /* Pods-Swiflix-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BD8E84E873B1F656025BF53D4A01F0E3 /* Pods-Swiflix-dummy.m */; };
+		0A5C1EA24B42E920F5CF43BD2AFC531E /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE3B0B8EC96581EC5EEDD9B2920838A /* Client.swift */; };
+		160A7A2FD2D5F0B72845FDE11C34EDC5 /* PersonMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A5E1EEE0A4C02CF745B87B7654DC5D /* PersonMDB.swift */; };
+		18F2198ECCFC84F616CBD769DDBC02C0 /* MovieListMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF5E73AC94F63292256A629B409736A /* MovieListMDB.swift */; };
+		31A0304AA3A26E9CB813B40788D7DD92 /* TMDBSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE0891E7C6081D9B46D04363DEB995F /* TMDBSwift-dummy.m */; };
+		32E02AB2B58A3BB39C85FA6FDD0DBCCA /* TranslationsMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB601CF8E99775925D7C1515E3D9C0EF /* TranslationsMDB.swift */; };
+		38E60C8A9A171BA760649A4E0932ED8D /* TVMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18849A7F5FF4EED5D0763638A0EDB982 /* TVMDB.swift */; };
+		39C2489DCC4A4ACDDB78AE7B3A2DEDF0 /* ChangesMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAD7D19E4CB57B5240230C53B888330 /* ChangesMDB.swift */; };
+		3A79DDB94855ACBAE2C34E71EA3717A8 /* ConfigurationMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059A37A8FA268997D999344578870A5A /* ConfigurationMDB.swift */; };
+		3C5CD4886A06C23D512ED3901157721B /* CreditsMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8095B70539EB10416B3F6C80A3B1BB19 /* CreditsMDB.swift */; };
+		3DB311F8958B0397298A1DBFF49D79ED /* KeywordsMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6C26925EFE5EF004902946219CFFD7 /* KeywordsMDB.swift */; };
+		3E363A831A436DC8A3854EA9E0FB74B4 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A45BFABFC541EE240B263015E30D5 /* SwiftyJSON.swift */; };
+		407EA49BF90A6790BF4C9A26DC45F87B /* DiscoverTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87ABD25143757E58763E4F98C05719B /* DiscoverTV.swift */; };
+		40E3F04D2883AC80BF5188848B6144FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		426FEA14E8476817AB78C2278F5D03FB /* ExternalIdsMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6FEE16583A802C266A06106FBF1210 /* ExternalIdsMDB.swift */; };
+		47A1E6884D6E8BB8209562E2F96C47F1 /* ArrayObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5330C1C040A8C869866E90E279BF38D5 /* ArrayObjectProtocol.swift */; };
+		4ADD70BF6958DCB4384705143B0579F4 /* Client_Certifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = B743D7AEC2CD2D01CFE91A00447CFD6F /* Client_Certifications.swift */; };
+		522365E15E7343BD598E1780B3E300AC /* Pods-Swiflix-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D14C34F282D59AE57DF5CE8E04F969D /* Pods-Swiflix-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		533F6601CE6F4B7EE885460AF79A6964 /* CastCrewMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1933EBB5AA4755FE6C511B9DFA42ECB /* CastCrewMDB.swift */; };
+		53E2507583FBF29F1753CB933D53C690 /* CollectionsMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39467FCBF986C060F3619EA6B7BA0CF1 /* CollectionsMDB.swift */; };
+		5E21ACDB1B6FD4E020A251876281CB5D /* ListsMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64C3015B4E385F2601AB3A839BAD8E /* ListsMDB.swift */; };
+		64CC8C257FCE3B55A07DF82B42590063 /* TVCreditsMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F1329326E3F912D76EA4B2657A742F /* TVCreditsMDB.swift */; };
+		689702745C57F1BD3B4E964CE55EFF34 /* Client_Networks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3146C890D18D2D1C7B405FA42BCE4C35 /* Client_Networks.swift */; };
+		69D785CC2950215F0B86C7525F505D5B /* Client_Credits.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD2714F1C617A75E57FA41D5010CD91 /* Client_Credits.swift */; };
+		6C2351F3D49CD028541645603076A45B /* Client_Genres.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDDE9C11BFD62B412B328264A33019B /* Client_Genres.swift */; };
+		6E4AF5A27F2F544BFBCA815B19D80671 /* CompaniesMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F70754DEC2828153894BDE600CA71B5 /* CompaniesMDB.swift */; };
+		725445E060DBD0D100505EB7A8072FA0 /* DiscoverMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22C2EEC6627DDC7452D34A6C6468B56 /* DiscoverMovie.swift */; };
+		74623823C4613DBBC8B218C36626AA2A /* Client_Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC717EE7ACF81CF26D9756369FD121C /* Client_Search.swift */; };
+		7962217F292865FFCF8DD249592D60B3 /* Client_People.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF204FF6E57E4067611A7AC399749D83 /* Client_People.swift */; };
+		82A057E1B6B770F78F0E4BC4CEA231A6 /* MovieCreditsMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EDC56017E5F999BA8913F935FBC87E /* MovieCreditsMDB.swift */; };
+		831131E17FDD1F59275767DA47E6658C /* Clent_Discover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB0237073FB750FD000EA43E57316CE /* Clent_Discover.swift */; };
+		8436BAAC50DB4328B1E89453AAFEC3E5 /* Client_Keywords.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2FABE0D74688BF5E2012A73CB4089B /* Client_Keywords.swift */; };
+		85A7A71D260B7EA33F1E2B9A7DE56523 /* ReviewsMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04C44B525BE21FA8D83E95F451E6410 /* ReviewsMDB.swift */; };
+		88DF3F961196041A4E6C86782B3292E8 /* Client_Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBA89CDB1D8F6A66D55567956545D8 /* Client_Movies.swift */; };
+		8A14199A5A665B8A7A206102E1978748 /* Client_Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6796A8969E2C23177954665C88E1865 /* Client_Configuration.swift */; };
+		8FC1E39E715B4AA1DABDE1C452A5F423 /* Client_TVSeasonsEpisodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5487B322247890C43C0E63A6683D6F99 /* Client_TVSeasonsEpisodes.swift */; };
+		92CE9BA6588FA5BDC81C34E365B7220F /* MovieMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1620D25A21B1A1C3FEC77904337170C2 /* MovieMDB.swift */; };
+		9E8F2619EB6586753DFF0DE85E08EDCA /* TVMDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C78810F677E23A27EED88ADE016C834 /* TVMDBModel.swift */; };
+		A1BE236CED19BA87398C44E5E612DF63 /* PageResultsMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD64203CBB3084AEA547CB8263FA0ACE /* PageResultsMDB.swift */; };
+		A8092C121F7DCAF431DC0CE0BA9792E2 /* Alternative_TitlesMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23151DC84B3AEBA73B0D526A9FF9936C /* Alternative_TitlesMDB.swift */; };
+		ABC1C5FA636717E1735D5929946A7B14 /* FindMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65D5776C672F3E264D7F84D7CB465CD /* FindMDB.swift */; };
+		ABC3F1D326064EA4F784BF4851AE4291 /* Client_Companies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731E61625276FD2CA91553C2CDBB2EFB /* Client_Companies.swift */; };
+		AF4F59E8A7C5C91D6574FBDF213D8176 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA39E2B9C879FF71ED8CF74A05D83D67 /* Config.swift */; };
+		BA51A44749EF40B91844F93BF7E4B320 /* CertificationMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = F195D8986B72A18787FD933F68F9748D /* CertificationMDB.swift */; };
+		BF72BDBE08ACAFC9826AF51B0D6AF790 /* GenresMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8445DBDBDEDE62707DC7977D31A605A9 /* GenresMDB.swift */; };
+		C58B06EF611798141FE0C3195C11B5B7 /* NetworksMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375DDE1A615DF1E9F0C7A136653893B9 /* NetworksMDB.swift */; };
+		C5A337BCDD1B4239E24A0645C1290A6C /* VideosMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218819B9500A5A674B469565A46CAEBB /* VideosMDB.swift */; };
+		C7C44ACDCD0B97DB0325C41C9D0DCDD7 /* TVDetailedMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6D2E2DFA8F737A981D2734539EF279 /* TVDetailedMDB.swift */; };
+		C8B6240BE8C35D2DC13432EBA33E018D /* TMDBSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D881E782E4415EA61E983C2F3BD70A2C /* TMDBSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CDF4AA31C9FA4C329690128F5859F651 /* TVEpisodesMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1968869884DD04E9A28FD7979D247705 /* TVEpisodesMDB.swift */; };
+		CDFE2AAC480CC25EF51D104FBC8680B9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		D19F0BD0FAFAC3AB83524F08760BEC47 /* Client_Collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D52AAC0B91D9588E349168E2D47EAA7 /* Client_Collections.swift */; };
+		D6AA28C6C09FCC505D35157D9E94A2BF /* SearchMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E14A52C74B98712EB291A957AD990F /* SearchMDB.swift */; };
+		D71FFB08B4350FECF7AAA3B394E54DC1 /* Discover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A99386AE1DC328593CD10E5473F01EA /* Discover.swift */; };
+		DA38F9A40ED2911929A299CE9C41284F /* Client_TV.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0F999B41862A66A2C3777B078450FF /* Client_TV.swift */; };
+		E13620CD286AB82030AA194747DFD6D9 /* MovieReviewMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982AC43ABDF0524ADB266A0BB1BDBBDA /* MovieReviewMDB.swift */; };
+		E3E3C387253186E7DB4D12136323768B /* MovieReleaseDatesMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235FD82E50FB3626E4F99AB870AF94E /* MovieReleaseDatesMDB.swift */; };
+		E6DBBB07ED09612F1DC4B20A6F988DFB /* Client_Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5797CB43DC4603CA24241E67EB1740 /* Client_Review.swift */; };
+		EA487B9F778EA575959A2F1F2A8CD949 /* Client_Find.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC2F35F83C31E66864E07819835FD5B /* Client_Find.swift */; };
+		F6F646D912AE2BE3C2A3AEC89F89C0F8 /* MovieDetailedMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E68795F9116AADA8662F6CA1E5DBED /* MovieDetailedMDB.swift */; };
+		F7CA78CEF34E0ED75B31CFA85534FBFF /* MovieMDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BCA42E9BDD023A17AA5BEEDCD472D6 /* MovieMDBModel.swift */; };
+		F9AC7C25A6B66C56A47D7319F2295F9E /* TVSeasonsMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF9EB12789629C68F8F23C093A3687B /* TVSeasonsMDB.swift */; };
+		FF33C24C69A49D291DF03D5F8ADA7A75 /* Client_Lists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D867069E0F85EBFA8CCEA9E0C62796 /* Client_Lists.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6F6879F754784CE183FC8932DBC948AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD08042101584CD51388D925427AEBAC;
+			remoteInfo = TMDBSwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		059A37A8FA268997D999344578870A5A /* ConfigurationMDB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConfigurationMDB.swift; path = Sources/Models/ConfigurationMDB.swift; sourceTree = "<group>"; };
+		0B2C36D6DA0B21E4F469124AA3A959B5 /* ImagesMDB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImagesMDB.swift; path = Sources/Models/ImagesMDB.swift; sourceTree = "<group>"; };
+		0C2FABE0D74688BF5E2012A73CB4089B /* Client_Keywords.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Client_Keywords.swift; path = Sources/Client/Client_Keywords.swift; sourceTree = "<group>"; };
+		0EE3B0B8EC96581EC5EEDD9B2920838A /* Client.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Client.swift; path = Sources/Client/Client.swift; sourceTree = "<group>"; };
+		1620D25A21B1A1C3FEC77904337170C2 /* MovieMDB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MovieMDB.swift; path = Sources/Models/MovieMDB.swift; sourceTree = "<group>"; };
+		18849A7F5FF4EED5D0763638A0EDB982 /* TVMDB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TVMDB.swift; path = Sources/Models/TVMDB.swift; sourceTree = "<group>"; };
+		1968869884DD04E9A28FD7979D247705 /* TVEpisodesMDB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TVEpisodesMDB.swift; path = Sources/Models/TVEpisodesMDB.swift; sourceTree = "<group>"; };
+		1AF9EB12789629C68F8F23C093A3687B /* TVSeasonsMDB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TVSeasonsMDB.swift; path = Sources/Models/TVSeasonsMDB.swift; sourceTree = "<group>"; };
+		218819B9500A5A674B469565A46CAEBB /* VideosMDB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VideosMDB.swift; path = Sources/Models/VideosMDB.swift; sourceTree = "<group>"; };
+		23151DC84B3AEBA73B0D526A9FF9936C /* Alternative_TitlesMDB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alternative_TitlesMDB.swift; path = Sources/Models/Alternative_TitlesMDB.swift; sourceTree = "<group>"; };
+		2593DB0CA37BB9C01EC85EDEFE3BDF6F /* TMDBSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TMDBSwift-prefix.pch"; sourceTree = "<group>"; };
+		2A2687D15E5F16928B0F45BB40F0DCA8 /* Pods_Swiflix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Swiflix.framework; path = "Pods-Swiflix.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C6C26925EFE5EF004902946219CFFD7 /* KeywordsMDB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeywordsMDB.swift; path = Sources/Models/KeywordsMDB.swift; sourceTree = "<group>"; };
+		2F70754DEC2828153894BDE600CA71B5 /* CompaniesMDB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CompaniesMDB.swift; path = Sources/Models/CompaniesMDB.swift; sourceTree = "<group>"; };
+		3146C890D18D2D1C7B405FA42BCE4C35 /* Client_Networks.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Client_Networks.swift; path = Sources/Client/Client_Networks.swift; sourceTree = "<group>"; };
+		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		34F1329326E3F912D76EA4B2657A742F /* TVCreditsMDB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TVCreditsMDB.swift; path = Sources/Models/TVCreditsMDB.swift; sourceTree = "<group>"; };
+		375DDE1A615DF1E9F0C7A136653893B9 /* NetworksMDB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworksMDB.swift; path = Sources/Models/NetworksMDB.swift; sourceTree = "<group>"; };
+		39467FCBF986C060F3619EA6B7BA0CF1 /* CollectionsMDB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CollectionsMDB.swift; path = Sources/Models/CollectionsMDB.swift; sourceTree = "<group>"; };
+		3D52AAC0B91D9588E349168E2D47EAA7 /* Client_Collections.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Client_Collections.swift; path = Sources/Client/Client_Collections.swift; sourceTree = "<group>"; };
+		3FDDE9C11BFD62B412B328264A33019B /* Client_Genres.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Client_Genres.swift; path = Sources/Client/Client_Genres.swift; sourceTree = "<group>"; };
+		41E14A52C74B98712EB291A957AD990F /* SearchMDB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SearchMDB.swift; path = Sources/Models/SearchMDB.swift; sourceTree = "<group>"; };
+		491E34B85A8D90A18775F8E842628E01 /* Pods-Swiflix-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Swiflix-acknowledgements.markdown"; sourceTree = "<group>"; };
+		49D867069E0F85EBFA8CCEA9E0C62796 /* Client_Lists.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Client_Lists.swift; path = Sources/Client/Client_Lists.swift; sourceTree = "<group>"; };
+		5330C1C040A8C869866E90E279BF38D5 /* ArrayObjectProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ArrayObjectProtocol.swift; path = Sources/Protocols/ArrayObjectProtocol.swift; sourceTree = "<group>"; };
+		5487B322247890C43C0E63A6683D6F99 /* Client_TVSeasonsEpisodes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Client_TVSeasonsEpisodes.swift; path = Sources/Client/Client_TVSeasonsEpisodes.swift; sourceTree = "<group>"; };
+		59E887F78B37CE4199AE3E3BDDBBE0A0 /* TMDBSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "TMDBSwift-Info.plist"; sourceTree = "<group>"; };
+		5A99386AE1DC328593CD10E5473F01EA /* Discover.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Discover.swift; path = Sources/Models/Discover/Discover.swift; sourceTree = "<group>"; };
+		5C78810F677E23A27EED88ADE016C834 /* TVMDBModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TVMDBModel.swift; path = Sources/Models/TVMDBModel.swift; sourceTree = "<group>"; };
+		65BAF71D9AA1C6EEB7710C2D0A9BABA8 /* Pods-Swiflix-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Swiflix-frameworks.sh"; sourceTree = "<group>"; };
+		6CB0237073FB750FD000EA43E57316CE /* Clent_Discover.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Clent_Discover.swift; path = Sources/Client/Clent_Discover.swift; sourceTree = "<group>"; };
+		6D14C34F282D59AE57DF5CE8E04F969D /* Pods-Swiflix-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Swiflix-umbrella.h"; sourceTree = "<group>"; };
+		731E61625276FD2CA91553C2CDBB2EFB /* Client_Companies.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Client_Companies.swift; path = Sources/Client/Client_Companies.swift; sourceTree = "<group>"; };
+		735999460ECB2F8F96F7CE212E8556AC /* Pods-Swiflix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Swiflix.release.xcconfig"; sourceTree = "<group>"; };
+		77E68795F9116AADA8662F6CA1E5DBED /* MovieDetailedMDB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MovieDetailedMDB.swift; path = Sources/Models/MovieDetailedMDB.swift; sourceTree = "<group>"; };
+		79FB572DC4FC2E9B349168E18D249507 /* Client_Changes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Client_Changes.swift; path = Sources/Client/Client_Changes.swift; sourceTree = "<group>"; };
+		7B6D2E2DFA8F737A981D2734539EF279 /* TVDetailedMDB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TVDetailedMDB.swift; path = Sources/Models/TVDetailedMDB.swift; sourceTree = "<group>"; };
+		7BE0891E7C6081D9B46D04363DEB995F /* TMDBSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TMDBSwift-dummy.m"; sourceTree = "<group>"; };
+		7C6FEE16583A802C266A06106FBF1210 /* ExternalIdsMDB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExternalIdsMDB.swift; path = Sources/Models/ExternalIdsMDB.swift; sourceTree = "<group>"; };
+		8095B70539EB10416B3F6C80A3B1BB19 /* CreditsMDB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CreditsMDB.swift; path = Sources/Models/CreditsMDB.swift; sourceTree = "<group>"; };
+		80BCA42E9BDD023A17AA5BEEDCD472D6 /* MovieMDBModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MovieMDBModel.swift; path = Sources/Models/MovieMDBModel.swift; sourceTree = "<group>"; };
+		8445DBDBDEDE62707DC7977D31A605A9 /* GenresMDB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GenresMDB.swift; path = Sources/Models/GenresMDB.swift; sourceTree = "<group>"; };
+		8640A514D00B06AAC252FEC4B4035228 /* TMDBSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TMDBSwift.framework; path = TMDBSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93474D3AE0D6F8C94C8C919B1EB827D2 /* Pods-Swiflix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Swiflix.debug.xcconfig"; sourceTree = "<group>"; };
+		95FBA89CDB1D8F6A66D55567956545D8 /* Client_Movies.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Client_Movies.swift; path = Sources/Client/Client_Movies.swift; sourceTree = "<group>"; };
+		982AC43ABDF0524ADB266A0BB1BDBBDA /* MovieReviewMDB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MovieReviewMDB.swift; path = Sources/Models/MovieReviewMDB.swift; sourceTree = "<group>"; };
+		996DA82DAC093A7D16AF1299A803ED55 /* Pods-Swiflix-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Swiflix-acknowledgements.plist"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A22C2EEC6627DDC7452D34A6C6468B56 /* DiscoverMovie.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DiscoverMovie.swift; path = Sources/Models/Discover/DiscoverMovie.swift; sourceTree = "<group>"; };
+		AA39E2B9C879FF71ED8CF74A05D83D67 /* Config.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Config.swift; path = Sources/Client/Config.swift; sourceTree = "<group>"; };
+		AEC717EE7ACF81CF26D9756369FD121C /* Client_Search.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Client_Search.swift; path = Sources/Client/Client_Search.swift; sourceTree = "<group>"; };
+		AF204FF6E57E4067611A7AC399749D83 /* Client_People.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Client_People.swift; path = Sources/Client/Client_People.swift; sourceTree = "<group>"; };
+		AF5797CB43DC4603CA24241E67EB1740 /* Client_Review.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Client_Review.swift; path = Sources/Client/Client_Review.swift; sourceTree = "<group>"; };
+		B235FD82E50FB3626E4F99AB870AF94E /* MovieReleaseDatesMDB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MovieReleaseDatesMDB.swift; path = Sources/Models/MovieReleaseDatesMDB.swift; sourceTree = "<group>"; };
+		B62A45BFABFC541EE240B263015E30D5 /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = "Sources/Open Source/SwiftyJSON.swift"; sourceTree = "<group>"; };
+		B743D7AEC2CD2D01CFE91A00447CFD6F /* Client_Certifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Client_Certifications.swift; path = Sources/Client/Client_Certifications.swift; sourceTree = "<group>"; };
+		BD8E84E873B1F656025BF53D4A01F0E3 /* Pods-Swiflix-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Swiflix-dummy.m"; sourceTree = "<group>"; };
+		C65D5776C672F3E264D7F84D7CB465CD /* FindMDB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FindMDB.swift; path = Sources/Models/FindMDB.swift; sourceTree = "<group>"; };
+		C6796A8969E2C23177954665C88E1865 /* Client_Configuration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Client_Configuration.swift; path = Sources/Client/Client_Configuration.swift; sourceTree = "<group>"; };
+		D1933EBB5AA4755FE6C511B9DFA42ECB /* CastCrewMDB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CastCrewMDB.swift; path = Sources/Models/CastCrewMDB.swift; sourceTree = "<group>"; };
+		D2F7A58FA06E197A58AF664C8B5A998F /* TMDBSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TMDBSwift.debug.xcconfig; sourceTree = "<group>"; };
+		D3EDC56017E5F999BA8913F935FBC87E /* MovieCreditsMDB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MovieCreditsMDB.swift; path = Sources/Models/MovieCreditsMDB.swift; sourceTree = "<group>"; };
+		D72CE8D91EC4F8BC4DE480BF91CC132B /* TMDBSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TMDBSwift.release.xcconfig; sourceTree = "<group>"; };
+		D881E782E4415EA61E983C2F3BD70A2C /* TMDBSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TMDBSwift-umbrella.h"; sourceTree = "<group>"; };
+		DA0F999B41862A66A2C3777B078450FF /* Client_TV.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Client_TV.swift; path = Sources/Client/Client_TV.swift; sourceTree = "<group>"; };
+		DAC2F35F83C31E66864E07819835FD5B /* Client_Find.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Client_Find.swift; path = Sources/Client/Client_Find.swift; sourceTree = "<group>"; };
+		DC6AE5355E4EC22ACDF4A6B133ACF8D2 /* Pods-Swiflix-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Swiflix-Info.plist"; sourceTree = "<group>"; };
+		DD64203CBB3084AEA547CB8263FA0ACE /* PageResultsMDB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PageResultsMDB.swift; path = Sources/Models/PageResultsMDB.swift; sourceTree = "<group>"; };
+		DD64C3015B4E385F2601AB3A839BAD8E /* ListsMDB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ListsMDB.swift; path = Sources/Models/ListsMDB.swift; sourceTree = "<group>"; };
+		E3BF24A74D189638E36806CD7313ADEE /* Pods-Swiflix.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Swiflix.modulemap"; sourceTree = "<group>"; };
+		EB601CF8E99775925D7C1515E3D9C0EF /* TranslationsMDB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TranslationsMDB.swift; path = Sources/Models/TranslationsMDB.swift; sourceTree = "<group>"; };
+		EEF5E73AC94F63292256A629B409736A /* MovieListMDB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MovieListMDB.swift; path = Sources/Models/MovieListMDB.swift; sourceTree = "<group>"; };
+		F04C44B525BE21FA8D83E95F451E6410 /* ReviewsMDB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReviewsMDB.swift; path = Sources/Models/ReviewsMDB.swift; sourceTree = "<group>"; };
+		F195D8986B72A18787FD933F68F9748D /* CertificationMDB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CertificationMDB.swift; path = Sources/Models/CertificationMDB.swift; sourceTree = "<group>"; };
+		F5A3BA2A705D72FEE9D17BABEFE04068 /* TMDBSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TMDBSwift.modulemap; sourceTree = "<group>"; };
+		F87ABD25143757E58763E4F98C05719B /* DiscoverTV.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DiscoverTV.swift; path = Sources/Models/Discover/DiscoverTV.swift; sourceTree = "<group>"; };
+		F9A5E1EEE0A4C02CF745B87B7654DC5D /* PersonMDB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PersonMDB.swift; path = Sources/Models/PersonMDB.swift; sourceTree = "<group>"; };
+		FAD2714F1C617A75E57FA41D5010CD91 /* Client_Credits.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Client_Credits.swift; path = Sources/Client/Client_Credits.swift; sourceTree = "<group>"; };
+		FEAD7D19E4CB57B5240230C53B888330 /* ChangesMDB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChangesMDB.swift; path = Sources/Models/ChangesMDB.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0719E22E4FBC4D89AD3B5FBCAF733123 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDFE2AAC480CC25EF51D104FBC8680B9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC20B0E5A69D5DE10AC341F50588B26E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40E3F04D2883AC80BF5188848B6144FE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00B5E5C299169EBE5C63030C964B2B75 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F5A3BA2A705D72FEE9D17BABEFE04068 /* TMDBSwift.modulemap */,
+				7BE0891E7C6081D9B46D04363DEB995F /* TMDBSwift-dummy.m */,
+				59E887F78B37CE4199AE3E3BDDBBE0A0 /* TMDBSwift-Info.plist */,
+				2593DB0CA37BB9C01EC85EDEFE3BDF6F /* TMDBSwift-prefix.pch */,
+				D881E782E4415EA61E983C2F3BD70A2C /* TMDBSwift-umbrella.h */,
+				D2F7A58FA06E197A58AF664C8B5A998F /* TMDBSwift.debug.xcconfig */,
+				D72CE8D91EC4F8BC4DE480BF91CC132B /* TMDBSwift.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/TMDBSwift";
+			sourceTree = "<group>";
+		};
+		1887DABF11D437A4D21845E651E305C6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				989A6531501F0DD27440F75CC2FDE9E4 /* TMDBSwift */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		453228E0E16F4DF234DFD1B57E6ED953 /* Pods-Swiflix */ = {
+			isa = PBXGroup;
+			children = (
+				E3BF24A74D189638E36806CD7313ADEE /* Pods-Swiflix.modulemap */,
+				491E34B85A8D90A18775F8E842628E01 /* Pods-Swiflix-acknowledgements.markdown */,
+				996DA82DAC093A7D16AF1299A803ED55 /* Pods-Swiflix-acknowledgements.plist */,
+				BD8E84E873B1F656025BF53D4A01F0E3 /* Pods-Swiflix-dummy.m */,
+				65BAF71D9AA1C6EEB7710C2D0A9BABA8 /* Pods-Swiflix-frameworks.sh */,
+				DC6AE5355E4EC22ACDF4A6B133ACF8D2 /* Pods-Swiflix-Info.plist */,
+				6D14C34F282D59AE57DF5CE8E04F969D /* Pods-Swiflix-umbrella.h */,
+				93474D3AE0D6F8C94C8C919B1EB827D2 /* Pods-Swiflix.debug.xcconfig */,
+				735999460ECB2F8F96F7CE212E8556AC /* Pods-Swiflix.release.xcconfig */,
+			);
+			name = "Pods-Swiflix";
+			path = "Target Support Files/Pods-Swiflix";
+			sourceTree = "<group>";
+		};
+		96ABACE8A08B278AF391A9B99BB1E9FF /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				453228E0E16F4DF234DFD1B57E6ED953 /* Pods-Swiflix */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		989A6531501F0DD27440F75CC2FDE9E4 /* TMDBSwift */ = {
+			isa = PBXGroup;
+			children = (
+				23151DC84B3AEBA73B0D526A9FF9936C /* Alternative_TitlesMDB.swift */,
+				5330C1C040A8C869866E90E279BF38D5 /* ArrayObjectProtocol.swift */,
+				D1933EBB5AA4755FE6C511B9DFA42ECB /* CastCrewMDB.swift */,
+				F195D8986B72A18787FD933F68F9748D /* CertificationMDB.swift */,
+				FEAD7D19E4CB57B5240230C53B888330 /* ChangesMDB.swift */,
+				6CB0237073FB750FD000EA43E57316CE /* Clent_Discover.swift */,
+				0EE3B0B8EC96581EC5EEDD9B2920838A /* Client.swift */,
+				B743D7AEC2CD2D01CFE91A00447CFD6F /* Client_Certifications.swift */,
+				79FB572DC4FC2E9B349168E18D249507 /* Client_Changes.swift */,
+				3D52AAC0B91D9588E349168E2D47EAA7 /* Client_Collections.swift */,
+				731E61625276FD2CA91553C2CDBB2EFB /* Client_Companies.swift */,
+				C6796A8969E2C23177954665C88E1865 /* Client_Configuration.swift */,
+				FAD2714F1C617A75E57FA41D5010CD91 /* Client_Credits.swift */,
+				DAC2F35F83C31E66864E07819835FD5B /* Client_Find.swift */,
+				3FDDE9C11BFD62B412B328264A33019B /* Client_Genres.swift */,
+				0C2FABE0D74688BF5E2012A73CB4089B /* Client_Keywords.swift */,
+				49D867069E0F85EBFA8CCEA9E0C62796 /* Client_Lists.swift */,
+				95FBA89CDB1D8F6A66D55567956545D8 /* Client_Movies.swift */,
+				3146C890D18D2D1C7B405FA42BCE4C35 /* Client_Networks.swift */,
+				AF204FF6E57E4067611A7AC399749D83 /* Client_People.swift */,
+				AF5797CB43DC4603CA24241E67EB1740 /* Client_Review.swift */,
+				AEC717EE7ACF81CF26D9756369FD121C /* Client_Search.swift */,
+				DA0F999B41862A66A2C3777B078450FF /* Client_TV.swift */,
+				5487B322247890C43C0E63A6683D6F99 /* Client_TVSeasonsEpisodes.swift */,
+				39467FCBF986C060F3619EA6B7BA0CF1 /* CollectionsMDB.swift */,
+				2F70754DEC2828153894BDE600CA71B5 /* CompaniesMDB.swift */,
+				AA39E2B9C879FF71ED8CF74A05D83D67 /* Config.swift */,
+				059A37A8FA268997D999344578870A5A /* ConfigurationMDB.swift */,
+				8095B70539EB10416B3F6C80A3B1BB19 /* CreditsMDB.swift */,
+				5A99386AE1DC328593CD10E5473F01EA /* Discover.swift */,
+				A22C2EEC6627DDC7452D34A6C6468B56 /* DiscoverMovie.swift */,
+				F87ABD25143757E58763E4F98C05719B /* DiscoverTV.swift */,
+				7C6FEE16583A802C266A06106FBF1210 /* ExternalIdsMDB.swift */,
+				C65D5776C672F3E264D7F84D7CB465CD /* FindMDB.swift */,
+				8445DBDBDEDE62707DC7977D31A605A9 /* GenresMDB.swift */,
+				0B2C36D6DA0B21E4F469124AA3A959B5 /* ImagesMDB.swift */,
+				2C6C26925EFE5EF004902946219CFFD7 /* KeywordsMDB.swift */,
+				DD64C3015B4E385F2601AB3A839BAD8E /* ListsMDB.swift */,
+				D3EDC56017E5F999BA8913F935FBC87E /* MovieCreditsMDB.swift */,
+				77E68795F9116AADA8662F6CA1E5DBED /* MovieDetailedMDB.swift */,
+				EEF5E73AC94F63292256A629B409736A /* MovieListMDB.swift */,
+				1620D25A21B1A1C3FEC77904337170C2 /* MovieMDB.swift */,
+				80BCA42E9BDD023A17AA5BEEDCD472D6 /* MovieMDBModel.swift */,
+				B235FD82E50FB3626E4F99AB870AF94E /* MovieReleaseDatesMDB.swift */,
+				982AC43ABDF0524ADB266A0BB1BDBBDA /* MovieReviewMDB.swift */,
+				375DDE1A615DF1E9F0C7A136653893B9 /* NetworksMDB.swift */,
+				DD64203CBB3084AEA547CB8263FA0ACE /* PageResultsMDB.swift */,
+				F9A5E1EEE0A4C02CF745B87B7654DC5D /* PersonMDB.swift */,
+				F04C44B525BE21FA8D83E95F451E6410 /* ReviewsMDB.swift */,
+				41E14A52C74B98712EB291A957AD990F /* SearchMDB.swift */,
+				B62A45BFABFC541EE240B263015E30D5 /* SwiftyJSON.swift */,
+				EB601CF8E99775925D7C1515E3D9C0EF /* TranslationsMDB.swift */,
+				34F1329326E3F912D76EA4B2657A742F /* TVCreditsMDB.swift */,
+				7B6D2E2DFA8F737A981D2734539EF279 /* TVDetailedMDB.swift */,
+				1968869884DD04E9A28FD7979D247705 /* TVEpisodesMDB.swift */,
+				18849A7F5FF4EED5D0763638A0EDB982 /* TVMDB.swift */,
+				5C78810F677E23A27EED88ADE016C834 /* TVMDBModel.swift */,
+				1AF9EB12789629C68F8F23C093A3687B /* TVSeasonsMDB.swift */,
+				218819B9500A5A674B469565A46CAEBB /* VideosMDB.swift */,
+				00B5E5C299169EBE5C63030C964B2B75 /* Support Files */,
+			);
+			name = TMDBSwift;
+			path = TMDBSwift;
+			sourceTree = "<group>";
+		};
+		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				1887DABF11D437A4D21845E651E305C6 /* Pods */,
+				E69CA36053FA34F2BE9F520223E8DE9D /* Products */,
+				96ABACE8A08B278AF391A9B99BB1E9FF /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E69CA36053FA34F2BE9F520223E8DE9D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2A2687D15E5F16928B0F45BB40F0DCA8 /* Pods_Swiflix.framework */,
+				8640A514D00B06AAC252FEC4B4035228 /* TMDBSwift.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		48E5942B784CA730A1F63DB29BDAAD22 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8B6240BE8C35D2DC13432EBA33E018D /* TMDBSwift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDEA0F447616735270A088C01C158C4E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				522365E15E7343BD598E1780B3E300AC /* Pods-Swiflix-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		CD08042101584CD51388D925427AEBAC /* TMDBSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A015BA9AE2D5B99874247AC4A80653C9 /* Build configuration list for PBXNativeTarget "TMDBSwift" */;
+			buildPhases = (
+				48E5942B784CA730A1F63DB29BDAAD22 /* Headers */,
+				E2D7A17D8D252F8B4D0D9E15D44E64E0 /* Sources */,
+				0719E22E4FBC4D89AD3B5FBCAF733123 /* Frameworks */,
+				FE0FCDF56F7F6EC4659D488C29B1C750 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TMDBSwift;
+			productName = TMDBSwift;
+			productReference = 8640A514D00B06AAC252FEC4B4035228 /* TMDBSwift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FB0DED9F31FF71A660116183CF70BD9B /* Pods-Swiflix */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6B94B5FB99416FF71E2C9674AA03298 /* Build configuration list for PBXNativeTarget "Pods-Swiflix" */;
+			buildPhases = (
+				CDEA0F447616735270A088C01C158C4E /* Headers */,
+				283915D51B6D6D79474A3D6B5A2A4D9C /* Sources */,
+				CC20B0E5A69D5DE10AC341F50588B26E /* Frameworks */,
+				3C02CD144FF901B91B5D84F231B6E8DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EFF9AAB9E1B5A17435D072964E83E81B /* PBXTargetDependency */,
+			);
+			name = "Pods-Swiflix";
+			productName = "Pods-Swiflix";
+			productReference = 2A2687D15E5F16928B0F45BB40F0DCA8 /* Pods_Swiflix.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = E69CA36053FA34F2BE9F520223E8DE9D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FB0DED9F31FF71A660116183CF70BD9B /* Pods-Swiflix */,
+				CD08042101584CD51388D925427AEBAC /* TMDBSwift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3C02CD144FF901B91B5D84F231B6E8DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE0FCDF56F7F6EC4659D488C29B1C750 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		283915D51B6D6D79474A3D6B5A2A4D9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0815688B6BB94C11AC143FDA36109633 /* Pods-Swiflix-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2D7A17D8D252F8B4D0D9E15D44E64E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8092C121F7DCAF431DC0CE0BA9792E2 /* Alternative_TitlesMDB.swift in Sources */,
+				47A1E6884D6E8BB8209562E2F96C47F1 /* ArrayObjectProtocol.swift in Sources */,
+				533F6601CE6F4B7EE885460AF79A6964 /* CastCrewMDB.swift in Sources */,
+				BA51A44749EF40B91844F93BF7E4B320 /* CertificationMDB.swift in Sources */,
+				39C2489DCC4A4ACDDB78AE7B3A2DEDF0 /* ChangesMDB.swift in Sources */,
+				831131E17FDD1F59275767DA47E6658C /* Clent_Discover.swift in Sources */,
+				0A5C1EA24B42E920F5CF43BD2AFC531E /* Client.swift in Sources */,
+				4ADD70BF6958DCB4384705143B0579F4 /* Client_Certifications.swift in Sources */,
+				06746D88B57C748A3D3370552E79A57B /* Client_Changes.swift in Sources */,
+				D19F0BD0FAFAC3AB83524F08760BEC47 /* Client_Collections.swift in Sources */,
+				ABC3F1D326064EA4F784BF4851AE4291 /* Client_Companies.swift in Sources */,
+				8A14199A5A665B8A7A206102E1978748 /* Client_Configuration.swift in Sources */,
+				69D785CC2950215F0B86C7525F505D5B /* Client_Credits.swift in Sources */,
+				EA487B9F778EA575959A2F1F2A8CD949 /* Client_Find.swift in Sources */,
+				6C2351F3D49CD028541645603076A45B /* Client_Genres.swift in Sources */,
+				8436BAAC50DB4328B1E89453AAFEC3E5 /* Client_Keywords.swift in Sources */,
+				FF33C24C69A49D291DF03D5F8ADA7A75 /* Client_Lists.swift in Sources */,
+				88DF3F961196041A4E6C86782B3292E8 /* Client_Movies.swift in Sources */,
+				689702745C57F1BD3B4E964CE55EFF34 /* Client_Networks.swift in Sources */,
+				7962217F292865FFCF8DD249592D60B3 /* Client_People.swift in Sources */,
+				E6DBBB07ED09612F1DC4B20A6F988DFB /* Client_Review.swift in Sources */,
+				74623823C4613DBBC8B218C36626AA2A /* Client_Search.swift in Sources */,
+				DA38F9A40ED2911929A299CE9C41284F /* Client_TV.swift in Sources */,
+				8FC1E39E715B4AA1DABDE1C452A5F423 /* Client_TVSeasonsEpisodes.swift in Sources */,
+				53E2507583FBF29F1753CB933D53C690 /* CollectionsMDB.swift in Sources */,
+				6E4AF5A27F2F544BFBCA815B19D80671 /* CompaniesMDB.swift in Sources */,
+				AF4F59E8A7C5C91D6574FBDF213D8176 /* Config.swift in Sources */,
+				3A79DDB94855ACBAE2C34E71EA3717A8 /* ConfigurationMDB.swift in Sources */,
+				3C5CD4886A06C23D512ED3901157721B /* CreditsMDB.swift in Sources */,
+				D71FFB08B4350FECF7AAA3B394E54DC1 /* Discover.swift in Sources */,
+				725445E060DBD0D100505EB7A8072FA0 /* DiscoverMovie.swift in Sources */,
+				407EA49BF90A6790BF4C9A26DC45F87B /* DiscoverTV.swift in Sources */,
+				426FEA14E8476817AB78C2278F5D03FB /* ExternalIdsMDB.swift in Sources */,
+				ABC1C5FA636717E1735D5929946A7B14 /* FindMDB.swift in Sources */,
+				BF72BDBE08ACAFC9826AF51B0D6AF790 /* GenresMDB.swift in Sources */,
+				00B9729AC1DE0BC9AEB9F521BBADEEB9 /* ImagesMDB.swift in Sources */,
+				3DB311F8958B0397298A1DBFF49D79ED /* KeywordsMDB.swift in Sources */,
+				5E21ACDB1B6FD4E020A251876281CB5D /* ListsMDB.swift in Sources */,
+				82A057E1B6B770F78F0E4BC4CEA231A6 /* MovieCreditsMDB.swift in Sources */,
+				F6F646D912AE2BE3C2A3AEC89F89C0F8 /* MovieDetailedMDB.swift in Sources */,
+				18F2198ECCFC84F616CBD769DDBC02C0 /* MovieListMDB.swift in Sources */,
+				92CE9BA6588FA5BDC81C34E365B7220F /* MovieMDB.swift in Sources */,
+				F7CA78CEF34E0ED75B31CFA85534FBFF /* MovieMDBModel.swift in Sources */,
+				E3E3C387253186E7DB4D12136323768B /* MovieReleaseDatesMDB.swift in Sources */,
+				E13620CD286AB82030AA194747DFD6D9 /* MovieReviewMDB.swift in Sources */,
+				C58B06EF611798141FE0C3195C11B5B7 /* NetworksMDB.swift in Sources */,
+				A1BE236CED19BA87398C44E5E612DF63 /* PageResultsMDB.swift in Sources */,
+				160A7A2FD2D5F0B72845FDE11C34EDC5 /* PersonMDB.swift in Sources */,
+				85A7A71D260B7EA33F1E2B9A7DE56523 /* ReviewsMDB.swift in Sources */,
+				D6AA28C6C09FCC505D35157D9E94A2BF /* SearchMDB.swift in Sources */,
+				3E363A831A436DC8A3854EA9E0FB74B4 /* SwiftyJSON.swift in Sources */,
+				31A0304AA3A26E9CB813B40788D7DD92 /* TMDBSwift-dummy.m in Sources */,
+				32E02AB2B58A3BB39C85FA6FDD0DBCCA /* TranslationsMDB.swift in Sources */,
+				64CC8C257FCE3B55A07DF82B42590063 /* TVCreditsMDB.swift in Sources */,
+				C7C44ACDCD0B97DB0325C41C9D0DCDD7 /* TVDetailedMDB.swift in Sources */,
+				CDF4AA31C9FA4C329690128F5859F651 /* TVEpisodesMDB.swift in Sources */,
+				38E60C8A9A171BA760649A4E0932ED8D /* TVMDB.swift in Sources */,
+				9E8F2619EB6586753DFF0DE85E08EDCA /* TVMDBModel.swift in Sources */,
+				F9AC7C25A6B66C56A47D7319F2295F9E /* TVSeasonsMDB.swift in Sources */,
+				C5A337BCDD1B4239E24A0645C1290A6C /* VideosMDB.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EFF9AAB9E1B5A17435D072964E83E81B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TMDBSwift;
+			target = CD08042101584CD51388D925427AEBAC /* TMDBSwift */;
+			targetProxy = 6F6879F754784CE183FC8932DBC948AF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		61FC5749665EDDB2D90E737333B3BA8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		956EBBE0EA2583DEC851154900D93412 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2F7A58FA06E197A58AF664C8B5A998F /* TMDBSwift.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/TMDBSwift/TMDBSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TMDBSwift/TMDBSwift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/TMDBSwift/TMDBSwift.modulemap";
+				PRODUCT_MODULE_NAME = TMDBSwift;
+				PRODUCT_NAME = TMDBSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C08D506708DD8139439CF32C173D7220 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93474D3AE0D6F8C94C8C919B1EB827D2 /* Pods-Swiflix.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Swiflix/Pods-Swiflix-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Swiflix/Pods-Swiflix.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EBA634AED924A8BA5145B1CF96C8F9E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 735999460ECB2F8F96F7CE212E8556AC /* Pods-Swiflix.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Swiflix/Pods-Swiflix-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Swiflix/Pods-Swiflix.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		ED94E77CB7633F7B8FDF6741A683ACD4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D72CE8D91EC4F8BC4DE480BF91CC132B /* TMDBSwift.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/TMDBSwift/TMDBSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TMDBSwift/TMDBSwift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/TMDBSwift/TMDBSwift.modulemap";
+				PRODUCT_MODULE_NAME = TMDBSwift;
+				PRODUCT_NAME = TMDBSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F671B4D3AA8F2CA18D12CD74BD1CDEF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				61FC5749665EDDB2D90E737333B3BA8D /* Debug */,
+				F671B4D3AA8F2CA18D12CD74BD1CDEF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A015BA9AE2D5B99874247AC4A80653C9 /* Build configuration list for PBXNativeTarget "TMDBSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				956EBBE0EA2583DEC851154900D93412 /* Debug */,
+				ED94E77CB7633F7B8FDF6741A683ACD4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C6B94B5FB99416FF71E2C9674AA03298 /* Build configuration list for PBXNativeTarget "Pods-Swiflix" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C08D506708DD8139439CF32C173D7220 /* Debug */,
+				EBA634AED924A8BA5145B1CF96C8F9E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
