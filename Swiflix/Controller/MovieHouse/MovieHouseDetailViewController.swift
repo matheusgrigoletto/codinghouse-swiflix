@@ -90,7 +90,7 @@ extension MovieHouseDetailViewController: UITableViewDataSource {
         switch self.segmentedIndex {
         case 0: //geral
             let cell = tableView.dequeueReusableCell(withIdentifier: MovieGeralTableViewCell.cellID, for: indexPath) as? MovieGeralTableViewCell
-            cell?.setup(self.fullMovie)
+          //  cell?.setup(self.fullMovie)
             return cell ?? UITableViewCell()
         case 1: // filmes similares
             let cell = tableView.dequeueReusableCell(withIdentifier: GenericMediaTableViewCell.cellID, for: indexPath) as? GenericMediaTableViewCell

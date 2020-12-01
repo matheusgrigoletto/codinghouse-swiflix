@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import TMDBSwift
 
 class MovieGeralTableViewCell: UITableViewCell {
     
@@ -27,16 +28,18 @@ class MovieGeralTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func setup(_ m: FullMovie){
+    func setup(_ m: MovieMDB){
         self.titulo.text = m.title
-        self.tituloOriginal.text = m.originalTitle
+        self.tituloOriginal.text = m.original_title
         self.sinopse.text = m.overview
-        self.duracao.text = "\(m.runtime) min"
-        self.dataLancamento.text = m.releaseDate
+        self.duracao.text = "Não tem tempo"
+        self.dataLancamento.text = m.release_date
         
         self.genero.text = " "
         for g in m.genres {
-            self.genero.text! += "\(g.name), "
+            if let genreName = g.name {
+                self.genero.text! += "\(genreName), "
+            }
         }
     
         self.genero.text?.removeLast()

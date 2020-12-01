@@ -9,8 +9,9 @@ import Foundation
 
 
 struct GenericMedia {
+    let id: Int
     let title:String
-    let rating: Float
+    let rating: Double
     let overview:String
     let poster: String
 }
