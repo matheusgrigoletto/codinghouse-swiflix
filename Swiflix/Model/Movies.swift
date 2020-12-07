@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Movie: Codable {
+struct Movies: Codable {
     
     var id: Int?
     var department: String?

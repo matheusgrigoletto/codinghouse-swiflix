@@ -22,5 +22,5 @@ struct DetailMovie {
     let release_date: String
     let revenue: Int
     let runtime: Int
-    let status: Status
+    let status: Any // Anteriormente como tipo Status
 }

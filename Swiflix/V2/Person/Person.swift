@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Person {
+struct Persons {
     let profile_path:String
     let id: Int
     let name: String

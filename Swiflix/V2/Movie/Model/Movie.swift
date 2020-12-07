@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Movie: Media {
+struct Movie: Codable {
     
     let title: String
     let original_title:String
