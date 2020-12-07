@@ -8,5 +8,7 @@ target 'Swiflix' do
   # Pods for Swiflix
 
   pod 'TMDBSwift', '~> 0.5'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
 
 end

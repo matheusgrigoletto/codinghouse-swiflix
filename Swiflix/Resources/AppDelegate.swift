@@ -7,6 +7,7 @@
 
 import UIKit
 import TMDBSwift
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         TMDBConfig.apikey = "17601f63de363af685777c6cdbb42574"
+        FirebaseApp.configure()
         return true
     }
 
