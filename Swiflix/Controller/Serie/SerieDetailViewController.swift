@@ -13,7 +13,7 @@ class SerieDetailViewController: UIViewController {
     @IBOutlet weak var rateLabel: UILabel!
     @IBOutlet weak var backdrop: UIImageView!
     
-    let serie: Serie = MockupSerie.getOneSerie()
+    var serie: Serie?
     let episodes: [SerieEpisode] = MockupSerie.getEpiosdes()
     let reviews: [Reviews] = MockupSerie.getReviews()
     let similar: [GenericMedia] = MockupSerie.getSeries()
@@ -49,11 +49,17 @@ class SerieDetailViewController: UIViewController {
         
     }
     
+    func setupCell(with serie: Serie) {
+        
+        self.serie = serie
+        
+    }
+    
     func configureUIElements() {
         
         self.serieTableView.sectionHeaderHeight = 30
         
-        if let imageUrl = URL(string: "\(Utils.baseImageURL)\(self.serie.backdrop)") {
+        if let imageUrl = URL(string: "\(Utils.baseImageURL)\(self.serie?.backdrop)") {
             
             do {
                 
@@ -172,7 +178,9 @@ extension SerieDetailViewController: UITableViewDataSource {
         case 0:
             
             let cell = tableView.dequeueReusableCell(withIdentifier: SerieGeralTableViewCell.cellID, for: indexPath) as? SerieGeralTableViewCell
-            cell?.setup(self.serie)
+            if let serie = self.serie {
+                cell?.setup(serie)
+            }
             return cell ?? UITableViewCell()
             
         case 1:

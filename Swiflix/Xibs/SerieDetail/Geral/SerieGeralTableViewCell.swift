@@ -34,12 +34,14 @@ class SerieGeralTableViewCell: UITableViewCell {
         self.duracao.text = "\(m.runtime) min"
         self.dataLancamento.text = m.releaseDate
         
-        self.genero.text = " "
+        self.genero.text = ""
         for g in m.genres {
             self.genero.text! += "\(g.name), "
         }
+
+        if self.genero.text != "" {
+            self.genero.text?.removeLast(2)
+        }
     
-        self.genero.text?.removeLast()
-        self.genero.text?.removeLast()
     }
 }

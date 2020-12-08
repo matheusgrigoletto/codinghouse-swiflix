@@ -44,4 +44,24 @@ class GenericMediaTableViewCell: UITableViewCell {
         }
     }
     
+    func setup(withSerie serie: Serie) {
+        
+        self.title.text = serie.title
+        self.rating.text = "\(Utils.star)\(serie.vote)"
+        self.overview.text = serie.overview
+        
+        if let imageURL = URL(string: "\(Utils.baseImageURL)\(serie.poster)"){
+            do{
+                let imageData:Data = try Data(contentsOf: imageURL)
+                self.poster.image = UIImage(data: imageData)
+            }catch{
+                //fatalError("error gettim image data")
+                print("error handling")
+            }
+        }else{
+            self.poster.image = UIImage(systemName: "camera")
+        }
+        
+    }
+    
 }

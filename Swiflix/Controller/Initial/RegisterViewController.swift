@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class RegisterViewController: UIViewController {
 
@@ -24,6 +25,8 @@ class RegisterViewController: UIViewController {
     
     //MARK: - IBActions
     @IBAction func cadastrarButtonTapped(_ sender: UIButton) {
+         //TODO: Implementar função de criar novo usuário aqui
+        
     }
     @IBAction func chooseImageButtonTapped(_ sender: UIButton) {
     }

@@ -10,4 +10,5 @@ import Foundation
 struct Genres {
     let id: Int
     let name: String
+
 }
