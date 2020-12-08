@@ -52,6 +52,7 @@ class SerieDetailViewController: UIViewController {
     func setupCell(with serie: Serie) {
         
         self.serie = serie
+        self.title = self.serie?.title ?? "Erro"
         
     }
     
@@ -77,6 +78,12 @@ class SerieDetailViewController: UIViewController {
             
             self.backdrop.image = UIImage(systemName: "film")
             
+        }
+        
+        if let vote = self.serie?.vote {
+            self.rateLabel.text = "\(Utils.star)\(vote)"
+        } else {
+            self.rateLabel.text = ""
         }
         
     }

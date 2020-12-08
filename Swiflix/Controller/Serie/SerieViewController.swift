@@ -42,7 +42,7 @@ class SerieViewController: UIViewController {
 
 
     private func getPopularSeries() {
-        TVMDB.popular(page: 1, language: "pt_BR") { (return, series) in
+        TVMDB.popular(page: 1, language: "pt-BR") { (return, series) in
             if let series = series {
                 for serie in series {
                     if let backdrop = serie.backdrop_path,

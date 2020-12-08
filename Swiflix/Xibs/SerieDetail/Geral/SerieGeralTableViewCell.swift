@@ -31,7 +31,7 @@ class SerieGeralTableViewCell: UITableViewCell {
         self.titulo.text = m.title
         self.tituloOriginal.text = m.originalTitle
         self.sinopse.text = m.overview
-        self.duracao.text = "\(m.runtime) min"
+        self.duracao.text = m.runtime != nil ? "\(m.runtime) min" : "Não tem tempo"
         self.dataLancamento.text = m.releaseDate
         
         self.genero.text = ""
