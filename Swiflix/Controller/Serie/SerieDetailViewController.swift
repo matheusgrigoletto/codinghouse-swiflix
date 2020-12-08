@@ -59,7 +59,7 @@ class SerieDetailViewController: UIViewController {
         
         self.serieTableView.sectionHeaderHeight = 30
         
-        if let imageUrl = URL(string: "\(Utils.baseImageURL)\(self.serie?.backdrop)") {
+        if let imageUrl = URL(string: "\(Utils.baseImageURL)\(self.serie?.backdrop ?? "")") {
             
             do {
                 
