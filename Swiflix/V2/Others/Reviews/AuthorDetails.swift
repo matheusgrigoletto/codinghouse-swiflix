@@ -7,9 +7,11 @@
 
 import Foundation
 
-struct AuthorDetails {
+struct AuthorDetails: Codable {
+
     let name: String
     let username: String
-    let avatar_path: String
-    let rating: String
+    let avatar_path: String?
+    let rating: Int
+
 }

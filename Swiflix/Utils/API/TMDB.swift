@@ -107,6 +107,22 @@ struct TMDB {
             
         }
         
+        static func getSeason(number season_number: Int, fromSerie tv_id: Int, language: String = "pt-BR", completion: @escaping (_ result: TvSeason?, _ error: Error?) -> Void) {
+            
+            if let _key = TMDB.key {
+                
+                let url = "https://api.themoviedb.org/3/tv/\(tv_id)/season/\(season_number)?api_key=\(_key)&language=\(language)"
+                
+                TMDB.request(url: url, method: .GET) { (results, error) in
+                    completion(results, error)
+                }
+                
+            } else {
+                completion(nil, NSError())
+            }
+            
+        }
+        
     }
     
 }
