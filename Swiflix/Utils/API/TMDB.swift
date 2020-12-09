@@ -41,6 +41,26 @@ struct TMDB {
         
     }
     
+    class Movie {
+        
+        static func getUpcoming(language: String = "pt-BR", page: Int = 1, region: String = "BR", completion: @escaping (_ result: UpcomingResults?, _ error: Error?) -> Void) {
+         
+            if let _key = TMDB.key {
+                
+                let url = "https://api.themoviedb.org/3/movie/upcoming?api_key=\(_key)&language=\(language)&region=\(region)&page=\(page)"
+                
+                TMDB.request(url: url, method: .GET) { (popular, error) in
+                    completion(popular, error)
+                }
+                
+            } else {
+                completion(nil, NSError())
+            }
+            
+        }
+        
+    }
+    
     class TV {
         
         static func getPopular(language: String = "pt-BR", page: Int = 1, completion: @escaping (_ result: TvResults?, _ error: Error?) -> Void) {
