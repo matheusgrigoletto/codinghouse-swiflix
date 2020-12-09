@@ -13,7 +13,8 @@ class SerieDetailViewController: UIViewController {
     @IBOutlet weak var rateLabel: UILabel!
     @IBOutlet weak var backdrop: UIImageView!
     
-    var serie: Serie?
+//    var serie: Serie?
+    var serie: Tv?
     let episodes: [SerieEpisode] = MockupSerie.getEpiosdes()
     let reviews: [Reviews] = MockupSerie.getReviews()
     let similar: [GenericMedia] = MockupSerie.getSeries()
@@ -49,10 +50,10 @@ class SerieDetailViewController: UIViewController {
         
     }
     
-    func setupCell(with serie: Serie) {
+    func setupCell(with serie: Tv) {
         
         self.serie = serie
-        self.title = self.serie?.title ?? "Erro"
+        self.title = self.serie?.name ?? "Erro"
         
     }
     
@@ -60,7 +61,7 @@ class SerieDetailViewController: UIViewController {
         
         self.serieTableView.sectionHeaderHeight = 30
         
-        if let imageUrl = URL(string: "\(Utils.baseImageURL)\(self.serie?.backdrop ?? "")") {
+        if let imageUrl = URL(string: "\(Utils.baseImageURL)\(self.serie?.backdrop_path ?? "")") {
             
             do {
                 
@@ -80,7 +81,7 @@ class SerieDetailViewController: UIViewController {
             
         }
         
-        if let vote = self.serie?.vote {
+        if let vote = self.serie?.vote_average {
             self.rateLabel.text = "\(Utils.star)\(vote)"
         } else {
             self.rateLabel.text = ""
