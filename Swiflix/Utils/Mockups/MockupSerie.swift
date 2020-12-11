@@ -31,24 +31,24 @@ struct MockupSerie {
         
     }
     
-    static func getOneSerie() -> Serie {
-        
-        return Serie(backdrop: "/mGVrXeIjyecj6TKmwPVpHlscEmw.jpg",
-                     genres: [
-                        Genres(id: 10765,
-                               name: "Ficção científica e fantasia"),
-                        Genres(id: 10759,
-                               name: "Ação e aventura")],
-                     homePage: "https://www.amazon.com/dp/B0875L45GK",
-                     id: 76479,
-                     originalTitle: "The Boys",
-                     overview: "Na trama, conhecemos um mundo em que super-heróis são as maiores celebridades do planeta, e rotineiramente abusam dos seus poderes ao invés de os usarem para o bem.",
-                     poster: "/dzOxNbbz1liFzHU1IPvdgUR647b.jpg",
-                     releaseDate: "2019-07-25",
-                     runtime: 60,
-                     title: "The Boys",
-                     vote: 8.4)
-    }
+//    static func getOneSerie() -> Serie {
+//
+//        return Serie(backdrop: "/mGVrXeIjyecj6TKmwPVpHlscEmw.jpg",
+//                     genres: [
+//                        Genres(id: 10765,
+//                               name: "Ficção científica e fantasia"),
+//                        Genres(id: 10759,
+//                               name: "Ação e aventura")],
+//                     homePage: "https://www.amazon.com/dp/B0875L45GK",
+//                     id: 76479,
+//                     originalTitle: "The Boys",
+//                     overview: "Na trama, conhecemos um mundo em que super-heróis são as maiores celebridades do planeta, e rotineiramente abusam dos seus poderes ao invés de os usarem para o bem.",
+//                     poster: "/dzOxNbbz1liFzHU1IPvdgUR647b.jpg",
+//                     releaseDate: "2019-07-25",
+//                     runtime: 60,
+//                     title: "The Boys",
+//                     vote: 8.4)
+//    }
     
     static func getEpiosdes() -> [SerieEpisode] {
         

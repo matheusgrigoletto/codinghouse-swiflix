@@ -14,7 +14,7 @@ class SerieDetailViewController: UIViewController {
     @IBOutlet weak var backdrop: UIImageView!
     
 //    var serie: Serie?
-    var serie: Tv?
+    var serie: TVDetailResponse?
     let episodes: [SerieEpisode] = MockupSerie.getEpiosdes()
     let reviews: [Reviews] = MockupSerie.getReviews()
     let similar: [GenericMedia] = MockupSerie.getSeries()
@@ -50,7 +50,7 @@ class SerieDetailViewController: UIViewController {
         
     }
     
-    func setupCell(with serie: Tv) {
+    func setupCell(with serie: TVDetailResponse) {
         
         self.serie = serie
         self.title = self.serie?.name ?? "Erro"

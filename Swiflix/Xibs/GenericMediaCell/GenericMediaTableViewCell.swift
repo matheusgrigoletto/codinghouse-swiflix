@@ -44,7 +44,7 @@ class GenericMediaTableViewCell: UITableViewCell {
         }
     }
     
-    func setup(withSerie serie: Tv) {
+    func setup(withSerie serie: TVDetailResponse) {
         
         self.title.text = serie.name
         self.rating.text = "\(Utils.star)\(serie.vote_average ?? 0)"
