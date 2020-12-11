@@ -12,7 +12,7 @@ class SerieViewController: UIViewController {
 
     @IBOutlet weak var serieTableView: UITableView!
 
-    var series: [Serie] = []
+    var series: [Tv] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +34,7 @@ class SerieViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         #warning("passar o id da serie escolhida para a proxima tela")
-        if let serie = sender as? Serie {
+        if let serie = sender as? Tv {
             let vc = segue.destination as? SerieDetailViewController
             vc?.setupCell(with: serie)
         }
@@ -44,20 +44,10 @@ class SerieViewController: UIViewController {
     private func getPopularSeries() {
         TVMDB.popular(page: 1, language: "pt-BR") { (return, series) in
             if let series = series {
-                for serie in series {
-                    if let backdrop = serie.backdrop_path,
-                       let id = serie.id,
-                       let originalTitle = serie.original_name,
-                       let overview = serie.overview,
-                       let poster = serie.poster_path,
-                       let releaseDate = serie.first_air_date,
-                       let title = serie.name,
-                       let vote = serie.vote_average {
-                        let media = Serie(backdrop: backdrop, genres: [], homePage: nil, id: id, originalTitle: originalTitle, overview: overview, poster: poster, releaseDate: releaseDate, runtime: nil, title: title, vote: vote)
-                        self.series.append(media)
-                    }
-                }
+                
+                series.forEach( { self.series.append(Tv.parse(from: $0)) } )
                 self.serieTableView.reloadData()
+                
             }
         }
     }

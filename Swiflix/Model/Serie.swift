@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Serie {
+//TODO: Apagar classe (Substituida por DetailTv)
+struct Seriebw {
     let backdrop: String
     let genres:[Genres]
     let homePage: String?
