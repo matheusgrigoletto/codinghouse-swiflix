@@ -8,8 +8,10 @@
 import Foundation
 
 
-enum Gender: Int {
+enum Gender: Int, Codable {
+    
     case Outro = 0
     case Feminino = 1
     case Masculino = 2
+    
 }

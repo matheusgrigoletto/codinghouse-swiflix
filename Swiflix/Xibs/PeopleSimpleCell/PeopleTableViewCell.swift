@@ -22,15 +22,15 @@ class PeopleTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func configure(person: Person, credits: Credit){
+    func configure(person: PersonDetailResponse, credits: PersonCreditsResponse){
         
         self.actorNameLabel.text = person.name
-        self.jobLabel.text = person.department
-        self.knownWorksLabel.text = credits.cast?
+        self.jobLabel.text = person.known_for_department
+        self.knownWorksLabel.text = credits.cast
             .map( { $0.title ?? "" } )
             .joined(separator: ", ")
         
-        if let imageURL = URL(string: "\(Utils.baseImageURL)\(person.profile ?? "")") {
+        if let imageURL = URL(string: "\(Utils.baseImageURL)\(person.profile_path ?? "")") {
             do {
                 let imageData = try Data(contentsOf: imageURL)
                 self.portraitView.image = UIImage(data: imageData)
