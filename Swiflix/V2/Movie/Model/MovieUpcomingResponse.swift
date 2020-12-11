@@ -7,22 +7,24 @@
 
 import Foundation
 
-struct UpcomingResults: Codable {
+struct MovieUpcomingResponse: Response {
     
     let page: Int
-    let results: [UpcomingMovie]
-    let dates: UpcomingDate
+    let results: [Self.UpcomingMovie]
+    var dates: Self.UpcomingDate?
     let total_pages: Int
     let total_results: Int
     
-    struct UpcomingMovie: Codable {
+    struct UpcomingMovie: Response {
         
         let poster_path: String?
         let adult: Bool
         let overview: String
         let release_date: String
         let genre_ids: [Int]
+        let id: Int
         let original_title: String
+        let original_language: String
         let title: String
         let backdrop_path: String?
         let popularity: Double
@@ -32,7 +34,7 @@ struct UpcomingResults: Codable {
         
     }
     
-    struct UpcomingDate: Codable {
+    struct UpcomingDate: Response {
         
         let maximum: String
         let minimum: String
