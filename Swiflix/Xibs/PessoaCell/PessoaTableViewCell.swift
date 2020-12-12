@@ -26,7 +26,7 @@ class PessoaTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func setup(withPerson person: Person){
+    func setup(withPerson person: Person_old){
         self.name.text = person.name
         self.department.text = person.department
         

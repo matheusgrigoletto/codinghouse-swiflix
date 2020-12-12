@@ -6,13 +6,12 @@
 //
 
 import UIKit
-import TMDBSwift
 
 class SerieViewController: UIViewController {
 
     @IBOutlet weak var serieTableView: UITableView!
 
-    var series: [TVPopularResponse.TV] = []
+    var series: [PopularMedia] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,16 +33,16 @@ class SerieViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         #warning("passar o id da serie escolhida para a proxima tela")
-//        if let serie = sender as? Tv {
+//        if let serie = sender as? TVPopularResponse.TV {
 //            let vc = segue.destination as? SerieDetailViewController
-//            vc?.setupCell(with: serie)
+//            vc?.serieId = serie.id
 //        }
     }
 
 
     private func getPopularSeries() {
         
-        TMDB.TV.getPopular { (results, error) in
+        TMDBTV.getPopular { (results, error) in
             
             if let _results = results {
                 
@@ -52,27 +51,19 @@ class SerieViewController: UIViewController {
             }
             
         }
-//        TVMDB.popular(page: 1, language: "pt-BR") { (return, series) in
-//            if let series = series {
-//
-//                series.forEach( { self.series.append(Tv.parse(from: $0)) } )
-//                self.serieTableView.reloadData()
-//
-//            }
-//        }
+        
     }
 
 }
 
 extension SerieViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return self.series.count
-        return 1
+        return self.series.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: GenericMediaTableViewCell.cellID, for: indexPath) as? GenericMediaTableViewCell
-//        cell?.setup(withSerie: self.series[indexPath.row])
+        cell?.setup(withSerie: self.series[indexPath.row])
         return cell ?? UITableViewCell()
     }
 

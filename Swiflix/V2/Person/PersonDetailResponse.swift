@@ -15,7 +15,7 @@ struct PersonDetailResponse: Response {
     let id: Int
     let name: String
     let also_known_as: [String]
-    let gender: Self.Gender
+    let gender: Gender
     let biography: String
     let popularity: Double
     let place_of_birth: String?
@@ -23,13 +23,5 @@ struct PersonDetailResponse: Response {
     let adult: Bool
     let imdb_id: String
     let homepage: String?
-    
-    enum Gender: Int, Response {
-        
-        case Outro = 0
-        case Feminino = 1
-        case Masculino = 2
-        
-    }
     
 }

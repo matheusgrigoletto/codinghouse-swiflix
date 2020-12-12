@@ -13,8 +13,18 @@ class SerieDetailViewController: UIViewController {
     @IBOutlet weak var rateLabel: UILabel!
     @IBOutlet weak var backdrop: UIImageView!
     
-//    var serie: Serie?
-    var serie: TVDetailResponse?
+    var serieId: Int {
+        set {
+            TMDBTV.getDetails(id: newValue) { (response, error) in
+                self.serie = response
+            }
+        }
+        get {
+            self.serie?.id ?? -1
+        }
+    }
+    
+    var serie: MediaDetailResponse?
     let episodes: [SerieEpisode] = MockupSerie.getEpiosdes()
     let reviews: [Reviews] = MockupSerie.getReviews()
     let similar: [GenericMedia] = MockupSerie.getSeries()
@@ -50,7 +60,7 @@ class SerieDetailViewController: UIViewController {
         
     }
     
-    func setupCell(with serie: TVDetailResponse) {
+    func setupCell(with serie: MediaDetailResponse) {
         
         self.serie = serie
         self.title = self.serie?.name ?? "Erro"

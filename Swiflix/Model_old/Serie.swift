@@ -8,7 +8,7 @@
 import Foundation
 
 //TODO: Apagar classe (Substituida por DetailTv)
-struct Seriebw {
+struct Serie {
     let backdrop: String
     let genres:[Genres]
     let homePage: String?
@@ -20,4 +20,5 @@ struct Seriebw {
     let runtime: Int?
     let title: String
     let vote: Double
+    
 }

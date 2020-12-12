@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Images: Response {
+struct Image: Response {
     
     let aspect_ratio: Double
     let file_path: String

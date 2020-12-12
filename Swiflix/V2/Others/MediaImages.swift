@@ -8,6 +8,8 @@
 import Foundation
 
 struct MediaImages {
-    let backdrops: [Images]
-    let posters: [Images]
+    
+    let backdrops: [Image]
+    let posters: [Image]
+    
 }
