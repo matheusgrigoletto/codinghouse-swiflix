@@ -45,7 +45,7 @@ class SerieGeralTableViewCell: UITableViewCell {
 //
 //    }
     
-    func setup(_ serie: Tv) {
+    func setup(_ serie: MediaDetailResponse) {
         
         self.titulo.text = serie.name
         self.tituloOriginal.text = serie.original_name

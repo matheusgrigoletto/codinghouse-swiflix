@@ -4,7 +4,7 @@
 
 import Foundation
 
-struct ReviewResult: Codable {
+struct ReviewResponse: Response {
 
     let id: Int
     let page: Int

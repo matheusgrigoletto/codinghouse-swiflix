@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct TvResults: Codable {
+struct TVPopularResponse: Response {
 
     let page: Int
     let total_results: Int
     let total_pages: Int
-    let results: [Tv]
+    let results: [PopularMedia]
 
 }

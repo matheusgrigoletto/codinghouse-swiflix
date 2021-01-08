@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct TvSeason: Codable {
+struct TVSeasonResponse: Response {
 
     let _id: String?
     let air_date: String
     let episode_count: Int?
-    let episodes: [TvEpisode]?
+    let episodes: [Episode]?
     let name: String
     let overview: String
     let id: Int

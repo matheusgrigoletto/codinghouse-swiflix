@@ -6,13 +6,12 @@
 //
 
 import UIKit
-import TMDBSwift
 
 class SerieViewController: UIViewController {
 
     @IBOutlet weak var serieTableView: UITableView!
 
-    var series: [Tv] = []
+    var series: [PopularMedia] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,22 +33,25 @@ class SerieViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         #warning("passar o id da serie escolhida para a proxima tela")
-        if let serie = sender as? Tv {
-            let vc = segue.destination as? SerieDetailViewController
-            vc?.setupCell(with: serie)
-        }
+//        if let serie = sender as? TVPopularResponse.TV {
+//            let vc = segue.destination as? SerieDetailViewController
+//            vc?.serieId = serie.id
+//        }
     }
 
 
     private func getPopularSeries() {
-        TVMDB.popular(page: 1, language: "pt-BR") { (return, series) in
-            if let series = series {
+        
+        TMDBTV.getPopular { (results, error) in
+            
+            if let _results = results {
                 
-                series.forEach( { self.series.append(Tv.parse(from: $0)) } )
-                self.serieTableView.reloadData()
+                self.series = _results.results
                 
             }
+            
         }
+        
     }
 
 }

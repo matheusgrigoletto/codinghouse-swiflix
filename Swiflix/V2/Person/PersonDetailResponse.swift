@@ -7,17 +7,21 @@
 
 import Foundation
 
-struct PersonDetail {
-    let profile_path:String
-    let id: Int
-    let name: String
-    let birthday: String
+struct PersonDetailResponse: Response {
+    
+    let birthday: String?
     let known_for_department: String
     let deathday: String?
+    let id: Int
+    let name: String
     let also_known_as: [String]
     let gender: Gender
     let biography: String
+    let popularity: Double
     let place_of_birth: String?
+    let profile_path:String?
+    let adult: Bool
+    let imdb_id: String
     let homepage: String?
-    let known_for: [AnyObject]
+    
 }

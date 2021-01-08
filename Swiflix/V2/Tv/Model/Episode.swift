@@ -1,10 +1,13 @@
 //
-// Created by Erik Radicheski da Silva on 08/12/20.
+//  Episode.swift
+//  Swiflix
+//
+//  Created by Erik Radicheski da Silva on 11/12/20.
 //
 
 import Foundation
 
-struct TvEpisode: Codable {
+struct Episode: Response {
 
     let air_date: String
     let episode_number: Int

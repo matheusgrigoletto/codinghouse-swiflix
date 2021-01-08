@@ -1,5 +1,5 @@
 //
-//  Genre.swift
+//  UpcomingDate.swift
 //  Swiflix
 //
 //  Created by Erik Radicheski da Silva on 11/12/20.
@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct Genre: Response {
+struct UpcomingDate: Response {
     
-    let id: Int
-    let name: String
+    let maximum: String
+    let minimum: String
     
 }

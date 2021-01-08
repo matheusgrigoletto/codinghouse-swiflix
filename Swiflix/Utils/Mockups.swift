@@ -44,12 +44,12 @@ struct MockupMovie {
 }
 
 struct MockupPerson {
-    static func getPeople() -> [Person] {
-        let people: [Person] = [
-            Person(name: "Scarlett Johansson", profile: "/6NsMbJXRlDZuDzatN2akFdGuTvx.jpg", department: "Acting", knownFor: ["Os Vingadores: The Avengers","Vingadores: Guerra Infinita","Capitão América: Guerra Civil"]),
-            Person(name: "Dwayne Johnson", profile: "/cgoy7t5Ve075naBPcewZrc08qGw.jpg", department: "Acting", knownFor: ["Jumanji: Bem-Vindo à Selva","Moana: Um Mar de Aventuras","Velozes e Furiosos 6"]),
-            Person(name: "Jason Statham", profile: "/lldeQ91GwIVff43JBrpdbAAeYWj.jpg", department: "Acting", knownFor: ["Velozes e Furiosos 6","Velozes & Furiosos 7","Velozes e Furiosos 8"]),
-            Person(name: "Anne Hathaway", profile: "/tLelKoPNiyJCSEtQTz1FGv4TLGc.jpg", department: "Acting", knownFor: ["Interestelar","Batman: O Cavaleiro das Trevas Ressurge","Alice no País das Maravilhas"]),
+    static func getPeople() -> [Person_old] {
+        let people: [Person_old] = [
+            Person_old(name: "Scarlett Johansson", profile: "/6NsMbJXRlDZuDzatN2akFdGuTvx.jpg", department: "Acting", knownFor: ["Os Vingadores: The Avengers","Vingadores: Guerra Infinita","Capitão América: Guerra Civil"]),
+            Person_old(name: "Dwayne Johnson", profile: "/cgoy7t5Ve075naBPcewZrc08qGw.jpg", department: "Acting", knownFor: ["Jumanji: Bem-Vindo à Selva","Moana: Um Mar de Aventuras","Velozes e Furiosos 6"]),
+            Person_old(name: "Jason Statham", profile: "/lldeQ91GwIVff43JBrpdbAAeYWj.jpg", department: "Acting", knownFor: ["Velozes e Furiosos 6","Velozes & Furiosos 7","Velozes e Furiosos 8"]),
+            Person_old(name: "Anne Hathaway", profile: "/tLelKoPNiyJCSEtQTz1FGv4TLGc.jpg", department: "Acting", knownFor: ["Interestelar","Batman: O Cavaleiro das Trevas Ressurge","Alice no País das Maravilhas"])
         ]
         
         return people

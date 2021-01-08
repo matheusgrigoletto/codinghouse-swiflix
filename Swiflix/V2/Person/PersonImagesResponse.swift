@@ -7,6 +7,9 @@
 
 import Foundation
 
-struct PersonImages {
-    let profiles: [Images]
+struct PersonImagesResponse: Response {
+    
+    let id: Int
+    let profiles: [Image]
+    
 }

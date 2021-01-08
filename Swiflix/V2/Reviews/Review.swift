@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Review: Codable {
+struct Review: Response {
 
     let author: String
     let author_details: AuthorDetails
@@ -16,5 +16,6 @@ struct Review: Codable {
     let id: String
     let updated_at: String
     let url: String
+
 
 }

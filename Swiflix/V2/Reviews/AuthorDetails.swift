@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct AuthorDetails: Codable {
+struct AuthorDetails: Response {
 
     let name: String
     let username: String
     let avatar_path: String?
-    let rating: Int
+    let rating: Int?
 
 }
