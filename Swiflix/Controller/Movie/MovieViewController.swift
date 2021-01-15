@@ -23,6 +23,7 @@ class MovieViewController: UIViewController {
     }
     
     private func getMovies(){
+        
         MovieMDB.popular(language: "pt-BR", page: 1) { (return, movies) in
             if let movies = movies {
                 for movie in movies {

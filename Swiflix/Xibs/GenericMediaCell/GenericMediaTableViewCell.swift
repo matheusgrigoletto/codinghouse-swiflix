@@ -44,13 +44,13 @@ class GenericMediaTableViewCell: UITableViewCell {
         }
     }
     
-    func setup(withSerie serie: PopularMedia) {
+    func setup(withSerie serie: GenericPopularMedia) {
         
-        self.title.text = serie.name
-        self.rating.text = "\(Utils.star)\(serie.vote_average ?? 0)"
+        self.title.text = serie.title
+        self.rating.text = "\(Utils.star)\(serie.rating ?? 0)"
         self.overview.text = serie.overview
         
-        if let imageURL = URL(string: "\(Utils.baseImageURL)\(serie.poster_path ?? "")"){
+        if let imageURL = URL(string: "\(Utils.baseImageURL)\(serie.poster ?? "")"){
             do{
                 let imageData:Data = try Data(contentsOf: imageURL)
                 self.poster.image = UIImage(data: imageData)

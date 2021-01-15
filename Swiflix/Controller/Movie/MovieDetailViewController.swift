@@ -18,7 +18,7 @@ class MovieDetailViewController: UIViewController {
     var fullMovie:MovieMDB?
     let similarMovies = MockupMovie.getMovies()
     let reviews = MockupMovie.getReviews()
-    let traillers = MockupMovie.getTraillers()
+    var traillers = MockupMovie.getTraillers() 
     
     var segmentedIndex = 0
     
