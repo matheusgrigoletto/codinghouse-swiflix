@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import TMDBSwift
 
 class NewMoviesDetailViewController: UIViewController {
 
@@ -13,17 +14,19 @@ class NewMoviesDetailViewController: UIViewController {
     @IBOutlet weak var rateLabel: UILabel!
     @IBOutlet weak var backdrop: UIImageView!
     
-    let fullMovie:FullMovie = MockupMovie.getFullMovie()
+    var fullMovie: MovieMDB?
     let similarMovies = MockupMovie.getMovies()
     let reviews = MockupMovie.getReviews()
     let traillers = MockupMovie.getTraillers()
     
     var segmentedIndex = 0
     
+    var movieID: Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureDelegates()
-        
+        self.getFullMovies()
         self.registerCells(nibName: MovieGeralTableViewCell.nibName, cellID: MovieGeralTableViewCell.cellID)
         self.registerCells(nibName: GenericMediaTableViewCell.nibName, cellID: GenericMediaTableViewCell.cellID)
         self.registerCells(nibName: MovieCriticaTableViewCell.nibName, cellID: MovieCriticaTableViewCell.cellID)
@@ -32,8 +35,18 @@ class NewMoviesDetailViewController: UIViewController {
         self.configureUIElements()
     }
     
+    
+    private func getFullMovies(){
+        MovieMDB.movie(movieID: self.movieID, language: "pt-BR") { (return, movieDetail) in
+            if let movieDetail = movieDetail {
+                self.fullMovie = movieDetail
+                self.newMoviesTableView.reloadData()
+            }
+        }
+    }
+    
     func configureUIElements(){
-        if let imageUrl = URL(string: "\(Utils.baseImageURL)\(self.fullMovie.backdrop)"){
+        if let imageUrl = URL(string: "\(Utils.baseImageURL)\(self.fullMovie?.backdrop_path)"){
             do{
                 let imageData = try Data(contentsOf: imageUrl)
                 self.backdrop.image = UIImage(data: imageData)
@@ -89,6 +102,9 @@ extension NewMoviesDetailViewController: UITableViewDataSource {
         switch self.segmentedIndex {
         case 0: //geral
             let cell = tableView.dequeueReusableCell(withIdentifier: MovieGeralTableViewCell.cellID, for: indexPath) as? MovieGeralTableViewCell
+            if let fullMovie = self.fullMovie {
+                cell?.setup(fullMovie)
+            }
         //    cell?.setup(self.fullMovie)
             return cell ?? UITableViewCell()
         case 1: // filmes similares
@@ -97,7 +113,7 @@ extension NewMoviesDetailViewController: UITableViewDataSource {
             return cell ?? UITableViewCell()
         case 2: // traillers
             let cell = tableView.dequeueReusableCell(withIdentifier: MovieTraillerTableViewCell.cellID, for: indexPath) as? MovieTraillerTableViewCell
-            cell?.setup(self.traillers[indexPath.row], movieImage: self.fullMovie.poster)
+            cell?.setup(self.traillers[indexPath.row], movieImage: self.fullMovie?.poster_path ?? "")
             return cell ?? UITableViewCell()
         case 3: // criticas
             let cell = tableView.dequeueReusableCell(withIdentifier: MovieCriticaTableViewCell.cellID, for: indexPath) as? MovieCriticaTableViewCell

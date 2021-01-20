@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import TMDBSwift
 
 class SerieDetailViewController: UIViewController {
     
@@ -13,29 +14,32 @@ class SerieDetailViewController: UIViewController {
     @IBOutlet weak var rateLabel: UILabel!
     @IBOutlet weak var backdrop: UIImageView!
     
-    var serieId: Int {
-        set {
-            TMDBTV.getDetails(id: newValue) { (response, error) in
-                self.serie = response
-            }
-        }
-        get {
-            self.serie?.id ?? -1
-        }
-    }
+    //    var serieId: Int {
+    //        set {
+    //            TMDBTV.getDetails(id: newValue) { (response, error) in
+    //                self.serie = response
+    //            }
+    //        }
+    //        get {
+    //            self.serie?.id ?? -1
+    //        }
+    //    }
     
-    var serie: MediaDetailResponse?
+    var fullSeries: TVMDB?
     let episodes: [SerieEpisode] = MockupSerie.getEpiosdes()
     let reviews: [Reviews] = MockupSerie.getReviews()
     let similar: [GenericMedia] = MockupSerie.getSeries()
     
     var segmentedIndex = 0
     
+    var serieID:Int?
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
         self.configureDelegates()
+        self.getFullSerie()
         
         self.registerCells(nibName: SerieGeralTableViewCell.nibName, cellID: SerieGeralTableViewCell.cellID)
         self.registerCells(nibName: SerieEpisodesTableViewCell.nibName, cellID: SerieEpisodesTableViewCell.cellID)
@@ -46,32 +50,34 @@ class SerieDetailViewController: UIViewController {
         
     }
     
-    func configureDelegates() {
+    private func getFullSerie(){
+        TVMDB.tv(tvShowID: serieID, language: "pt-BR") { (return, serieDetail) in
+            if let serieDetail = serieDetail {
+                self.fullSeries = serieDetail
+                self.serieTableView.reloadData()
+            }
+        }
         
-        self.serieTableView.delegate = self
-        self.serieTableView.dataSource = self
-        
-    }
-    
-    func registerCells(nibName: String, cellID: String) {
-        
-        let nib = UINib(nibName: nibName, bundle: nil)
-        self.serieTableView.register(nib, forCellReuseIdentifier: cellID)
         
     }
     
-    func setupCell(with serie: MediaDetailResponse) {
+    func configureUIElements(){
+//        if let imageUrl = URL(string: "\(Utils.baseImageURL)\(self.fullSeries?.backdrop_path)"){
+//            do{
+//                let imageData = try Data(contentsOf: imageUrl)
+//                self.backdrop.image = UIImage(data: imageData)
+//            }catch{
+//                print(error.localizedDescription)
+//                self.backdrop.image = UIImage(systemName: "film")
+//            }
+//        }else{
+//            self.backdrop.image = UIImage(systemName: "film")
+//        }
         
-        self.serie = serie
-        self.title = self.serie?.name ?? "Erro"
-        
-    }
-    
-    func configureUIElements() {
         
         self.serieTableView.sectionHeaderHeight = 30
         
-        if let imageUrl = URL(string: "\(Utils.baseImageURL)\(self.serie?.backdrop_path ?? "")") {
+        if let imageUrl = URL(string: "\(Utils.baseImageURL)\(self.fullSeries?.backdrop_path ?? "")") {
             
             do {
                 
@@ -91,20 +97,77 @@ class SerieDetailViewController: UIViewController {
             
         }
         
-        if let vote = self.serie?.vote_average {
+        if let vote = self.fullSeries?.vote_average {
             self.rateLabel.text = "\(Utils.star)\(vote)"
         } else {
             self.rateLabel.text = ""
         }
+    }
+    
+    
+    
+    
+    
+    func configureDelegates() {
+        
+        self.serieTableView.delegate = self
+        self.serieTableView.dataSource = self
+        self.serieTableView.tableFooterView = UIView()
         
     }
     
-    @IBAction func segmentedChanged(_ sender: UISegmentedControl) {
+    func registerCells(nibName: String, cellID: String) {
         
-        self.segmentedIndex = sender.selectedSegmentIndex
-        self.serieTableView.reloadData()
+        let nib = UINib(nibName: nibName, bundle: nil)
+        self.serieTableView.register(nib, forCellReuseIdentifier: cellID)
         
     }
+    //
+    //func setupCell(with serie: MediaDetailResponse) {
+    //
+    //    self.fullSeries = serie
+    //    self.title = self.fullSeries?.name ?? "Erro"
+    //
+    //}
+    
+    @IBAction func segmentedChanged(_ sender: UISegmentedControl) {
+        self.segmentedIndex = sender.selectedSegmentIndex
+        self.serieTableView.reloadData()
+    }
+    
+    
+//    func configureUIElements() {
+//
+//        self.serieTableView.sectionHeaderHeight = 30
+//
+//        if let imageUrl = URL(string: "\(Utils.baseImageURL)\(self.serie?.backdrop_path ?? "")") {
+//
+//            do {
+//
+//                let imageData = try Data(contentsOf: imageUrl)
+//                self.backdrop.image = UIImage(data: imageData)
+//
+//            } catch {
+//
+//                print(error.localizedDescription)
+//                self.backdrop.image = UIImage(systemName: "film")
+//
+//            }
+//
+//        } else {
+//
+//            self.backdrop.image = UIImage(systemName: "film")
+//
+//        }
+//
+//        if let vote = self.serie?.vote_average {
+//            self.rateLabel.text = "\(Utils.star)\(vote)"
+//        } else {
+//            self.rateLabel.text = ""
+//        }
+//
+//    }
+    
     
 }
 
@@ -196,7 +259,7 @@ extension SerieDetailViewController: UITableViewDataSource {
         case 0:
             
             let cell = tableView.dequeueReusableCell(withIdentifier: SerieGeralTableViewCell.cellID, for: indexPath) as? SerieGeralTableViewCell
-            if let serie = self.serie {
+            if let serie = self.fullSeries {
                 cell?.setup(serie)
             }
             return cell ?? UITableViewCell()

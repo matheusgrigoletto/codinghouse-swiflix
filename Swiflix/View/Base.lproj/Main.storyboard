@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0wQ-2h-rwz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0wQ-2h-rwz">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swiflix" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="ciG-96-N8I">
-                                <rect key="frame" x="60" y="290" width="294" height="116.5"/>
+                                <rect key="frame" x="60" y="286" width="294" height="124.5"/>
                                 <fontDescription key="fontDescription" name="BerkshireSwash-Regular" family="Berkshire Swash" pointSize="100"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
@@ -105,7 +105,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swiflix" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="eZr-bx-Rb0">
-                                <rect key="frame" x="60" y="290" width="294" height="116.5"/>
+                                <rect key="frame" x="60" y="286" width="294" height="124.5"/>
                                 <fontDescription key="fontDescription" name="BerkshireSwash-Regular" family="Berkshire Swash" pointSize="100"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
@@ -237,13 +237,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swiflix" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="mXu-N9-7BP">
-                                <rect key="frame" x="60" y="150" width="294" height="58.5"/>
+                                <rect key="frame" x="60" y="158.5" width="294" height="62.5"/>
                                 <fontDescription key="fontDescription" name="BerkshireSwash-Regular" family="Berkshire Swash" pointSize="50"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Zuc-Bf-WJq" userLabel="TextFields">
-                                <rect key="frame" x="20" y="356.5" width="374" height="210"/>
+                                <rect key="frame" x="20" y="369" width="374" height="210"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome Completo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d0M-P0-y6n">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
@@ -295,7 +295,7 @@
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="mMe-Hi-lUp">
-                                <rect key="frame" x="143" y="219" width="128" height="127"/>
+                                <rect key="frame" x="143" y="231.5" width="128" height="127"/>
                                 <color key="tintColor" red="0.3740689767" green="0.3740689767" blue="0.3740689767" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="128" id="dtI-fV-ZTV"/>
@@ -318,7 +318,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pq4-xn-0Z6">
-                                <rect key="frame" x="143" y="218.5" width="128" height="128"/>
+                                <rect key="frame" x="143" y="231" width="128" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="EZY-lk-IOz"/>
                                     <constraint firstAttribute="width" constant="128" id="Kzb-gI-Yec"/>
@@ -362,7 +362,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="YTr-7P-JR0"/>
+        <segue reference="hzg-Ac-yqH"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="camera.circle.fill" catalog="system" width="128" height="121"/>

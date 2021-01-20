@@ -23,6 +23,7 @@ class PeopleDetailViewController: UIViewController {
     let galery = MockupPhoto.getPhotos()
 
     var segmentedIndex = 0
+    var personID:Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()

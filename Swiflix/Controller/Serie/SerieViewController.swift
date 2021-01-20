@@ -37,7 +37,8 @@ class SerieViewController: UIViewController {
                 if let serie = sender as? GenericPopularMedia {
                     let vc = segue.destination as? SerieDetailViewController
                     vc?.title = serie.title ?? "Erro"
-                    vc?.serieId = serie.id
+                    vc?.serieID = serie.id
+                    
                 }
     }
     

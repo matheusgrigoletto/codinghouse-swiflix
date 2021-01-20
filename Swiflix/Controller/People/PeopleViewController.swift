@@ -1,9 +1,11 @@
+
 //
 //  PeopleViewController.swift
 //  Swiflix
 //
 //  Created by Vanessa Montagner on 26/10/20.
 //
+
 
 import UIKit
 
@@ -61,4 +63,3 @@ extension PeopleViewController: UITableViewDelegate {
         performSegue(withIdentifier: Segues.toPersonDetail, sender: chosenPeople)
     }
 }
-

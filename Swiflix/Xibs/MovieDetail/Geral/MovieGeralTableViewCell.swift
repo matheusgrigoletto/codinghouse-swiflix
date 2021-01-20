@@ -45,4 +45,8 @@ class MovieGeralTableViewCell: UITableViewCell {
         self.genero.text?.removeLast()
         self.genero.text?.removeLast()
     }
+    
+//    func setup(_ movie: MovieDetailedMDB){
+//        self.duracao.text = String
+//    }
 }

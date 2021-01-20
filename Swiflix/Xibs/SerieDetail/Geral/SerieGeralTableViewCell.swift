@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import TMDBSwift
 
 class SerieGeralTableViewCell: UITableViewCell {
     
@@ -45,7 +46,7 @@ class SerieGeralTableViewCell: UITableViewCell {
 //
 //    }
     
-    func setup(_ serie: MediaDetailResponse) {
+    func setup(_ serie: TVMDB) {
         
         self.titulo.text = serie.name
         self.tituloOriginal.text = serie.original_name

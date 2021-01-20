@@ -6,17 +6,42 @@
 //
 
 import UIKit
+import TMDBSwift
 
 class MovieHouseViewController: UIViewController {
 
     @IBOutlet weak var movieHouseTableView: UITableView!
     
-    let movies:[GenericMedia] = MockupMovie.getMovies()
+    var movies:[GenericMedia] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.registerCell(nib: GenericMediaTableViewCell.nibName, cellID: GenericMediaTableViewCell.cellID)
         self.configureDelegates()
+        self.getMovieHouse()
+    }
+    
+    private func getMovieHouse(){
+        
+        MovieMDB.nowplaying(language: "pt-BR", page: 1) { (return, movies) in
+            if let movies = movies {
+                for movie in movies {
+                    if
+                        let title = movie.title,
+                        let id = movie.id,
+                        let rating = movie.vote_average,
+                        let overview = movie.overview,
+                        let poster = movie.poster_path{
+                                    
+                        let generic = GenericMedia(id: id, title: title, rating: rating, overview: overview, poster: poster)
+                        self.movies.append(generic)
+                    }
+                }
+                self.movieHouseTableView.reloadData()
+            }
+        }
+        
+        
     }
     
     func registerCell(nib:String, cellID: String){
@@ -26,7 +51,7 @@ class MovieHouseViewController: UIViewController {
     
     func configureDelegates(){
         self.movieHouseTableView.delegate = self
-        self.movieHouseTableView.dataSource = self
+        self.movieHouseTableView.dataSource = self 
     }
     
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -34,6 +59,7 @@ class MovieHouseViewController: UIViewController {
             let movie = sender as? GenericMedia
             let vc = segue.destination as? MovieHouseDetailViewController
             vc?.title = movie?.title ?? "Erro"
+            vc?.movieID = movie?.id
         }
 }
 

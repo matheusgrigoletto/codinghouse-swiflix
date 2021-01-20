@@ -465,6 +465,7 @@
 				AD455A6C2584092300383835 /* DetailMovie.swift */,
 				ADA8789D25842C6900B7B722 /* SimilarMovie.swift */,
 				ADA878A125842CB700B7B722 /* MovieTrailer.swift */,
+				C38A0338255360A300E6C010 /* GenericMedia.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -671,7 +672,6 @@
 			children = (
 				C38A033E2553612000E6C010 /* PersonPhotoGallery.swift */,
 				C38A033B2553610300E6C010 /* FullPerson.swift */,
-				C38A0338255360A300E6C010 /* GenericMedia.swift */,
 				AD64EA41254E2B9500F63F89 /* Movies.swift */,
 				AD64EA40254E2B9500F63F89 /* Person_old.swift */,
 				C309565F25477CE500E5A75E /* SimpleMovieSerie.swift */,
