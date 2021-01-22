@@ -8,15 +8,20 @@
 import UIKit
 import Firebase
 
-class RegisterViewController: UIViewController, UITextFieldDelegate {
+class RegisterViewController: UIViewController {
 
     //MARK: - IBOutlets
+    @IBOutlet weak var photoButton: UIImageView!
+   // @IBOutlet weak var photoButton: UIButton!
     @IBOutlet weak var nomeTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var confirmarEmailTextField: UITextField!
     @IBOutlet weak var senhaTextField: UITextField!
     @IBOutlet weak var confirmarSenhaTextField: UITextField!
     @IBOutlet weak var cadastrarButton: UIButton!
+    
+    
+    var imagePicker = UIImagePickerController()
     
     //MARK: - View LifeCycle
     override func viewDidLoad() {
@@ -28,39 +33,31 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         confirmarSenhaTextField.delegate = self
         
         
+        photoButton.layer.borderWidth = 1
+        photoButton.layer.masksToBounds = false
+        photoButton.layer.borderColor = UIColor.black.cgColor
+        photoButton.layer.cornerRadius = photoButton.frame.height/2
+        photoButton.clipsToBounds = true
+        
+        
         
         super.viewDidLoad()
         escondeTecladoClicandoFora()
         
-        nomeTextField.backgroundColor = .systemGray
-        emailTextField.backgroundColor = .systemGray
-        confirmarEmailTextField.backgroundColor = .systemGray
-        senhaTextField.backgroundColor = .systemGray
-        confirmarSenhaTextField.backgroundColor = .systemGray
+        nomeTextField.backgroundColor = .white
+        emailTextField.backgroundColor = .white
+        confirmarEmailTextField.backgroundColor = .white
+        senhaTextField.backgroundColor = .white
+        confirmarSenhaTextField.backgroundColor = .white
         
         
     }
     
   
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        if textField == self.nomeTextField {
-            self.nomeTextField.backgroundColor = .white
-            self.nomeTextField.textColor = .black
-        } else if textField == self.emailTextField {
-            self.emailTextField.backgroundColor = .white
-            self.emailTextField.textColor = .black
-        } else if textField == self.confirmarEmailTextField {
-            self.confirmarEmailTextField.backgroundColor = .white
-            self.confirmarEmailTextField.textColor = .black
-        } else if textField == self.senhaTextField {
-            self.senhaTextField.backgroundColor = .white
-            self.senhaTextField.textColor = .black
-        } else if textField == self.confirmarSenhaTextField {
-            self.confirmarSenhaTextField.backgroundColor = .white
-            self.confirmarSenhaTextField.textColor = .black
-        }
-    }
     
+    
+    
+ 
     
 //MARK: - Tentativa de validar email
     //Validar TextFields emails iguais e senhas iguais
@@ -87,7 +84,20 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
 //            }
         }
     
-     
+    private func getImage(fromSourceType sourceType: UIImagePickerController.SourceType) {
+         
+         if UIImagePickerController.isSourceTypeAvailable(sourceType) {
+             
+             let imagePickerController = UIImagePickerController()
+             imagePickerController.delegate = self
+             imagePickerController.sourceType = sourceType
+             
+             self.present(imagePickerController, animated: true, completion: nil)
+             
+         }
+         
+     }
+    
     
     
     //MARK: - IBActions
@@ -95,8 +105,12 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     @IBAction func cadastrarButtonTapped(_ sender: UIButton) {
          //TODO: Implementar função de criar novo usuário aqui
         
+        
     }
     @IBAction func chooseImageButtonTapped(_ sender: UIButton) {
+        
+        self.getImage(fromSourceType: .photoLibrary)
+        present(imagePicker, animated: true, completion: nil)
     }
     
     
@@ -115,5 +129,70 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
 //        }))
 
         present(refreshAlert, animated: true, completion: nil)
+    }
+
+  
+    
+}
+
+
+
+
+extension RegisterViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    
+            switch textField {
+            case self.nomeTextField:
+                self.emailTextField.becomeFirstResponder()
+            case self.emailTextField:
+                self.confirmarEmailTextField.becomeFirstResponder()
+            case self.confirmarEmailTextField:
+                self.senhaTextField.becomeFirstResponder()
+            case self.senhaTextField:
+                self.confirmarSenhaTextField.becomeFirstResponder()
+            case self.confirmarSenhaTextField:
+                self.confirmarSenhaTextField.resignFirstResponder()
+            default:break
+            }
+    
+            return true
+        }
+}
+
+
+//MARK: UIImagePickerControllerDelegate UINavigationControllerDelegate
+extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        let imageURL = info[UIImagePickerController.InfoKey.referenceURL] as! NSURL
+        
+        let urlImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+
+        
+        
+        photoButton.image = urlImage
+        
+       // self.photoButton.layer.cornerRadius = 100
+        
+        
+        print("urlImage:\(urlImage)")
+        
+        print("=========\(info)")
+        picker.dismiss(animated: true, completion: nil)
+        
+    }
+}
+
+extension UIImageView {
+
+    func makeRounded() {
+
+        self.layer.borderWidth = 1
+        self.layer.masksToBounds = false
+        self.layer.borderColor = UIColor.black.cgColor
+        self.layer.cornerRadius = self.frame.height / 2
+        self.clipsToBounds = true
     }
 }
