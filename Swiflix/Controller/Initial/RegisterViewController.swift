@@ -75,7 +75,11 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
    
     
      func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
-        textField.backgroundColor = .systemGray
+        if textField.text != ""{
+            textField.backgroundColor = .white
+        }else{
+            textField.backgroundColor = .systemGray
+        }
 
 //        if confirmarEmailTextField.isSelected == true {
 //            if self.confirmarEmailTextField != self.emailTextField{
