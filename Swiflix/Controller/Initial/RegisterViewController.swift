@@ -74,16 +74,16 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
 
    
     
-//     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
-//        textField.backgroundColor = .systemGray
-//
+     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        textField.backgroundColor = .systemGray
+
 //        if confirmarEmailTextField.isSelected == true {
 //            if self.confirmarEmailTextField != self.emailTextField{
 //                alertaEmail()
 //            }
-//        }
+        }
     
-//     }
+     }
     
     
     //MARK: - IBActions
