@@ -48,6 +48,7 @@ class MovieDetailViewController: UIViewController {
             if let movieDetail = movieDetail {
                 self.fullMovie = movieDetail
                 self.movieTableView.reloadData()
+                self.configureUIElements()
             }
         }
     }
@@ -84,7 +85,7 @@ class MovieDetailViewController: UIViewController {
     }
     
     func configureUIElements(){
-        if let imageUrl = URL(string: "\(Utils.baseImageURL)\(self.fullMovie?.backdrop_path)"){
+        if let imageUrl = URL(string: "\(Utils.baseImageURL)\(self.fullMovie?.backdrop_path ?? "")"){
             do{
                 let imageData = try Data(contentsOf: imageUrl)
                 self.backdrop.image = UIImage(data: imageData)
@@ -94,6 +95,10 @@ class MovieDetailViewController: UIViewController {
             }
         }else{
             self.backdrop.image = UIImage(systemName: "film")
+        }
+        
+        if let rate = self.fullMovie?.vote_average {
+            self.rateLabel.text = "⭐️\(rate)"
         }
     }
     
