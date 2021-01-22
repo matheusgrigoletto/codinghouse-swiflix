@@ -17,7 +17,7 @@ class SerieDetailViewController: UIViewController {
     var fullSeries: MediaDetailResponse?
     var episodes: [Episode] = []
     let reviews: [Reviews] = MockupSerie.getReviews()
-    let similar: [GenericMedia] = MockupSerie.getSeries()
+    var similar: [Similar] = []
     
     var segmentedIndex = 0
     
@@ -29,6 +29,7 @@ class SerieDetailViewController: UIViewController {
         
         self.configureDelegates()
         self.getFullSerie()
+        self.getSimilar()
         
         self.registerCells(nibName: SerieGeralTableViewCell.nibName, cellID: SerieGeralTableViewCell.cellID)
         self.registerCells(nibName: SerieEpisodesTableViewCell.nibName, cellID: SerieEpisodesTableViewCell.cellID)
@@ -77,6 +78,21 @@ class SerieDetailViewController: UIViewController {
                 
             }
             
+        }
+        
+    }
+    
+    private func getSimilar() {
+        
+        if let id = self.serieID {
+            TMDBTV.getSimilar(id: id) { (response, error) in
+                if let response = response {
+                    self.similar = response.results
+                }
+                if let error = error {
+                    print(error)
+                }
+            }
         }
         
     }
@@ -238,7 +254,7 @@ extension SerieDetailViewController: UITableViewDataSource {
         case 2:
             
             let cell = tableView.dequeueReusableCell(withIdentifier: GenericMediaTableViewCell.cellID, for: indexPath) as? GenericMediaTableViewCell
-            cell?.setup(withMedia: self.similar[indexPath.row])
+            cell?.setup(withMedia: self.similar[indexPath.row].asGenericMedia)
             return cell ?? UITableViewCell()
             
         case 3:

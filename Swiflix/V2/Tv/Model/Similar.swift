@@ -23,4 +23,14 @@ struct Similar: Codable {
     let name: String
     let original_name: String
     
+    var asGenericMedia: GenericMedia {
+        get {
+            GenericMedia(id: self.id,
+                         title: self.name,
+                         rating: self.vote_average,
+                         overview: self.overview,
+                         poster: self.poster_path ?? self.backdrop_path ?? "")
+        }
+    }
+    
 }
