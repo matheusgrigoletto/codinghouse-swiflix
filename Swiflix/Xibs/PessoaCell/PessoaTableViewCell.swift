@@ -26,19 +26,21 @@ class PessoaTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func setup(withPerson person: Person_old){
+    func setup(withPerson person: Person){
         self.name.text = person.name
-        self.department.text = person.department
+        self.department.text = person.known_for_department
         
         var known:String = ""
-        for value in person.knownFor {
-            known += "\(Utils.movie) \(value)\n"
+        for value in person.known_for {
+            if let title = value.title {
+                known += "\(Utils.movie) \(title)\n"
+            }
         }
 //        known.removeLast()
 //        known.removeLast()
         self.knowFor.text = known
         
-        if let imageURL = URL(string: "\(Utils.baseImageURL)\(person.profile)") {
+        if let imageURL = URL(string: "\(Utils.baseImageURL)\(person.profile_path)") {
             do{
                 let imageData = try Data(contentsOf: imageURL)
                 self.profile.image = UIImage(data: imageData)

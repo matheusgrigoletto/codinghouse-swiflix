@@ -8,18 +8,31 @@
 
 
 import UIKit
+import TMDBSwift
 
 class PeopleViewController: UIViewController {
 
     @IBOutlet weak var peopleTableView: UITableView!
     
-    let pessoas = MockupPerson.getPeople()
+    var pessoas: [Person] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureDelegates()
         self.registerCell()
         escondeTecladoClicandoFora()
+        self.getMovies()
+    }
+    
+    private func getMovies() {
+        TMDBPeople.getPopular { (people, error) in
+            if let people = people {
+                self.pessoas = people.results
+            }
+            DispatchQueue.main.async {
+                self.peopleTableView.reloadData()
+            }
+        }
     }
     
     func configureDelegates(){
