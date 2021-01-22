@@ -16,6 +16,13 @@ struct Review: Response {
     let id: String
     let updated_at: String
     let url: String
+    
+    var asReviews: Reviews {
+        get {
+            return Reviews(author: self.author,
+                           content: self.content)
+        }
+    }
 
 
 }

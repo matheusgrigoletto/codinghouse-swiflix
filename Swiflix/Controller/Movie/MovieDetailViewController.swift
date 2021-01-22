@@ -16,9 +16,8 @@ class MovieDetailViewController: UIViewController {
     
     //let fullMovie:FullMovie = MockupMovie.getFullMovie()
     var fullMovie:MovieMDB?
-//    var similarMovies = MockupMovie.getMovies()
     var similarMovies: [SimilarMovie] = []
-    let reviews = MockupMovie.getReviews()
+    var reviews: [Review] = []
     var traillers = MockupMovie.getTraillers() 
     
     var segmentedIndex = 0
@@ -33,6 +32,7 @@ class MovieDetailViewController: UIViewController {
         escondeTecladoClicandoFora()
         self.getFullMovie()
         self.getSimilarMovies()
+        self.getReviews()
         
         self.registerCells(nibName: MovieGeralTableViewCell.nibName, cellID: MovieGeralTableViewCell.cellID)
         self.registerCells(nibName: GenericMediaTableViewCell.nibName, cellID: GenericMediaTableViewCell.cellID)
@@ -46,7 +46,6 @@ class MovieDetailViewController: UIViewController {
         MovieMDB.movie(movieID: self.movieID, language: "pt-BR") { (return, movieDetail) in
             if let movieDetail = movieDetail {
                 self.fullMovie = movieDetail
-                print(movieDetail.id)
                 self.movieTableView.reloadData()
             }
         }
@@ -57,6 +56,17 @@ class MovieDetailViewController: UIViewController {
             TMDBMovies.getSimilar(id: id) { (response, error) in
                 if let response = response {
                     self.similarMovies = response.results
+                }
+            }
+        }
+    }
+    
+    private func getReviews() {
+        if let id = self.movieID {
+            #warning("Mostrando reviews em inglês porque alguns filmes não tem review em português")
+            TMDBMovies.getReviews(id: id, language: "en-US") { (response, error) in
+                if let response = response {
+                    self.reviews = response.results
                 }
             }
         }
@@ -133,7 +143,7 @@ extension MovieDetailViewController: UITableViewDataSource {
             return cell ?? UITableViewCell()
         case 3: // criticas
             let cell = tableView.dequeueReusableCell(withIdentifier: MovieCriticaTableViewCell.cellID, for: indexPath) as? MovieCriticaTableViewCell
-            cell?.setup(self.reviews[indexPath.row])
+            cell?.setup(self.reviews[indexPath.row].asReviews)
             return cell ?? UITableViewCell()
         default:
             return UITableViewCell()
