@@ -15,9 +15,9 @@ class NewMoviesDetailViewController: UIViewController {
     @IBOutlet weak var backdrop: UIImageView!
     
     var fullMovie: MovieMDB?
-    let similarMovies = MockupMovie.getMovies()
-    let reviews = MockupMovie.getReviews()
-    let traillers = MockupMovie.getTraillers()
+    var similarMovies: [SimilarMovie] = []
+    var reviews: [Review] = []
+    var traillers: [MovieTrailer] = []
     
     var segmentedIndex = 0
     
@@ -27,6 +27,10 @@ class NewMoviesDetailViewController: UIViewController {
         super.viewDidLoad()
         self.configureDelegates()
         self.getFullMovies()
+        self.getSimilarMovies()
+        self.getReviews()
+        self.getTrailers()
+        
         self.registerCells(nibName: MovieGeralTableViewCell.nibName, cellID: MovieGeralTableViewCell.cellID)
         self.registerCells(nibName: GenericMediaTableViewCell.nibName, cellID: GenericMediaTableViewCell.cellID)
         self.registerCells(nibName: MovieCriticaTableViewCell.nibName, cellID: MovieCriticaTableViewCell.cellID)
@@ -46,8 +50,39 @@ class NewMoviesDetailViewController: UIViewController {
         }
     }
     
+    private func getSimilarMovies() {
+        if let id = self.movieID {
+            TMDBMovies.getSimilar(id: id) { (response, error) in
+                if let response = response {
+                    self.similarMovies = response.results
+                }
+            }
+        }
+    }
+    
+    private func getReviews() {
+        if let id = self.movieID {
+            #warning("Mostrando reviews em inglês porque alguns filmes não tem review em português")
+            TMDBMovies.getReviews(id: id, language: "en-US") { (response, error) in
+                if let response = response {
+                    self.reviews = response.results
+                }
+            }
+        }
+    }
+    
+    private func getTrailers() {
+        if let id = self.movieID {
+            TMDBMovies.getTrailers(id: id) { (response, error) in
+                if let response = response {
+                    self.traillers = response.results
+                }
+            }
+        }
+    }
+    
     func configureUIElements(){
-        if let imageUrl = URL(string: "\(Utils.baseImageURL)\(self.fullMovie?.backdrop_path ?? ")"){
+        if let imageUrl = URL(string: "\(Utils.baseImageURL)\(self.fullMovie?.backdrop_path ?? "")"){
             do{
                 let imageData = try Data(contentsOf: imageUrl)
                 self.backdrop.image = UIImage(data: imageData)
@@ -115,15 +150,15 @@ extension NewMoviesDetailViewController: UITableViewDataSource {
             return cell ?? UITableViewCell()
         case 1: // filmes similares
             let cell = tableView.dequeueReusableCell(withIdentifier: GenericMediaTableViewCell.cellID, for: indexPath) as? GenericMediaTableViewCell
-            cell?.setup(withMedia: self.similarMovies[indexPath.row])
+            cell?.setup(withMedia: self.similarMovies[indexPath.row].genericMedia)
             return cell ?? UITableViewCell()
         case 2: // traillers
             let cell = tableView.dequeueReusableCell(withIdentifier: MovieTraillerTableViewCell.cellID, for: indexPath) as? MovieTraillerTableViewCell
-            cell?.setup(self.traillers[indexPath.row], movieImage: self.fullMovie?.poster_path ?? "")
+            cell?.setup(self.traillers[indexPath.row].asMovieTrailler, movieImage: self.fullMovie?.poster_path ?? "")
             return cell ?? UITableViewCell()
         case 3: // criticas
             let cell = tableView.dequeueReusableCell(withIdentifier: MovieCriticaTableViewCell.cellID, for: indexPath) as? MovieCriticaTableViewCell
-            cell?.setup(self.reviews[indexPath.row])
+            cell?.setup(self.reviews[indexPath.row].asReviews)
             return cell ?? UITableViewCell()
         default:
           return UITableViewCell()
