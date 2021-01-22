@@ -16,7 +16,7 @@ class SerieDetailViewController: UIViewController {
     
     var fullSeries: MediaDetailResponse?
     var episodes: [Episode] = []
-    let reviews: [Reviews] = MockupSerie.getReviews()
+    var reviews: [Review] = []
     var similar: [Similar] = []
     
     var segmentedIndex = 0
@@ -30,6 +30,7 @@ class SerieDetailViewController: UIViewController {
         self.configureDelegates()
         self.getFullSerie()
         self.getSimilar()
+        self.getReviews()
         
         self.registerCells(nibName: SerieGeralTableViewCell.nibName, cellID: SerieGeralTableViewCell.cellID)
         self.registerCells(nibName: SerieEpisodesTableViewCell.nibName, cellID: SerieEpisodesTableViewCell.cellID)
@@ -91,6 +92,19 @@ class SerieDetailViewController: UIViewController {
                 }
                 if let error = error {
                     print(error)
+                }
+            }
+        }
+        
+    }
+    
+    private func getReviews() {
+        
+        if let id = self.serieID {
+            #warning("Mostrando reviews em inglês porque alguns filmes não tem review em português")
+            TMDBTV.getReviews(id: id, language: "en-US") { (response, error) in
+                if let response = response {
+                    self.reviews = response.results
                 }
             }
         }
@@ -260,7 +274,7 @@ extension SerieDetailViewController: UITableViewDataSource {
         case 3:
             
             let cell = tableView.dequeueReusableCell(withIdentifier: MovieCriticaTableViewCell.cellID, for: indexPath) as? MovieCriticaTableViewCell
-            cell?.setup(self.reviews[indexPath.row])
+            cell?.setup(self.reviews[indexPath.row].asReviews)
             return cell ?? UITableViewCell()
             
         default:
