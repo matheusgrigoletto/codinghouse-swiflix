@@ -14,19 +14,8 @@ class SerieDetailViewController: UIViewController {
     @IBOutlet weak var rateLabel: UILabel!
     @IBOutlet weak var backdrop: UIImageView!
     
-    //    var serieId: Int {
-    //        set {
-    //            TMDBTV.getDetails(id: newValue) { (response, error) in
-    //                self.serie = response
-    //            }
-    //        }
-    //        get {
-    //            self.serie?.id ?? -1
-    //        }
-    //    }
-    
-    var fullSeries: TVMDB?
-    let episodes: [SerieEpisode] = MockupSerie.getEpiosdes()
+    var fullSeries: MediaDetailResponse?
+    var episodes: [Episode] = []
     let reviews: [Reviews] = MockupSerie.getReviews()
     let similar: [GenericMedia] = MockupSerie.getSeries()
     
@@ -53,29 +42,46 @@ class SerieDetailViewController: UIViewController {
     }
     
     private func getFullSerie(){
-        TVMDB.tv(tvShowID: serieID, language: "pt-BR") { (return, serieDetail) in
-            if let serieDetail = serieDetail {
-                self.fullSeries = serieDetail
-                self.serieTableView.reloadData()
+        
+        if let id = self.serieID {
+            TMDBTV.getDetails(id: id) { (response, error) in
+                if let response = response {
+                    self.fullSeries = response
+                    self.getEpisodes()
+                    DispatchQueue.main.async {
+                        self.serieTableView.reloadData()
+                        self.configureUIElements()
+                    }
+                }
             }
+            
         }
         
+    }
+    
+    private func getEpisodes() {
+        
+        if let id = self.serieID,
+           let seasons = self.fullSeries?.number_of_seasons {
+            
+            for season in 1...seasons {
+                
+                TMDBTV.getSeason(number: season, fromSerie: id) { (response, error) in
+                    if let response = response {
+                        self.episodes.append(contentsOf: response.episodes ?? [])
+                    }
+                    if let error = error {
+                        print(error)
+                    }
+                }
+                
+            }
+            
+        }
         
     }
     
     func configureUIElements(){
-//        if let imageUrl = URL(string: "\(Utils.baseImageURL)\(self.fullSeries?.backdrop_path)"){
-//            do{
-//                let imageData = try Data(contentsOf: imageUrl)
-//                self.backdrop.image = UIImage(data: imageData)
-//            }catch{
-//                print(error.localizedDescription)
-//                self.backdrop.image = UIImage(systemName: "film")
-//            }
-//        }else{
-//            self.backdrop.image = UIImage(systemName: "film")
-//        }
-        
         
         self.serieTableView.sectionHeaderHeight = 30
         
@@ -106,10 +112,6 @@ class SerieDetailViewController: UIViewController {
         }
     }
     
-    
-    
-    
-    
     func configureDelegates() {
         
         self.serieTableView.delegate = self
@@ -124,52 +126,11 @@ class SerieDetailViewController: UIViewController {
         self.serieTableView.register(nib, forCellReuseIdentifier: cellID)
         
     }
-    //
-    //func setupCell(with serie: MediaDetailResponse) {
-    //
-    //    self.fullSeries = serie
-    //    self.title = self.fullSeries?.name ?? "Erro"
-    //
-    //}
     
     @IBAction func segmentedChanged(_ sender: UISegmentedControl) {
         self.segmentedIndex = sender.selectedSegmentIndex
         self.serieTableView.reloadData()
     }
-    
-    
-//    func configureUIElements() {
-//
-//        self.serieTableView.sectionHeaderHeight = 30
-//
-//        if let imageUrl = URL(string: "\(Utils.baseImageURL)\(self.serie?.backdrop_path ?? "")") {
-//
-//            do {
-//
-//                let imageData = try Data(contentsOf: imageUrl)
-//                self.backdrop.image = UIImage(data: imageData)
-//
-//            } catch {
-//
-//                print(error.localizedDescription)
-//                self.backdrop.image = UIImage(systemName: "film")
-//
-//            }
-//
-//        } else {
-//
-//            self.backdrop.image = UIImage(systemName: "film")
-//
-//        }
-//
-//        if let vote = self.serie?.vote_average {
-//            self.rateLabel.text = "\(Utils.star)\(vote)"
-//        } else {
-//            self.rateLabel.text = ""
-//        }
-//
-//    }
-    
     
 }
 
@@ -270,7 +231,7 @@ extension SerieDetailViewController: UITableViewDataSource {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: SerieEpisodesTableViewCell.cellID, for: indexPath) as? SerieEpisodesTableViewCell
             if let episode = self.episodes.filter( { $0.season == indexPath.section + 1 && $0.episode == indexPath.row + 1 } ).first {
-                cell?.setup(episodio: episode)
+                cell?.setup(episodio: episode.asSerieEpisode)
             }
             return cell ?? UITableViewCell()
             
@@ -291,12 +252,6 @@ extension SerieDetailViewController: UITableViewDataSource {
             return UITableViewCell()
             
         }
-        
-        //        case 2: // traillers
-        //            let cell = tableView.dequeueReusableCell(withIdentifier: MovieTraillerTableViewCell.cellID, for: indexPath) as? MovieTraillerTableViewCell
-        //            cell?.setup(self.traillers[indexPath.row], movieImage: self.fullMovie.poster)
-        //            return cell ?? UITableViewCell()
-        
         
     }
     

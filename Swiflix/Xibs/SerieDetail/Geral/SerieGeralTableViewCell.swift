@@ -28,25 +28,7 @@ class SerieGeralTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-//    func setup(_ m: Serie){
-//        self.titulo.text = m.title
-//        self.tituloOriginal.text = m.originalTitle
-//        self.sinopse.text = m.overview
-//        self.duracao.text = m.runtime != nil ? "\(m.runtime) min" : "Não tem tempo"
-//        self.dataLancamento.text = m.releaseDate
-//
-//        self.genero.text = ""
-//        for g in m.genres {
-//            self.genero.text! += "\(g.name), "
-//        }
-//
-//        if self.genero.text != "" {
-//            self.genero.text?.removeLast(2)
-//        }
-//
-//    }
-    
-    func setup(_ serie: TVMDB) {
+    func setup(_ serie: MediaDetailResponse) {
         
         self.titulo.text = serie.name
         self.tituloOriginal.text = serie.original_name
