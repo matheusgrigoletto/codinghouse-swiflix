@@ -24,9 +24,9 @@ class PersonBiographyTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func setup(_ r: FullPerson){
-        self.name.text = r.name
-        self.Biography.text = r.biography
+    func setup(_ r: FullPerson?){
+        self.name.text = r?.name ?? ""
+        self.Biography.text = r?.biography ?? ""
     }
     
 }

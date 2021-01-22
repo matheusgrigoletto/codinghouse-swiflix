@@ -50,6 +50,7 @@ class PeopleViewController: UIViewController {
         let people = sender as? Person
         let vc = segue.destination as? PeopleDetailViewController
         vc?.title = people?.name
+        vc?.personID = people?.id
     }
 }
 

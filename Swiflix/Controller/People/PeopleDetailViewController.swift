@@ -17,8 +17,7 @@ class PeopleDetailViewController: UIViewController {
     @IBOutlet weak var dateBirth: UILabel!
     @IBOutlet weak var dateDeath: UILabel!
     
-   
-    let fullPerson: FullPerson = MockupFullPerson.getFullPerson()
+    var fullPerson: PersonDetailResponse?
     let workMovies = MockupFullPerson.getWorks()
     let galery = MockupPhoto.getPhotos()
 
@@ -29,20 +28,38 @@ class PeopleDetailViewController: UIViewController {
         super.viewDidLoad()
         self.configureDelegates()
         escondeTecladoClicandoFora()
+        self.getFullPerson()
+        
         self.registerCells(nibName: PersonBiographyTableViewCell.nibName, cellID: PersonBiographyTableViewCell.cellID)
         self.registerCells(nibName: GenericMediaTableViewCell.nibName, cellID: GenericMediaTableViewCell.cellID)
         self.registerCells(nibName: PersonGaleryTableViewCell.nibName, cellID: PersonGaleryTableViewCell.cellID)
         
-        self.configureUIElements(fullPerson)
+        self.configureUIElements()
     }
     
-    func configureUIElements(_ data: FullPerson){
-        self.name.text = data.name
-        self.department.text = data.known_for_department
-        self.dateBirth.text = data.birthday
-        self.dateDeath.text = data.deathday
+    private func getFullPerson() {
         
-        if let imageUrl = URL(string: "\(Utils.baseImageURL)\(self.fullPerson.profile_path)"){
+        if let id = self.personID {
+            TMDBPeople.getDetails(id: id) { (response, error) in
+                if let response = response {
+                    self.fullPerson = response
+                    DispatchQueue.main.async {
+                        self.personTableView.reloadData()
+                        self.configureUIElements()
+                    }
+                }
+            }
+        }
+        
+    }
+    
+    func configureUIElements(){
+        self.name.text = self.fullPerson?.name ?? ""
+        self.department.text = self.fullPerson?.known_for_department ?? ""
+        self.dateBirth.text = self.fullPerson?.birthday ?? ""
+        self.dateDeath.text = self.fullPerson?.deathday ?? ""
+        
+        if let imageUrl = URL(string: "\(Utils.baseImageURL)\(self.fullPerson?.profile_path ?? "")"){
             do{
                 let imageData = try Data(contentsOf: imageUrl)
                 self.profile_path.image = UIImage(data: imageData)
@@ -109,7 +126,7 @@ extension PeopleDetailViewController: UITableViewDataSource {
         switch self.segmentedIndex {
         case 0: //Biografia
             let cell = tableView.dequeueReusableCell(withIdentifier: PersonBiographyTableViewCell.cellID, for: indexPath) as? PersonBiographyTableViewCell
-            cell?.setup(self.fullPerson)
+            cell?.setup(self.fullPerson?.asFullPerson)
             return cell ?? UITableViewCell()
         case 1: // filmes trabalhados
             let cell = tableView.dequeueReusableCell(withIdentifier: GenericMediaTableViewCell.cellID, for: indexPath) as? GenericMediaTableViewCell
