@@ -16,7 +16,7 @@ class NewMoviesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        escondeTecladoClicandoFora()
         self.registerCell(nib: GenericMediaTableViewCell.nibName, cellID: GenericMediaTableViewCell.cellID)
         self.configureDelegates()
         self.getNewMovies()

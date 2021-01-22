@@ -28,7 +28,7 @@ class PeopleDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureDelegates()
-
+        escondeTecladoClicandoFora()
         self.registerCells(nibName: PersonBiographyTableViewCell.nibName, cellID: PersonBiographyTableViewCell.cellID)
         self.registerCells(nibName: GenericMediaTableViewCell.nibName, cellID: GenericMediaTableViewCell.cellID)
         self.registerCells(nibName: PersonGaleryTableViewCell.nibName, cellID: PersonGaleryTableViewCell.cellID)

@@ -19,6 +19,7 @@ class MovieHouseViewController: UIViewController {
         self.registerCell(nib: GenericMediaTableViewCell.nibName, cellID: GenericMediaTableViewCell.cellID)
         self.configureDelegates()
         self.getMovieHouse()
+        escondeTecladoClicandoFora()
     }
     
     private func getMovieHouse(){

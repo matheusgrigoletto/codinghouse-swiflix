@@ -21,6 +21,7 @@ class RegisterViewController: UIViewController {
     //MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        escondeTecladoClicandoFora()
     }
     
     //MARK: - IBActions

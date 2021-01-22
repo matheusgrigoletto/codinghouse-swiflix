@@ -16,7 +16,7 @@ class InitialViewController: UIViewController {
     //MARK: - ViewController Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        escondeTecladoClicandoFora()
         //esconde o titulo no navigation controller
         //self.navigationController?.setNavigationBarHidden(true, animated: true)
     }

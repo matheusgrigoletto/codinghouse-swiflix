@@ -31,7 +31,7 @@ class NewMoviesDetailViewController: UIViewController {
         self.registerCells(nibName: GenericMediaTableViewCell.nibName, cellID: GenericMediaTableViewCell.cellID)
         self.registerCells(nibName: MovieCriticaTableViewCell.nibName, cellID: MovieCriticaTableViewCell.cellID)
         self.registerCells(nibName: MovieTraillerTableViewCell.nibName, cellID: MovieTraillerTableViewCell.cellID)
-        
+        escondeTecladoClicandoFora()
         self.configureUIElements()
     }
     

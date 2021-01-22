@@ -29,7 +29,7 @@ class MovieHouseDetailViewController: UIViewController {
         super.viewDidLoad()
         self.configureDelegates()
         self.getFullMovie()
-        
+        escondeTecladoClicandoFora()
         self.registerCells(nibName: MovieGeralTableViewCell.nibName, cellID: MovieGeralTableViewCell.cellID)
         self.registerCells(nibName: GenericMediaTableViewCell.nibName, cellID: GenericMediaTableViewCell.cellID)
         self.registerCells(nibName: MovieCriticaTableViewCell.nibName, cellID: MovieCriticaTableViewCell.cellID)

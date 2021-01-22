@@ -29,7 +29,7 @@ class MovieDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureDelegates()
-        
+        escondeTecladoClicandoFora()
         self.getFullMovie()
         
         self.registerCells(nibName: MovieGeralTableViewCell.nibName, cellID: MovieGeralTableViewCell.cellID)

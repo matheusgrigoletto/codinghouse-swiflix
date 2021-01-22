@@ -23,10 +23,9 @@ class LoginViewController: UIViewController {
         self.view.addGestureRecognizer(tap)
     }
     
-    @objc func dismissKeyboard(){
-        self.view.endEditing(true)
-    }
     
+
+
     func configureDelegates(){
         self.emailTextField.delegate = self
         self.senhaTextField.delegate = self
@@ -69,5 +68,22 @@ extension UITextField {
         }else{
             self.layer.borderColor = UIColor.green.cgColor
         }
+    }
+}
+
+//MARK: - Funcao Recolher Teclado
+extension UIViewController{
+    @objc func escondeTecladoClicandoFora(){
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.escondeTeclado))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func escondeTeclado(){
+        view.endEditing(true)
+    }
+    
+    @objc func dismissKeyboard(){
+        self.view.endEditing(true)
     }
 }

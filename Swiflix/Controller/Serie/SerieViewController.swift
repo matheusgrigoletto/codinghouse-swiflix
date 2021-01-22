@@ -20,6 +20,8 @@ class SerieViewController: UIViewController {
         self.registerCell()
         
         self.getPopularSeries()
+        
+        escondeTecladoClicandoFora()
     }
     
     func configureDelegates() {

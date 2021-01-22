@@ -17,7 +17,7 @@ class PerfilViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        escondeTecladoClicandoFora()
         self.configureUI()
         self.configureTableView()
     }

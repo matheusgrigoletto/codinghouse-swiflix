@@ -19,6 +19,7 @@ class PeopleViewController: UIViewController {
         super.viewDidLoad()
         self.configureDelegates()
         self.registerCell()
+        escondeTecladoClicandoFora()
     }
     
     func configureDelegates(){

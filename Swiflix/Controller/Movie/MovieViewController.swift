@@ -18,7 +18,7 @@ class MovieViewController: UIViewController {
         super.viewDidLoad()
         self.registerCell(nib: GenericMediaTableViewCell.nibName, cellID: GenericMediaTableViewCell.cellID)
         self.configureDelegates()
-        
+        escondeTecladoClicandoFora()
         self.getMovies()
     }
     

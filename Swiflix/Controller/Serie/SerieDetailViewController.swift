@@ -48,6 +48,8 @@ class SerieDetailViewController: UIViewController {
         
         self.configureUIElements()
         
+        escondeTecladoClicandoFora()
+        
     }
     
     private func getFullSerie(){
