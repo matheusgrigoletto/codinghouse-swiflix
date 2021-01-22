@@ -28,7 +28,7 @@ struct TMDB {
                         let object = try JSONDecoder().decode(T.self, from: _data)
                         completion(object, nil)
                     } catch {
-                        print(try? JSONSerialization.jsonObject(with: _data, options: []))
+//                        print(try? JSONSerialization.jsonObject(with: _data, options: []))
                         completion(nil, error)
                     }
                     

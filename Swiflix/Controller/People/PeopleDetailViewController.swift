@@ -18,7 +18,7 @@ class PeopleDetailViewController: UIViewController {
     @IBOutlet weak var dateDeath: UILabel!
     
     var fullPerson: PersonDetailResponse?
-    let workMovies = MockupFullPerson.getWorks()
+    var workMovies: [GenericMedia] = []
     let galery = MockupPhoto.getPhotos()
 
     var segmentedIndex = 0
@@ -29,6 +29,7 @@ class PeopleDetailViewController: UIViewController {
         self.configureDelegates()
         escondeTecladoClicandoFora()
         self.getFullPerson()
+        self.getWorkMovies()
         
         self.registerCells(nibName: PersonBiographyTableViewCell.nibName, cellID: PersonBiographyTableViewCell.cellID)
         self.registerCells(nibName: GenericMediaTableViewCell.nibName, cellID: GenericMediaTableViewCell.cellID)
@@ -47,6 +48,26 @@ class PeopleDetailViewController: UIViewController {
                         self.personTableView.reloadData()
                         self.configureUIElements()
                     }
+                }
+            }
+        }
+        
+    }
+    
+    private func getWorkMovies() {
+        
+        if let id = self.personID {
+            TMDBPeople.getCredits(id: id) { (response, error) in
+                if let response = response {
+                    for cast in response.cast {
+                        self.workMovies.append(cast.asGenericMedia)
+                    }
+                    for crew in response.crew {
+                        self.workMovies.append(crew.asGenericMedia)
+                    }
+                }
+                if let error = error {
+                    print(error)
                 }
             }
         }

@@ -32,4 +32,14 @@ struct Cast: Response {
     let title: String?
     let adult: Bool?
     
+    var asGenericMedia: GenericMedia {
+        get {
+            return GenericMedia(id: self.id,
+                                title: self.title ?? self.original_title ?? "",
+                                rating: self.vote_average,
+                                overview: self.overview,
+                                poster: self.poster_path ?? self.backdrop_path ?? "")
+        }
+    }
+    
 }

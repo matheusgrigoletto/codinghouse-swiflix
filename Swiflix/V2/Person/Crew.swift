@@ -27,10 +27,20 @@ struct Crew: Response {
     let vote_average: Double
     let genre_ids: [Int]
     let poster_path: String?
-    let original_title: String
-    let video: Bool
-    let title: String
-    let adult: Bool
-    let release_date: String
+    let original_title: String?
+    let video: Bool?
+    let title: String?
+    let adult: Bool?
+    let release_date: String?
+    
+    var asGenericMedia: GenericMedia {
+        get {
+            return GenericMedia(id: self.id,
+                                title: self.title ?? self.original_title ?? "",
+                                rating: self.vote_average,
+                                overview: self.overview,
+                                poster: self.poster_path ?? self.backdrop_path ?? "")
+        }
+    }
     
 }
