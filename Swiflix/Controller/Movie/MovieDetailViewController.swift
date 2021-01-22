@@ -18,7 +18,7 @@ class MovieDetailViewController: UIViewController {
     var fullMovie:MovieMDB?
     var similarMovies: [SimilarMovie] = []
     var reviews: [Review] = []
-    var traillers = MockupMovie.getTraillers() 
+    var traillers: [MovieTrailer] = []
     
     var segmentedIndex = 0
     
@@ -33,6 +33,7 @@ class MovieDetailViewController: UIViewController {
         self.getFullMovie()
         self.getSimilarMovies()
         self.getReviews()
+        self.getTrailers()
         
         self.registerCells(nibName: MovieGeralTableViewCell.nibName, cellID: MovieGeralTableViewCell.cellID)
         self.registerCells(nibName: GenericMediaTableViewCell.nibName, cellID: GenericMediaTableViewCell.cellID)
@@ -67,6 +68,16 @@ class MovieDetailViewController: UIViewController {
             TMDBMovies.getReviews(id: id, language: "en-US") { (response, error) in
                 if let response = response {
                     self.reviews = response.results
+                }
+            }
+        }
+    }
+    
+    private func getTrailers() {
+        if let id = self.movieID {
+            TMDBMovies.getTrailers(id: id) { (response, error) in
+                if let response = response {
+                    self.traillers = response.results
                 }
             }
         }
@@ -139,7 +150,7 @@ extension MovieDetailViewController: UITableViewDataSource {
             return cell ?? UITableViewCell()
         case 2: // traillers
             let cell = tableView.dequeueReusableCell(withIdentifier: MovieTraillerTableViewCell.cellID, for: indexPath) as? MovieTraillerTableViewCell
-            cell?.setup(self.traillers[indexPath.row], movieImage: self.fullMovie?.poster_path ?? "")
+            cell?.setup(self.traillers[indexPath.row].asMovieTrailler, movieImage: self.fullMovie?.poster_path ?? "")
             return cell ?? UITableViewCell()
         case 3: // criticas
             let cell = tableView.dequeueReusableCell(withIdentifier: MovieCriticaTableViewCell.cellID, for: indexPath) as? MovieCriticaTableViewCell

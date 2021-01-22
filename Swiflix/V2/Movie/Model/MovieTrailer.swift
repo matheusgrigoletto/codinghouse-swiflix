@@ -18,4 +18,13 @@ struct MovieTrailer: Response {
     let size: Int
     let type: String
     
+    var asMovieTrailler: MovieTrailler {
+        get {
+            return MovieTrailler(name: self.name,
+                                 key: self.key,
+                                 site: self.site,
+                                 type: self.type)
+        }
+    }
+    
 }
