@@ -19,7 +19,7 @@ class PeopleDetailViewController: UIViewController {
     
     var fullPerson: PersonDetailResponse?
     var workMovies: [GenericMedia] = []
-    let galery = MockupPhoto.getPhotos()
+    var galery: [Image] = []
 
     var segmentedIndex = 0
     var personID:Int?
@@ -30,6 +30,7 @@ class PeopleDetailViewController: UIViewController {
         escondeTecladoClicandoFora()
         self.getFullPerson()
         self.getWorkMovies()
+        self.getPhotos()
         
         self.registerCells(nibName: PersonBiographyTableViewCell.nibName, cellID: PersonBiographyTableViewCell.cellID)
         self.registerCells(nibName: GenericMediaTableViewCell.nibName, cellID: GenericMediaTableViewCell.cellID)
@@ -72,6 +73,16 @@ class PeopleDetailViewController: UIViewController {
             }
         }
         
+    }
+    
+    private func getPhotos() {
+        if let id = self.personID {
+            TMDBPeople.getImages(id: id) { (response, error) in
+                if let response = response {
+                    self.galery = response.profiles
+                }
+            }
+        }
     }
     
     func configureUIElements(){

@@ -18,7 +18,7 @@ class PersonGaleryTableViewCell: UITableViewCell {
     
     var photoClickDelegate: PersonGaleryTableViewCellDelegate?
     
-    var gallery:[PersonPhotoGallery]?
+    var gallery:[Image]?
     
     @IBOutlet weak var galleryCollection: UICollectionView!
     
@@ -39,7 +39,7 @@ class PersonGaleryTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func setup(_ gallery: [PersonPhotoGallery]){
+    func setup(_ gallery: [Image]){
         self.gallery = gallery
     }
 }
@@ -52,7 +52,7 @@ extension PersonGaleryTableViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GalleryCollectionViewCell.cellID, for: indexPath) as? GalleryCollectionViewCell
-        cell?.setup(self.gallery?[indexPath.row] ?? PersonPhotoGallery(file_path: "erro"))
+        cell?.setup(self.gallery?[indexPath.row].asPersonPhotoGallery ?? PersonPhotoGallery(file_path: "erro"))
         return cell ?? UICollectionViewCell()
     }
 }

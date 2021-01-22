@@ -17,4 +17,10 @@ struct Image: Response {
     let vote_count: Int
     let width: Int
     
+    var asPersonPhotoGallery: PersonPhotoGallery {
+        get {
+            return PersonPhotoGallery(file_path: self.file_path)
+        }
+    }
+    
 }
