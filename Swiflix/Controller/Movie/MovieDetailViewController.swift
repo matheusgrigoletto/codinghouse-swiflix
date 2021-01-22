@@ -9,14 +9,15 @@ import UIKit
 import TMDBSwift
 
 class MovieDetailViewController: UIViewController {
-
+    
     @IBOutlet weak var movieTableView: UITableView!
     @IBOutlet weak var rateLabel: UILabel!
     @IBOutlet weak var backdrop: UIImageView!
     
     //let fullMovie:FullMovie = MockupMovie.getFullMovie()
     var fullMovie:MovieMDB?
-    let similarMovies = MockupMovie.getMovies()
+//    var similarMovies = MockupMovie.getMovies()
+    var similarMovies: [SimilarMovie] = []
     let reviews = MockupMovie.getReviews()
     var traillers = MockupMovie.getTraillers() 
     
@@ -24,13 +25,14 @@ class MovieDetailViewController: UIViewController {
     
     var movieID:Int?
     
-   
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureDelegates()
         escondeTecladoClicandoFora()
         self.getFullMovie()
+        self.getSimilarMovies()
         
         self.registerCells(nibName: MovieGeralTableViewCell.nibName, cellID: MovieGeralTableViewCell.cellID)
         self.registerCells(nibName: GenericMediaTableViewCell.nibName, cellID: GenericMediaTableViewCell.cellID)
@@ -44,7 +46,18 @@ class MovieDetailViewController: UIViewController {
         MovieMDB.movie(movieID: self.movieID, language: "pt-BR") { (return, movieDetail) in
             if let movieDetail = movieDetail {
                 self.fullMovie = movieDetail
+                print(movieDetail.id)
                 self.movieTableView.reloadData()
+            }
+        }
+    }
+    
+    private func getSimilarMovies() {
+        if let id = self.movieID {
+            TMDBMovies.getSimilar(id: id) { (response, error) in
+                if let response = response {
+                    self.similarMovies = response.results
+                }
             }
         }
     }
@@ -112,7 +125,7 @@ extension MovieDetailViewController: UITableViewDataSource {
             return cell ?? UITableViewCell()
         case 1: // filmes similares
             let cell = tableView.dequeueReusableCell(withIdentifier: GenericMediaTableViewCell.cellID, for: indexPath) as? GenericMediaTableViewCell
-            cell?.setup(withMedia: self.similarMovies[indexPath.row])
+            cell?.setup(withMedia: self.similarMovies[indexPath.row].genericMedia)
             return cell ?? UITableViewCell()
         case 2: // traillers
             let cell = tableView.dequeueReusableCell(withIdentifier: MovieTraillerTableViewCell.cellID, for: indexPath) as? MovieTraillerTableViewCell
@@ -123,7 +136,7 @@ extension MovieDetailViewController: UITableViewDataSource {
             cell?.setup(self.reviews[indexPath.row])
             return cell ?? UITableViewCell()
         default:
-          return UITableViewCell()
+            return UITableViewCell()
         }
     }
     

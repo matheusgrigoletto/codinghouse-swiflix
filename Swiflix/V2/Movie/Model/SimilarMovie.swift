@@ -24,4 +24,14 @@ struct SimilarMovie: Response {
     let video: Bool
     let vote_average: Double
     
+    var genericMedia: GenericMedia {
+        get {
+            return GenericMedia(id: self.id,
+                                title: self.title,
+                                rating: self.vote_average,
+                                overview: self.overview,
+                                poster: self.backdrop_path ?? "")
+        }
+    }
+    
 }
