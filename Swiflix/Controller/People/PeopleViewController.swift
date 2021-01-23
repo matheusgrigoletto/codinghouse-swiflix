@@ -57,6 +57,10 @@ class PeopleViewController: UIViewController {
 
 extension PeopleViewController: UITableViewDataSource {
 
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.contentView.layer.masksToBounds = true
+    }
+    
     
    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.pessoas.count
@@ -69,6 +73,7 @@ extension PeopleViewController: UITableViewDataSource {
         return cell ?? UITableViewCell()
     }
     
+
     
 }
 

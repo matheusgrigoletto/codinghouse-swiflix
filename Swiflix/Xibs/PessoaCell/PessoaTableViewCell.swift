@@ -17,6 +17,7 @@ class PessoaTableViewCell: UITableViewCell {
     
     static let nibName: String = "PessoaTableViewCell"
     static let cellID:String = "PessoaCell"
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,8 +26,10 @@ class PessoaTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 5, left: 0, bottom: 0, right: 0))
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0))
         
+        self.profile.layer.cornerRadius = 6
+        self.contentView.layer.cornerRadius = 6
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

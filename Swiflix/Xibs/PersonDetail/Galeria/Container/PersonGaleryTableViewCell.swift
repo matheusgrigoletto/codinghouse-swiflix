@@ -20,12 +20,17 @@ class PersonGaleryTableViewCell: UITableViewCell {
     
     var gallery:[Image]?
     
+    
     @IBOutlet weak var galleryCollection: UICollectionView!
+    
+    let spacing: CGFloat = 10
     
     override func awakeFromNib() {
         super.awakeFromNib()
         self.configureCollectionCell()
     }
+    
+
     
     func configureCollectionCell(){
         let nib = UINib(nibName: GalleryCollectionViewCell.nibName, bundle: nil)
@@ -44,7 +49,7 @@ class PersonGaleryTableViewCell: UITableViewCell {
     }
 }
 
-extension PersonGaleryTableViewCell: UICollectionViewDataSource {
+extension PersonGaleryTableViewCell: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.gallery?.count ?? 0
@@ -54,6 +59,22 @@ extension PersonGaleryTableViewCell: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GalleryCollectionViewCell.cellID, for: indexPath) as? GalleryCollectionViewCell
         cell?.setup(self.gallery?[indexPath.row].asPersonPhotoGallery ?? PersonPhotoGallery(file_path: "erro"))
         return cell ?? UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let numberOfItemsPerRow:CGFloat = 3
+        let spacingBetweenCells:CGFloat = 6
+        
+                
+        let totalSpacing = (2 * self.spacing) + ((numberOfItemsPerRow - 1) * spacingBetweenCells)
+                
+        if let collection = self.galleryCollection{
+                    let width = (collection.bounds.width - totalSpacing)/numberOfItemsPerRow
+                    return CGSize(width: width, height: width)
+                }else{
+                    return CGSize(width: 0, height: 0)
+                }
+        
     }
 }
 

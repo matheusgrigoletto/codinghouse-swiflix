@@ -17,7 +17,12 @@ class GalleryCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.galleryImageView.layer.cornerRadius = 20
+        self.contentView.layer.cornerRadius = 20
+        
+    }
     func setup(_ gallery: PersonPhotoGallery){
         if let imageURL = URL(string: "\(Utils.baseImageURL)\(gallery.file_path)"){
             do{
