@@ -120,6 +120,7 @@
 		C38A033C2553610300E6C010 /* FullPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38A033B2553610300E6C010 /* FullPerson.swift */; };
 		C38A033F2553612000E6C010 /* PersonPhotoGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38A033E2553612000E6C010 /* PersonPhotoGallery.swift */; };
 		C3B0390A25617E4A00F63C70 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B0390925617E4A00F63C70 /* PhotoDetailViewController.swift */; };
+		C3BD0E2B25BCC9F1008FA216 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BD0E2A25BCC9F1008FA216 /* Extensions.swift */; };
 		C3D8F63E255827BD001FFCA1 /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D8F63D255827BD001FFCA1 /* Reviews.swift */; };
 		C3D8F6442558289B001FFCA1 /* MovieCriticaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D8F6422558289B001FFCA1 /* MovieCriticaTableViewCell.swift */; };
 		C3D8F6452558289B001FFCA1 /* MovieCriticaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3D8F6432558289B001FFCA1 /* MovieCriticaTableViewCell.xib */; };
@@ -245,6 +246,7 @@
 		C38A033B2553610300E6C010 /* FullPerson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullPerson.swift; sourceTree = "<group>"; };
 		C38A033E2553612000E6C010 /* PersonPhotoGallery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonPhotoGallery.swift; sourceTree = "<group>"; };
 		C3B0390925617E4A00F63C70 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		C3BD0E2A25BCC9F1008FA216 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C3D8F63D255827BD001FFCA1 /* Reviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
 		C3D8F6422558289B001FFCA1 /* MovieCriticaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCriticaTableViewCell.swift; sourceTree = "<group>"; };
 		C3D8F6432558289B001FFCA1 /* MovieCriticaTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCriticaTableViewCell.xib; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 		2FD283B02537DC9E0032400F /* Swiflix */ = {
 			isa = PBXGroup;
 			children = (
+				C3BD0E2925BCC9EA008FA216 /* Extras */,
 				AD9EFC66257ED65D004DA2BC /* GoogleService-Info.plist */,
 				AD455A652584092300383835 /* V2 */,
 				C33E12E4254452B70011E5A9 /* Fonts */,
@@ -734,6 +737,14 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		C3BD0E2925BCC9EA008FA216 /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				C3BD0E2A25BCC9F1008FA216 /* Extensions.swift */,
+			);
+			path = Extras;
+			sourceTree = "<group>";
+		};
 		C3D2551425477B72003E628C /* MovieSerieSimpleCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -942,6 +953,7 @@
 				2FD283B22537DC9E0032400F /* AppDelegate.swift in Sources */,
 				0FBDE1A92545D74B00655436 /* MovieSerieTableViewCell.swift in Sources */,
 				AD455A982584092300383835 /* Review.swift in Sources */,
+				C3BD0E2B25BCC9F1008FA216 /* Extensions.swift in Sources */,
 				2FD283B42537DC9E0032400F /* SceneDelegate.swift in Sources */,
 				AD455A8E2584092300383835 /* Image.swift in Sources */,
 				5600FC3D255DBB0900AD7617 /* NewMoviesDetailViewController.swift in Sources */,
