@@ -19,16 +19,7 @@ class GalleryCollectionViewCell: UICollectionViewCell {
     }
     
     func setup(_ gallery: PersonPhotoGallery){
-        if let imageURL = URL(string: "\(Utils.baseImageURL)\(gallery.file_path)"){
-            do{
-                let imageData = try Data(contentsOf: imageURL)
-                self.galleryImageView.image = UIImage(data: imageData)
-            }catch{
-                print("error getting image data")
-            }
-        }else{
-            print("error getting image url")
-        }
+        self.galleryImageView.withMediaURL(gallery.file_path)
     }
 
 }
