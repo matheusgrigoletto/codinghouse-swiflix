@@ -296,6 +296,7 @@
 				2FD283AF2537DC9E0032400F /* Products */,
 				D8A1CE840BDC8217C6B3F230 /* Pods */,
 				08621D74529EB5CB9CF050EC /* Frameworks */,
+				C373B31E25BCE357007C394F /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -658,6 +659,14 @@
 			path = MovieDetail;
 			sourceTree = "<group>";
 		};
+		C373B31E25BCE357007C394F /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				C3BD0E2A25BCC9F1008FA216 /* Extensions.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		C3B0390825617E3300F63C70 /* PhotoGalleryDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -731,14 +740,6 @@
 				C33E12F0254469DE0011E5A9 /* Segues.swift */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		C3BD0E2925BCC9EA008FA216 /* Extras */ = {
-			isa = PBXGroup;
-			children = (
-				C3BD0E2A25BCC9F1008FA216 /* Extensions.swift */,
-			);
-			path = Extras;
 			sourceTree = "<group>";
 		};
 		C3D2551425477B72003E628C /* MovieSerieSimpleCell */ = {
