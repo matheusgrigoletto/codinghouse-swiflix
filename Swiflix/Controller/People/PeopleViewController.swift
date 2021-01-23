@@ -15,11 +15,8 @@ class PeopleViewController: UIViewController {
     @IBOutlet weak var peopleTableView: UITableView!
     
     var pessoas: [Person] = []
-<<<<<<< HEAD
     let cellSpacingHeight: CGFloat = 5
-=======
     var page: Int = 1
->>>>>>> feature/lazyLoading
     
     override func viewDidLoad() {
         super.viewDidLoad()
