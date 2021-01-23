@@ -41,17 +41,7 @@ class GenericMediaTableViewCell: UITableViewCell {
         self.rating.text = "\(Utils.star)\(media.rating)"
         self.overview.text = media.overview
         
-        if let imageURL = URL(string: "\(Utils.baseImageURL)\(media.poster)"){
-            do{
-                let imageData:Data = try Data(contentsOf: imageURL)
-                self.poster.image = UIImage(data: imageData)
-            }catch{
-                //fatalError("error gettim image data")
-                print("error handling")
-            }
-        }else{
-            self.poster.image = UIImage(systemName: "camera")
-        }
+        self.poster.withMediaURL(media.poster)
     }
     
     func setup(withSerie serie: GenericPopularMedia) {
@@ -60,17 +50,7 @@ class GenericMediaTableViewCell: UITableViewCell {
         self.rating.text = "\(Utils.star)\(serie.rating ?? 0)"
         self.overview.text = serie.overview
         
-        if let imageURL = URL(string: "\(Utils.baseImageURL)\(serie.poster ?? "")"){
-            do{
-                let imageData:Data = try Data(contentsOf: imageURL)
-                self.poster.image = UIImage(data: imageData)
-            }catch{
-                //fatalError("error gettim image data")
-                print("error handling")
-            }
-        }else{
-            self.poster.image = UIImage(systemName: "camera")
-        }
+        self.poster.withMediaURL(serie.poster)
         
     }
     

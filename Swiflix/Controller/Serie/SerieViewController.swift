@@ -13,13 +13,14 @@ class SerieViewController: UIViewController {
     @IBOutlet weak var serieTableView: UITableView!
     
     var series: [GenericPopularMedia] = []
+    var page: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureDelegates()
         self.registerCell()
         
-        self.getPopularSeries()
+        self.getPopularSeries(page: self.page)
         
         escondeTecladoClicandoFora()
     }
@@ -45,9 +46,9 @@ class SerieViewController: UIViewController {
     }
     
     
-    private func getPopularSeries() {
+    private func getPopularSeries(page: Int) {
         
-        TVMDB.popular(page: 1, language: "pt-BR") { (return, populares) in
+        TVMDB.popular(page: page, language: "pt-BR") { (return, populares) in
             
             if let populares = populares {
                 for popular in populares {
@@ -62,6 +63,7 @@ class SerieViewController: UIViewController {
                         self.series.append(generic)
                     }
                 }
+                self.page += 1
                 self.serieTableView.reloadData()
             }
             
@@ -77,6 +79,11 @@ extension SerieViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if self.series.count - 1 == indexPath.row {
+            self.getPopularSeries(page: self.page)
+        }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: GenericMediaTableViewCell.cellID, for: indexPath) as? GenericMediaTableViewCell
         cell?.setup(withSerie: self.series[indexPath.row])
         return cell ?? UITableViewCell()
