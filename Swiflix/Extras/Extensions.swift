@@ -15,6 +15,6 @@ extension UIImageView {
             return
         }
         
-        self.kf.setImage(with: url, placeholder: UIImage(systemName: "nosign"), options: nil, completionHandler: nil)
+        self.kf.setImage(with: url, placeholder: UIImage(systemName: "nosign"), options: [.transition(.fade(1))], completionHandler: nil)
     }
 }

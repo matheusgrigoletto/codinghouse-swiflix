@@ -40,18 +40,7 @@ class PessoaTableViewCell: UITableViewCell {
 //        known.removeLast()
         self.knowFor.text = known
         
-        if let imageURL = URL(string: "\(Utils.baseImageURL)\(person.profile_path)") {
-            do{
-                let imageData = try Data(contentsOf: imageURL)
-                self.profile.image = UIImage(data: imageData)
-                self.profile.contentMode = .scaleAspectFill
-            }catch{
-                fatalError("error getting image from data")
-            }
-        }else{
-            self.profile.image = UIImage(systemName: "person.fill.questionmark")
-            self.profile.contentMode = .scaleAspectFit
-        }
+        self.profile.withMediaURL(person.profile_path)
     }
     
 }

@@ -13,18 +13,18 @@ class MovieViewController: UIViewController {
     @IBOutlet weak var movieTableView: UITableView!
     
     var movies:[GenericMedia] = []
+    var page: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.registerCell(nib: GenericMediaTableViewCell.nibName, cellID: GenericMediaTableViewCell.cellID)
         self.configureDelegates()
         escondeTecladoClicandoFora()
-        self.getMovies()
+        self.getMovies(page: self.page)
     }
     
-    private func getMovies(){
-        
-        MovieMDB.popular(language: "pt-BR", page: 1) { (return, movies) in
+    private func getMovies(page: Int){
+        MovieMDB.popular(language: "pt-BR", page: page) { (result, movies) in
             if let movies = movies {
                 for movie in movies {
                     if
@@ -32,12 +32,13 @@ class MovieViewController: UIViewController {
                         let id = movie.id,
                         let rating = movie.vote_average,
                         let overview = movie.overview,
-                        let poster = movie.poster_path{
+                        let poster = movie.poster_path {
                         
                         let generic = GenericMedia(id: id, title: title, rating: rating, overview: overview, poster: poster)
                         self.movies.append(generic)
                     }
                 }
+                self.page += 1
                 self.movieTableView.reloadData()
             }
         }
@@ -67,6 +68,11 @@ extension MovieViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if self.movies.count - 1 == indexPath.row {
+            self.getMovies(page: self.page)
+        }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: GenericMediaTableViewCell.cellID, for: indexPath) as? GenericMediaTableViewCell
         cell?.setup(withMedia: self.movies[indexPath.row])
         return cell ?? UITableViewCell()

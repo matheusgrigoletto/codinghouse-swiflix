@@ -15,23 +15,26 @@ class PeopleViewController: UIViewController {
     @IBOutlet weak var peopleTableView: UITableView!
     
     var pessoas: [Person] = []
+    var page: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureDelegates()
         self.registerCell()
         escondeTecladoClicandoFora()
-        self.getMovies()
+        self.getMovies(page: self.page)
     }
     
-    private func getMovies() {
-        TMDBPeople.getPopular { (people, error) in
+    private func getMovies(page: Int) {
+        print(page)
+        TMDBPeople.getPopular(language: "pt-BR", page: page) { (people, error) in
             if let people = people {
-                self.pessoas = people.results
+                self.pessoas.append(contentsOf: people.results)
             }
             DispatchQueue.main.async {
                 self.peopleTableView.reloadData()
             }
+            self.page += 1
         }
     }
     
@@ -60,6 +63,10 @@ extension PeopleViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+                if self.pessoas.count - 1 == indexPath.row {
+            self.getMovies(page: self.page)
+        }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: PessoaTableViewCell.cellID, for: indexPath) as? PessoaTableViewCell
         cell?.setup(withPerson: self.pessoas[indexPath.row])
         return cell ?? UITableViewCell()
