@@ -44,16 +44,24 @@ class RegisterViewController: UIViewController {
         super.viewDidLoad()
         escondeTecladoClicandoFora()
         
-        nomeTextField.backgroundColor = .white
-        emailTextField.backgroundColor = .white
-        confirmarEmailTextField.backgroundColor = .white
-        senhaTextField.backgroundColor = .white
-        confirmarSenhaTextField.backgroundColor = .white
+        nomeTextField.backgroundColor = .darkGray
+        nomeTextField.attributedPlaceholder = NSAttributedString(string:"Nome Completo", attributes:[NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        emailTextField.backgroundColor = .darkGray
+        emailTextField.attributedPlaceholder = NSAttributedString(string:"E-mail", attributes:[NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        confirmarEmailTextField.backgroundColor = .darkGray
+        confirmarEmailTextField.attributedPlaceholder = NSAttributedString(string:"Repita o E-mail", attributes:[NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        senhaTextField.backgroundColor = .darkGray
+        senhaTextField.attributedPlaceholder = NSAttributedString(string:"Senha", attributes:[NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        confirmarSenhaTextField.backgroundColor = .darkGray
+        confirmarSenhaTextField.attributedPlaceholder = NSAttributedString(string:"Repita a Senha", attributes:[NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         
         
     }
     
   
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+    }
     
     
     
@@ -74,8 +82,13 @@ class RegisterViewController: UIViewController {
      func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         if textField.text != ""{
             textField.backgroundColor = .white
+            textField.textColor = .black
+            
         }else{
-            textField.backgroundColor = .systemGray
+            textField.backgroundColor = .darkGray
+            if textField.text?.isEmpty == true{
+                campoVazio() //Tentando validar
+            }
         }
 
 //        if confirmarEmailTextField.isSelected == true {
@@ -91,6 +104,7 @@ class RegisterViewController: UIViewController {
              let imagePickerController = UIImagePickerController()
              imagePickerController.delegate = self
              imagePickerController.sourceType = sourceType
+            imagePickerController.allowsEditing = true
              
              self.present(imagePickerController, animated: true, completion: nil)
              
@@ -116,6 +130,15 @@ class RegisterViewController: UIViewController {
     
     //MARK: - Functions
     
+    
+    func campoVazio(){
+        let emptyField = UIAlertController(title: "Atenção", message: "Preencha todos os campos.", preferredStyle: UIAlertController.Style.alert)
+        
+        emptyField.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            
+        }))
+        present(emptyField, animated: true, completion: nil)
+    }
     
     func alertaEmail(){
         let refreshAlert = UIAlertController(title: "Atenção", message: "Os e-mails não conferem!", preferredStyle: UIAlertController.Style.alert)
@@ -168,7 +191,7 @@ extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationC
         
         let imageURL = info[UIImagePickerController.InfoKey.referenceURL] as! NSURL
         
-        let urlImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        let urlImage = info[UIImagePickerController.InfoKey.editedImage] as! UIImage
 
         
         
