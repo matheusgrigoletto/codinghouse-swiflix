@@ -15,6 +15,7 @@ class PeopleViewController: UIViewController {
     @IBOutlet weak var peopleTableView: UITableView!
     
     var pessoas: [Person] = []
+    let cellSpacingHeight: CGFloat = 5
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,9 +56,12 @@ class PeopleViewController: UIViewController {
 }
 
 extension PeopleViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+    
+   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.pessoas.count
-    }
+}
+ 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PessoaTableViewCell.cellID, for: indexPath) as? PessoaTableViewCell
