@@ -47,6 +47,21 @@ class PersonGaleryTableViewCell: UITableViewCell {
     func setup(_ gallery: [Image]){
         self.gallery = gallery
     }
+    
+    func spacingTotal() -> CGSize{
+        let numberOfItemsPerRow:CGFloat = 3
+        let spacingBetweenCells:CGFloat = 6
+        
+                
+        let totalSpacing = (2 * self.spacing) + ((numberOfItemsPerRow - 1) * spacingBetweenCells)
+                
+        if let collection = self.galleryCollection{
+                    let width = (collection.bounds.width - totalSpacing)/numberOfItemsPerRow
+                    return CGSize(width: width, height: width)
+                }else{
+                    return CGSize(width: 0, height: 0)
+                }
+    }
 }
 
 extension PersonGaleryTableViewCell: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -62,20 +77,12 @@ extension PersonGaleryTableViewCell: UICollectionViewDataSource, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let numberOfItemsPerRow:CGFloat = 3
-        let spacingBetweenCells:CGFloat = 6
+     
         
-                
-        let totalSpacing = (2 * self.spacing) + ((numberOfItemsPerRow - 1) * spacingBetweenCells)
-                
-        if let collection = self.galleryCollection{
-                    let width = (collection.bounds.width - totalSpacing)/numberOfItemsPerRow
-                    return CGSize(width: width, height: width)
-                }else{
-                    return CGSize(width: 0, height: 0)
-                }
-        
+        return spacingTotal()
     }
+    
+
 }
 
 extension PersonGaleryTableViewCell: UICollectionViewDelegate {

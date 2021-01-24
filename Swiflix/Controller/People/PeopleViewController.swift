@@ -18,6 +18,7 @@ class PeopleViewController: UIViewController {
     let cellSpacingHeight: CGFloat = 5
     var page: Int = 1
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureDelegates()
