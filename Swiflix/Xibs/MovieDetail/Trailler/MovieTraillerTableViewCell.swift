@@ -31,14 +31,7 @@ class MovieTraillerTableViewCell: UITableViewCell {
         self.nome.text = t.name
         self.tipo.text = t.type
         
-        if let imageURL = URL(string: "\(Utils.baseImageURL)\(movieImage)"){
-            do{
-                let imageData = try Data(contentsOf: imageURL)
-                self.poster.image = UIImage(data: imageData)
-            }catch{
-                //error
-            }
-        }
+        self.poster.withMediaURL(movieImage)
     }
     
 }

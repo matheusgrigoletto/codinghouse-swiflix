@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TraillerViewController" customModule="Swiflix" customModuleProvider="target">
+            <connections>
+                <outlet property="player" destination="Yf3-s6-otD" id="Gzd-0e-jGR"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ziJ-nA-WlJ">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eNO-vf-gHb">
+                            <rect key="frame" x="8" y="52" width="44" height="30"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Voltar"/>
+                            <connections>
+                                <action selector="voltarTapped:" destination="-1" eventType="touchUpInside" id="P6L-oU-nwj"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trailer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dqp-H6-8GC">
+                            <rect key="frame" x="180.5" y="57" width="53" height="21"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemRedColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="1yW-fM-vst"/>
+                        <constraint firstItem="eNO-vf-gHb" firstAttribute="leading" secondItem="ziJ-nA-WlJ" secondAttribute="leading" constant="8" id="CyM-9F-qVk"/>
+                        <constraint firstAttribute="bottom" secondItem="eNO-vf-gHb" secondAttribute="bottom" constant="18" id="eMO-ky-MfY"/>
+                        <constraint firstItem="Dqp-H6-8GC" firstAttribute="centerX" secondItem="ziJ-nA-WlJ" secondAttribute="centerX" id="t9B-6E-gel"/>
+                        <constraint firstAttribute="bottom" secondItem="Dqp-H6-8GC" secondAttribute="bottom" constant="22" id="ukW-dZ-FfD"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yf3-s6-otD" customClass="YouTubePlayerView" customModule="YouTubePlayer">
+                    <rect key="frame" x="30" y="130" width="354" height="702"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Yf3-s6-otD" firstAttribute="top" secondItem="ziJ-nA-WlJ" secondAttribute="bottom" constant="30" id="8XI-Ve-Bao"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Yf3-s6-otD" secondAttribute="trailing" constant="30" id="AKb-68-Zas"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Yf3-s6-otD" secondAttribute="bottom" constant="30" id="NdD-Sh-rXW"/>
+                <constraint firstItem="ziJ-nA-WlJ" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ZRh-3Z-Lf9"/>
+                <constraint firstItem="ziJ-nA-WlJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="mcj-BS-Oo8"/>
+                <constraint firstItem="Yf3-s6-otD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="rKi-64-1IS"/>
+                <constraint firstItem="ziJ-nA-WlJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="s3z-9O-8S2"/>
+            </constraints>
+            <point key="canvasLocation" x="18.840579710144929" y="89.732142857142847"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
