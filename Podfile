@@ -12,5 +12,6 @@ target 'Swiflix' do
 	pod 'Firebase/Auth'
 
 	pod 'Kingfisher', '~> 6.0'
+	pod 'YouTubePlayer'
 
 end

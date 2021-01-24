@@ -99,6 +99,8 @@
 		C3110BE92553661600A6BD86 /* GenericMediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3110BE72553661600A6BD86 /* GenericMediaTableViewCell.swift */; };
 		C3110BEE25536B8200A6BD86 /* PessoaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3110BEC25536B8100A6BD86 /* PessoaTableViewCell.swift */; };
 		C3110BEF25536B8200A6BD86 /* PessoaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3110BED25536B8200A6BD86 /* PessoaTableViewCell.xib */; };
+		C318AF4C25BD2ED200DBAF8E /* TraillerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C318AF4A25BD2ED200DBAF8E /* TraillerViewController.swift */; };
+		C318AF4D25BD2ED200DBAF8E /* TraillerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C318AF4B25BD2ED200DBAF8E /* TraillerViewController.xib */; };
 		C337370325648A4000F90F36 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C337370225648A4000F90F36 /* PerfilViewController.swift */; };
 		C33E12E6254452D50011E5A9 /* BerkshireSwash-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C33E12E5254452D50011E5A9 /* BerkshireSwash-Regular.ttf */; };
 		C33E12EA254457F40011E5A9 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33E12E9254457F40011E5A9 /* InitialViewController.swift */; };
@@ -224,6 +226,8 @@
 		C3110BE72553661600A6BD86 /* GenericMediaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericMediaTableViewCell.swift; sourceTree = "<group>"; };
 		C3110BEC25536B8100A6BD86 /* PessoaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PessoaTableViewCell.swift; sourceTree = "<group>"; };
 		C3110BED25536B8200A6BD86 /* PessoaTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PessoaTableViewCell.xib; sourceTree = "<group>"; };
+		C318AF4A25BD2ED200DBAF8E /* TraillerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraillerViewController.swift; sourceTree = "<group>"; };
+		C318AF4B25BD2ED200DBAF8E /* TraillerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TraillerViewController.xib; sourceTree = "<group>"; };
 		C337370225648A4000F90F36 /* PerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
 		C33E12E5254452D50011E5A9 /* BerkshireSwash-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BerkshireSwash-Regular.ttf"; sourceTree = "<group>"; };
 		C33E12E9254457F40011E5A9 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
@@ -617,6 +621,15 @@
 			path = PessoaCell;
 			sourceTree = "<group>";
 		};
+		C318AF4925BD2EC100DBAF8E /* TraillerView */ = {
+			isa = PBXGroup;
+			children = (
+				C318AF4A25BD2ED200DBAF8E /* TraillerViewController.swift */,
+				C318AF4B25BD2ED200DBAF8E /* TraillerViewController.xib */,
+			);
+			path = TraillerView;
+			sourceTree = "<group>";
+		};
 		C337370125648A2E00F90F36 /* Perfil */ = {
 			isa = PBXGroup;
 			children = (
@@ -706,6 +719,7 @@
 		C3B54E08253C6C7F0067E6F5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C318AF4925BD2EC100DBAF8E /* TraillerView */,
 				2FD283B72537DC9E0032400F /* Main.storyboard */,
 				2FD283BC2537DCA10032400F /* LaunchScreen.storyboard */,
 				5631F42825473B9E00FFCCBC /* Tabbar.storyboard */,
@@ -861,6 +875,7 @@
 				2FD283BE2537DCA10032400F /* LaunchScreen.storyboard in Resources */,
 				ADC19A9B255DF9B700F9BD55 /* SerieEpisodesTableViewCell.xib in Resources */,
 				AD1EEC58255DEF6D001BE764 /* SerieGeralTableViewCell.xib in Resources */,
+				C318AF4D25BD2ED200DBAF8E /* TraillerViewController.xib in Resources */,
 				56DD8A85255B0A1C005B0E16 /* PersonBiographyTableViewCell.xib in Resources */,
 				C3110BEF25536B8200A6BD86 /* PessoaTableViewCell.xib in Resources */,
 				2FD283BB2537DCA10032400F /* Assets.xcassets in Resources */,
@@ -1006,6 +1021,7 @@
 				56DD8A84255B0A1C005B0E16 /* PersonBiographyTableViewCell.swift in Sources */,
 				AD455A912584092300383835 /* PersonDetailResponse.swift in Sources */,
 				AD455AA72584095000383835 /* HttpMethod.swift in Sources */,
+				C318AF4C25BD2ED200DBAF8E /* TraillerViewController.swift in Sources */,
 				AD455AA82584095000383835 /* TMDBTest.swift in Sources */,
 				AD455A892584092300383835 /* MovieSimilarResponse.swift in Sources */,
 				AD4F3FB4258435AE00DAB15D /* Episode.swift in Sources */,
