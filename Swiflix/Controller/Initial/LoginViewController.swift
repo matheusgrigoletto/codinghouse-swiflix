@@ -36,8 +36,26 @@ class LoginViewController: UIViewController {
     
     //MARK: - IBAction
     @IBAction func loginButtonTapped(_ sender: UIButton) {
+        let email = emailTextField.text!
+        let senha = senhaTextField.text!
+        Auth.auth().signIn(withEmail: email, password: senha) { (result, error) in
+            guard let isLogged = result else {
+                print(error?.localizedDescription)
+                let erro = error?.localizedDescription
+                self.alertaDesconectado(descricaoErro: erro ?? "")
+                return
+            }
+            print("=============")
+            print(isLogged)
+            print("=============")
+            if isLogged != nil {
+                self.performSegue(withIdentifier: Segues.loginToMain, sender: nil)
+            }
+        }
         
-        self.performSegue(withIdentifier: Segues.loginToMain, sender: nil)
+        
+       
+        
     }
     
     //MARK: - Functions
@@ -89,5 +107,30 @@ extension UIViewController{
     
     @objc func dismissKeyboard(){
         self.view.endEditing(true)
+    }
+}
+
+
+extension UIViewController {
+    func alertaDesconectado(descricaoErro: String){
+        var resultado: String
+        if descricaoErro == "The password is invalid or the user does not have a password." {
+            resultado = "Senha inválida ou usuário não possui senha."
+        }else if descricaoErro == "The email address is badly formatted." {
+            resultado = "Email incorreto ou mal formatado."
+        }else if descricaoErro == "There is no user record corresponding to this identifier. The user may have been deleted."{
+            resultado = "Não há usuário com este e-mail."
+        }else {
+            resultado = "Erro desconhecido!"
+        }
+        
+        let refreshAlert = UIAlertController(title: "Atenção", message: resultado, preferredStyle: UIAlertController.Style.alert)
+
+        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+              //print("Handle Ok logic here")
+        }))
+        
+        present(refreshAlert, animated: true, completion: nil)
+        
     }
 }

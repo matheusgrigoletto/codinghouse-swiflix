@@ -41,9 +41,13 @@ class RegisterViewController: UIViewController {
         photoButton.layer.cornerRadius = photoButton.frame.height/2
         photoButton.clipsToBounds = true
         
-        
+        //MARK: - Realtime Database - instanciando
+        var ref: DatabaseReference!
+        ref = Database.database().reference()
+        //==========================================
         
         super.viewDidLoad()
+        
         escondeTecladoClicandoFora()
         
         nomeTextField.backgroundColor = .darkGray
@@ -186,6 +190,7 @@ class RegisterViewController: UIViewController {
         }))
         
         present(refreshAlert, animated: true, completion: nil)
+        
     }
     
     func alertaSenha(){
