@@ -7,6 +7,8 @@
 
 import UIKit
 import Firebase
+import IQKeyboardManagerSwift
+
 
 class RegisterViewController: UIViewController {
 
@@ -87,7 +89,7 @@ class RegisterViewController: UIViewController {
         }else{
             textField.backgroundColor = .darkGray
             if textField.text?.isEmpty == true{
-                campoVazio() //Tentando validar
+//                campoVazio() //Tentando validar
             }
         }
 
@@ -119,8 +121,40 @@ class RegisterViewController: UIViewController {
     @IBAction func cadastrarButtonTapped(_ sender: UIButton) {
          //TODO: Implementar função de criar novo usuário aqui
         
+        let nome = nomeTextField.text!
+        let email = emailTextField.text!
+        let password = senhaTextField.text!
+        
+        if checkField(f1: emailTextField.text ?? "email1", f2: confirmarEmailTextField.text ?? "email2") == false {
+            emailTextField.textColor = UIColor.red
+            confirmarEmailTextField.textColor = UIColor.red
+            alertaEmail()
+        }
+        if checkField(f1: senhaTextField.text ?? "s1", f2: confirmarSenhaTextField.text ?? "s2") == false {
+            senhaTextField.textColor = UIColor.red
+            senhaTextField.textColor = UIColor.red
+            alertaSenha()
+        }
+        
+        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+            guard let result = result else {
+                print(error?.localizedDescription)
+                return
+            }
+            print(result.user.uid)
+        }
+        
         
     }
+    
+    func checkField(f1: String, f2: String) -> Bool{
+        if f1 != f2 {
+            return false
+        }else {
+            return true
+        }
+    }
+    
     @IBAction func chooseImageButtonTapped(_ sender: UIButton) {
         
         self.getImage(fromSourceType: .photoLibrary)
@@ -146,11 +180,16 @@ class RegisterViewController: UIViewController {
         refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
               //print("Handle Ok logic here")
         }))
+        
+        present(refreshAlert, animated: true, completion: nil)
+    }
+    
+    func alertaSenha(){
+        let refreshAlert = UIAlertController(title: "Atenção", message: "As senhas não conferem!", preferredStyle: UIAlertController.Style.alert)
 
-//        refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
-//              print("Handle Cancel Logic here")
-//        }))
-
+        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+              //print("Handle Ok logic here")
+        }))
         present(refreshAlert, animated: true, completion: nil)
     }
 

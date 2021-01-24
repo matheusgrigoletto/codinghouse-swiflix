@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import Firebase
+import IQKeyboardManagerSwift
+
 
 class InitialViewController: UIViewController {
     

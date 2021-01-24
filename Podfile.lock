@@ -65,6 +65,7 @@ PODS:
   - GoogleUtilities/UserDefaults (7.1.1):
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.5.0)
+  - IQKeyboardManagerSwift (6.3.0)
   - nanopb (2.30906.0):
     - nanopb/decode (= 2.30906.0)
     - nanopb/encode (= 2.30906.0)
@@ -76,6 +77,7 @@ PODS:
 DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Auth
+  - IQKeyboardManagerSwift (= 6.3.0)
   - TMDBSwift (~> 0.5)
 
 SPEC REPOS:
@@ -90,6 +92,7 @@ SPEC REPOS:
     - GoogleDataTransport
     - GoogleUtilities
     - GTMSessionFetcher
+    - IQKeyboardManagerSwift
     - nanopb
     - PromisesObjC
     - TMDBSwift
@@ -105,10 +108,11 @@ SPEC CHECKSUMS:
   GoogleDataTransport: e4085e6762f36a6141738f46b0153473ce57fb18
   GoogleUtilities: 3dc4ff0d5e4840e2fa8eef0889620e8c33d4218c
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
+  IQKeyboardManagerSwift: a8228c257614af98743b4cd8584637025f36358f
   nanopb: 1bf24dd71191072e120b83dd02d08f3da0d65e53
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
   TMDBSwift: 9220f3dcee23372c05b92f8c111f5f4c37185aee
 
-PODFILE CHECKSUM: d06129a3f3e8959dcf2a7faba0b6dcb93d26ed87
+PODFILE CHECKSUM: 3c1052250847773d57e9c5d937cf748fbc0bb138
 
 COCOAPODS: 1.10.0
