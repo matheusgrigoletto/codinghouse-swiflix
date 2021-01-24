@@ -141,7 +141,11 @@ class RegisterViewController: UIViewController {
                 print(error?.localizedDescription)
                 return
             }
+            
             print(result.user.uid)
+            if result.user.uid != nil {
+                self.performSegue(withIdentifier: Segues.loginToMain, sender: nil)
+            }
         }
         
         

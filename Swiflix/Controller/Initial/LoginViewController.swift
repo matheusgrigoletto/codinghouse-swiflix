@@ -36,6 +36,7 @@ class LoginViewController: UIViewController {
     
     //MARK: - IBAction
     @IBAction func loginButtonTapped(_ sender: UIButton) {
+        
         self.performSegue(withIdentifier: Segues.loginToMain, sender: nil)
     }
     

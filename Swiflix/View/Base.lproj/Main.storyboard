@@ -311,7 +311,7 @@
                                 </state>
                                 <connections>
                                     <action selector="cadastrarButtonTapped:" destination="Vow-ZN-cbm" eventType="touchUpInside" id="oaW-yc-Ft6"/>
-                                    <segue destination="kxV-Jq-N13" kind="presentation" modalPresentationStyle="fullScreen" id="YTr-7P-JR0"/>
+                                    <segue destination="kxV-Jq-N13" kind="presentation" identifier="loginToMainSegue" modalPresentationStyle="fullScreen" id="YTr-7P-JR0"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="HkF-xJ-Znq">
