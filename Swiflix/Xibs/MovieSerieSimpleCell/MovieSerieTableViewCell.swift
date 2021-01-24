@@ -9,6 +9,9 @@ import UIKit
 
 class MovieSerieTableViewCell: UITableViewCell {
     
+    
+    @IBOutlet weak var outerView: UIView!
+    
     @IBOutlet weak var posterImage: UIImageView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var sinopse: UILabel!
@@ -27,9 +30,11 @@ class MovieSerieTableViewCell: UITableViewCell {
         
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0))
         
-        self.posterImage.layer.cornerRadius = 6
+       
         self.contentView.layer.cornerRadius = 6
-
+        self.posterImage.applyShadowWithCorner(containerView: outerView, cornerRadious: 6)
+        
+        
         
     }
 
@@ -56,3 +61,4 @@ class MovieSerieTableViewCell: UITableViewCell {
     }
     
 }
+
