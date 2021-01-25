@@ -9,8 +9,8 @@ import UIKit
 
 class PessoaTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var contentViewColor: UIView!
     @IBOutlet weak var outerView: UIView!
-    
     @IBOutlet weak var profile: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var department: UILabel!
@@ -29,8 +29,11 @@ class PessoaTableViewCell: UITableViewCell {
         
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0))
         
+        
         self.contentView.layer.cornerRadius = 6
-        self.profile.applyShadowWithCorner(containerView: outerView, cornerRadious: 6)
+        
+            self.profile.applyShadowWithCorner(containerView: outerView, cornerRadious: 6, color: UIColor.gray.cgColor)
+            
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -58,9 +61,10 @@ class PessoaTableViewCell: UITableViewCell {
 
 
 extension UIImageView  {
-    func applyShadowWithCorner(containerView: UIView, cornerRadious: CGFloat){
+    
+    func applyShadowWithCorner(containerView: UIView, cornerRadious: CGFloat, color: CGColor){
         containerView.clipsToBounds = false
-        containerView.layer.shadowColor = UIColor.black.cgColor
+        containerView.layer.shadowColor = color
         containerView.layer.shadowOpacity = 1
         containerView.layer.shadowOffset = CGSize.zero
         containerView.layer.shadowRadius = 10
@@ -71,3 +75,5 @@ extension UIImageView  {
     }
     
 }
+
+

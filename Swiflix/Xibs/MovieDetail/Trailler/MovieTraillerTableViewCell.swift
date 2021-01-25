@@ -32,8 +32,15 @@ class MovieTraillerTableViewCell: UITableViewCell {
         
         self.contentView.layer.cornerRadius = 6
         
-        
-        self.poster.applyShadowWithCorner(containerView: outerView, cornerRadious: 6)
+        if contentView.backgroundColor?.isEqual(UIColor.white) == true{
+            self.poster.applyShadowWithCorner(containerView: outerView, cornerRadious: 6, color: UIColor.black.cgColor)
+            
+        }else{
+            self.poster.applyShadowWithCorner(containerView: outerView, cornerRadious: 6, color: UIColor.gray.cgColor)
+        }
+    
+    
+      
         
     }
 

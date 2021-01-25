@@ -21,6 +21,15 @@ class MovieViewController: UIViewController {
         self.configureDelegates()
         escondeTecladoClicandoFora()
         self.getMovies(page: self.page)
+        
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        guard UIApplication.shared.applicationState == .inactive else { return }
+        
+    
     }
     
     private func getMovies(page: Int){
@@ -95,3 +104,4 @@ extension MovieViewController: UITableViewDelegate {
         performSegue(withIdentifier: Segues.toMovieDetail, sender: chosenMovie)
     }
 }
+

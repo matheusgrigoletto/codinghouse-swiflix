@@ -10,6 +10,7 @@ import UIKit
 class MovieSerieTableViewCell: UITableViewCell {
     
     
+    @IBOutlet weak var contentViewColor: UIView!
     @IBOutlet weak var outerView: UIView!
     
     @IBOutlet weak var posterImage: UIImageView!
@@ -32,9 +33,9 @@ class MovieSerieTableViewCell: UITableViewCell {
         
        
         self.contentView.layer.cornerRadius = 6
-        self.posterImage.applyShadowWithCorner(containerView: outerView, cornerRadious: 6)
-        
-        
+            
+            self.posterImage.applyShadowWithCorner(containerView: outerView, cornerRadious: 6, color: UIColor.gray.cgColor)
+
         
     }
 

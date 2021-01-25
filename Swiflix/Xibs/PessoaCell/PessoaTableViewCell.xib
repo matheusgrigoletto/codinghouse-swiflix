@@ -85,6 +85,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="contentViewColor" destination="H2p-sc-9uM" id="riQ-mk-9wH"/>
                 <outlet property="department" destination="0Y7-gB-A3x" id="Vtb-5Z-TNZ"/>
                 <outlet property="knowFor" destination="COS-mf-PtA" id="mpl-Vx-aMN"/>
                 <outlet property="name" destination="hkb-9T-4At" id="b1i-9q-WHo"/>

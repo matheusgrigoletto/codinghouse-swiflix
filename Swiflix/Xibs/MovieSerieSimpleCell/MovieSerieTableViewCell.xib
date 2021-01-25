@@ -81,6 +81,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="contentViewColor" destination="H2p-sc-9uM" id="wn7-3s-4Lf"/>
                 <outlet property="outerView" destination="ghC-xx-XuA" id="oCA-dc-Com"/>
                 <outlet property="posterImage" destination="4Xb-8g-Mbp" id="eXt-Zc-VMD"/>
                 <outlet property="rating" destination="dAu-m9-ViH" id="vtH-3I-ccH"/>

@@ -12,6 +12,7 @@ class GenericMediaTableViewCell: UITableViewCell {
     
     @IBOutlet weak var outerView: UIView!
     
+    @IBOutlet weak var contentViewColor: UIView!
     @IBOutlet weak var poster: UIImageView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var rating: UILabel!
@@ -31,8 +32,10 @@ class GenericMediaTableViewCell: UITableViewCell {
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0))
         
         
-        self.contentView.layer.cornerRadius = 6
-        self.poster.applyShadowWithCorner(containerView: outerView, cornerRadious: 6)
+            self.contentView.layer.cornerRadius = 6
+            self.poster.applyShadowWithCorner(containerView: outerView, cornerRadious: 6, color: UIColor.gray.cgColor)
+        
+    
         
     }
 
