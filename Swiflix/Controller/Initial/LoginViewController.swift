@@ -42,14 +42,22 @@ class LoginViewController: UIViewController {
             guard let isLogged = result else {
                 print(error?.localizedDescription)
                 let erro = error?.localizedDescription
-                self.alertaDesconectado(descricaoErro: erro ?? "")
+                self.alertaDesconectado(descricaoErro: erro ?? "===NIL===ERRO===")
                 return
             }
             print("=============")
             print(isLogged)
             print("=============")
             if isLogged != nil {
-                self.performSegue(withIdentifier: Segues.loginToMain, sender: nil)
+                //self.performSegue(withIdentifier: Segues.loginToMain, sender: nil)
+                
+                
+                let storyboard = UIStoryboard(name: "Tabbar", bundle: nil)
+                        let vc = storyboard.instantiateInitialViewController()
+                        self.view.window?.rootViewController = vc
+                
+               
+                
             }
         }
         
@@ -60,14 +68,20 @@ class LoginViewController: UIViewController {
     
     //MARK: - Functions
     private func configureTextFields(){
-        self.emailTextField.layer.cornerRadius = 10
-        self.emailTextField.layer.borderWidth = 2
-        self.emailTextField.layer.borderColor = UIColor.systemGray.cgColor
-        self.emailTextField.layer.masksToBounds = true
+//        self.emailTextField.layer.cornerRadius = 10
+//        self.emailTextField.layer.borderWidth = 2
+//        self.emailTextField.layer.borderColor = UIColor.systemGray.cgColor
+//        self.emailTextField.layer.masksToBounds = true
         
-        self.senhaTextField.layer.cornerRadius = 10
-        self.senhaTextField.layer.borderWidth = 2
-        self.senhaTextField.layer.borderColor = UIColor.systemGray.cgColor
+//        self.senhaTextField.layer.cornerRadius = 10
+//        self.senhaTextField.layer.borderWidth = 2
+//        self.senhaTextField.layer.borderColor = UIColor.systemGray.cgColor
+        //=======
+        self.emailTextField.backgroundColor = .darkGray
+        self.emailTextField.attributedPlaceholder = NSAttributedString(string:"E-mail", attributes:[NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        self.senhaTextField.backgroundColor = .darkGray
+        self.senhaTextField.attributedPlaceholder = NSAttributedString(string:"Senha", attributes:[NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        
     }
     
 }

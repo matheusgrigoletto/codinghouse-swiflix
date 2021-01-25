@@ -87,14 +87,16 @@ class RegisterViewController: UIViewController {
     
      func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         if textField.text != ""{
-            textField.backgroundColor = .white
-            textField.textColor = .black
+            //textField.backgroundColor = .white
+            textField.textColor = .white
+            textField.layer.borderWidth = 2
+            textField.layer.borderColor = CGColor.init(red: 0, green: 255, blue: 0, alpha: 75)
             
         }else{
-            textField.backgroundColor = .darkGray
-            if textField.text?.isEmpty == true{
-//                campoVazio() //Tentando validar
-            }
+            //textField.backgroundColor = .darkGray
+            textField.textColor = .black
+            textField.layer.borderWidth = 2
+            textField.layer.borderColor = CGColor.init(red: 255, green: 0, blue: 0, alpha: 75)
         }
 
 //        if confirmarEmailTextField.isSelected == true {
@@ -142,7 +144,9 @@ class RegisterViewController: UIViewController {
         
         Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
             guard let result = result else {
+                let erro = error?.localizedDescription
                 print(error?.localizedDescription)
+                self.alertaDesconectado(descricaoErro: erro ?? "===NIL===ERRO===")
                 return
             }
             
@@ -155,13 +159,6 @@ class RegisterViewController: UIViewController {
         
     }
     
-    func checkField(f1: String, f2: String) -> Bool{
-        if f1 != f2 {
-            return false
-        }else {
-            return true
-        }
-    }
     
     @IBAction func chooseImageButtonTapped(_ sender: UIButton) {
         
@@ -266,4 +263,15 @@ extension UIImageView {
         self.layer.cornerRadius = self.frame.height / 2
         self.clipsToBounds = true
     }
+}
+
+extension UIViewController {
+    func checkField(f1: String, f2: String) -> Bool{
+        if f1 != f2 {
+            return false
+        }else {
+            return true
+        }
+    }
+    
 }

@@ -22,6 +22,10 @@ class InitialViewController: UIViewController {
         escondeTecladoClicandoFora()
         //esconde o titulo no navigation controller
         //self.navigationController?.setNavigationBarHidden(true, animated: true)
+        
+        overrideUserInterfaceStyle = .light
+        
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,6 +33,8 @@ class InitialViewController: UIViewController {
         //esconde o titulo no navigation controller
         //self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
+    
+    
     
     //MARK: - IBActions
     @IBAction func comecarButtonTapped(_ sender: UIButton) {
@@ -39,3 +45,4 @@ class InitialViewController: UIViewController {
     }
     
 }
+
