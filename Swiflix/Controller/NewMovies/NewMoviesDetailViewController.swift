@@ -120,6 +120,11 @@ class NewMoviesDetailViewController: UIViewController {
 }
 
 extension NewMoviesDetailViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.contentView.layer.masksToBounds = true
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch self.segmentedIndex {
         case 0:

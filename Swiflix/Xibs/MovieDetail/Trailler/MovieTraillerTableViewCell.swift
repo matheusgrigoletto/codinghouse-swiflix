@@ -9,6 +9,7 @@ import UIKit
 
 class MovieTraillerTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var outerView: UIView!
     @IBOutlet weak var site: UILabel!
     @IBOutlet weak var tipo: UILabel!
     @IBOutlet weak var nome: UILabel!
@@ -20,6 +21,20 @@ class MovieTraillerTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0))
+        
+        self.contentView.layer.cornerRadius = 6
+        
+        
+        self.poster.applyShadowWithCorner(containerView: outerView, cornerRadious: 6)
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
