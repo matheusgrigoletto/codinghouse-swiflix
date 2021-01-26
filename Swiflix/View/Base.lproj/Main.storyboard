@@ -155,6 +155,10 @@
                                         <state key="normal" title="Esqueci a Senha">
                                             <color key="titleColor" red="0.3740689767" green="0.3740689767" blue="0.3740689767" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="esqueciButtonTapped:" destination="w4s-X3-eqd" eventType="touchUpInside" id="sVq-wR-oWy"/>
+                                            <segue destination="kQg-NJ-mYE" kind="presentation" identifier="MudarSenhaVC" id="X7D-qc-iZp"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -193,6 +197,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bRf-wY-neL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-4449" y="-332"/>
+        </scene>
+        <!--MudarSenhaVC-->
+        <scene sceneID="eEN-dv-0rM">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="MudarSenhaVC" storyboardName="ChangePassword" referencedIdentifier="MudarSenhaVC" id="kQg-NJ-mYE" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5iV-Kj-CiH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3647" y="-56"/>
         </scene>
         <!--Tabbar-->
         <scene sceneID="EHu-62-2dF">

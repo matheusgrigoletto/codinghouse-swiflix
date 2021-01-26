@@ -16,6 +16,7 @@ class PerfilViewController: UIViewController {
     
     @IBOutlet weak var nomeLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var mudarSenhaBtn: UIButton!
     
     var segmentedIndex:Int = 0
     var favoriteMovies = MockupMovie.getMovies()
@@ -46,6 +47,7 @@ class PerfilViewController: UIViewController {
     
     func configureUI(){
         self.title = "Perfil"
+        mudarSenhaBtn.layer.cornerRadius = mudarSenhaBtn.layer.frame.height / 2
         try! Auth.auth().signOut()
         let logoutButton = UIBarButtonItem(title: "Logout", style: .done, target: self, action: #selector(logout))
         self.navigationItem.rightBarButtonItem = logoutButton

@@ -10,6 +10,8 @@
 		0F3CE7A425BD0926006990B1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F3CE7A325BD0926006990B1 /* GoogleService-Info.plist */; };
 		0FBDE1A92545D74B00655436 /* MovieSerieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBDE1A42545D74B00655436 /* MovieSerieTableViewCell.swift */; };
 		0FBDE1AA2545D74B00655436 /* MovieSerieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FBDE1A52545D74B00655436 /* MovieSerieTableViewCell.xib */; };
+		0FF75CFA25BFA27E00A68766 /* MudarSenhaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF75CF925BFA27E00A68766 /* MudarSenhaVC.swift */; };
+		0FF75CFD25BFADC300A68766 /* ChangePassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF75CFC25BFADC300A68766 /* ChangePassword.storyboard */; };
 		2FD283B22537DC9E0032400F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD283B12537DC9E0032400F /* AppDelegate.swift */; };
 		2FD283B42537DC9E0032400F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD283B32537DC9E0032400F /* SceneDelegate.swift */; };
 		2FD283B92537DC9E0032400F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FD283B72537DC9E0032400F /* Main.storyboard */; };
@@ -132,6 +134,8 @@
 		0F3CE7A325BD0926006990B1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0FBDE1A42545D74B00655436 /* MovieSerieTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieSerieTableViewCell.swift; sourceTree = "<group>"; };
 		0FBDE1A52545D74B00655436 /* MovieSerieTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieSerieTableViewCell.xib; sourceTree = "<group>"; };
+		0FF75CF925BFA27E00A68766 /* MudarSenhaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MudarSenhaVC.swift; sourceTree = "<group>"; };
+		0FF75CFC25BFADC300A68766 /* ChangePassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangePassword.storyboard; sourceTree = "<group>"; };
 		2FD283AE2537DC9E0032400F /* Swiflix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swiflix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FD283B12537DC9E0032400F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FD283B32537DC9E0032400F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -619,6 +623,7 @@
 			isa = PBXGroup;
 			children = (
 				C337370225648A4000F90F36 /* PerfilViewController.swift */,
+				0FF75CF925BFA27E00A68766 /* MudarSenhaVC.swift */,
 			);
 			path = Perfil;
 			sourceTree = "<group>";
@@ -692,6 +697,7 @@
 				2FD283BC2537DCA10032400F /* LaunchScreen.storyboard */,
 				5631F42825473B9E00FFCCBC /* Tabbar.storyboard */,
 				C353434C2562226E00239BE5 /* UserProfile.storyboard */,
+				0FF75CFC25BFADC300A68766 /* ChangePassword.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -841,6 +847,7 @@
 				C364A1692560421400265DBB /* GalleryCollectionViewCell.xib in Resources */,
 				AD64EA49254E2BC100F63F89 /* PeopleTableViewCell.xib in Resources */,
 				2FD283BE2537DCA10032400F /* LaunchScreen.storyboard in Resources */,
+				0FF75CFD25BFADC300A68766 /* ChangePassword.storyboard in Resources */,
 				ADC19A9B255DF9B700F9BD55 /* SerieEpisodesTableViewCell.xib in Resources */,
 				AD1EEC58255DEF6D001BE764 /* SerieGeralTableViewCell.xib in Resources */,
 				56DD8A85255B0A1C005B0E16 /* PersonBiographyTableViewCell.xib in Resources */,
@@ -945,6 +952,7 @@
 				2FD283B42537DC9E0032400F /* SceneDelegate.swift in Sources */,
 				AD455A8E2584092300383835 /* Image.swift in Sources */,
 				5600FC3D255DBB0900AD7617 /* NewMoviesDetailViewController.swift in Sources */,
+				0FF75CFA25BFA27E00A68766 /* MudarSenhaVC.swift in Sources */,
 				56AA48ED255B105E00003A53 /* PersonGaleryTableViewCell.swift in Sources */,
 				C3D8F64825582E7D001FFCA1 /* MovieTrailler.swift in Sources */,
 				ADB4238A255DC10A00B92915 /* MockupSerie.swift in Sources */,

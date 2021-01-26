@@ -19,11 +19,17 @@ class LoginViewController: UIViewController {
 
     //MARK: - View LifeCycle
     override func viewDidLoad() {
+        
+        DispatchQueue.main.async {
+               self.emailTextField.becomeFirstResponder()
+           }
+        
         super.viewDidLoad()
         self.configureTextFields()
         self.configureDelegates()
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         self.view.addGestureRecognizer(tap)
+        
     }
     
     
@@ -35,6 +41,14 @@ class LoginViewController: UIViewController {
     }
     
     //MARK: - IBAction
+    @IBAction func esqueciButtonTapped(_ sender: UIButton) {
+//        let storyboard = UIStoryboard(name: "MudarSenhaVC", bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier: "MudarSenhaVC")
+//        present(vc, animated: true, completion: nil)
+        
+        performSegue(withIdentifier: "MudarSenhaVC", sender: nil)
+        
+    }
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         let email = emailTextField.text!
         let senha = senhaTextField.text!
@@ -148,3 +162,4 @@ extension UIViewController {
         
     }
 }
+
