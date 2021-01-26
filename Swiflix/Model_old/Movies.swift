@@ -15,6 +15,7 @@ struct Movies: Codable {
     var episodeCount: Int?
     var job: String?
     var overview: String?
+    var runtime: Int?
     var originCountry: [String]?
     var originalName: String?
     var genreIds: [Int]?

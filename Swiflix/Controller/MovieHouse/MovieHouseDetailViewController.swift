@@ -15,7 +15,7 @@ class MovieHouseDetailViewController: UIViewController {
     @IBOutlet weak var backdrop: UIImageView!
     
     //let fullMovie:FullMovie = MockupMovie.getFullMovie()
-    var fullMovie:MovieMDB?
+    var fullMovie:MovieDetailedMDB?
     var similarMovies: [SimilarMovie] = []
     var reviews: [Review] = []
     var traillers: [MovieTrailer] = []
@@ -43,7 +43,7 @@ class MovieHouseDetailViewController: UIViewController {
     }
     
     private func getFullMovie(){
-        MovieMDB.movie(movieID: self.movieID, language: "pt-BR") { (return, movieDetail) in
+        MovieDetailedMDB.movie(movieID: self.movieID, language: "pt-BR") { (return, movieDetail) in
             if let movieDetail = movieDetail {
                 self.fullMovie = movieDetail
                 self.movieHouseTableView.reloadData()
@@ -51,6 +51,7 @@ class MovieHouseDetailViewController: UIViewController {
             }
         }
     }
+    
     
     private func getSimilarMovies() {
         if let id = self.movieID {

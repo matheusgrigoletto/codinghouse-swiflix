@@ -33,7 +33,15 @@ class SerieGeralTableViewCell: UITableViewCell {
         self.titulo.text = serie.name
         self.tituloOriginal.text = serie.original_name
         self.sinopse.text = serie.overview
-        self.duracao.text = "Não tem tempo" //TODO: Melhorar essa linha
+        self.duracao.text = ""
+        if let runtime = serie.episode_run_time{
+        for ep in runtime {
+                self.duracao.text! = "\(ep) "
+            }
+        }
+        self.duracao.text! += "minutos"
+
+       
         self.dataLancamento.text = serie.first_air_date
         self.genero.text = ""
         

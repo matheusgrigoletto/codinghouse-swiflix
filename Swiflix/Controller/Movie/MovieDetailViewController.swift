@@ -15,7 +15,7 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var backdrop: UIImageView!
     
     //let fullMovie:FullMovie = MockupMovie.getFullMovie()
-    var fullMovie:MovieMDB?
+    var fullMovie:MovieDetailedMDB?
     var similarMovies: [SimilarMovie] = []
     var reviews: [Review] = []
     var traillers: [MovieTrailer] = []

@@ -28,11 +28,14 @@ class MovieGeralTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func setup(_ m: MovieMDB){
+    func setup(_ m: MovieDetailedMDB){
         self.titulo.text = m.title
         self.tituloOriginal.text = m.original_title
         self.sinopse.text = m.overview
-        self.duracao.text = "Não tem tempo"
+        if let runtime = m.runtime{
+            self.duracao.text = "\(String(runtime)) minutos"
+            
+        }
         self.dataLancamento.text = m.release_date
         
         self.genero.text = " "
@@ -45,8 +48,10 @@ class MovieGeralTableViewCell: UITableViewCell {
         self.genero.text?.removeLast()
         self.genero.text?.removeLast()
     }
-    
-//    func setup(_ movie: MovieDetailedMDB){
-//        self.duracao.text = String
-//    }
+        func setupRuntime(_ movie: MovieDetailedMDB){
+            if let runtime = movie.runtime{
+                self.duracao.text = String(runtime)
+                
+            }
+   }
 }

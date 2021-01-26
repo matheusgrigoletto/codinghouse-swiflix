@@ -14,7 +14,7 @@ class NewMoviesDetailViewController: UIViewController {
     @IBOutlet weak var rateLabel: UILabel!
     @IBOutlet weak var backdrop: UIImageView!
     
-    var fullMovie: MovieMDB?
+    var fullMovie: MovieDetailedMDB?
     var similarMovies: [SimilarMovie] = []
     var reviews: [Review] = []
     var traillers: [MovieTrailer] = []
