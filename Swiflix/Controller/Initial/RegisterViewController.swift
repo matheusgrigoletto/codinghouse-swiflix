@@ -151,8 +151,13 @@ class RegisterViewController: UIViewController {
             }
             
             print(result.user.uid)
-            if result.user.uid != nil {
-                self.performSegue(withIdentifier: Segues.loginToMain, sender: nil)
+            var isLogged = result.user.uid
+            if isLogged != nil {
+                
+                let storyboard = UIStoryboard(name: "Tabbar", bundle: nil)
+                        let vc = storyboard.instantiateInitialViewController()
+                        self.view.window?.rootViewController = vc
+                
             }
         }
         

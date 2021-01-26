@@ -63,14 +63,10 @@ class LoginViewController: UIViewController {
             print(isLogged)
             print("=============")
             if isLogged != nil {
-                //self.performSegue(withIdentifier: Segues.loginToMain, sender: nil)
-                
                 
                 let storyboard = UIStoryboard(name: "Tabbar", bundle: nil)
                         let vc = storyboard.instantiateInitialViewController()
                         self.view.window?.rootViewController = vc
-                
-               
                 
             }
         }
