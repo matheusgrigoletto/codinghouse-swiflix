@@ -46,7 +46,7 @@ class PerfilViewController: UIViewController {
     
     func configureUI(){
         self.title = "Perfil"
-        
+        try! Auth.auth().signOut()
         let logoutButton = UIBarButtonItem(title: "Logout", style: .done, target: self, action: #selector(logout))
         self.navigationItem.rightBarButtonItem = logoutButton
     }
@@ -61,6 +61,7 @@ class PerfilViewController: UIViewController {
     
     
     @objc func logout(){
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyboard.instantiateInitialViewController()
                 self.view.window?.rootViewController = vc

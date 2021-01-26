@@ -19,6 +19,7 @@ class InitialViewController: UIViewController {
     //MARK: - ViewController Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        isLogged()
         escondeTecladoClicandoFora()
         //esconde o titulo no navigation controller
         //self.navigationController?.setNavigationBarHidden(true, animated: true)
@@ -34,10 +35,21 @@ class InitialViewController: UIViewController {
         //self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
+    func isLogged(){
+        if Auth.auth().currentUser?.uid != nil {
+            let storyboard = UIStoryboard(name: "Tabbar", bundle: nil)
+                    let vc = storyboard.instantiateInitialViewController()
+                    self.view.window?.rootViewController = vc
+            print("UserLogged")
+        }else {
+            print("NO USER LOGGED")
+        }
+    }
     
     
     //MARK: - IBActions
     @IBAction func comecarButtonTapped(_ sender: UIButton) {
+        isLogged()
         performSegue(withIdentifier: Segues.toLogin, sender: nil)
     }
     @IBAction func registerButtonTapped(_ sender: UIButton) {
