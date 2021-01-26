@@ -15,7 +15,7 @@
                 <navigationController id="21y-CX-qSw" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Filmes" image="film" catalog="system" selectedImage="film.fill" id="Pgh-U4-tsw"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="5ME-GF-Ij0">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="104.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -210,7 +210,7 @@
                 <navigationController id="Ce4-38-V9i" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Séries" image="list.and.film" catalog="system" selectedImage="list.and.film" id="dUG-Zm-ZqA"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="K3L-9T-4hW">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="104.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
