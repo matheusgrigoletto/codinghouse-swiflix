@@ -9,17 +9,23 @@ import UIKit
 import TMDBSwift
 
 class MovieViewController: UIViewController {
-
+    
     @IBOutlet weak var movieTableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var movies:[GenericMedia] = []
     var page: Int = 1
     
     override func viewDidLoad() {
+        searchBar.placeholder = "Procure por um filme"
+        
         super.viewDidLoad()
         self.registerCell(nib: GenericMediaTableViewCell.nibName, cellID: GenericMediaTableViewCell.cellID)
         self.configureDelegates()
-        escondeTecladoClicandoFora()
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        self.view.addGestureRecognizer(tap)
+        
         self.getMovies(page: self.page)
         
     }
@@ -29,10 +35,52 @@ class MovieViewController: UIViewController {
         
         guard UIApplication.shared.applicationState == .inactive else { return }
         
-    
+        
     }
     
+    
+    private func getSearchMovies(searchText: String){
+        
+        print("antes do searchmovie\(searchText)")
+        
+        self.movies = []
+        
+        SearchMDB.movie(query: searchText, language: "pt-BR", page: 1, includeAdult: false, year: nil, primaryReleaseYear: nil) { (return, movies) in
+            
+            if let movies = movies {
+                
+                for movie in movies {
+                    
+                    if
+                        
+                        let title = movie.title,
+                        let id = movie.id,
+                        let rating = movie.vote_average,
+                        let overview = movie.overview,
+                        let poster = movie.poster_path{
+                        let generic = GenericMedia(id: id, title: title, rating: rating, overview: overview, poster: poster)
+                        
+                        self.movies.append(generic)
+                        
+                    }
+                }
+                
+                print("antes else\(searchText)")
+                self.movieTableView.reloadData()
+                
+            }else{
+                print("no else\(searchText)")
+            }
+        }
+        
+    }
+    
+    
     private func getMovies(page: Int){
+        
+
+    
+        
         MovieMDB.popular(language: "pt-BR", page: page) { (result, movies) in
             if let movies = movies {
                 for movie in movies {
@@ -61,6 +109,7 @@ class MovieViewController: UIViewController {
     func configureDelegates(){
         self.movieTableView.delegate = self
         self.movieTableView.dataSource = self
+        self.searchBar.delegate = self
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -104,4 +153,28 @@ extension MovieViewController: UITableViewDelegate {
         performSegue(withIdentifier: Segues.toMovieDetail, sender: chosenMovie)
     }
 }
+
+extension MovieViewController: UISearchBarDelegate{
+    
+    
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar){
+        searchBar.resignFirstResponder()
+        
+    }
+    
+    
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
+        if (!searchText.isEmpty){
+            getSearchMovies(searchText: searchText)
+        }else{
+            self.movies = []
+            self.page = 1
+            getMovies(page: self.page)
+        }
+    }
+    
+}
+
 
