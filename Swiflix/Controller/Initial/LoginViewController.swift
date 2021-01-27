@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import Firebase
+import IQKeyboardManagerSwift
+
 
 class LoginViewController: UIViewController {
     //MARK: - IBOutlets
@@ -16,11 +19,17 @@ class LoginViewController: UIViewController {
 
     //MARK: - View LifeCycle
     override func viewDidLoad() {
+        
+        DispatchQueue.main.async {
+               self.emailTextField.becomeFirstResponder()
+           }
+        
         super.viewDidLoad()
         self.configureTextFields()
         self.configureDelegates()
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         self.view.addGestureRecognizer(tap)
+        
     }
     
     
@@ -32,20 +41,57 @@ class LoginViewController: UIViewController {
     }
     
     //MARK: - IBAction
+    @IBAction func esqueciButtonTapped(_ sender: UIButton) {
+//        let storyboard = UIStoryboard(name: "MudarSenhaVC", bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier: "MudarSenhaVC")
+//        present(vc, animated: true, completion: nil)
+        
+        performSegue(withIdentifier: "MudarSenhaVC", sender: nil)
+        
+    }
     @IBAction func loginButtonTapped(_ sender: UIButton) {
-        self.performSegue(withIdentifier: Segues.loginToMain, sender: nil)
+        let email = emailTextField.text!
+        let senha = senhaTextField.text!
+        Auth.auth().signIn(withEmail: email, password: senha) { (result, error) in
+            guard let isLogged = result else {
+                print(error?.localizedDescription)
+                let erro = error?.localizedDescription
+                self.alertaDesconectado(descricaoErro: erro ?? "===NIL===ERRO===")
+                return
+            }
+            print("=============")
+            print(isLogged)
+            print("=============")
+            if isLogged != nil {
+                
+                let storyboard = UIStoryboard(name: "Tabbar", bundle: nil)
+                        let vc = storyboard.instantiateInitialViewController()
+                        self.view.window?.rootViewController = vc
+                
+            }
+        }
+        
+        
+       
+        
     }
     
     //MARK: - Functions
     private func configureTextFields(){
-        self.emailTextField.layer.cornerRadius = 10
-        self.emailTextField.layer.borderWidth = 2
-        self.emailTextField.layer.borderColor = UIColor.systemGray.cgColor
-        self.emailTextField.layer.masksToBounds = true
+//        self.emailTextField.layer.cornerRadius = 10
+//        self.emailTextField.layer.borderWidth = 2
+//        self.emailTextField.layer.borderColor = UIColor.systemGray.cgColor
+//        self.emailTextField.layer.masksToBounds = true
         
-        self.senhaTextField.layer.cornerRadius = 10
-        self.senhaTextField.layer.borderWidth = 2
-        self.senhaTextField.layer.borderColor = UIColor.systemGray.cgColor
+//        self.senhaTextField.layer.cornerRadius = 10
+//        self.senhaTextField.layer.borderWidth = 2
+//        self.senhaTextField.layer.borderColor = UIColor.systemGray.cgColor
+        //=======
+        self.emailTextField.backgroundColor = .darkGray
+        self.emailTextField.attributedPlaceholder = NSAttributedString(string:"E-mail", attributes:[NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        self.senhaTextField.backgroundColor = .darkGray
+        self.senhaTextField.attributedPlaceholder = NSAttributedString(string:"Senha", attributes:[NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        
     }
     
 }
@@ -87,3 +133,29 @@ extension UIViewController{
         self.view.endEditing(true)
     }
 }
+
+
+extension UIViewController {
+    func alertaDesconectado(descricaoErro: String){
+        var resultado: String
+        if descricaoErro == "The password is invalid or the user does not have a password." {
+            resultado = "Senha inválida ou usuário não possui senha."
+        }else if descricaoErro == "The email address is badly formatted." {
+            resultado = "Email incorreto ou mal formatado."
+        }else if descricaoErro == "There is no user record corresponding to this identifier. The user may have been deleted."{
+            resultado = "Não há usuário com este e-mail."
+        }else {
+            resultado = "Erro desconhecido!"
+        }
+        
+        let refreshAlert = UIAlertController(title: "Atenção", message: resultado, preferredStyle: UIAlertController.Style.alert)
+
+        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+              //print("Handle Ok logic here")
+        }))
+        
+        present(refreshAlert, animated: true, completion: nil)
+        
+    }
+}
+

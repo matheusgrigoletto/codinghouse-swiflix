@@ -9,6 +9,9 @@ PODS:
     - FirebaseAnalytics (= 7.2.0)
   - Firebase/CoreOnly (7.2.0):
     - FirebaseCore (= 7.2.0)
+  - Firebase/Database (7.2.0):
+    - Firebase/CoreOnly
+    - FirebaseDatabase (~> 7.2.0)
   - FirebaseAnalytics (7.2.0):
     - FirebaseCore (~> 7.0)
     - FirebaseInstallations (~> 7.0)
@@ -32,6 +35,9 @@ PODS:
     - GoogleUtilities/Environment (~> 7.0)
     - GoogleUtilities/Logger (~> 7.0)
     - nanopb (~> 2.30906.0)
+  - FirebaseDatabase (7.2.0):
+    - FirebaseCore (~> 7.0)
+    - leveldb-library (~> 1.22)
   - FirebaseInstallations (7.2.0):
     - FirebaseCore (~> 7.0)
     - GoogleUtilities/Environment (~> 7.0)
@@ -65,7 +71,9 @@ PODS:
   - GoogleUtilities/UserDefaults (7.1.1):
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.5.0)
+  - IQKeyboardManagerSwift (6.3.0)
   - Kingfisher (6.0.1)
+  - leveldb-library (1.22)
   - nanopb (2.30906.0):
     - nanopb/decode (= 2.30906.0)
     - nanopb/encode (= 2.30906.0)
@@ -78,6 +86,8 @@ PODS:
 DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Auth
+  - Firebase/Database
+  - IQKeyboardManagerSwift (= 6.3.0)
   - Kingfisher (~> 6.0)
   - TMDBSwift (~> 0.5)
   - YouTubePlayer
@@ -89,12 +99,15 @@ SPEC REPOS:
     - FirebaseAuth
     - FirebaseCore
     - FirebaseCoreDiagnostics
+    - FirebaseDatabase
     - FirebaseInstallations
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleUtilities
     - GTMSessionFetcher
+    - IQKeyboardManagerSwift
     - Kingfisher
+    - leveldb-library
     - nanopb
     - PromisesObjC
     - TMDBSwift
@@ -106,17 +119,20 @@ SPEC CHECKSUMS:
   FirebaseAuth: e6a214cc897d2eab7635b1e5dd6b4298fd1e776b
   FirebaseCore: c959e8a598f83125c01c1700d9161b236ab3833c
   FirebaseCoreDiagnostics: 2d508e12e77e9691ca67d1669b91ee80f0985b29
+  FirebaseDatabase: efb4d986413f55f7d9a05e621bd86ca1589e6ca7
   FirebaseInstallations: 9ab3a9a6522e687f59ff9bcfd92949ac85073f3c
   GoogleAppMeasurement: 57a0df93dc2feb5176b1bac06012dbd725191ba5
   GoogleDataTransport: e4085e6762f36a6141738f46b0153473ce57fb18
   GoogleUtilities: 3dc4ff0d5e4840e2fa8eef0889620e8c33d4218c
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
+  IQKeyboardManagerSwift: a8228c257614af98743b4cd8584637025f36358f
   Kingfisher: adde87a4f74f6a3845395769354efff593581740
+  leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 1bf24dd71191072e120b83dd02d08f3da0d65e53
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
   TMDBSwift: 9220f3dcee23372c05b92f8c111f5f4c37185aee
   YouTubePlayer: 2b5f2830d8f9b2cde942083211291e382c9e6bd5
 
-PODFILE CHECKSUM: 049a7a9fd06b97e783a9f379102246e46f406d33
+PODFILE CHECKSUM: 429a5a7bc6e65def7b663988bf2cef7a59bbcb5e
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.10.0

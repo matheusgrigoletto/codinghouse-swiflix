@@ -14,7 +14,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Initial View Controller-->
+        <!-- -->
         <scene sceneID="Obe-OS-6Hw">
             <objects>
                 <viewController id="Cn0-Zu-pqk" customClass="InitialViewController" customModule="Swiflix" customModuleProvider="target" sceneMemberID="viewController">
@@ -85,7 +85,7 @@
                             <constraint firstItem="kF0-ea-3W6" firstAttribute="bottom" secondItem="U56-Vc-lpn" secondAttribute="bottom" constant="50" id="zTM-T6-N5i"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="6fK-F3-qVU"/>
+                    <navigationItem key="navigationItem" title=" " id="6fK-F3-qVU"/>
                     <connections>
                         <outlet property="comecarButton" destination="DHc-uM-Reh" id="xCT-6D-305"/>
                         <segue destination="w4s-X3-eqd" kind="show" identifier="toLoginSegue" id="hIP-Xh-j5Q"/>
@@ -144,8 +144,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="loginButtonTapped:" destination="w4s-X3-eqd" eventType="touchUpInside" id="qy5-OL-7tR"/>
-                                            <segue destination="kxV-Jq-N13" kind="presentation" identifier="loginToMainSegue" modalPresentationStyle="fullScreen" id="hzg-Ac-yqH"/>
+                                            <action selector="loginButtonTapped:" destination="w4s-X3-eqd" eventType="touchUpInside" id="G3C-V9-vRk"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUa-KU-kOg">
@@ -156,6 +155,10 @@
                                         <state key="normal" title="Esqueci a Senha">
                                             <color key="titleColor" red="0.3740689767" green="0.3740689767" blue="0.3740689767" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="esqueciButtonTapped:" destination="w4s-X3-eqd" eventType="touchUpInside" id="sVq-wR-oWy"/>
+                                            <segue destination="kQg-NJ-mYE" kind="presentation" identifier="MudarSenhaVC" id="X7D-qc-iZp"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -188,16 +191,27 @@
                         <outlet property="emailTextField" destination="42g-OD-8Zh" id="CNZ-5I-oSf"/>
                         <outlet property="loginButton" destination="ZBX-4d-be1" id="mzw-hX-ZNX"/>
                         <outlet property="senhaTextField" destination="5Ka-ow-K8g" id="gTc-HQ-sjf"/>
+                        <segue destination="kxV-Jq-N13" kind="show" identifier="loginToMainSegue" id="gKk-mv-LDx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bRf-wY-neL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-4449" y="-332"/>
         </scene>
+        <!--MudarSenhaVC-->
+        <scene sceneID="eEN-dv-0rM">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="MudarSenhaVC" storyboardName="ChangePassword" referencedIdentifier="MudarSenhaVC" id="kQg-NJ-mYE" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5iV-Kj-CiH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3647" y="-56"/>
+        </scene>
         <!--Tabbar-->
         <scene sceneID="EHu-62-2dF">
             <objects>
-                <viewControllerPlaceholder storyboardName="Tabbar" id="kxV-Jq-N13" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Tabbar" id="kxV-Jq-N13" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="rHf-lz-roo"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aJS-iU-sMD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-4951" y="204"/>
@@ -237,13 +251,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swiflix" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="mXu-N9-7BP">
-                                <rect key="frame" x="60" y="158.5" width="294" height="62.5"/>
+                                <rect key="frame" x="60" y="150" width="294" height="62.5"/>
                                 <fontDescription key="fontDescription" name="BerkshireSwash-Regular" family="Berkshire Swash" pointSize="50"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Zuc-Bf-WJq" userLabel="TextFields">
-                                <rect key="frame" x="20" y="369" width="374" height="210"/>
+                                <rect key="frame" x="20" y="360.5" width="374" height="210"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome Completo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d0M-P0-y6n">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
@@ -290,7 +304,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pq4-xn-0Z6">
-                                <rect key="frame" x="143" y="231" width="128" height="128"/>
+                                <rect key="frame" x="143" y="222.5" width="128" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="EZY-lk-IOz"/>
                                     <constraint firstAttribute="width" constant="128" id="Kzb-gI-Yec"/>
@@ -311,11 +325,10 @@
                                 </state>
                                 <connections>
                                     <action selector="cadastrarButtonTapped:" destination="Vow-ZN-cbm" eventType="touchUpInside" id="oaW-yc-Ft6"/>
-                                    <segue destination="kxV-Jq-N13" kind="presentation" modalPresentationStyle="fullScreen" id="YTr-7P-JR0"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="HkF-xJ-Znq">
-                                <rect key="frame" x="143" y="229.5" width="128" height="127"/>
+                                <rect key="frame" x="143" y="221" width="128" height="127"/>
                                 <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="128" id="AXg-8m-LHP"/>
@@ -350,6 +363,7 @@
                         <outlet property="nomeTextField" destination="d0M-P0-y6n" id="QXk-pX-kKF"/>
                         <outlet property="photoButton" destination="HkF-xJ-Znq" id="c9f-uQ-oxW"/>
                         <outlet property="senhaTextField" destination="Yiv-Z1-Dbs" id="3il-wT-vCa"/>
+                        <segue destination="kxV-Jq-N13" kind="show" identifier="loginToMainSegue" id="0Lv-7V-Mtw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7MX-Bf-Xl2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -358,7 +372,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="YTr-7P-JR0"/>
+        <segue reference="gKk-mv-LDx"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="camera.circle.fill" catalog="system" width="128" height="121"/>

@@ -7,10 +7,13 @@ target 'Swiflix' do
 
   # Pods for Swiflix
 
- 	pod 'TMDBSwift', '~> 0.5'
-	pod 'Firebase/Analytics'
-	pod 'Firebase/Auth'
+  pod 'TMDBSwift', '~> 0.5'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
 
+#Ajuste no TextField quando keyboard acionado
+	pod 'IQKeyboardManagerSwift', '6.3.0'
 	pod 'Kingfisher', '~> 6.0'
 	pod 'YouTubePlayer'
 

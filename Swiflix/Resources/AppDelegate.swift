@@ -7,7 +7,8 @@
 
 import UIKit
 import TMDBSwift
-//import Firebase
+import Firebase
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         TMDBConfig.apikey = "17601f63de363af685777c6cdbb42574"
         TMDB.key = "17601f63de363af685777c6cdbb42574"
+        
+        IQKeyboardManager.shared.enable = true
+        FirebaseApp.configure()
         
         return true
     }

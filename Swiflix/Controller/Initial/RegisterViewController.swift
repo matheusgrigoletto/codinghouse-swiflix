@@ -7,6 +7,8 @@
 
 import UIKit
 import Firebase
+import IQKeyboardManagerSwift
+
 
 class RegisterViewController: UIViewController {
 
@@ -39,9 +41,13 @@ class RegisterViewController: UIViewController {
         photoButton.layer.cornerRadius = photoButton.frame.height/2
         photoButton.clipsToBounds = true
         
-        
+        //MARK: - Realtime Database - instanciando
+        var ref: DatabaseReference!
+        ref = Database.database().reference()
+        //==========================================
         
         super.viewDidLoad()
+        
         escondeTecladoClicandoFora()
         
         nomeTextField.backgroundColor = .darkGray
@@ -81,14 +87,16 @@ class RegisterViewController: UIViewController {
     
      func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         if textField.text != ""{
-            textField.backgroundColor = .white
-            textField.textColor = .black
+            //textField.backgroundColor = .white
+            textField.textColor = .white
+            textField.layer.borderWidth = 2
+            textField.layer.borderColor = CGColor.init(red: 0, green: 255, blue: 0, alpha: 75)
             
         }else{
-            textField.backgroundColor = .darkGray
-            if textField.text?.isEmpty == true{
-                campoVazio() //Tentando validar
-            }
+            //textField.backgroundColor = .darkGray
+            textField.textColor = .black
+            textField.layer.borderWidth = 2
+            textField.layer.borderColor = CGColor.init(red: 255, green: 0, blue: 0, alpha: 75)
         }
 
 //        if confirmarEmailTextField.isSelected == true {
@@ -119,8 +127,44 @@ class RegisterViewController: UIViewController {
     @IBAction func cadastrarButtonTapped(_ sender: UIButton) {
          //TODO: Implementar função de criar novo usuário aqui
         
+        let nome = nomeTextField.text!
+        let email = emailTextField.text!
+        let password = senhaTextField.text!
+        
+        if checkField(f1: emailTextField.text ?? "email1", f2: confirmarEmailTextField.text ?? "email2") == false {
+            emailTextField.textColor = UIColor.red
+            confirmarEmailTextField.textColor = UIColor.red
+            alertaEmail()
+        }
+        if checkField(f1: senhaTextField.text ?? "s1", f2: confirmarSenhaTextField.text ?? "s2") == false {
+            senhaTextField.textColor = UIColor.red
+            senhaTextField.textColor = UIColor.red
+            alertaSenha()
+        }
+        
+        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+            guard let result = result else {
+                let erro = error?.localizedDescription
+                print(error?.localizedDescription)
+                self.alertaDesconectado(descricaoErro: erro ?? "===NIL===ERRO===")
+                return
+            }
+            
+            print(result.user.uid)
+            var isLogged = result.user.uid
+            if isLogged != nil {
+                
+                let storyboard = UIStoryboard(name: "Tabbar", bundle: nil)
+                        let vc = storyboard.instantiateInitialViewController()
+                        self.view.window?.rootViewController = vc
+                
+            }
+        }
+        
         
     }
+    
+    
     @IBAction func chooseImageButtonTapped(_ sender: UIButton) {
         
         self.getImage(fromSourceType: .photoLibrary)
@@ -146,11 +190,17 @@ class RegisterViewController: UIViewController {
         refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
               //print("Handle Ok logic here")
         }))
+        
+        present(refreshAlert, animated: true, completion: nil)
+        
+    }
+    
+    func alertaSenha(){
+        let refreshAlert = UIAlertController(title: "Atenção", message: "As senhas não conferem!", preferredStyle: UIAlertController.Style.alert)
 
-//        refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
-//              print("Handle Cancel Logic here")
-//        }))
-
+        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+              //print("Handle Ok logic here")
+        }))
         present(refreshAlert, animated: true, completion: nil)
     }
 
@@ -218,4 +268,15 @@ extension UIImageView {
         self.layer.cornerRadius = self.frame.height / 2
         self.clipsToBounds = true
     }
+}
+
+extension UIViewController {
+    func checkField(f1: String, f2: String) -> Bool{
+        if f1 != f2 {
+            return false
+        }else {
+            return true
+        }
+    }
+    
 }

@@ -6,20 +6,32 @@
 //
 
 import UIKit
+import Firebase
+
+
 
 class PerfilViewController: UIViewController {
     
     @IBOutlet weak var favoriteTableView: UITableView!
+    
+    @IBOutlet weak var nomeLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var mudarSenhaBtn: UIButton!
     
     var segmentedIndex:Int = 0
     var favoriteMovies = MockupMovie.getMovies()
     var favoriteSeries = MockupSerie.getSeries()
     
     override func viewDidLoad() {
+        getAuthInfo()
+        
         super.viewDidLoad()
         escondeTecladoClicandoFora()
         self.configureUI()
         self.configureTableView()
+        
+        
+        
     }
     
     func configureTableView(){
@@ -31,15 +43,30 @@ class PerfilViewController: UIViewController {
         let nib = UINib(nibName: GenericMediaTableViewCell.nibName, bundle: nil)
         self.favoriteTableView.register(nib, forCellReuseIdentifier: GenericMediaTableViewCell.cellID)
     }
+
     
     func configureUI(){
         self.title = "Perfil"
-        
+        mudarSenhaBtn.layer.cornerRadius = mudarSenhaBtn.layer.frame.height / 2
+        try! Auth.auth().signOut()
         let logoutButton = UIBarButtonItem(title: "Logout", style: .done, target: self, action: #selector(logout))
         self.navigationItem.rightBarButtonItem = logoutButton
     }
     
+    func getAuthInfo(){
+        let nome = Auth.auth().currentUser?.displayName
+        let email = Auth.auth().currentUser?.email
+        nomeLabel.text = nome
+        emailLabel.text = email
+    }
+
+    
+    
     @objc func logout(){
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateInitialViewController()
+                self.view.window?.rootViewController = vc
         print("logging out...")
     }
 
@@ -78,3 +105,5 @@ extension PerfilViewController: UITableViewDelegate {
         
     }
 }
+
+
