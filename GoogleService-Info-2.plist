@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>595357167781-7lji0mom5p06r2aln2cq2qi2jbrc2j93.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.595357167781-7lji0mom5p06r2aln2cq2qi2jbrc2j93</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCrx-yz8JW1W4cqiXNCW5gwe9IalWgvUME</string>
+	<key>GCM_SENDER_ID</key>
+	<string>595357167781</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>br.com.codinghouse.Swiflix</string>
+	<key>PROJECT_ID</key>
+	<string>swiflix-120f0</string>
+	<key>STORAGE_BUCKET</key>
+	<string>swiflix-120f0.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:595357167781:ios:47118d689566a856d5dd4c</string>
+	<key>DATABASE_URL</key>
+	<string>https://swiflix-120f0-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>

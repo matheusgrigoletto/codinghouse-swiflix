@@ -15,14 +15,12 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var senhaTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
-    
+
 
     //MARK: - View LifeCycle
     override func viewDidLoad() {
         
-        DispatchQueue.main.async {
-               self.emailTextField.becomeFirstResponder()
-           }
+        self.emailTextField.becomeFirstResponder()
         
         super.viewDidLoad()
         self.configureTextFields()

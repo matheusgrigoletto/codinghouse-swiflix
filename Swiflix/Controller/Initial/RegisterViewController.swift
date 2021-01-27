@@ -42,8 +42,8 @@ class RegisterViewController: UIViewController {
         photoButton.clipsToBounds = true
         
         //MARK: - Realtime Database - instanciando
-        var ref: DatabaseReference!
-        ref = Database.database().reference()
+//        var ref: DatabaseReference!
+//        ref = Database.database().reference()
         //==========================================
         
         super.viewDidLoad()
