@@ -20,10 +20,8 @@ class LoginViewController: UIViewController {
     //MARK: - View LifeCycle
     override func viewDidLoad() {
         
-        DispatchQueue.main.async {
-               self.emailTextField.becomeFirstResponder()
-           }
-        
+        self.emailTextField.becomeFirstResponder()
+
         super.viewDidLoad()
         self.configureTextFields()
         self.configureDelegates()
@@ -31,9 +29,6 @@ class LoginViewController: UIViewController {
         self.view.addGestureRecognizer(tap)
         
     }
-    
-    
-
 
     func configureDelegates(){
         self.emailTextField.delegate = self
@@ -41,14 +36,11 @@ class LoginViewController: UIViewController {
     }
     
     //MARK: - IBAction
+    
     @IBAction func esqueciButtonTapped(_ sender: UIButton) {
-//        let storyboard = UIStoryboard(name: "MudarSenhaVC", bundle: nil)
-//        let vc = storyboard.instantiateViewController(withIdentifier: "MudarSenhaVC")
-//        present(vc, animated: true, completion: nil)
-        
         performSegue(withIdentifier: "MudarSenhaVC", sender: nil)
-        
     }
+    
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         let email = emailTextField.text!
         let senha = senhaTextField.text!

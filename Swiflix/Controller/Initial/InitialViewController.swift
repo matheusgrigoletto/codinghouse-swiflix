@@ -19,12 +19,8 @@ class InitialViewController: UIViewController {
     //MARK: - ViewController Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-//        isLogged()
         escondeTecladoClicandoFora()
-        
         overrideUserInterfaceStyle = .light
-        
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,10 +34,14 @@ class InitialViewController: UIViewController {
             let storyboard = UIStoryboard(name: "Tabbar", bundle: nil)
                     let vc = storyboard.instantiateInitialViewController()
                     self.view.window?.rootViewController = vc
+            print("===========")
             print("UserLogged")
+            print("===========")
         }else {
             performSegue(withIdentifier: Segues.toLogin, sender: nil)
+            print("==============")
             print("NO USER LOGGED")
+            print("==============")
         }
     }
     
