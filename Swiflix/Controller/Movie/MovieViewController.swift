@@ -41,8 +41,6 @@ class MovieViewController: UIViewController {
     
     private func getSearchMovies(searchText: String){
         
-        print("antes do searchmovie\(searchText)")
-        
         self.movies = []
         
         SearchMDB.movie(query: searchText, language: "pt-BR", page: 1, includeAdult: false, year: nil, primaryReleaseYear: nil) { (return, movies) in
@@ -65,11 +63,8 @@ class MovieViewController: UIViewController {
                     }
                 }
                 
-                print("antes else\(searchText)")
                 self.movieTableView.reloadData()
                 
-            }else{
-                print("no else\(searchText)")
             }
         }
         
