@@ -23,11 +23,12 @@ class PeopleViewController: UIViewController {
         super.viewDidLoad()
         self.configureDelegates()
         self.registerCell()
-        escondeTecladoClicandoFora()
-        self.getMovies(page: self.page)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        self.view.addGestureRecognizer(tap)
+        self.getPeoples(page: self.page)
     }
     
-    private func getMovies(page: Int) {
+    private func getPeoples(page: Int) {
         print(page)
         TMDBPeople.getPopular(language: "pt-BR", page: page) { (people, error) in
             if let people = people {
@@ -73,7 +74,7 @@ extension PeopleViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
                 if self.pessoas.count - 1 == indexPath.row {
-            self.getMovies(page: self.page)
+            self.getPeoples(page: self.page)
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: PessoaTableViewCell.cellID, for: indexPath) as? PessoaTableViewCell
