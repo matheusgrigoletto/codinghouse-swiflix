@@ -11,6 +11,7 @@ target 'Swiflix' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'Firebase/Core'
 
 #Ajuste no TextField quando keyboard acionado
 	pod 'IQKeyboardManagerSwift', '6.3.0'

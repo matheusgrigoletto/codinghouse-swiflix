@@ -7,10 +7,15 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
 import IQKeyboardManagerSwift
 
 
 class RegisterViewController: UIViewController {
+    
+    private let database = Database.database().reference()
+    
+    
 
     //MARK: - IBOutlets
     @IBOutlet weak var photoButton: UIImageView!
@@ -48,6 +53,15 @@ class RegisterViewController: UIViewController {
         
         super.viewDidLoad()
         
+        //MARK: - Realtime Database - instanciando
+        let button = UIButton(frame: CGRect(x: 20, y: 200, width: view.frame.size.width-40, height: 50))
+        button.setTitle("Adcione Nome", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .link
+        view.addSubview(button)
+        button.addTarget(self, action: #selector(addNovaEntrada), for: .touchUpInside)
+        
+        
         escondeTecladoClicandoFora()
         
         nomeTextField.backgroundColor = .darkGray
@@ -62,6 +76,14 @@ class RegisterViewController: UIViewController {
         confirmarSenhaTextField.attributedPlaceholder = NSAttributedString(string:"Repita a Senha", attributes:[NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         
         
+    }
+    
+    @objc private func addNovaEntrada(){
+        let objeto: [String: Any] = [
+            "name": "iOS Academy" as NSObject,
+            "Youtube": "yes"
+        ]
+        database.child("something").setValue(objeto)
     }
     
   

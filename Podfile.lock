@@ -84,6 +84,7 @@ PODS:
 DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Auth
+  - Firebase/Core
   - Firebase/Database
   - IQKeyboardManagerSwift (= 6.3.0)
   - TMDBSwift (~> 0.5)
@@ -125,6 +126,6 @@ SPEC CHECKSUMS:
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
   TMDBSwift: 9220f3dcee23372c05b92f8c111f5f4c37185aee
 
-PODFILE CHECKSUM: 4c551d93b08985dd85b3bccffce32da9dcc33cd8
+PODFILE CHECKSUM: 36ef6f3d9a5f8d67e962796bbbffa99429a0a975
 
 COCOAPODS: 1.10.0
