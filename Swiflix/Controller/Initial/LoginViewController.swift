@@ -90,6 +90,7 @@ class LoginViewController: UIViewController {
         self.senhaTextField.backgroundColor = .darkGray
         self.senhaTextField.attributedPlaceholder = NSAttributedString(string:"Senha", attributes:[NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         
+        self.senhaTextField.isSecureTextEntry = true
     }
     
 }
