@@ -814,11 +814,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-<<<<<<< HEAD
-        <segue reference="lQX-YM-eYg"/>
-=======
         <segue reference="fnY-8L-E4y"/>
->>>>>>> a32a9e78b50037e4b681da7839baef6b413bd76e
     </inferredMetricsTieBreakers>
     <resources>
         <image name="film" catalog="system" width="128" height="93"/>
