@@ -19,10 +19,9 @@ class SerieViewController: UIViewController {
         super.viewDidLoad()
         self.configureDelegates()
         self.registerCell()
-        
+        self.serieTableView.keyboardDismissMode = .onDrag
         self.getPopularSeries(page: self.page)
         
-        escondeTecladoClicandoFora()
     }
     
     func configureDelegates() {

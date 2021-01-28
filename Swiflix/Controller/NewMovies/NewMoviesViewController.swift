@@ -19,6 +19,7 @@ class NewMoviesViewController: UIViewController {
         escondeTecladoClicandoFora()
         self.registerCell(nib: GenericMediaTableViewCell.nibName, cellID: GenericMediaTableViewCell.cellID)
         self.configureDelegates()
+        self.newMoviesTableView.keyboardDismissMode = .onDrag
         self.getNewMovies()
         
     }

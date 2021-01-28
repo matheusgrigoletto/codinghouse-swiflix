@@ -7,6 +7,7 @@
 
 import UIKit
 import TMDBSwift
+import IQKeyboardManagerSwift
 
 class MovieViewController: UIViewController {
     
@@ -15,6 +16,7 @@ class MovieViewController: UIViewController {
     
     var movies:[GenericMedia] = []
     var page: Int = 1
+   
     
     override func viewDidLoad() {
         searchBar.placeholder = "Procure por um filme"
@@ -22,9 +24,9 @@ class MovieViewController: UIViewController {
         super.viewDidLoad()
         self.registerCell(nib: GenericMediaTableViewCell.nibName, cellID: GenericMediaTableViewCell.cellID)
         self.configureDelegates()
+        self.movieTableView.keyboardDismissMode = .onDrag
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        self.view.addGestureRecognizer(tap)
+      
         
         self.getMovies(page: self.page)
         
@@ -158,6 +160,16 @@ extension MovieViewController: UISearchBarDelegate{
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar){
         searchBar.resignFirstResponder()
         
+        
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        
+     
+
+    }
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+       
     }
     
     
@@ -170,6 +182,7 @@ extension MovieViewController: UISearchBarDelegate{
             self.page = 1
             getMovies(page: self.page)
         }
+        
     }
     
 }
