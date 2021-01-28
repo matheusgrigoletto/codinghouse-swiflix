@@ -23,8 +23,7 @@ class PeopleViewController: UIViewController {
         super.viewDidLoad()
         self.configureDelegates()
         self.registerCell()
-        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        self.view.addGestureRecognizer(tap)
+        self.peopleTableView.keyboardDismissMode = .onDrag
         self.getPeoples(page: self.page)
     }
     
