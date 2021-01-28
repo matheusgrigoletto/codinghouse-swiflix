@@ -43,7 +43,14 @@ class SerieGeralTableViewCell: UITableViewCell {
 
        
         self.dataLancamento.text = serie.first_air_date
-        self.genero.text = ""
+        self.genero.text! = ""
+        for g in serie.genres {
+            self.genero.text! += "\(g.name), "
+            
+        }
+    
+        self.genero.text?.removeLast()
+        self.genero.text?.removeLast()
         
         
     }
