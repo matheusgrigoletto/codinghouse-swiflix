@@ -152,6 +152,7 @@ extension MovieDetailViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: MovieGeralTableViewCell.cellID, for: indexPath) as? MovieGeralTableViewCell
             if let fullMovie = self.fullMovie {
                 cell?.setup(fullMovie)
+                cell?.delegate = self
             }
             return cell ?? UITableViewCell()
         case 1: // filmes similares
@@ -192,4 +193,43 @@ extension MovieDetailViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+}
+
+extension MovieDetailViewController: MovieGeralTableViewCellDelegate {
+    func favoritar(m: MovieDetailedMDB?) {
+        
+        // verificar se o filme já esta favoritado
+        guard let m = m else {
+            print("movie esta vazio")
+            return
+        }
+        
+        Network.shared.verificarFilmeFavorito(m: m) {
+            //filme já existe
+            self.showAlert(title: "Ops 😅", message: "Este filme já está favoritado")
+        } ifNotExists: {
+            self.showConfirmAlert(title: m.title, message: "Gostaria de favoritar este filme?", okHandler: { _ in
+                self.favoritarFilme(m)
+            }, cancelHandler: nil)
+        } onFail: { (error) in
+            self.showAlert(title: "Erro 😩", message: error)
+        }
+    }
+    
+    func favoritarFilme(_ m:MovieDetailedMDB){
+        let movieJson: [String: Any] = [
+            "id":m.id,
+            "title":m.title,
+            "vote_average":m.vote_average,
+            "poster_path":m.poster_path,
+            "overview":m.overview
+        ]
+        
+        Network.shared.favoriteMovie(data: movieJson) {
+            self.showAlert(title: "Sucesso", message: "Filme favoritado 😀")
+        } fail: { (error) in
+            self.showAlert(title: "Erro 😩", message: error)
+        }
+
+    }
 }

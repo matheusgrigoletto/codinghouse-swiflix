@@ -19,7 +19,7 @@ class PerfilViewController: UIViewController {
     @IBOutlet weak var mudarSenhaBtn: UIButton!
     
     var segmentedIndex:Int = 0
-    var favoriteMovies = MockupMovie.getMovies()
+    var favoriteMovies: [GenericMedia] = []
     var favoriteSeries = MockupSerie.getSeries()
     
     override func viewDidLoad() {
@@ -31,7 +31,18 @@ class PerfilViewController: UIViewController {
         self.configureTableView()
         
         
-        
+        self.fetchFavoriteMovies()
+    }
+    
+    private func fetchFavoriteMovies(){
+        Network.shared.getFavorites { (medias) in
+            //success
+            self.favoriteMovies = medias
+            self.favoriteTableView.reloadData()
+        } onFail: { (error) in
+            self.showAlert(title: "erro", message: error)
+        }
+
     }
     
     func configureTableView(){
@@ -48,7 +59,7 @@ class PerfilViewController: UIViewController {
     func configureUI(){
         self.title = "Perfil"
         mudarSenhaBtn.layer.cornerRadius = mudarSenhaBtn.layer.frame.height / 2
-        try! Auth.auth().signOut()
+//        try! Auth.auth().signOut()
         let logoutButton = UIBarButtonItem(title: "Logout", style: .done, target: self, action: #selector(logout))
         self.navigationItem.rightBarButtonItem = logoutButton
     }
