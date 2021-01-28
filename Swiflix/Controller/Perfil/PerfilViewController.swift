@@ -63,11 +63,12 @@ class PerfilViewController: UIViewController {
     
     
     @objc func logout(){
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateInitialViewController()
-                self.view.window?.rootViewController = vc
-        print("logging out...")
+        self.showConfirmAlert(title: "Logout", message: "Deseja realizar logout?", okHandler: { _ in
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let vc = storyboard.instantiateInitialViewController()
+                    self.view.window?.rootViewController = vc
+            print("logging out...")
+        }, cancelHandler: nil)
     }
 
     @IBAction func segmentedChanged(_ sender: UISegmentedControl) {

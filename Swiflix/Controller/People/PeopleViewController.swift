@@ -31,8 +31,11 @@ class PeopleViewController: UIViewController {
     private func getPeoples(page: Int) {
         print(page)
         TMDBPeople.getPopular(language: "pt-BR", page: page) { (people, error) in
+            print(people)
             if let people = people {
                 self.pessoas.append(contentsOf: people.results)
+            }else {
+                print(error?.localizedDescription)
             }
             DispatchQueue.main.async {
                 self.peopleTableView.reloadData()
@@ -76,7 +79,6 @@ extension PeopleViewController: UITableViewDataSource {
                 if self.pessoas.count - 1 == indexPath.row {
             self.getPeoples(page: self.page)
         }
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: PessoaTableViewCell.cellID, for: indexPath) as? PessoaTableViewCell
         cell?.setup(withPerson: self.pessoas[indexPath.row])
         return cell ?? UITableViewCell()

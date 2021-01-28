@@ -62,7 +62,7 @@ struct TMDBPeople {
         if let _key = TMDB.key {
             
             let url = "https://api.themoviedb.org/3/person/popular?api_key=\(_key)&language=\(language)&page=\(page)"
-            
+            print(url)
             TMDB.request(url: url, method: .GET) { (popular, error) in
                 completion(popular, error)
             }

@@ -35,24 +35,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0zY-lO-Vaa">
-                                <rect key="frame" x="0.0" y="196" width="414" height="617"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="LE3-GY-iQu">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="LE3-GY-iQu">
-                                <rect key="frame" x="0.0" y="140" width="414" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gLB-6z-1b1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="gLB-6z-1b1" firstAttribute="trailing" secondItem="LE3-GY-iQu" secondAttribute="trailing" id="3IW-e8-OV3"/>
-                            <constraint firstItem="0zY-lO-Vaa" firstAttribute="top" secondItem="LE3-GY-iQu" secondAttribute="bottom" id="S65-nl-Z5u"/>
-                            <constraint firstItem="LE3-GY-iQu" firstAttribute="top" secondItem="gLB-6z-1b1" secondAttribute="top" id="TE5-2S-aqP"/>
-                            <constraint firstItem="0zY-lO-Vaa" firstAttribute="leading" secondItem="gLB-6z-1b1" secondAttribute="leading" id="fgv-Ku-TgS"/>
-                            <constraint firstItem="0zY-lO-Vaa" firstAttribute="bottom" secondItem="gLB-6z-1b1" secondAttribute="bottom" id="qhS-Pc-q8s"/>
-                            <constraint firstItem="LE3-GY-iQu" firstAttribute="leading" secondItem="cHV-Bm-XSl" secondAttribute="leading" id="uTs-3J-R8A"/>
-                            <constraint firstItem="0zY-lO-Vaa" firstAttribute="trailing" secondItem="gLB-6z-1b1" secondAttribute="trailing" id="ze8-tW-L72"/>
+                            <constraint firstItem="0zY-lO-Vaa" firstAttribute="trailing" secondItem="gLB-6z-1b1" secondAttribute="trailing" id="4IO-Sf-St2"/>
+                            <constraint firstItem="0zY-lO-Vaa" firstAttribute="leading" secondItem="gLB-6z-1b1" secondAttribute="leading" id="FYa-2N-NLt"/>
+                            <constraint firstItem="0zY-lO-Vaa" firstAttribute="top" secondItem="gLB-6z-1b1" secondAttribute="top" id="ML7-iW-TI6"/>
+                            <constraint firstItem="0zY-lO-Vaa" firstAttribute="bottom" secondItem="gLB-6z-1b1" secondAttribute="bottom" id="geX-Ix-pPx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Filmes" id="ssn-Sk-Lna">
@@ -168,7 +166,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="b16-2x-131">
             <objects>
-                <tabBarController id="JDj-cG-rFD" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabbarScreen" id="JDj-cG-rFD" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="b6q-Cb-RoT"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="f6O-U0-DyU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -320,11 +318,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="HFW-tW-vkv">
-                                <rect key="frame" x="0.0" y="140" width="414" height="56"/>
+                                <rect key="frame" x="0.0" y="148.5" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="n2f-Ei-hfY">
-                                <rect key="frame" x="0.0" y="196" width="414" height="617"/>
+                                <rect key="frame" x="0.0" y="204.5" width="414" height="608.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -383,14 +381,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Hc-V3-EjK">
-                                <rect key="frame" x="0.0" y="148.5" width="414" height="232.5"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="232.5"/>
                                 <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="5Hc-V3-EjK" secondAttribute="height" multiplier="376:211" id="9KP-Ip-CRA"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⭐️9.9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9v0-I3-Pp1">
-                                <rect key="frame" x="325" y="332" width="79" height="39"/>
+                                <rect key="frame" x="325" y="323.5" width="79" height="39"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="cjn-Vp-hfe"/>
@@ -401,7 +399,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="SwE-sy-diQ">
-                                <rect key="frame" x="0.0" y="386" width="414" height="32"/>
+                                <rect key="frame" x="0.0" y="377.5" width="414" height="32"/>
                                 <segments>
                                     <segment title="Geral"/>
                                     <segment title="Outros"/>
@@ -413,7 +411,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="qud-hp-0W2">
-                                <rect key="frame" x="0.0" y="417" width="414" height="396"/>
+                                <rect key="frame" x="0.0" y="408.5" width="414" height="404.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -598,7 +596,7 @@
                 <navigationController id="bMe-uV-fga" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Lançamentos" image="square.stack.3d.forward.dottedline" catalog="system" selectedImage="square.stack.3d.forward.dottedline" id="wIQ-Yz-4mk"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Rp7-yr-qLH">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="104.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>

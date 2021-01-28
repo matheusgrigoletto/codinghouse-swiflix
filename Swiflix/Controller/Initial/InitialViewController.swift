@@ -28,9 +28,13 @@ class InitialViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
-        //esconde o titulo no navigation controller
-        //self.navigationController?.setNavigationBarHidden(true, animated: true)
+        if let _ = Auth.auth().currentUser {
+            let storyboard = UIStoryboard(name: "Tabbar", bundle: nil)
+            if let vc = storyboard.instantiateInitialViewController() {
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: false, completion: nil)
+            }
+        }
     }
     
     func isLogged(){

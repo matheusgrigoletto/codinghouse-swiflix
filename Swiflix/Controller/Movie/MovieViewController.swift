@@ -72,11 +72,11 @@ class MovieViewController: UIViewController {
     
     
     private func getMovies(page: Int){
-        
 
-    
-        
         MovieMDB.popular(language: "pt-BR", page: page) { (result, movies) in
+            
+            print(result.error)
+            
             if let movies = movies {
                 for movie in movies {
                     if
@@ -93,6 +93,7 @@ class MovieViewController: UIViewController {
                 self.page += 1
                 self.movieTableView.reloadData()
             }
+            
         }
     }
     
@@ -142,9 +143,10 @@ extension MovieViewController: UITableViewDataSource {
 extension MovieViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        let chosenMovie = self.movies[indexPath.row]
+        
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let chosenMovie = self.movies[indexPath.row]
         performSegue(withIdentifier: Segues.toMovieDetail, sender: chosenMovie)
     }
 }
