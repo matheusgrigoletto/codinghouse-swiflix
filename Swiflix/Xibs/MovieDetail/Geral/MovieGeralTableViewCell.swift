@@ -8,6 +8,11 @@
 import UIKit
 import TMDBSwift
 
+
+protocol MovieGeralTableViewCellDelegate {
+    func favoritar(m: MovieDetailedMDB?)
+}
+
 class MovieGeralTableViewCell: UITableViewCell {
     
     @IBOutlet weak var titulo: UILabel!
@@ -20,6 +25,10 @@ class MovieGeralTableViewCell: UITableViewCell {
     static let cellID: String = "movieGeralTableViewCell"
     static let nibName: String = "MovieGeralTableViewCell"
     
+    var delegate: MovieGeralTableViewCellDelegate?
+    
+    var movieDetail: MovieDetailedMDB?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -29,6 +38,9 @@ class MovieGeralTableViewCell: UITableViewCell {
     }
     
     func setup(_ m: MovieDetailedMDB){
+        
+        self.movieDetail = m
+        
         self.titulo.text = m.title
         self.tituloOriginal.text = m.original_title
         self.sinopse.text = m.overview
@@ -54,4 +66,9 @@ class MovieGeralTableViewCell: UITableViewCell {
                 
             }
    }
+    
+    @IBAction func favoritarTapped(_ sender: UIButton) {
+        self.delegate?.favoritar(m: self.movieDetail)
+    }
+    
 }

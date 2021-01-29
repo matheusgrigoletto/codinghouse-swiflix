@@ -1499,7 +1499,6 @@ static NSMutableDictionary *gKeychainServiceNameForAppName;
     didReceiveRemoteNotification:(NSDictionary *)userInfo
           fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
   [self canHandleNotification:userInfo];
-  completionHandler(UIBackgroundFetchResultNoData);
 }
 
 // iOS 10 deprecation
