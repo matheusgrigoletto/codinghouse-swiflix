@@ -26,7 +26,7 @@ class PhotoDetailViewController: UIViewController {
         }
         
         let cancel = UIAlertAction(title: "Não", style: .cancel) { _ in
-            self.dismiss(animated: true, completion: nil)
+//            self.dismiss(animated: true, completion: nil)
         }
         
         alert.addAction(ok)
