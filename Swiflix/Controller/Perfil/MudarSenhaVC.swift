@@ -13,6 +13,7 @@ class MudarSenhaVC: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     
+    @IBOutlet weak var imgEmailReset: UIImageView!
     @IBOutlet weak var bttEnviar: UIButton!
     
     
@@ -48,7 +49,7 @@ class MudarSenhaVC: UIViewController {
         emailTextField.placeholder = "Insira seu E-mail"
         emailTextField.textColor = .black
         emailTextField.backgroundColor = .darkGray
-        
-    }
+        self.imgEmailReset.image = #imageLiteral(resourceName: "emailReset")
 
+    }
 }
