@@ -19,7 +19,7 @@ struct KnownFor: Response {
     let media_type: String
     let original_language: String
     let title: String?
-    let backdrop_path: String
+//    let backdrop_path: String
     let popularity: Double?
     let vote_count: Int
     let video: Bool?

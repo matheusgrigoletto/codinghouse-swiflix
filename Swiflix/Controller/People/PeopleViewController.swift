@@ -29,6 +29,9 @@ class PeopleViewController: UIViewController {
     
     private func getPeoples(page: Int) {
         print(page)
+        
+        
+        
         TMDBPeople.getPopular(language: "pt-BR", page: page) { (people, error) in
             print(people)
             if let people = people {

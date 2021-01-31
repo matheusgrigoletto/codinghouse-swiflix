@@ -75,6 +75,7 @@ class PerfilViewController: UIViewController {
     
     @objc func logout(){
         self.showConfirmAlert(title: "Logout", message: "Deseja realizar logout?", okHandler: { _ in
+            try! Auth.auth().signOut()
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let vc = storyboard.instantiateInitialViewController()
                     self.view.window?.rootViewController = vc

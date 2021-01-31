@@ -43,17 +43,30 @@ class PessoaTableViewCell: UITableViewCell {
     func setup(withPerson person: Person){
         self.name.text = person.name
         self.department.text = person.known_for_department
-        
-        var known:String = ""
-        for value in person.known_for {
-            if let title = value.title {
-                known += "\(Utils.movie) \(title)\n"
+        if let trabalhos = person.known_for{
+            var known:String = ""
+            for trab in trabalhos {
+                print(trab.title)
+                if let title = trab.title {
+                    known += "\(Utils.movie) \(title)\n"
+                }
+                if let name = trab.name {
+                    known += "\(Utils.movie) \(name)\n"
+                }
+                
             }
+            self.knowFor.text = known
         }
+//        var known:String = ""
+//        for value in person.known_for {
+//            if let title = value.title {
+//                known += "\(Utils.movie) \(title)\n"
+//            }
+//        }
 //        known.removeLast()
 //        known.removeLast()
-        self.knowFor.text = known
-        
+//        self.knowFor.text = known
+
         self.profile.withMediaURL(person.profile_path)
     }
     
