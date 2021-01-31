@@ -34,22 +34,36 @@ class RegisterViewController: UIViewController {
         senhaTextField.delegate = self
         confirmarSenhaTextField.delegate = self
         
+        configurePhotoButton()
+
+        super.viewDidLoad()
         
+        escondeTecladoClicandoFora()
+        configureValidation()
+               
+    }
+    
+  
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+    }
+    
+    
+    
+ 
+    //MARK: - Cofigurating Functions
+
+    
+    func configurePhotoButton(){
         photoButton.layer.borderWidth = 1
         photoButton.layer.masksToBounds = false
         photoButton.layer.borderColor = UIColor.black.cgColor
         photoButton.layer.cornerRadius = photoButton.frame.height/2
         photoButton.clipsToBounds = true
-        
-        //MARK: - Realtime Database - instanciando
-//        var ref: DatabaseReference!
-//        ref = Database.database().reference()
-        //==========================================
-        
-        super.viewDidLoad()
-        
-        escondeTecladoClicandoFora()
-        
+    }
+    
+    
+    func configureValidation(){
         nomeTextField.backgroundColor = .darkGray
         nomeTextField.attributedPlaceholder = NSAttributedString(string:"Nome Completo", attributes:[NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         emailTextField.backgroundColor = .darkGray
@@ -61,29 +75,7 @@ class RegisterViewController: UIViewController {
         confirmarSenhaTextField.backgroundColor = .darkGray
         confirmarSenhaTextField.attributedPlaceholder = NSAttributedString(string:"Repita a Senha", attributes:[NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         
-        
     }
-    
-  
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        
-    }
-    
-    
-    
- 
-    
-//MARK: - Tentativa de validar email
-    //Validar TextFields emails iguais e senhas iguais
-//    func textFieldDidEndEditing(_ textField: UITextField) {
-//        if textField == self.confirmarEmailTextField{}
-//            if self.confirmarEmailTextField != self.emailTextField{
-//                alertaEmail()
-//            }
-//        }
-//
-
-   
     
      func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         if textField.text != ""{
@@ -150,7 +142,19 @@ class RegisterViewController: UIViewController {
                 return
             }
             
+            let usuario: [String: Any] = ["nome": nome]
+            
             print(result.user.uid)
+            
+            Firestore.firestore().collection("usuario").document(result.user.uid).setData(usuario) { (erro) in
+                guard erro == nil else{
+                    print(erro?.localizedDescription)
+                    return
+                }
+                
+                
+            }
+            
             var isLogged = result.user.uid
             if isLogged != nil {
                 

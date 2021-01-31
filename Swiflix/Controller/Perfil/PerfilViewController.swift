@@ -10,6 +10,7 @@ import Firebase
 
 
 
+
 class PerfilViewController: UIViewController {
     
     @IBOutlet weak var favoriteTableView: UITableView!
@@ -29,7 +30,6 @@ class PerfilViewController: UIViewController {
         escondeTecladoClicandoFora()
         self.configureUI()
         self.configureTableView()
-        
         
         self.fetchFavoriteMovies()
     }
@@ -65,10 +65,28 @@ class PerfilViewController: UIViewController {
     }
     
     func getAuthInfo(){
-        let nome = Auth.auth().currentUser?.displayName
-        let email = Auth.auth().currentUser?.email
-        nomeLabel.text = nome
-        emailLabel.text = email
+        
+        guard let usuarioID = Auth.auth().currentUser?.uid else{
+            print("erro buscando nome de usuario no banco")
+            return
+        }
+        Firestore.firestore().collection("usuario").document(usuarioID).getDocument { (foto, erro) in
+            guard let fotoDoBanco = foto?.data() else {
+                print(erro?.localizedDescription)
+                return
+            }
+            guard let nome = fotoDoBanco["nome"] else {
+                return
+            }
+            
+            
+            let email = Auth.auth().currentUser?.email
+            self.emailLabel.text = email
+            self.nomeLabel.text = nome as! String
+        }
+        
+//        nomeLabel.text = nome as! String
+        
     }
 
     
