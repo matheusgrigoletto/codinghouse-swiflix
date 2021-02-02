@@ -11,6 +11,7 @@ import TMDBSwift
 class NewMoviesViewController: UIViewController {
 
     @IBOutlet weak var newMoviesTableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var movies:[GenericMedia] = []
     
