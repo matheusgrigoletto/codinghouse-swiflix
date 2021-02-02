@@ -14,18 +14,21 @@ class MovieHouseViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     
     var movies:[GenericMedia] = []
+    var page: Int = 1
     
     override func viewDidLoad() {
+        searchBar.placeholder = "Procure por um filme"
+        
         super.viewDidLoad()
         self.registerCell(nib: GenericMediaTableViewCell.nibName, cellID: GenericMediaTableViewCell.cellID)
         self.configureDelegates()
-        self.getMovieHouse()
+        self.getMovieHouse(page: self.page)
         self.movieHouseTableView.keyboardDismissMode = .onDrag
     }
     
-    private func getMovieHouse(){
+    private func getMovieHouse(page: Int){
         
-        MovieMDB.nowplaying(language: "pt-BR", page: 1) { (return, movies) in
+        MovieMDB.nowplaying(language: "pt-BR", page: page) { (return, movies) in
             if let movies = movies {
                 for movie in movies {
                     if
@@ -39,6 +42,7 @@ class MovieHouseViewController: UIViewController {
                         self.movies.append(generic)
                     }
                 }
+                self.page += 1
                 self.movieHouseTableView.reloadData()
             }
         }
@@ -66,15 +70,29 @@ class MovieHouseViewController: UIViewController {
 }
 
     extension MovieHouseViewController: UITableViewDataSource {
+        
+        
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.contentView.layer.masksToBounds = true
+    }
+        
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.movies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
+        if self.movies.count - 1 == indexPath.row {
+            self.getMovieHouse(page: self.page)
+        }
+
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: GenericMediaTableViewCell.cellID, for: indexPath) as? GenericMediaTableViewCell
         cell?.setup(withMedia: self.movies[indexPath.row])
         return cell ?? UITableViewCell()
     }
+         
     
     
 }
