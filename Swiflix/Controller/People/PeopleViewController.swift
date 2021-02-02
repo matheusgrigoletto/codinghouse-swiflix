@@ -13,6 +13,7 @@ import TMDBSwift
 class PeopleViewController: UIViewController {
 
     @IBOutlet weak var peopleTableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var pessoas: [Person] = []
     let cellSpacingHeight: CGFloat = 5
@@ -20,11 +21,29 @@ class PeopleViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        searchBar.placeholder = "Procure por um ator ou atriz"
+        
         super.viewDidLoad()
         self.configureDelegates()
         self.registerCell()
         self.peopleTableView.keyboardDismissMode = .onDrag
         self.getPeoples(page: self.page)
+    }
+    
+    
+    private func getSearchPeoples(searchText: String){
+        self.pessoas = []
+        
+        SearchMDB.person(query: searchText, page: 1, includeAdult: false) { (return, people) in
+            if let people = people {
+                
+                //self.pessoas.append()
+            }
+            DispatchQueue.main.async {
+                self.peopleTableView.reloadData()
+            }
+        }
+        
     }
     
     private func getPeoples(page: Int) {
@@ -49,6 +68,7 @@ class PeopleViewController: UIViewController {
     func configureDelegates(){
         self.peopleTableView.delegate = self
         self.peopleTableView.dataSource = self
+        self.searchBar.delegate = self
     }
     
     func registerCell(){
@@ -99,4 +119,38 @@ extension PeopleViewController: UITableViewDelegate {
         let chosenPeople = self.pessoas[indexPath.row]
         performSegue(withIdentifier: Segues.toPersonDetail, sender: chosenPeople)
     }
+}
+
+extension PeopleViewController: UISearchBarDelegate{
+    
+    
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar){
+        searchBar.resignFirstResponder()
+        
+        
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        
+     
+
+    }
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+       
+    }
+    
+    
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
+        if (!searchText.isEmpty){
+            getSearchPeoples(searchText: searchText)
+        }else{
+            self.pessoas = []
+            self.page = 1
+            getPeoples(page: self.page)
+        }
+        
+    }
+    
 }
