@@ -76,7 +76,7 @@
             <objects>
                 <viewController id="Gzh-7R-gum" customClass="PeopleViewController" customModule="Swiflix" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="enQ-4m-DM7">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="U10-OE-nFJ">
@@ -110,6 +110,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="peopleTableView" destination="RAM-mF-5CG" id="WXX-mW-5oA"/>
+                        <outlet property="searchBar" destination="U10-OE-nFJ" id="h9e-fl-zha"/>
                         <segue destination="bBt-Jd-rul" kind="show" identifier="personDetailSegue" id="aD4-Mg-p5N"/>
                     </connections>
                 </viewController>
@@ -126,11 +127,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="HDp-fa-7T0">
-                                <rect key="frame" x="0.0" y="140" width="414" height="56"/>
+                                <rect key="frame" x="0.0" y="148.5" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KII-nZ-ywb">
-                                <rect key="frame" x="0.0" y="196" width="414" height="617"/>
+                                <rect key="frame" x="0.0" y="204.5" width="414" height="608.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -155,6 +156,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchBar" destination="HDp-fa-7T0" id="bCj-jA-ANB"/>
                         <outlet property="serieTableView" destination="KII-nZ-ywb" id="I4h-DJ-Y89"/>
                         <segue destination="LkH-zC-dKA" kind="show" identifier="serieDetailShowSegue" id="Pnk-Zx-IUM"/>
                     </connections>
@@ -192,7 +194,7 @@
                 <navigationController id="9hB-Dk-2pR" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Pessoas" image="person" catalog="system" selectedImage="person.fill" id="YCz-rh-XmL"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="nJO-Sw-8mx">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="104.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -348,6 +350,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="movieHouseTableView" destination="n2f-Ei-hfY" id="8nc-sg-Q2h"/>
+                        <outlet property="searchBar" destination="HFW-tW-vkv" id="dus-V6-abG"/>
                         <segue destination="SpR-zc-yaV" kind="show" identifier="movieHouseToDetailMovieHouseSegue" id="GOu-AF-W0f"/>
                     </connections>
                 </viewController>
@@ -361,7 +364,7 @@
                 <navigationController id="NEC-aI-THo" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Cinema" image="video" catalog="system" selectedImage="video" id="N4V-Gq-cn1"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="8rN-vx-zwn">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="104.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -460,7 +463,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5qS-lD-9rs">
-                                <rect key="frame" x="0.0" y="303" width="414" height="32"/>
+                                <rect key="frame" x="0.0" y="311.5" width="414" height="32"/>
                                 <segments>
                                     <segment title="Biografia"/>
                                     <segment title="Trabalhos"/>
@@ -471,11 +474,11 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="S8w-LI-4R3">
-                                <rect key="frame" x="0.0" y="334" width="414" height="479"/>
+                                <rect key="frame" x="0.0" y="342.5" width="414" height="470.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Nbp-SB-0Rk">
-                                <rect key="frame" x="131" y="140" width="273" height="157"/>
+                                <rect key="frame" x="131" y="148.5" width="273" height="157"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XOo-Sj-Z04">
                                         <rect key="frame" x="0.0" y="0.0" width="273" height="32"/>
@@ -507,7 +510,7 @@
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r6i-Ko-crd">
-                                <rect key="frame" x="10" y="140" width="111" height="158"/>
+                                <rect key="frame" x="10" y="148.5" width="111" height="158"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="111" id="M26-aZ-jCn"/>
                                     <constraint firstAttribute="height" constant="158" id="tJ3-HD-NNk"/>
@@ -646,6 +649,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="newMoviesTableView" destination="tBi-4e-xNx" id="Tk8-cB-9bM"/>
+                        <outlet property="searchBar" destination="114-Hb-tQA" id="bZB-Se-u5x"/>
                         <segue destination="WUQ-Fi-hUj" kind="show" identifier="NewMovieToDetailNewMovieSegue" id="nCI-rV-4Oc"/>
                     </connections>
                 </viewController>
@@ -813,7 +817,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="fnY-8L-E4y"/>
+        <segue reference="pvk-Jb-KYf"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="film" catalog="system" width="128" height="93"/>

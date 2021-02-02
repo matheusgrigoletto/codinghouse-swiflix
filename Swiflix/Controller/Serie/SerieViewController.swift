@@ -11,11 +11,15 @@ import TMDBSwift
 class SerieViewController: UIViewController {
     
     @IBOutlet weak var serieTableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var series: [GenericPopularMedia] = []
     var page: Int = 1
     
     override func viewDidLoad() {
+        
+        searchBar.placeholder = "Procure por uma serie"
+        
         super.viewDidLoad()
         self.configureDelegates()
         self.registerCell()
@@ -27,6 +31,7 @@ class SerieViewController: UIViewController {
     func configureDelegates() {
         self.serieTableView.delegate = self
         self.serieTableView.dataSource = self
+        self.searchBar.delegate = self
     }
     
     func registerCell() {
@@ -43,6 +48,34 @@ class SerieViewController: UIViewController {
                     
                 }
     }
+    
+    
+    private func getSearchSeries(searchText: String){
+        
+        self.series = []
+        
+        
+        SearchMDB.tv(query: searchText, page: 1, language: "pt-BR", first_air_date_year: nil) { (return, series) in
+            if let series = series {
+                for serie in series {
+                    if
+                        let title = serie.name,
+                        let id = serie.id,
+                        let rating = serie.vote_average,
+                        let overview = serie.overview,
+                        let poster = serie.poster_path{
+                        
+                        let generic = GenericPopularMedia(id: id, title: title, rating: rating, overview: overview, poster: poster)
+                        self.series.append(generic)
+                    }
+                }
+               
+                self.serieTableView.reloadData()
+            }
+        }
+        
+    }
+    
     
     
     private func getPopularSeries(page: Int) {
@@ -109,3 +142,42 @@ extension SerieViewController: UITableViewDelegate {
     }
     
 }
+
+
+
+extension SerieViewController: UISearchBarDelegate{
+    
+    
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar){
+        searchBar.resignFirstResponder()
+        
+        
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        
+     
+
+    }
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+       
+    }
+    
+    
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
+        if (!searchText.isEmpty){
+            getSearchSeries(searchText: searchText)
+        }else{
+            self.series = []
+            self.page = 1
+            getPopularSeries(page: self.page)
+        }
+        
+    }
+    
+}
+
+
+
