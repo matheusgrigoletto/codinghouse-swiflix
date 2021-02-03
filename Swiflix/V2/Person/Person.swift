@@ -8,7 +8,7 @@ import Foundation
 
 struct Person: Response {
     
-    let profile_path: String
+    let profile_path: String?
     let adult: Bool?
     let id: Int
     let gender: Gender

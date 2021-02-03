@@ -73,4 +73,27 @@ struct TMDBPeople {
         
     }
     
+    static func search(query: String,
+                       language: String = "pt-BR",
+                       page: Int = 1,
+                       includeAdult: Bool = false,
+                       region: String? = nil,
+                       completion: @escaping (_ result: PersonPopularResponse?, _ error: Error?) -> Void) {
+        
+        if let _key = TMDB.key {
+            var url = "https://api.themoviedb.org/3/search/person?api_key=\(_key)&language=\(language)&page=\(page)&query=\(query)&include_adult=\(includeAdult)"
+            if let _region = region {
+                url.append("&region=\(_region)")
+            }
+            print(url)
+            TMDB.request(url: url, method: .GET) { (popular, error) in
+                completion(popular, error)
+            }
+            
+        } else {
+            completion(nil, NSError())
+        }
+        
+    }
+    
 }

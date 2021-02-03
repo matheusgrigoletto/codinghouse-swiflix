@@ -11,8 +11,8 @@ import Kingfisher
 typealias AlertActionCompletionHandler = ((UIAlertAction) -> Void)?
 
 extension UIImageView {
-    func withMediaURL(_ url: String){
-        guard let url = URL(string: Utils.baseImageURL + url) else {
+    func withMediaURL(_ url: String?){
+        guard let url = URL(string: Utils.baseImageURL + (url ?? "")) else {
             self.image = UIImage(systemName: "nosign")
             return
         }
@@ -43,4 +43,16 @@ extension UIViewController {
         
         self.present(alert, animated: true, completion: nil)
     }
+    
+    func setCustomTitle(text: String, fontName: String = "Berkshire Swash", size: CGFloat = 30, color: UIColor = .white) {
+        
+        let titleLabel = UILabel()
+        titleLabel.text = text
+        titleLabel.textAlignment = .center
+        titleLabel.font = UIFont(name: fontName, size: size)
+        titleLabel.textColor = color
+        self.navigationItem.titleView = titleLabel
+        
+    }
+    
 }

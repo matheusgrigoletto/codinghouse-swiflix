@@ -9,7 +9,7 @@ import Foundation
 
 struct KnownFor: Response {
     
-    let poster_path: String
+    let poster_path: String?
     let adult: Bool?
     let overview: String
     let release_date: String?
