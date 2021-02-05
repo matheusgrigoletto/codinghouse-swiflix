@@ -34,10 +34,12 @@ class PeopleViewController: UIViewController {
     private func getSearchPeoples(searchText: String){
         self.pessoas = []
         
-        SearchMDB.person(query: searchText, page: 1, includeAdult: false) { (return, people) in
+        TMDBPeople.search(query: searchText, language: "pt-BR", page: 1, includeAdult: false, region: nil) { (people, error) in
+            
             if let people = people {
-                
-                //self.pessoas.append()
+                self.pessoas.append(contentsOf: people.results)
+            }else {
+                print(error?.localizedDescription)
             }
             DispatchQueue.main.async {
                 self.peopleTableView.reloadData()
@@ -47,12 +49,10 @@ class PeopleViewController: UIViewController {
     }
     
     private func getPeoples(page: Int) {
-        print(page)
-        
-        
+      
         
         TMDBPeople.getPopular(language: "pt-BR", page: page) { (people, error) in
-            print(people)
+            
             if let people = people {
                 self.pessoas.append(contentsOf: people.results)
             }else {
