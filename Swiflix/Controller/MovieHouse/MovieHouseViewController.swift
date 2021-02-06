@@ -71,26 +71,51 @@ class MovieHouseViewController: UIViewController {
     
     private func getMovieHouse(page: Int){
         
-        MovieMDB.nowplaying(language: "pt-BR", page: page) { (return, movies) in
-            if let movies = movies {
+        TMDBMovies.getNowPlaying(language: "pt-BR", page: page, region: "BR") { (movies, erro) in
+            
+            if let movies = movies?.results {
                 for movie in movies {
                     if
                         let title = movie.title,
-                        let id = movie.id,
-                        let rating = movie.vote_average,
-                        let overview = movie.overview,
+//                        let id = movie.id,
+//                        let rating = movie.vote_average,
+//                        let overview = movie.overview,
                         let poster = movie.poster_path{
-                                    
-                        let generic = GenericMedia(id: id, title: title, rating: rating, overview: overview, poster: poster)
+                        
+                        let generic = GenericMedia(id: movie.id, title: title, rating: movie.vote_average, overview: movie.overview, poster: poster)
                         self.movies.append(generic)
                     }
                 }
                 self.page += 1
-                self.movieHouseTableView.reloadData()
+                DispatchQueue.main.async {
+                    self.movieHouseTableView.reloadData()
+                }
                 print("============= print get moviesHouse")
             }
+            
         }
         
+//
+//        MovieMDB.nowplaying(language: "pt-BR", page: page) { (return, movies) in
+//            if let movies = movies {
+//                for movie in movies {
+//                    if
+//                        let title = movie.title,
+//                        let id = movie.id,
+//                        let rating = movie.vote_average,
+//                        let overview = movie.overview,
+//                        let poster = movie.poster_path{
+//
+//                        let generic = GenericMedia(id: id, title: title, rating: rating, overview: overview, poster: poster)
+//                        self.movies.append(generic)
+//                    }
+//                }
+//                self.page += 1
+//                self.movieHouseTableView.reloadData()
+//                print("============= print get moviesHouse")
+//            }
+//        }
+//
         
     }
     

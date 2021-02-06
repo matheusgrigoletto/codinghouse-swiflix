@@ -160,6 +160,13 @@ extension MovieViewController: UISearchBarDelegate{
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar){
         searchBar.resignFirstResponder()
         
+        if (!(searchBar.text?.isEmpty ?? false)){
+            getSearchMovies(searchText: searchBar.text ?? "")
+        }else{
+            self.movies = []
+            self.page = 1
+            getMovies(page: self.page)
+        }
         
     }
     
@@ -168,21 +175,23 @@ extension MovieViewController: UISearchBarDelegate{
      
 
     }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        searchBar.endEditing(true)
+        self.movies = []
+        self.page = 1
+        getMovies(page: self.page)
+        
+    }
+    
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-       
     }
     
     
     
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
-        if (!searchText.isEmpty){
-            getSearchMovies(searchText: searchText)
-        }else{
-            self.movies = []
-            self.page = 1
-            getMovies(page: self.page)
-        }
-        
     }
     
 }

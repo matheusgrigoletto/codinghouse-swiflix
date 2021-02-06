@@ -50,15 +50,12 @@ class MovieGeralTableViewCell: UITableViewCell {
         }
         self.dataLancamento.text = m.release_date
         
-        self.genero.text = " "
-        for g in m.genres {
-            if let genreName = g.name {
-                self.genero.text! += "\(genreName), "
-            }
+        let generos = m.genres.map { (arg0) -> String in
+            let (id, name) = arg0
+            return name ?? ""
         }
-    
-        self.genero.text?.removeLast()
-        self.genero.text?.removeLast()
+        self.genero.text = generos.joined(separator: ", ")
+        
     }
         func setupRuntime(_ movie: MovieDetailedMDB){
             if let runtime = movie.runtime{
