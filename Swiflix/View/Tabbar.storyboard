@@ -15,7 +15,7 @@
                 <navigationController id="21y-CX-qSw" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Filmes" image="film" catalog="system" selectedImage="film.fill" id="Pgh-U4-tsw"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="5ME-GF-Ij0">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="104.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -364,7 +364,7 @@
                 <navigationController id="NEC-aI-THo" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Cinema" image="video" catalog="system" selectedImage="video" id="N4V-Gq-cn1"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="8rN-vx-zwn">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="104.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -817,7 +817,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="fnY-8L-E4y"/>
+        <segue reference="lQX-YM-eYg"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="film" catalog="system" width="128" height="93"/>

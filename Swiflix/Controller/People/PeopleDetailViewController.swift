@@ -140,13 +140,18 @@ extension PeopleDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch self.segmentedIndex {
         case 0:
+            tableView.rowHeight = -1
             tableView.allowsSelection = false
             return 1
         case 1:
+            tableView.rowHeight = -1
             tableView.allowsSelection = true
             return self.workMovies.count
         case 2:
             tableView.allowsSelection = true
+            print("\(tableView.frame.height)====FRAME.HEIGHT")
+            print("\(tableView.rowHeight)====ROW.HEIGHT")
+            
             tableView.rowHeight = tableView.frame.height
             return 1
         default:

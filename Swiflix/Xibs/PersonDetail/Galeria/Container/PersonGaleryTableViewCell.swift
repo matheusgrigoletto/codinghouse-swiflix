@@ -77,8 +77,8 @@ extension PersonGaleryTableViewCell: UICollectionViewDataSource, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-     
-        
+
+
         return spacingTotal()
     }
     

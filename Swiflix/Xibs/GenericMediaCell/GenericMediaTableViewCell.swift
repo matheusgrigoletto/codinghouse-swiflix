@@ -31,7 +31,6 @@ class GenericMediaTableViewCell: UITableViewCell {
         
             contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0))
         
-        
             self.contentView.layer.cornerRadius = 6
             self.poster.applyShadowWithCorner(containerView: outerView, cornerRadious: 6, color: UIColor.gray.cgColor)
         
