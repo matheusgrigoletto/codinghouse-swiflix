@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F161EFA25C0F3AA00AC3F4F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F161EF925C0F3AA00AC3F4F /* GoogleService-Info.plist */; };
+		0F73F5A625CE1B5A009C9258 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F73F5A525CE1B5A009C9258 /* GoogleService-Info.plist */; };
 		0FBDE1A92545D74B00655436 /* MovieSerieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBDE1A42545D74B00655436 /* MovieSerieTableViewCell.swift */; };
 		0FBDE1AA2545D74B00655436 /* MovieSerieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FBDE1A52545D74B00655436 /* MovieSerieTableViewCell.xib */; };
 		0FF75CFA25BFA27E00A68766 /* MudarSenhaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF75CF925BFA27E00A68766 /* MudarSenhaVC.swift */; };
@@ -135,7 +135,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0F161EF925C0F3AA00AC3F4F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0F73F5A525CE1B5A009C9258 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0FBDE1A42545D74B00655436 /* MovieSerieTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieSerieTableViewCell.swift; sourceTree = "<group>"; };
 		0FBDE1A52545D74B00655436 /* MovieSerieTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieSerieTableViewCell.xib; sourceTree = "<group>"; };
 		0FF75CF925BFA27E00A68766 /* MudarSenhaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MudarSenhaVC.swift; sourceTree = "<group>"; };
@@ -306,7 +306,7 @@
 			children = (
 				2FD283B02537DC9E0032400F /* Swiflix */,
 				2FD283BF2537DCA10032400F /* Info.plist */,
-				0F161EF925C0F3AA00AC3F4F /* GoogleService-Info.plist */,
+				0F73F5A525CE1B5A009C9258 /* GoogleService-Info.plist */,
 				2FD283AF2537DC9E0032400F /* Products */,
 				D8A1CE840BDC8217C6B3F230 /* Pods */,
 				08621D74529EB5CB9CF050EC /* Frameworks */,
@@ -903,12 +903,12 @@
 				AD3F4C37255DF7F30044F24B /* SerieCriticaTableViewCell.xib in Resources */,
 				C353434D2562226E00239BE5 /* UserProfile.storyboard in Resources */,
 				C3D8F6452558289B001FFCA1 /* MovieCriticaTableViewCell.xib in Resources */,
-				0F161EFA25C0F3AA00AC3F4F /* GoogleService-Info.plist in Resources */,
 				C33E12E6254452D50011E5A9 /* BerkshireSwash-Regular.ttf in Resources */,
 				0FBDE1AA2545D74B00655436 /* MovieSerieTableViewCell.xib in Resources */,
 				56AA48EE255B105E00003A53 /* PersonGaleryTableViewCell.xib in Resources */,
 				0FBDE1AA2545D74B00655436 /* MovieSerieTableViewCell.xib in Resources */,
 				C36856B82556E8D90032D09A /* MovieGeralTableViewCell.xib in Resources */,
+				0F73F5A625CE1B5A009C9258 /* GoogleService-Info.plist in Resources */,
 				C3D8F64E25582FB7001FFCA1 /* MovieTraillerTableViewCell.xib in Resources */,
 				5631F42925473B9E00FFCCBC /* Tabbar.storyboard in Resources */,
 				2FD283B92537DC9E0032400F /* Main.storyboard in Resources */,
