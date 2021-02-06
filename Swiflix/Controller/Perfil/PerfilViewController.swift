@@ -123,18 +123,27 @@ extension PerfilViewController: UITableViewDataSource {
     
 }
 
+
 extension PerfilViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        
+        let uid = Auth.auth().currentUser?.uid.description
         if self.segmentedIndex == 0 {
+            print("=====REMOVENDO FILME FAVORITADO====")
+            Firestore.firestore().collection("favoritos").document(uid as! String).collection("meusFavoritos").document(favoriteMovies[indexPath.row].title).delete()
+            
             self.favoriteMovies.remove(at: indexPath.row)
+            
         }else{
             self.favoriteSeries.remove(at: indexPath.row)
+            print("=====REMOVENDO SERIE FAVORITADA====")
+            
         }
         
         tableView.deleteRows(at: [indexPath], with: .fade)
         
     }
+
 }
+
 
 

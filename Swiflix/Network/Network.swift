@@ -27,16 +27,20 @@ class Network {
             return
         }
         
-        dbManager.collection("favoritos-\(uid)").document(m.title!).getDocument { (snapshot, error) in
+        //Alteracao 1
+        dbManager.collection("favoritos").document(uid.description).collection("meusFavoritos").document(m.title!).getDocument { (snapshot, error) in
             guard let snapshot = snapshot, error == nil else {
                 print(error?.localizedDescription)
                 onFail(error!.localizedDescription)
                 return
             }
-            
+            print("=-=-=-=--=-????? FUNCAO VERIFICAR FILME FAVORITO ????=-=--=--=-=-=-=-=")
             snapshot.exists ? ifExists() : ifNotExists()
         }
     }
+ 
+    
+    //MARK: - Carregar Favoritos
     
     func getFavorites(onSuccess: @escaping ([GenericMedia]) -> Void, onFail: @escaping (String) -> Void){
         guard let uid = self.getUID() else {
@@ -45,37 +49,43 @@ class Network {
             return
         }
         
-        dbManager.collection("favoritos-\(uid)").getDocuments { (snapshot, error) in
-            guard let snapshot = snapshot, !snapshot.isEmpty, error == nil else {
-                onFail("ops, aconteceu algum erro")
-                return
-            }
-            var medias: [GenericMedia] = []
-            for doc in snapshot.documents {
-                let data = doc.data()
-                let id = data["id"] as! Int
-                let title = data["title"] as! String
-                let vote = data["vote_average"] as! Double
-                let overview = data["overview"] as! String
-                let poster = data["poster_path"] as! String
+        //Alteracao 2
+        dbManager.collection("favoritos").getDocuments { (snapshot, error) in
+            self.dbManager.collection("favoritos").document(self.getUID()?.description as! String).collection("meusFavoritos").getDocuments { (snapshot, error) in
+                guard let snapshot = snapshot, !snapshot.isEmpty, error == nil else {
+                    onFail("ops, aconteceu algum erro")
+                    return
+                }
                 
-                let media = GenericMedia(id: id, title: title, rating: vote, overview: overview, poster: poster)
+                var medias: [GenericMedia] = []
+                for doc in snapshot.documents {
+                    let data = doc.data()
+                    let id = data["id"] as! Int
+                    let title = data["title"] as! String
+                    let vote = data["vote_average"] as! Double
+                    let overview = data["overview"] as! String
+                    let poster = data["poster_path"] as! String
+                    
+                    let media = GenericMedia(id: id, title: title, rating: vote, overview: overview, poster: poster)
+                    
+                    medias.append(media)
+                }
                 
-                medias.append(media)
+                onSuccess(medias)
             }
-            
-            onSuccess(medias)
         }
     }
-    
-    func favoriteMovie(data: [String:Any], success: @escaping () -> Void, fail: @escaping (String) -> Void){
-        let uid = authManager.currentUser!.uid
-        self.dbManager.collection("favoritos-\(uid)").document(data["title"] as! String).setData(data) { (error) in
-            guard error == nil else {
-                fail(error!.localizedDescription)
-                return
+        
+        func favoriteMovie(data: [String:Any], success: @escaping () -> Void, fail: @escaping (String) -> Void){
+            let uid = authManager.currentUser!.uid
+            let dataFav = data["title"] as! String
+            self.dbManager.collection("favoritos").document(uid.description as! String).collection("meusFavoritos").document(dataFav as! String).setData(data) { (error) in
+                guard error == nil else {
+                    fail(error!.localizedDescription)
+                    return
+                }
             }
+            success()
         }
-        success()
     }
-}
+
