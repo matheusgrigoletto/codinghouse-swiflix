@@ -25,6 +25,7 @@ class PerfilViewController: UIViewController {
     
     override func viewDidLoad() {
         getAuthInfo()
+        self.navigationController?.navigationBar.prefersLargeTitles = false
         
         super.viewDidLoad()
         escondeTecladoClicandoFora()

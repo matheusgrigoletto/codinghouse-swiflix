@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0Qw-XH-h3d">
-                                <rect key="frame" x="20" y="199" width="374" height="91"/>
+                                <rect key="frame" x="20" y="164" width="374" height="91"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ziu-Ov-iSU">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
@@ -78,14 +78,14 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="qtz-f2-vGc">
-                                <rect key="frame" x="157" y="90.5" width="100" height="97.5"/>
+                                <rect key="frame" x="157" y="55.5" width="100" height="97.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="Tia-DH-jpp"/>
                                     <constraint firstAttribute="height" constant="100" id="wYC-6w-mll"/>
                                 </constraints>
                             </imageView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lCP-Zd-kvV">
-                                <rect key="frame" x="0.0" y="339" width="414" height="32"/>
+                                <rect key="frame" x="0.0" y="304" width="414" height="32"/>
                                 <segments>
                                     <segment title="Filmes"/>
                                     <segment title="Séries"/>
@@ -95,13 +95,13 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favoritos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ily-lK-3fy">
-                                <rect key="frame" x="10" y="310" width="394" height="24"/>
+                                <rect key="frame" x="10" y="275" width="394" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zml-AD-Vas">
-                                <rect key="frame" x="0.0" y="375" width="414" height="438"/>
+                                <rect key="frame" x="0.0" y="340" width="414" height="473"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -110,7 +110,7 @@
                         <constraints>
                             <constraint firstItem="j8e-11-FQw" firstAttribute="trailing" secondItem="0Qw-XH-h3d" secondAttribute="trailing" constant="20" id="0bg-BA-JFP"/>
                             <constraint firstItem="lCP-Zd-kvV" firstAttribute="top" secondItem="Ily-lK-3fy" secondAttribute="bottom" constant="5" id="Afa-fE-L9h"/>
-                            <constraint firstItem="qtz-f2-vGc" firstAttribute="top" secondItem="j8e-11-FQw" secondAttribute="top" constant="45" id="Kh9-Tv-3sH"/>
+                            <constraint firstItem="qtz-f2-vGc" firstAttribute="top" secondItem="j8e-11-FQw" secondAttribute="top" constant="10" id="Kh9-Tv-3sH"/>
                             <constraint firstItem="Zml-AD-Vas" firstAttribute="top" secondItem="lCP-Zd-kvV" secondAttribute="bottom" constant="5" id="R4L-ed-dS4"/>
                             <constraint firstItem="j8e-11-FQw" firstAttribute="trailing" secondItem="Zml-AD-Vas" secondAttribute="trailing" id="Xjr-r6-Vfc"/>
                             <constraint firstItem="Ily-lK-3fy" firstAttribute="leading" secondItem="j8e-11-FQw" secondAttribute="leading" constant="10" id="Xny-xX-Qwh"/>
