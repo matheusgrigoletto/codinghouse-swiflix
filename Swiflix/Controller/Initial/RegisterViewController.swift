@@ -8,6 +8,8 @@
 import UIKit
 import Firebase
 import IQKeyboardManagerSwift
+import FirebaseStorage
+
 
 
 class RegisterViewController: UIViewController {
@@ -22,6 +24,10 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var confirmarSenhaTextField: UITextField!
     @IBOutlet weak var cadastrarButton: UIButton!
     
+    
+    let storage = Storage.storage()
+    
+
     
     var imagePicker = UIImagePickerController()
     
@@ -98,19 +104,19 @@ class RegisterViewController: UIViewController {
         }
     
     private func getImage(fromSourceType sourceType: UIImagePickerController.SourceType) {
-         
-         if UIImagePickerController.isSourceTypeAvailable(sourceType) {
-             
-             let imagePickerController = UIImagePickerController()
-             imagePickerController.delegate = self
-             imagePickerController.sourceType = sourceType
+        
+        if UIImagePickerController.isSourceTypeAvailable(sourceType) {
+            
+            let imagePickerController = UIImagePickerController()
+            imagePickerController.delegate = self
+            imagePickerController.sourceType = sourceType
             imagePickerController.allowsEditing = true
-             
-             self.present(imagePickerController, animated: true, completion: nil)
-             
-         }
-         
-     }
+            
+            self.present(imagePickerController, animated: true, completion: nil)
+            
+        }
+        
+    }
     
     
     
@@ -146,14 +152,23 @@ class RegisterViewController: UIViewController {
             
             print(result.user.uid)
             
-            Firestore.firestore().collection("usuario").document(result.user.uid).setData(usuario) { (erro) in
-                guard erro == nil else{
-                    print(erro?.localizedDescription)
-                    return
-                }
-                
-                
-            }
+            let data = Data()
+            
+            let storageRef = self.storage.reference()
+            let imagesRef = storageRef.child("images")
+            var spaceRef = storageRef.child("images/space.jpg")
+            let storagePath = "\(Auth.auth().currentUser?.uid)/images/space.jpg"
+            spaceRef = self.storage.reference(forURL: storagePath)
+
+            
+            
+
+//            Firestore.firestore().collection("usuario").document(result.user.uid).setData(usuario) { (erro) in
+//                guard erro == nil else{
+//                    print(erro?.localizedDescription)
+//                    return
+//                }
+//            }
             
             var isLogged = result.user.uid
             if isLogged != nil {
@@ -168,15 +183,26 @@ class RegisterViewController: UIViewController {
         
     }
     
-    
     @IBAction func chooseImageButtonTapped(_ sender: UIButton) {
-        
-        self.getImage(fromSourceType: .photoLibrary)
-        present(imagePicker, animated: true, completion: nil)
+           chooseImageSource()
     }
     
     
     //MARK: - Functions
+    
+    func chooseImageSource(){
+        let alert = UIAlertController(title: "Escolha a fonte.", message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (_) in
+            self.getImage(fromSourceType: .camera)
+            self.present(self.imagePicker, animated: true, completion: nil)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Album", style: .default, handler: { (_) in
+            self.getImage(fromSourceType: .photoLibrary)
+            self.present(self.imagePicker, animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
     
     
     func campoVazio(){
@@ -254,7 +280,8 @@ extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationC
        // self.photoButton.layer.cornerRadius = 100
         
         
-        print("urlImage:\(urlImage)")
+        print("urlImage:\(urlImage.jpegData(compressionQuality: 0.5))")
+        
         
         print("=========\(info)")
         picker.dismiss(animated: true, completion: nil)

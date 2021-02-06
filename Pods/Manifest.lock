@@ -234,6 +234,9 @@ PODS:
   - Firebase/Firestore (7.0.0):
     - Firebase/CoreOnly
     - FirebaseFirestore (~> 7.0.0)
+  - Firebase/Storage (7.0.0):
+    - Firebase/CoreOnly
+    - FirebaseStorage (~> 7.0.0)
   - FirebaseAnalytics (7.0.0):
     - FirebaseCore (~> 7.0)
     - FirebaseInstallations (~> 7.0)
@@ -277,6 +280,9 @@ PODS:
     - GoogleUtilities/Environment (~> 7.0)
     - GoogleUtilities/UserDefaults (~> 7.0)
     - PromisesObjC (~> 1.2)
+  - FirebaseStorage (7.0.0):
+    - FirebaseCore (~> 7.0)
+    - GTMSessionFetcher/Core (~> 1.4)
   - GoogleAppMeasurement (7.0.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 7.0)
     - GoogleUtilities/MethodSwizzler (~> 7.0)
@@ -346,6 +352,7 @@ DEPENDENCIES:
   - Firebase/Auth (= 7)
   - Firebase/Database (= 7)
   - Firebase/Firestore (= 7)
+  - Firebase/Storage (= 7)
   - IQKeyboardManagerSwift (= 6.3.0)
   - Kingfisher (~> 6.0)
   - TMDBSwift (~> 0.5)
@@ -363,6 +370,7 @@ SPEC REPOS:
     - FirebaseDatabase
     - FirebaseFirestore
     - FirebaseInstallations
+    - FirebaseStorage
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleUtilities
@@ -388,6 +396,7 @@ SPEC CHECKSUMS:
   FirebaseDatabase: 2481b48ebfd233ef591095d79d76720ea85cde74
   FirebaseFirestore: 969dd448250bee681d0e2d0af89cbb76ef955bb0
   FirebaseInstallations: 30646fc9a61c6f4ee3cd7a8b7231721842b40c95
+  FirebaseStorage: ea52bc7a1cb540406ed1e1acfc2bf3946621ed34
   GoogleAppMeasurement: 7790ef975d1d463c8614cd949a847e612edf087a
   GoogleDataTransport: 116c84c4bdeb76be2a7a46de51244368f9794eab
   GoogleUtilities: d866834472f1324d080496bc67ab3ce5d0d46027
@@ -402,6 +411,6 @@ SPEC CHECKSUMS:
   TMDBSwift: 9220f3dcee23372c05b92f8c111f5f4c37185aee
   YouTubePlayer: 2b5f2830d8f9b2cde942083211291e382c9e6bd5
 
-PODFILE CHECKSUM: b9b004de0ae15a55935a40d16ce34fec30c3dc9e
+PODFILE CHECKSUM: f0b841c495a130534c1840e26150609027c7b762
 
 COCOAPODS: 1.10.0
