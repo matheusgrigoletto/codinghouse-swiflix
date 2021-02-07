@@ -152,15 +152,22 @@ class RegisterViewController: UIViewController {
             
             print(result.user.uid)
             
-            let data = Data()
-            
-            let storageRef = self.storage.reference()
-            let imagesRef = storageRef.child("images")
-            var spaceRef = storageRef.child("images/space.jpg")
-            let storagePath = "\(Auth.auth().currentUser?.uid)/images/space.jpg"
-            spaceRef = self.storage.reference(forURL: storagePath)
-
-            
+            if let data = self.photoButton.image?.jpegData(compressionQuality: 0.5){
+                
+                let storageRef = self.storage.reference()
+                let imagesRef = storageRef.child("\(Auth.auth().currentUser?.uid)/images/space.jpg")
+//                var spaceRef = storageRef.child("images/space.jpg")
+//                let storagePath = "gs://swiflix-83c39.appspot.com/\(Auth.auth().currentUser?.uid)/images/space.jpg"
+//                spaceRef = self.storage.reference(forURL: storagePath)
+                
+                let uploadTask = imagesRef.putData(data, metadata: nil) { (metadata, error) in
+                  guard let metadata = metadata else {
+                    print("=========erro na gravacao da imagem=========")
+                    return
+                  }
+                
+            }
+            }
             
 
 //            Firestore.firestore().collection("usuario").document(result.user.uid).setData(usuario) { (erro) in
@@ -176,7 +183,6 @@ class RegisterViewController: UIViewController {
                 let storyboard = UIStoryboard(name: "Tabbar", bundle: nil)
                         let vc = storyboard.instantiateInitialViewController()
                         self.view.window?.rootViewController = vc
-                
             }
         }
         
