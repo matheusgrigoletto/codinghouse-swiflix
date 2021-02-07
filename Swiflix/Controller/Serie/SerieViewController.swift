@@ -152,6 +152,14 @@ extension SerieViewController: UISearchBarDelegate{
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar){
         searchBar.resignFirstResponder()
         
+        if (!(searchBar.text?.isEmpty ?? false)){
+            getSearchSeries(searchText: searchBar.text ?? "")
+        }else{
+            self.series = []
+            self.page = 1
+            getPopularSeries(page: self.page)
+        }
+        
         
     }
     
@@ -160,6 +168,16 @@ extension SerieViewController: UISearchBarDelegate{
      
 
     }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        searchBar.endEditing(true)
+        self.series = []
+        self.page = 1
+        getPopularSeries(page: self.page)
+        
+    }
+    
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
        
     }
@@ -167,14 +185,7 @@ extension SerieViewController: UISearchBarDelegate{
     
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
-        if (!searchText.isEmpty){
-            getSearchSeries(searchText: searchText)
-        }else{
-            self.series = []
-            self.page = 1
-            getPopularSeries(page: self.page)
-        }
-        
+     
     }
     
 }
