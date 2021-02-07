@@ -35,7 +35,6 @@ class NewMoviesDetailViewController: UIViewController {
         self.registerCells(nibName: GenericMediaTableViewCell.nibName, cellID: GenericMediaTableViewCell.cellID)
         self.registerCells(nibName: MovieCriticaTableViewCell.nibName, cellID: MovieCriticaTableViewCell.cellID)
         self.registerCells(nibName: MovieTraillerTableViewCell.nibName, cellID: MovieTraillerTableViewCell.cellID)
-        escondeTecladoClicandoFora()
         self.configureUIElements()
     }
     
@@ -176,6 +175,18 @@ extension NewMoviesDetailViewController: UITableViewDataSource {
 extension NewMoviesDetailViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch self.segmentedIndex {
+        case 2:
+            let trailer = self.traillers[indexPath.row]
+            let vc = TraillerViewController(trailer)
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion: nil)
+            break
+            
+        default:
+            
+            break
+        }
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
