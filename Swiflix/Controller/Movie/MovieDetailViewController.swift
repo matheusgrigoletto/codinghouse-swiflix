@@ -29,7 +29,6 @@ class MovieDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureDelegates()
-        escondeTecladoClicandoFora()
         self.getFullMovie()
         self.getSimilarMovies()
         self.getReviews()
@@ -105,7 +104,6 @@ class MovieDetailViewController: UIViewController {
     func configureDelegates(){
         self.movieTableView.delegate = self
         self.movieTableView.dataSource = self
-        
         self.movieTableView.tableFooterView = UIView()
     }
     
