@@ -13,10 +13,10 @@ import FirebaseStorage
 
 
 class RegisterViewController: UIViewController {
-
+    
     //MARK: - IBOutlets
     @IBOutlet weak var photoButton: UIImageView!
-   // @IBOutlet weak var photoButton: UIButton!
+    // @IBOutlet weak var photoButton: UIButton!
     @IBOutlet weak var nomeTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var confirmarEmailTextField: UITextField!
@@ -24,10 +24,11 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var confirmarSenhaTextField: UITextField!
     @IBOutlet weak var cadastrarButton: UIButton!
     
+    var isImageSelected: Bool = false
     
     let storage = Storage.storage()
     
-
+    
     
     var imagePicker = UIImagePickerController()
     
@@ -41,24 +42,24 @@ class RegisterViewController: UIViewController {
         confirmarSenhaTextField.delegate = self
         
         configurePhotoButton()
-
+        
         super.viewDidLoad()
         
         escondeTecladoClicandoFora()
         configureValidation()
-               
+        
     }
     
-  
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
     }
     
     
     
- 
+    
     //MARK: - Cofigurating Functions
-
+    
     
     func configurePhotoButton(){
         photoButton.layer.borderWidth = 1
@@ -83,7 +84,7 @@ class RegisterViewController: UIViewController {
         
     }
     
-     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         if textField.text != ""{
             //textField.backgroundColor = .white
             textField.textColor = .white
@@ -96,15 +97,15 @@ class RegisterViewController: UIViewController {
             textField.layer.borderWidth = 2
             textField.layer.borderColor = CGColor.init(red: 255, green: 0, blue: 0, alpha: 75)
         }
-
-//        if confirmarEmailTextField.isSelected == true {
-//            if self.confirmarEmailTextField != self.emailTextField{
-//                alertaEmail()
-//            }
-        }
+        
+        //        if confirmarEmailTextField.isSelected == true {
+        //            if self.confirmarEmailTextField != self.emailTextField{
+        //                alertaEmail()
+        //            }
+    }
     
     private func getImage(fromSourceType sourceType: UIImagePickerController.SourceType) {
-        
+         
         if UIImagePickerController.isSourceTypeAvailable(sourceType) {
             
             let imagePickerController = UIImagePickerController()
@@ -113,6 +114,7 @@ class RegisterViewController: UIViewController {
             imagePickerController.allowsEditing = true
             
             self.present(imagePickerController, animated: true, completion: nil)
+            
             
         }
         
@@ -123,7 +125,7 @@ class RegisterViewController: UIViewController {
     //MARK: - IBActions
     
     @IBAction func cadastrarButtonTapped(_ sender: UIButton) {
-         //TODO: Implementar função de criar novo usuário aqui
+        //TODO: Implementar função de criar novo usuário aqui
         
         let nome = nomeTextField.text!
         let email = emailTextField.text!
@@ -152,37 +154,40 @@ class RegisterViewController: UIViewController {
             
             print(result.user.uid)
             
-            if let data = self.photoButton.image?.jpegData(compressionQuality: 0.5){
+            if let data = self.photoButton.image?.jpegData(compressionQuality: 0.5),
+               let user = Auth.auth().currentUser?.uid,
+               self.isImageSelected {
+                
+                UserProfile.shared.image = self.photoButton.image
                 
                 let storageRef = self.storage.reference()
-                let imagesRef = storageRef.child("\(Auth.auth().currentUser?.uid)/images/space.jpg")
-//                var spaceRef = storageRef.child("images/space.jpg")
-//                let storagePath = "gs://swiflix-83c39.appspot.com/\(Auth.auth().currentUser?.uid)/images/space.jpg"
-//                spaceRef = self.storage.reference(forURL: storagePath)
+                let imagesRef = storageRef.child("\(user).jpg")
                 
-                let uploadTask = imagesRef.putData(data, metadata: nil) { (metadata, error) in
-                  guard let metadata = metadata else {
-                    print("=========erro na gravacao da imagem=========")
-                    return
-                  }
+                let metadata = StorageMetadata()
+                metadata.contentType = "image/jpeg"
                 
-            }
+                let uploadTask = imagesRef.putData(data, metadata: metadata) { (metadata, error) in
+                    guard let metadata = metadata else {
+                        print("=========erro na gravacao da imagem=========")
+                        return
+                    }
+                    
+                }
             }
             
-
-//            Firestore.firestore().collection("usuario").document(result.user.uid).setData(usuario) { (erro) in
-//                guard erro == nil else{
-//                    print(erro?.localizedDescription)
-//                    return
-//                }
-//            }
+            Firestore.firestore().collection("usuario").document(result.user.uid).setData(usuario) { (erro) in
+                guard erro == nil else{
+                    print(erro?.localizedDescription)
+                    return
+                }
+            }
             
             var isLogged = result.user.uid
             if isLogged != nil {
                 
                 let storyboard = UIStoryboard(name: "Tabbar", bundle: nil)
-                        let vc = storyboard.instantiateInitialViewController()
-                        self.view.window?.rootViewController = vc
+                let vc = storyboard.instantiateInitialViewController()
+                self.view.window?.rootViewController = vc
             }
         }
         
@@ -190,7 +195,7 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func chooseImageButtonTapped(_ sender: UIButton) {
-           chooseImageSource()
+        chooseImageSource()
     }
     
     
@@ -222,9 +227,9 @@ class RegisterViewController: UIViewController {
     
     func alertaEmail(){
         let refreshAlert = UIAlertController(title: "Atenção", message: "Os e-mails não conferem!", preferredStyle: UIAlertController.Style.alert)
-
+        
         refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
-              //print("Handle Ok logic here")
+            //print("Handle Ok logic here")
         }))
         
         present(refreshAlert, animated: true, completion: nil)
@@ -233,14 +238,14 @@ class RegisterViewController: UIViewController {
     
     func alertaSenha(){
         let refreshAlert = UIAlertController(title: "Atenção", message: "As senhas não conferem!", preferredStyle: UIAlertController.Style.alert)
-
+        
         refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
-              //print("Handle Ok logic here")
+            //print("Handle Ok logic here")
         }))
         present(refreshAlert, animated: true, completion: nil)
     }
-
-  
+    
+    
     
 }
 
@@ -250,23 +255,23 @@ class RegisterViewController: UIViewController {
 extension RegisterViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    
-            switch textField {
-            case self.nomeTextField:
-                self.emailTextField.becomeFirstResponder()
-            case self.emailTextField:
-                self.confirmarEmailTextField.becomeFirstResponder()
-            case self.confirmarEmailTextField:
-                self.senhaTextField.becomeFirstResponder()
-            case self.senhaTextField:
-                self.confirmarSenhaTextField.becomeFirstResponder()
-            case self.confirmarSenhaTextField:
-                self.confirmarSenhaTextField.resignFirstResponder()
-            default:break
-            }
-    
-            return true
+        
+        switch textField {
+        case self.nomeTextField:
+            self.emailTextField.becomeFirstResponder()
+        case self.emailTextField:
+            self.confirmarEmailTextField.becomeFirstResponder()
+        case self.confirmarEmailTextField:
+            self.senhaTextField.becomeFirstResponder()
+        case self.senhaTextField:
+            self.confirmarSenhaTextField.becomeFirstResponder()
+        case self.confirmarSenhaTextField:
+            self.confirmarSenhaTextField.resignFirstResponder()
+        default:break
         }
+        
+        return true
+    }
 }
 
 
@@ -278,12 +283,12 @@ extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationC
         let imageURL = info[UIImagePickerController.InfoKey.referenceURL] as! NSURL
         
         let urlImage = info[UIImagePickerController.InfoKey.editedImage] as! UIImage
-
+        
         
         
         photoButton.image = urlImage
-        
-       // self.photoButton.layer.cornerRadius = 100
+        self.isImageSelected = true
+        // self.photoButton.layer.cornerRadius = 100
         
         
         print("urlImage:\(urlImage.jpegData(compressionQuality: 0.5))")
@@ -296,9 +301,9 @@ extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationC
 }
 
 extension UIImageView {
-
+    
     func makeRounded() {
-
+        
         self.layer.borderWidth = 1
         self.layer.masksToBounds = false
         self.layer.borderColor = UIColor.black.cgColor

@@ -132,6 +132,7 @@
                         <outlet property="favoriteTableView" destination="Zml-AD-Vas" id="g7R-Ku-coX"/>
                         <outlet property="mudarSenhaBtn" destination="MYL-jl-cbs" id="8ta-OE-7gp"/>
                         <outlet property="nomeLabel" destination="4fY-wS-r7U" id="NXa-o4-4Cm"/>
+                        <outlet property="userImage" destination="qtz-f2-vGc" id="jA8-Jh-6oU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SFL-f1-h5Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

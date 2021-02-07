@@ -7,7 +7,7 @@
 
 import UIKit
 import Firebase
-
+import FirebaseStorage
 
 
 
@@ -17,11 +17,14 @@ class PerfilViewController: UIViewController {
     
     @IBOutlet weak var nomeLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var mudarSenhaBtn: UIButton!
     
     var segmentedIndex:Int = 0
     var favoriteMovies: [GenericMedia] = []
     var favoriteSeries = MockupSerie.getSeries()
+    
+    let storage = Storage.storage()
     
     override func viewDidLoad() {
         getAuthInfo()
@@ -33,6 +36,27 @@ class PerfilViewController: UIViewController {
         self.configureTableView()
         
         self.fetchFavoriteMovies()
+        
+        self.downloadUserImage()
+        
+        self.configureUserImage()
+    }
+    
+    private func downloadUserImage() {
+        
+        if let user = Auth.auth().currentUser?.uid {
+            let storageRef = self.storage.reference()
+            let imagesRef = storageRef.child("\(user).jpg")
+            imagesRef.getData(maxSize: 3 * 1024 * 1024) { (image, error) in
+                if let image = image {
+                    UserProfile.shared.image = UIImage(data: image)
+                    self.configureUserImage()
+                } else {
+                    print("===Erro ao baixar imagem do usuário===")
+                }
+            }
+        }
+        
     }
     
     private func fetchFavoriteMovies(){
@@ -43,7 +67,7 @@ class PerfilViewController: UIViewController {
         } onFail: { (error) in
             self.showAlert(title: "erro", message: error)
         }
-
+        
     }
     
     func configureTableView(){
@@ -55,12 +79,21 @@ class PerfilViewController: UIViewController {
         let nib = UINib(nibName: GenericMediaTableViewCell.nibName, bundle: nil)
         self.favoriteTableView.register(nib, forCellReuseIdentifier: GenericMediaTableViewCell.cellID)
     }
-
+    
+    func configureUserImage(){
+        self.userImage.layer.borderWidth = 1
+        self.userImage.layer.masksToBounds = false
+        self.userImage.layer.borderColor = UIColor.black.cgColor
+        self.userImage.layer.cornerRadius = self.userImage.frame.height/2
+        self.userImage.clipsToBounds = true
+        self.userImage.image = UserProfile.shared.image ?? UIImage(systemName: "person")
+        self.userImage.contentMode = .scaleAspectFill
+    }
     
     func configureUI(){
         self.title = "Perfil"
         mudarSenhaBtn.layer.cornerRadius = mudarSenhaBtn.layer.frame.height / 2
-//        try! Auth.auth().signOut()
+        //        try! Auth.auth().signOut()
         let logoutButton = UIBarButtonItem(title: "Logout", style: .done, target: self, action: #selector(logout))
         self.navigationItem.rightBarButtonItem = logoutButton
     }
@@ -86,22 +119,22 @@ class PerfilViewController: UIViewController {
             self.nomeLabel.text = nome as! String
         }
         
-//        nomeLabel.text = nome as! String
+        //        nomeLabel.text = nome as! String
         
     }
-
+    
     
     
     @objc func logout(){
         self.showConfirmAlert(title: "Logout", message: "Deseja realizar logout?", okHandler: { _ in
             try! Auth.auth().signOut()
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let vc = storyboard.instantiateInitialViewController()
-                    self.view.window?.rootViewController = vc
+            let vc = storyboard.instantiateInitialViewController()
+            self.view.window?.rootViewController = vc
             print("logging out...")
         }, cancelHandler: nil)
     }
-
+    
     @IBAction func segmentedChanged(_ sender: UISegmentedControl) {
         self.segmentedIndex = sender.selectedSegmentIndex
         self.favoriteTableView.reloadData()
@@ -143,7 +176,7 @@ extension PerfilViewController: UITableViewDelegate {
         tableView.deleteRows(at: [indexPath], with: .fade)
         
     }
-
+    
 }
 
 
