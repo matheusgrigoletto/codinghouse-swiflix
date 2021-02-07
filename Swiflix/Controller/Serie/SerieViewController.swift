@@ -18,7 +18,7 @@ class SerieViewController: UIViewController {
     
     override func viewDidLoad() {
         
-        searchBar.placeholder = "Procure por uma serie"
+        searchBar.placeholder = "Procure por uma série"
         
         super.viewDidLoad()
         self.configureDelegates()
