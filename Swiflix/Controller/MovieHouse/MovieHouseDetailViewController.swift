@@ -29,7 +29,6 @@ class MovieHouseDetailViewController: UIViewController {
         super.viewDidLoad()
         self.configureDelegates()
         self.getFullMovie()
-        escondeTecladoClicandoFora()
         self.getSimilarMovies()
         self.getReviews()
         self.getTrailers()
@@ -106,7 +105,6 @@ class MovieHouseDetailViewController: UIViewController {
     func configureDelegates(){
         self.movieHouseTableView.delegate = self
         self.movieHouseTableView.dataSource = self
-        
         self.movieHouseTableView.tableFooterView = UIView()
     }
     
@@ -178,6 +176,18 @@ extension MovieHouseDetailViewController: UITableViewDataSource {
 extension MovieHouseDetailViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch self.segmentedIndex {
+        case 2:
+            let trailer = self.traillers[indexPath.row]
+            let vc = TraillerViewController(trailer)
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion: nil)
+            break
+            
+        default:
+            
+            break
+        }
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
