@@ -19,7 +19,6 @@ class PeopleViewController: UIViewController {
     let cellSpacingHeight: CGFloat = 5
     var page: Int = 1
     
-    //alksjaksljksaldj
     
     override func viewDidLoad() {
         searchBar.placeholder = "Procure por um ator ou atriz"
@@ -129,28 +128,35 @@ extension PeopleViewController: UISearchBarDelegate{
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar){
         searchBar.resignFirstResponder()
         
-        
-    }
-    
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        
-     
-
-    }
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-       
-    }
-    
-    
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
-        if (!searchText.isEmpty){
-            getSearchPeoples(searchText: searchText)
+        if (!(searchBar.text?.isEmpty ?? false)){
+            getSearchPeoples(searchText: searchBar.text ?? "")
         }else{
             self.pessoas = []
             self.page = 1
             getPeoples(page: self.page)
         }
+        
+        
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        searchBar.endEditing(true)
+        self.pessoas = []
+        self.page = 1
+        getPeoples(page: self.page)
+        
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+       
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
         
     }
     

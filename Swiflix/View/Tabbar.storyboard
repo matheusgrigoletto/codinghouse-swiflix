@@ -15,7 +15,7 @@
                 <navigationController id="21y-CX-qSw" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Filmes" image="film" catalog="system" selectedImage="film.fill" id="Pgh-U4-tsw"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="5ME-GF-Ij0">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="104.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -79,25 +79,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="U10-OE-nFJ">
-                                <rect key="frame" x="0.0" y="140" width="414" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RAM-mF-5CG">
-                                <rect key="frame" x="0.0" y="196" width="414" height="617"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" showsCancelButton="YES" id="U10-OE-nFJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Xy1-jh-rpB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="RAM-mF-5CG" firstAttribute="leading" secondItem="Xy1-jh-rpB" secondAttribute="leading" id="GuX-U0-NZ9"/>
-                            <constraint firstItem="Xy1-jh-rpB" firstAttribute="trailing" secondItem="U10-OE-nFJ" secondAttribute="trailing" id="JkS-eL-O5r"/>
-                            <constraint firstItem="RAM-mF-5CG" firstAttribute="top" secondItem="U10-OE-nFJ" secondAttribute="bottom" id="Mu7-Kh-unr"/>
+                            <constraint firstItem="RAM-mF-5CG" firstAttribute="top" secondItem="Xy1-jh-rpB" secondAttribute="top" id="a5c-PZ-U3q"/>
                             <constraint firstItem="Xy1-jh-rpB" firstAttribute="bottom" secondItem="RAM-mF-5CG" secondAttribute="bottom" id="ic8-6U-GYH"/>
                             <constraint firstItem="Xy1-jh-rpB" firstAttribute="trailing" secondItem="RAM-mF-5CG" secondAttribute="trailing" id="sOW-pH-vNQ"/>
-                            <constraint firstItem="U10-OE-nFJ" firstAttribute="top" secondItem="Xy1-jh-rpB" secondAttribute="top" id="sjs-4x-NFJ"/>
-                            <constraint firstItem="U10-OE-nFJ" firstAttribute="leading" secondItem="enQ-4m-DM7" secondAttribute="leading" id="z9J-jZ-FMn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Pessoas" id="taK-1B-eq5">
@@ -126,25 +124,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="HDp-fa-7T0">
-                                <rect key="frame" x="0.0" y="140" width="414" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KII-nZ-ywb">
-                                <rect key="frame" x="0.0" y="196" width="414" height="617"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" showsCancelButton="YES" id="HDp-fa-7T0">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JYe-v3-wt2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="KII-nZ-ywb" firstAttribute="top" secondItem="JYe-v3-wt2" secondAttribute="top" id="GjY-Gb-On4"/>
                             <constraint firstItem="JYe-v3-wt2" firstAttribute="trailing" secondItem="KII-nZ-ywb" secondAttribute="trailing" id="OUL-18-AIB"/>
-                            <constraint firstItem="HDp-fa-7T0" firstAttribute="top" secondItem="JYe-v3-wt2" secondAttribute="top" id="Qc7-EP-DKU"/>
                             <constraint firstItem="JYe-v3-wt2" firstAttribute="bottom" secondItem="KII-nZ-ywb" secondAttribute="bottom" id="d7V-bQ-dw6"/>
                             <constraint firstItem="KII-nZ-ywb" firstAttribute="leading" secondItem="JYe-v3-wt2" secondAttribute="leading" id="dje-dP-pF7"/>
-                            <constraint firstItem="JYe-v3-wt2" firstAttribute="trailing" secondItem="HDp-fa-7T0" secondAttribute="trailing" id="mjV-kb-1Ks"/>
-                            <constraint firstItem="HDp-fa-7T0" firstAttribute="leading" secondItem="qUk-8e-7PC" secondAttribute="leading" id="rX9-mt-wnr"/>
-                            <constraint firstItem="KII-nZ-ywb" firstAttribute="top" secondItem="HDp-fa-7T0" secondAttribute="bottom" id="v14-DY-BdY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Séries" id="5bF-Hm-fI6">
@@ -801,7 +797,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pvk-Jb-KYf"/>
+        <segue reference="jZK-el-4n1"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="film" catalog="system" width="128" height="93"/>
