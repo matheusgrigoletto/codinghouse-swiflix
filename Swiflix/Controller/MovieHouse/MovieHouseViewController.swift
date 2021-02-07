@@ -11,63 +11,22 @@ import TMDBSwift
 class MovieHouseViewController: UIViewController {
 
     @IBOutlet weak var movieHouseTableView: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
+   
     
     var movies:[GenericMedia] = []
     var page: Int = 1
-    let date = Date()
-    let calendar = Calendar.current
-    
-    //kajshkajshakjsh
-    
-    
 
     
     override func viewDidLoad() {
-        searchBar.placeholder = "Procure por um filme"
+        
         
         super.viewDidLoad()
         self.registerCell(nib: GenericMediaTableViewCell.nibName, cellID: GenericMediaTableViewCell.cellID)
         self.configureDelegates()
         self.getMovieHouse(page: self.page)
-        self.movieHouseTableView.keyboardDismissMode = .onDrag
-    }
-    
-    
-    
-    private func getSearchMovieHouse(searchText: String){
-        self.movies = []
-        let ano = calendar.component(.year, from: date)
-        
-        
-        SearchMDB.movie(query: searchText, language: "pt-BR", page: 1, includeAdult: false, year: ano, primaryReleaseYear: ano) { (return, movies) in
-            
-            
-            if let movies = movies {
-                
-                for movie in movies {
-                    
-                    if
-                        
-                        let title = movie.title,
-                        let id = movie.id,
-                        let rating = movie.vote_average,
-                        let overview = movie.overview,
-                        let poster = movie.poster_path{
-                        let generic = GenericMedia(id: id, title: title, rating: rating, overview: overview, poster: poster)
-                        
-                        self.movies.append(generic)
-                        
-                        
-                    }
-                }
-                print()
-                self.movieHouseTableView.reloadData()
-                
-            }
-        }
         
     }
+    
     
     private func getMovieHouse(page: Int){
         
@@ -77,9 +36,6 @@ class MovieHouseViewController: UIViewController {
                 for movie in movies {
                     if
                         let title = movie.title,
-//                        let id = movie.id,
-//                        let rating = movie.vote_average,
-//                        let overview = movie.overview,
                         let poster = movie.poster_path{
                         
                         let generic = GenericMedia(id: movie.id, title: title, rating: movie.vote_average, overview: movie.overview, poster: poster)
@@ -90,32 +46,9 @@ class MovieHouseViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.movieHouseTableView.reloadData()
                 }
-                print("============= print get moviesHouse")
             }
             
         }
-        
-//
-//        MovieMDB.nowplaying(language: "pt-BR", page: page) { (return, movies) in
-//            if let movies = movies {
-//                for movie in movies {
-//                    if
-//                        let title = movie.title,
-//                        let id = movie.id,
-//                        let rating = movie.vote_average,
-//                        let overview = movie.overview,
-//                        let poster = movie.poster_path{
-//
-//                        let generic = GenericMedia(id: id, title: title, rating: rating, overview: overview, poster: poster)
-//                        self.movies.append(generic)
-//                    }
-//                }
-//                self.page += 1
-//                self.movieHouseTableView.reloadData()
-//                print("============= print get moviesHouse")
-//            }
-//        }
-//
         
     }
     
@@ -127,7 +60,7 @@ class MovieHouseViewController: UIViewController {
     func configureDelegates(){
         self.movieHouseTableView.delegate = self
         self.movieHouseTableView.dataSource = self
-        self.searchBar.delegate = self
+        
     }
     
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -177,40 +110,4 @@ extension MovieHouseViewController: UITableViewDelegate {
         performSegue(withIdentifier: Segues.toMovieHouseDetail, sender: chosenMovie)
     }
 }
-
-
-extension MovieHouseViewController: UISearchBarDelegate{
-    
-    
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar){
-        searchBar.resignFirstResponder()
-        
-        
-    }
-    
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        
-     
-
-    }
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-       
-    }
-    
-    
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
-        if (!searchText.isEmpty){
-            getSearchMovieHouse(searchText: searchText)
-        }else{
-            self.movies = []
-            self.page = 1
-            getMovieHouse(page: self.page)
-        }
-        
-    }
-    
-}
-    
 

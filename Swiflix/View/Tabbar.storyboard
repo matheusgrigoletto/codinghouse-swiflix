@@ -15,7 +15,7 @@
                 <navigationController id="21y-CX-qSw" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Filmes" image="film" catalog="system" selectedImage="film.fill" id="Pgh-U4-tsw"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="5ME-GF-Ij0">
-                        <rect key="frame" x="0.0" y="44" width="414" height="104.5"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -231,14 +231,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N4m-dM-sM8">
-                                <rect key="frame" x="0.0" y="140" width="414" height="232.5"/>
+                                <rect key="frame" x="0.0" y="148.5" width="414" height="232.5"/>
                                 <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="N4m-dM-sM8" secondAttribute="height" multiplier="376:211" id="oaJ-Hv-vjt"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⭐️9.9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5k-HL-DYz">
-                                <rect key="frame" x="325" y="323.5" width="79" height="39"/>
+                                <rect key="frame" x="325" y="332" width="79" height="39"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="79" id="i4i-Fw-Gvy"/>
@@ -249,7 +249,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="J4V-hf-Adk">
-                                <rect key="frame" x="0.0" y="377.5" width="414" height="32"/>
+                                <rect key="frame" x="0.0" y="386" width="414" height="32"/>
                                 <segments>
                                     <segment title="Geral"/>
                                     <segment title="Outros"/>
@@ -261,7 +261,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="pKd-JZ-uyQ">
-                                <rect key="frame" x="0.0" y="408.5" width="414" height="404.5"/>
+                                <rect key="frame" x="0.0" y="417" width="414" height="396"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -319,12 +319,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="HFW-tW-vkv">
-                                <rect key="frame" x="0.0" y="140" width="414" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="n2f-Ei-hfY">
-                                <rect key="frame" x="0.0" y="196" width="414" height="617"/>
+                                <rect key="frame" x="0.0" y="148.5" width="414" height="664.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -334,10 +330,7 @@
                             <constraint firstItem="jko-on-2r3" firstAttribute="bottom" secondItem="n2f-Ei-hfY" secondAttribute="bottom" id="6Ij-lU-ccd"/>
                             <constraint firstItem="jko-on-2r3" firstAttribute="trailing" secondItem="n2f-Ei-hfY" secondAttribute="trailing" id="F5q-Np-w1i"/>
                             <constraint firstItem="n2f-Ei-hfY" firstAttribute="leading" secondItem="jko-on-2r3" secondAttribute="leading" id="OIH-25-T5t"/>
-                            <constraint firstItem="jko-on-2r3" firstAttribute="trailing" secondItem="HFW-tW-vkv" secondAttribute="trailing" id="TSE-xg-Sac"/>
-                            <constraint firstItem="HFW-tW-vkv" firstAttribute="top" secondItem="jko-on-2r3" secondAttribute="top" id="XbW-3k-aMm"/>
-                            <constraint firstItem="n2f-Ei-hfY" firstAttribute="top" secondItem="HFW-tW-vkv" secondAttribute="bottom" id="dHo-ru-3VE"/>
-                            <constraint firstItem="HFW-tW-vkv" firstAttribute="leading" secondItem="bBJ-IS-lIW" secondAttribute="leading" id="jjk-uu-4cM"/>
+                            <constraint firstItem="n2f-Ei-hfY" firstAttribute="top" secondItem="jko-on-2r3" secondAttribute="top" id="ohE-ev-blK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Cinema" id="yYO-YA-bk2">
@@ -350,7 +343,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="movieHouseTableView" destination="n2f-Ei-hfY" id="8nc-sg-Q2h"/>
-                        <outlet property="searchBar" destination="HFW-tW-vkv" id="dus-V6-abG"/>
                         <segue destination="SpR-zc-yaV" kind="show" identifier="movieHouseToDetailMovieHouseSegue" id="GOu-AF-W0f"/>
                     </connections>
                 </viewController>
@@ -364,7 +356,7 @@
                 <navigationController id="NEC-aI-THo" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Cinema" image="video" catalog="system" selectedImage="video" id="N4V-Gq-cn1"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="8rN-vx-zwn">
-                        <rect key="frame" x="0.0" y="44" width="414" height="104.5"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -599,7 +591,7 @@
                 <navigationController id="bMe-uV-fga" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Lançamentos" image="square.stack.3d.forward.dottedline" catalog="system" selectedImage="square.stack.3d.forward.dottedline" id="wIQ-Yz-4mk"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Rp7-yr-qLH">
-                        <rect key="frame" x="0.0" y="44" width="414" height="104.5"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -618,12 +610,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="114-Hb-tQA">
-                                <rect key="frame" x="0.0" y="148.5" width="414" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tBi-4e-xNx">
-                                <rect key="frame" x="0.0" y="204.5" width="414" height="608.5"/>
+                                <rect key="frame" x="0.0" y="148.5" width="414" height="664.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -631,12 +619,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="JJg-Rv-4M2" firstAttribute="trailing" secondItem="tBi-4e-xNx" secondAttribute="trailing" id="IMQ-tl-oQu"/>
-                            <constraint firstItem="114-Hb-tQA" firstAttribute="top" secondItem="JJg-Rv-4M2" secondAttribute="top" id="dY6-jr-ohb"/>
-                            <constraint firstItem="JJg-Rv-4M2" firstAttribute="trailing" secondItem="114-Hb-tQA" secondAttribute="trailing" id="efh-CK-TAh"/>
-                            <constraint firstItem="tBi-4e-xNx" firstAttribute="top" secondItem="114-Hb-tQA" secondAttribute="bottom" id="fo7-cH-4TO"/>
                             <constraint firstItem="JJg-Rv-4M2" firstAttribute="bottom" secondItem="tBi-4e-xNx" secondAttribute="bottom" id="kgG-yx-pdQ"/>
                             <constraint firstItem="tBi-4e-xNx" firstAttribute="leading" secondItem="JJg-Rv-4M2" secondAttribute="leading" id="mLL-1P-wd6"/>
-                            <constraint firstItem="114-Hb-tQA" firstAttribute="leading" secondItem="dk8-sP-oRo" secondAttribute="leading" id="oIi-e2-4jp"/>
+                            <constraint firstItem="tBi-4e-xNx" firstAttribute="top" secondItem="JJg-Rv-4M2" secondAttribute="top" id="wHu-80-aMj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Lançamentos" id="aCT-QS-qRd">
@@ -649,7 +634,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="newMoviesTableView" destination="tBi-4e-xNx" id="Tk8-cB-9bM"/>
-                        <outlet property="searchBar" destination="114-Hb-tQA" id="bZB-Se-u5x"/>
                         <segue destination="WUQ-Fi-hUj" kind="show" identifier="NewMovieToDetailNewMovieSegue" id="nCI-rV-4Oc"/>
                     </connections>
                 </viewController>
@@ -817,7 +801,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="lQX-YM-eYg"/>
+        <segue reference="pvk-Jb-KYf"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="film" catalog="system" width="128" height="93"/>
