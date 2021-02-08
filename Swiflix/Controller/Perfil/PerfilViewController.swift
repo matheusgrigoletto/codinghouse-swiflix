@@ -22,7 +22,7 @@ class PerfilViewController: UIViewController {
     
     var segmentedIndex:Int = 0
     var favoriteMovies: [GenericMedia] = []
-    var favoriteSeries = MockupSerie.getSeries()
+    var favoriteSeries: [GenericMedia] = []
     
     let storage = Storage.storage()
     
@@ -36,6 +36,7 @@ class PerfilViewController: UIViewController {
         self.configureTableView()
         
         self.fetchFavoriteMovies()
+        self.fetchFavoriteSeries()
         
         self.downloadUserImage()
         
@@ -65,9 +66,20 @@ class PerfilViewController: UIViewController {
     }
     
     private func fetchFavoriteMovies(){
-        Network.shared.getFavorites { (medias) in
+        Network.shared.getFavorites(mediaType: .movie) { (medias) in
             //success
             self.favoriteMovies = medias
+            self.favoriteTableView.reloadData()
+        } onFail: { (error) in
+            self.showAlert(title: "erro", message: error)
+        }
+        
+    }
+    
+    private func fetchFavoriteSeries(){
+        Network.shared.getFavorites(mediaType: .serie) { (medias) in
+            //success
+            self.favoriteSeries = medias
             self.favoriteTableView.reloadData()
         } onFail: { (error) in
             self.showAlert(title: "erro", message: error)
@@ -173,6 +185,7 @@ extension PerfilViewController: UITableViewDelegate {
             self.favoriteMovies.remove(at: indexPath.row)
             
         }else{
+            Firestore.firestore().collection("favoritos").document(uid as! String).collection("seriesFavoritas").document(favoriteSeries[indexPath.row].title).delete()
             self.favoriteSeries.remove(at: indexPath.row)
             print("=====REMOVENDO SERIE FAVORITADA====")
             

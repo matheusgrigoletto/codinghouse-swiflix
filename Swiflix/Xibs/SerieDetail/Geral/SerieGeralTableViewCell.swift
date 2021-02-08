@@ -8,6 +8,10 @@
 import UIKit
 import TMDBSwift
 
+protocol SerieGeralTableViewCellDelegate {
+    func favoritar(m: MediaDetailResponse?)
+}
+
 class SerieGeralTableViewCell: UITableViewCell {
     
     @IBOutlet weak var titulo: UILabel!
@@ -20,6 +24,9 @@ class SerieGeralTableViewCell: UITableViewCell {
     static let cellID: String = "SerieGeralTableViewCell"
     static let nibName: String = "SerieGeralTableViewCell"
     
+    var delegate: SerieGeralTableViewCellDelegate?
+    var serie: MediaDetailResponse?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -29,6 +36,8 @@ class SerieGeralTableViewCell: UITableViewCell {
     }
     
     func setup(_ serie: MediaDetailResponse) {
+        
+        self.serie = serie
         
         self.titulo.text = serie.name
         self.tituloOriginal.text = serie.original_name
@@ -53,6 +62,10 @@ class SerieGeralTableViewCell: UITableViewCell {
         self.genero.text?.removeLast()
         
         
+    }
+    
+    @IBAction func favoritarTapped(_ sender: UIButton) {
+        self.delegate?.favoritar(m: self.serie)
     }
     
 }

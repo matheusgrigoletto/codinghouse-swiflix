@@ -254,6 +254,7 @@ extension SerieDetailViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: SerieGeralTableViewCell.cellID, for: indexPath) as? SerieGeralTableViewCell
             if let serie = self.fullSeries {
                 cell?.setup(serie)
+                cell?.delegate = self
             }
             return cell ?? UITableViewCell()
             
@@ -283,6 +284,47 @@ extension SerieDetailViewController: UITableViewDataSource {
             
         }
         
+    }
+    
+}
+
+
+extension SerieDetailViewController: SerieGeralTableViewCellDelegate {
+    
+    func favoritar(m: MediaDetailResponse?) {
+        
+        // verificar se o filme já esta favoritado
+        guard let m = m else {
+            print("Série está vazia")
+            return
+        }
+        
+        Network.shared.verificarSerieFavorita(m: m) {
+            self.showAlert(title: "Ops 😅", message: "Esta série já está favoritada")
+        } ifNotExists: {
+            self.showConfirmAlert(title: m.title, message: "Gostaria de favoritar esta série?", okHandler: { _ in
+                self.favoritarFilme(m)
+            }, cancelHandler: nil)
+        } onFail: { (error) in
+            self.showAlert(title: "Erro 😩", message: "Não há séries favoritas")
+        }
+    }
+    
+    func favoritarFilme(_ m: MediaDetailResponse){
+        let serieJson: [String: Any] = [
+            "id":m.id,
+            "title":m.name,
+            "vote_average":m.vote_average,
+            "poster_path":m.poster_path,
+            "overview":m.overview
+        ]
+        
+        Network.shared.favoriteSerie(data: serieJson) {
+            self.showAlert(title: "Sucesso", message: "Série favoritada 😀")
+        } fail: { (error) in
+            self.showAlert(title: "Erro 😩", message: error)
+        }
+
     }
     
 }

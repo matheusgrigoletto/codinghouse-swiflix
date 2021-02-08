@@ -38,6 +38,9 @@
                                         <state key="normal">
                                             <imageReference key="image" image="suit.heart.fill" catalog="system" symbolScale="large"/>
                                         </state>
+                                        <connections>
+                                            <action selector="favoritarTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Eto-ev-wVn"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

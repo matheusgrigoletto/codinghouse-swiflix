@@ -38,20 +38,29 @@ class Network {
             snapshot.exists ? ifExists() : ifNotExists()
         }
     }
- 
+    
     
     //MARK: - Carregar Favoritos
     
-    func getFavorites(onSuccess: @escaping ([GenericMedia]) -> Void, onFail: @escaping (String) -> Void){
+    func getFavorites(mediaType: MediaType, onSuccess: @escaping ([GenericMedia]) -> Void, onFail: @escaping (String) -> Void){
         guard let uid = self.getUID() else {
             print("erro - usuario nao logado")
             onFail("erro ao pegar uid do usuario")
             return
         }
         
+        var folder: String
+        
+        switch mediaType {
+        case .movie:
+            folder = "meusFavoritos"
+        case .serie:
+            folder = "seriesFavoritas"
+        }
+        
         //Alteracao 2
         dbManager.collection("favoritos").getDocuments { (snapshot, error) in
-            self.dbManager.collection("favoritos").document(self.getUID()?.description as! String).collection("meusFavoritos").getDocuments { (snapshot, error) in
+            self.dbManager.collection("favoritos").document(self.getUID()?.description as! String).collection(folder).getDocuments { (snapshot, error) in
                 guard let snapshot = snapshot, !snapshot.isEmpty, error == nil else {
                     onFail("ops, aconteceu algum erro")
                     return
@@ -75,17 +84,53 @@ class Network {
             }
         }
     }
-        
-        func favoriteMovie(data: [String:Any], success: @escaping () -> Void, fail: @escaping (String) -> Void){
-            let uid = authManager.currentUser!.uid
-            let dataFav = data["title"] as! String
-            self.dbManager.collection("favoritos").document(uid.description as! String).collection("meusFavoritos").document(dataFav as! String).setData(data) { (error) in
-                guard error == nil else {
-                    fail(error!.localizedDescription)
-                    return
-                }
+    
+    func favoriteMovie(data: [String:Any], success: @escaping () -> Void, fail: @escaping (String) -> Void){
+        let uid = authManager.currentUser!.uid
+        let dataFav = data["title"] as! String
+        self.dbManager.collection("favoritos").document(uid.description as! String).collection("meusFavoritos").document(dataFav as! String).setData(data) { (error) in
+            guard error == nil else {
+                fail(error!.localizedDescription)
+                return
             }
-            success()
+        }
+        success()
+    }
+    
+    func verificarSerieFavorita(m: MediaDetailResponse, ifExists: @escaping () -> Void, ifNotExists: @escaping () -> Void, onFail: @escaping (String) -> Void){
+        guard let uid = self.getUID() else {
+            print("erro - usuario nao logado")
+            onFail("erro ao pegar uid do usuario")
+            return
+        }
+        
+        
+        dbManager.collection("favoritos").document(uid.description).collection("seriesFavoritas").document(m.name!).getDocument { (snapshot, error) in
+            guard let snapshot = snapshot, error == nil else {
+                print(error?.localizedDescription)
+                onFail(error!.localizedDescription)
+                return
+            }
+            print("=-=-=-=--=-????? FUNCAO VERIFICAR SÉRIE FAVORITO ????=-=--=--=-=-=-=-=")
+            snapshot.exists ? ifExists() : ifNotExists()
         }
     }
+    
+    func favoriteSerie(data: [String:Any], success: @escaping () -> Void, fail: @escaping (String) -> Void){
+        let uid = authManager.currentUser!.uid
+        let dataFav = data["title"] as! String
+        self.dbManager.collection("favoritos").document(uid.description as! String).collection("seriesFavoritas").document(dataFav as! String).setData(data) { (error) in
+            guard error == nil else {
+                fail(error!.localizedDescription)
+                return
+            }
+        }
+        success()
+    }
+    
+}
 
+enum MediaType {
+    case movie
+    case serie
+}
