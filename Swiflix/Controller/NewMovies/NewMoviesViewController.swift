@@ -11,6 +11,8 @@ import TMDBSwift
 class NewMoviesViewController: UIViewController {
 
     @IBOutlet weak var newMoviesTableView: UITableView!
+    
+    var page: Int = 1
    
     
     var movies:[GenericMedia] = []
@@ -30,7 +32,7 @@ class NewMoviesViewController: UIViewController {
 
     private func getNewMovies(){
         
-        TMDBMovies.getUpcoming(language: "pt-BR", page: 1, region: "BR") { (movies, erro) in
+        TMDBMovies.getUpcoming(language: "pt-BR", page: self.page) { (movies, erro) in
             
             if let movies = movies?.results {
                 for movie in movies {
@@ -42,7 +44,7 @@ class NewMoviesViewController: UIViewController {
                         self.movies.append(generic)
                     }
                 }
-                
+                self.page += 1
                 DispatchQueue.main.async {
                     self.newMoviesTableView.reloadData()
                 }
@@ -105,6 +107,11 @@ class NewMoviesViewController: UIViewController {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if self.movies.count - 1 == indexPath.row {
+            self.getNewMovies()
+        }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: GenericMediaTableViewCell.cellID, for: indexPath) as? GenericMediaTableViewCell
         cell?.setup(withMedia: self.movies[indexPath.row])
         return cell ?? UITableViewCell()

@@ -41,11 +41,11 @@ class TMDBMovies {
         
     }
     
-    static func getUpcoming(language: String = "pt-BR", page: Int = 1, region: String = "BR", completion: @escaping (_ result: MovieUpcomingResponse?, _ error: Error?) -> Void) {
+    static func getUpcoming(language: String = "pt-BR", page: Int = 1, completion: @escaping (_ result:  MovieUpcomingResponse?, _ error: Error?) -> Void) {
      
         if let _key = TMDB.key {
             
-            let url = "https://api.themoviedb.org/3/movie/upcoming?api_key=\(_key)&language=\(language)&region=\(region)&page=\(page)"
+            let url = "https://api.themoviedb.org/3/movie/upcoming?api_key=\(_key)&language=\(language)&page=\(page)"
             
             TMDB.request(url: url, method: .GET) { (popular, error) in
                 completion(popular, error)
