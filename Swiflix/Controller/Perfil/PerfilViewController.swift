@@ -42,6 +42,11 @@ class PerfilViewController: UIViewController {
         self.configureUserImage()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     private func downloadUserImage() {
         
         if let user = Auth.auth().currentUser?.uid {
