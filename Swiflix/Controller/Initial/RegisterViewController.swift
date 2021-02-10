@@ -89,7 +89,7 @@ class RegisterViewController: UIViewController {
             //textField.backgroundColor = .white
             textField.textColor = .white
             textField.layer.borderWidth = 2
-            textField.layer.borderColor = CGColor.init(red: 0, green: 255, blue: 0, alpha: 75)
+            textField.layer.borderColor = CGColor.init(genericCMYKCyan: 0, magenta: 0, yellow: 0, black: 0, alpha: 100)
             
         }else{
             //textField.backgroundColor = .darkGray
@@ -97,11 +97,6 @@ class RegisterViewController: UIViewController {
             textField.layer.borderWidth = 2
             textField.layer.borderColor = CGColor.init(red: 255, green: 0, blue: 0, alpha: 75)
         }
-        
-        //        if confirmarEmailTextField.isSelected == true {
-        //            if self.confirmarEmailTextField != self.emailTextField{
-        //                alertaEmail()
-        //            }
     }
     
     private func getImage(fromSourceType sourceType: UIImagePickerController.SourceType) {
@@ -135,11 +130,13 @@ class RegisterViewController: UIViewController {
             emailTextField.textColor = UIColor.red
             confirmarEmailTextField.textColor = UIColor.red
             alertaEmail()
+            return
         }
         if checkField(f1: senhaTextField.text ?? "s1", f2: confirmarSenhaTextField.text ?? "s2") == false {
             senhaTextField.textColor = UIColor.red
             senhaTextField.textColor = UIColor.red
             alertaSenha()
+            return
         }
         
         Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
@@ -244,13 +241,7 @@ class RegisterViewController: UIViewController {
         }))
         present(refreshAlert, animated: true, completion: nil)
     }
-    
-    
-    
 }
-
-
-
 
 extension RegisterViewController: UITextFieldDelegate {
     
@@ -274,7 +265,6 @@ extension RegisterViewController: UITextFieldDelegate {
     }
 }
 
-
 //MARK: UIImagePickerControllerDelegate UINavigationControllerDelegate
 extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -284,17 +274,11 @@ extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationC
         
         let urlImage = info[UIImagePickerController.InfoKey.editedImage] as! UIImage
         
-        
-        
         photoButton.image = urlImage
         self.isImageSelected = true
-        // self.photoButton.layer.cornerRadius = 100
-        
-        
-        print("urlImage:\(urlImage.jpegData(compressionQuality: 0.5))")
-        
-        
-        print("=========\(info)")
+//
+//        //print("urlImage:\(urlImage.jpegData(compressionQuality: 0.5))")
+//        print("=========\(info)")
         picker.dismiss(animated: true, completion: nil)
         
     }

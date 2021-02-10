@@ -73,7 +73,6 @@ class PerfilViewController: UIViewController {
         } onFail: { (error) in
             self.showAlert(title: "erro", message: error)
         }
-        
     }
     
     private func fetchFavoriteSeries(){
@@ -84,7 +83,6 @@ class PerfilViewController: UIViewController {
         } onFail: { (error) in
             self.showAlert(title: "erro", message: error)
         }
-        
     }
     
     func configureTableView(){
@@ -130,14 +128,10 @@ class PerfilViewController: UIViewController {
                 return
             }
             
-            
             let email = Auth.auth().currentUser?.email
             self.emailLabel.text = email
             self.nomeLabel.text = nome as! String
         }
-        
-        //        nomeLabel.text = nome as! String
-        
     }
     
     
@@ -188,9 +182,7 @@ extension PerfilViewController: UITableViewDelegate {
             Firestore.firestore().collection("favoritos").document(uid as! String).collection("seriesFavoritas").document(favoriteSeries[indexPath.row].title).delete()
             self.favoriteSeries.remove(at: indexPath.row)
             print("=====REMOVENDO SERIE FAVORITADA====")
-            
         }
-        
         tableView.deleteRows(at: [indexPath], with: .fade)
         
     }
